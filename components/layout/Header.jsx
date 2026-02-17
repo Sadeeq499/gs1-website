@@ -36,137 +36,36 @@ import { cn } from "@/lib/utils";
 
 const mainNavItems = [
   {
-    title: "About Us",
-    href: "/about",
-    type: "columns",
-    columns: [
-      {
-        title: "Who we are",
-        items: [
-          { title: "Our history", href: "/about/history" },
-          { title: "Our president", href: "/about/president" },
-          { title: "Our board", href: "/about/board" },
-          { title: "Our leadership team", href: "/about/leadership" },
-          { title: "Our three-year strategy", href: "/about/strategy" },
-          { title: "Governance", href: "/about/governance" },
-        ],
-      },
-      {
-        title: "Membership",
-        items: [{ title: "Meet our members", href: "/about/members" }],
-        extras: [
-          {
-            title: "Annual General Meeting 2025",
-            href: "/about/agm-2025",
-            highlight: true,
-          },
-        ],
-      },
-      {
-        items: [
-          { title: "Careers", href: "/about/careers" },
-          {
-            title: "Our annual review",
-            href: "/about/review",
-            hasSeparator: true,
-          },
-          {
-            title: "Our nominated charity",
-            href: "/about/charity",
-            hasSeparator: true,
-          },
-          { title: "Public policy", href: "/about/policy", hasSeparator: true },
-        ],
-      },
-    ],
+    title: "Home",
+    href: "/",
   },
   {
     title: "Standards",
     href: "/standards",
-    items: [
-      {
-        title: "Identify",
-        href: "/standards/identify",
-        description: "GS1 identification numbers (GTIN, GLN, etc.).",
-      },
-      {
-        title: "Capture",
-        href: "/standards/capture",
-        description: "Barcodes and EPC/RFID tags.",
-      },
-      {
-        title: "Share",
-        href: "/standards/share",
-        description: "Interoperability and data sharing standards.",
-      },
-    ],
   },
   {
     title: "Services",
     href: "/services",
-    items: [
-      {
-        title: "Get a Barcode",
-        href: "/services/get-barcode",
-        description: "Start identifying your products.",
-      },
-      {
-        title: "Training",
-        href: "/services/training",
-        description: "Workshops and educational resources.",
-      },
-      {
-        title: "Consultancy",
-        href: "/services/consultancy",
-        description: "Expert advice on implementation.",
-      },
-    ],
   },
   {
     title: "Industries",
     href: "/industries",
-    items: [
-      {
-        title: "Retail",
-        href: "/industries/retail",
-        description: "Omnichannel retail and marketplaces.",
-      },
-      {
-        title: "Healthcare",
-        href: "/industries/healthcare",
-        description: "Patient safety and supply chain.",
-      },
-      {
-        title: "Logistics",
-        href: "/industries/logistics",
-        description: "Transport and logistics efficiency.",
-      },
-    ],
   },
   {
-    title: "Resources",
-    href: "/resources",
+    title: "Blog",
+    href: "/blog",
+  },
+  {
+    title: "About Us",
+    href: "/about",
     items: [
-      {
-        title: "Tools & Apps",
-        href: "/resources/tools",
-        description: "Check Digit Calculator, GEPIR, and more.",
-      },
-      {
-        title: "Document Library",
-        href: "/resources/documents",
-        description: "Access technical standards and guides.",
-      },
-      {
-        title: "Success Stories",
-        href: "/resources/success-stories",
-        description: "Real-world implementation examples.",
-      },
-      {
-        title: "Help Center",
-        href: "/resources/help",
-        description: "FAQs and technical support.",
-      },
+      { title: "Who We Are", href: "/about/who-we-are" },
+      { title: "Mission & Vision", href: "/about/mission-vision" },
+      { title: "Management Board", href: "/about/board" },
+      { title: "Our Strategy", href: "/about/strategy" },
+      { title: "Our Partners", href: "/about/partners" },
+      { title: "Our Team", href: "/about/team" },
+      { title: "Success Stories", href: "/about/success-stories" },
     ],
   },
 ];
@@ -249,11 +148,11 @@ export default function Header() {
                   <NavigationMenuItem key={item.title}>
                     {item.type === "columns" ? (
                       <>
-                        <NavigationMenuTrigger className="text-sm font-semibold text-primary data-[state=open]:text-primary bg-transparent hover:bg-transparent focus:bg-transparent focus:text-primary">
+                        <NavigationMenuTrigger className="text-[15px] font-medium text-primary hover:text-secondary bg-transparent hover:bg-transparent focus:bg-transparent focus:text-secondary data-[state=open]:text-secondary transition-colors">
                           {item.title}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
-                          <div className="flex gap-12 p-8 w-[800px] bg-white rounded-xl">
+                          <div className="flex gap-12 p-8 w-[800px] bg-white rounded-xl border-t-4 border-secondary">
                             {item.columns.map((col, idx) => (
                               <div
                                 key={idx}
@@ -261,7 +160,7 @@ export default function Header() {
                               >
                                 {col.title && (
                                   <div className="space-y-4">
-                                    <h4 className="font-bold text-lg text-primary">
+                                    <h4 className="font-bold text-lg text-primary border-b border-gray-100 pb-2">
                                       {col.title}
                                     </h4>
                                     <ul className="space-y-3">
@@ -269,7 +168,7 @@ export default function Header() {
                                         <li key={subItem.title}>
                                           <Link
                                             href={subItem.href}
-                                            className="text-[15px] font-medium text-muted-foreground hover:text-secondary transition-colors block"
+                                            className="text-[15px] font-medium text-muted-foreground hover:text-secondary hover:translate-x-1 transition-all block"
                                           >
                                             {subItem.title}
                                           </Link>
@@ -316,11 +215,11 @@ export default function Header() {
                       </>
                     ) : item.items ? (
                       <>
-                        <NavigationMenuTrigger className="text-sm font-semibold text-primary data-[state=open]:text-primary bg-transparent hover:bg-transparent focus:bg-transparent focus:text-primary">
+                        <NavigationMenuTrigger className="text-[15px] font-medium text-primary hover:text-secondary bg-transparent hover:bg-transparent focus:bg-transparent focus:text-secondary data-[state=open]:text-secondary transition-colors">
                           {item.title}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
-                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl border-t-4 border-secondary">
                             {item.items.map((subItem) => (
                               <ListItem
                                 key={subItem.title}
@@ -338,8 +237,7 @@ export default function Header() {
                         <Link
                           href={item.href}
                           className={cn(
-                            navigationMenuTriggerStyle(),
-                            "text-base font-medium text-foreground/80 hover:text-primary bg-transparent hover:bg-transparent focus:bg-transparent focus:text-primary",
+                            "text-[15px] font-medium text-primary hover:text-secondary bg-transparent hover:bg-transparent focus:bg-transparent focus:text-secondary transition-colors px-4 py-2 block",
                           )}
                         >
                           {item.title}
@@ -521,12 +419,14 @@ const ListItem = React.forwardRef(
             )}
             {...props}
           >
-            <div className="text-sm font-medium leading-none group-hover:text-primary transition-colors">
+            <div className="text-sm font-medium leading-none group-hover:text-secondary transition-colors">
               {title}
             </div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-muted-foreground/80">
-              {children}
-            </p>
+            {children && (
+              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-muted-foreground/80">
+                {children}
+              </p>
+            )}
           </a>
         </NavigationMenuLink>
       </li>
