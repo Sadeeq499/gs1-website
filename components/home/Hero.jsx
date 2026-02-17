@@ -51,7 +51,7 @@ const slides = [
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[450px] overflow-hidden bg-black text-white">
+    <section className="relative w-full h-[500px] overflow-hidden bg-black text-white">
       <Carousel
         className="w-full h-full"
         opts={{
