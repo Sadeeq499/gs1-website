@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
-import { ArrowRight, BarChart3 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
 
 export function IndustryCard({ industry, className }) {
   return (
@@ -20,24 +19,6 @@ export function IndustryCard({ industry, className }) {
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
         />
-
-        {/* Floating Tag */}
-        <div className="absolute top-4 left-4 z-20">
-          <Badge
-            variant="secondary"
-            className="bg-white/90 text-secondary hover:bg-white backdrop-blur-sm border-0 font-bold shadow-sm"
-          >
-            {industry.tag}
-          </Badge>
-        </div>
-
-        {/* Stats on Hover */}
-        {industry.stats && (
-          <div className="absolute bottom-4 right-4 z-20 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hidden sm:flex items-center gap-1.5 rounded-full bg-primary/90 py-1.5 px-3 text-xs font-medium text-white backdrop-blur-md shadow-lg ring-1 ring-white/20">
-            <BarChart3 className="h-3.5 w-3.5" />
-            {industry.stats}
-          </div>
-        )}
       </div>
 
       {/* Content */}

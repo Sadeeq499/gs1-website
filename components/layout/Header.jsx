@@ -52,10 +52,6 @@ const mainNavItems = [
     href: "/industries",
   },
   {
-    title: "Blog",
-    href: "/blog",
-  },
-  {
     title: "About Us",
     href: "/about",
     items: [
