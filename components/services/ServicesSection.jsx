@@ -7,68 +7,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Barcode,
-  MapPin,
-  Package,
-  ShieldCheck,
-  Cigarette,
-} from "lucide-react";
-
-// Service Data
-const services = [
-  {
-    id: "gtin",
-    title: "Global Trade Item Number (GTIN)",
-    shortName: "GTIN",
-    description:
-      "Uniquely identify your products with GTINs (barcodes) to sell in retail stores and online marketplaces globally.",
-    icon: Barcode,
-    color: "bg-primary",
-    textColor: "text-primary",
-  },
-  {
-    id: "gln",
-    title: "Global Location Number (GLN)",
-    shortName: "GLN",
-    description:
-      "Identify physical locations and legal entities to streamline supply chain communications and transactions.",
-    icon: MapPin,
-    color: "bg-secondary",
-    textColor: "text-secondary",
-  },
-  {
-    id: "sscc",
-    title: "Serial Shipping Container Code (SSCC)",
-    shortName: "SSCC",
-    description:
-      "Track and trace logistic units throughout the supply chain with a unique identifier for every pallet or shipment.",
-    icon: Package,
-    color: "bg-primary",
-    textColor: "text-primary",
-  },
-  {
-    id: "sec",
-    title: "Saudi Electricity Company (SEC)",
-    shortName: "SEC",
-    description:
-      "Specialized barcoding and identification solutions for Saudi Electricity Company suppliers and vendors.",
-    icon: ShieldCheck,
-    color: "bg-secondary",
-    textColor: "text-secondary",
-  },
-  {
-    id: "tobacco",
-    title: "Tobacco Traceability",
-    shortName: "Tobacco",
-    description:
-      "Special Category: Ensure compliance with tobacco regulations through our specialized tracking and tracing solutions.",
-    icon: Cigarette,
-    color: "bg-primary",
-    textColor: "text-primary",
-  },
-];
+import { ArrowRight } from "lucide-react";
+import { services } from "./data";
 
 const ServicesSection = () => {
   return (
@@ -133,7 +73,7 @@ const ServicesSection = () => {
                     {service.description}
                   </CardDescription>
 
-                  <Link href={`/services/${service.id}`} className="mt-auto">
+                  <Link href={`/services/${service.slug}`} className="mt-auto">
                     <button
                       className={`flex items-center gap-2 text-sm font-semibold transition-colors group-hover:translate-x-1 ${service.textColor}`}
                     >
