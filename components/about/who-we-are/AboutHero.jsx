@@ -2,14 +2,14 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import aboutHeroImage from '@/public/images/about.jpg'; // Local Import
+import whoImage from '@/public/images/who.jpg';
 
 export const AboutHero = ({ data }) => (
-  <section className="relative min-h-[85vh] flex items-center text-white overflow-hidden rounded-b-[4rem]">
+  <section className="relative flex py-12 items-center text-white overflow-hidden">
     {/* Background Image Container */}
     <div className="absolute inset-0 z-0">
       <Image 
-        src={aboutHeroImage} 
+        src={whoImage} 
         alt="About GS1 Saudi Arabia" 
         fill 
         className="object-cover" 
@@ -23,23 +23,23 @@ export const AboutHero = ({ data }) => (
       <motion.div 
         initial={{ opacity: 0, y: 30 }} 
         animate={{ opacity: 1, y: 0 }} 
-        className="max-w-4xl space-y-8"
+        className=" space-y-8"
       >
-        <Badge className="bg-secondary text-primary font-bold px-6 py-2 border-none">
+        <Badge className="bg-secondary text-white font-bold px-6 py-2 border-none">
           {data.badge}
         </Badge>
         
-        <h1 className="text-6xl lg:text-8xl font-black tracking-tighter leading-[0.9]">
+        <h1 className="text-3xl lg:text-5xl font-black tracking-tighter leading-[0.9]">
           {data.title} <br />
           <span className="text-secondary italic">{data.titleHighlight}</span> <br />
           {data.titleSuffix}
         </h1>
 
-        <p className="text-xl text-white/70 max-w-2xl leading-relaxed">
+        <p className="text-lg text-white/70 leading-relaxed">
           {data.description}
         </p>
 
-        <div className="flex flex-wrap gap-12 pt-12 border-t border-white/10">
+        <div className="flex flex-wrap gap-12 pt-12 border-t border-white/60">
           {data.stats.map((stat, i) => (
             <div key={i} className="space-y-1">
               <div className="text-4xl font-black text-secondary">{stat.value}</div>
