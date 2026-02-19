@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { EVENTS_DATA } from "./events-data";
-import conferenceImg from "@/public/images/conference.jpg";
+import EventsImg from "@/public/images/events.jpg";
 
 export const EventsHero = () => {
   const { hero } = EVENTS_DATA;
@@ -14,14 +14,14 @@ export const EventsHero = () => {
       {/* Background Image Implementation */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={conferenceImg}
+          src={EventsImg}
           alt="GS1 Saudi Arabia Events"
           fill
           className="object-cover"
           priority
         />
         {/* Dark Blue Overlay with Blur to match your style */}
-        <div className="absolute inset-0 bg-primary/30" />
+        <div className="absolute inset-0 bg-primary/50 backdrop-blur-[2px]" />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">

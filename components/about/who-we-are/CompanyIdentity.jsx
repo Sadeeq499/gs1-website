@@ -24,9 +24,9 @@ export const CompanyIdentity = ({ data }) => (
             </div>
           </div>
           <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-full px-8 h-14" asChild>
-            {/* <button>
+            <button>
               <FileDown className="mr-2 w-5 h-5" /> {data.buttonText}
-            </button> */}
+            </button>
           </Button>
         </div>
 
