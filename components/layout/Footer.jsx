@@ -119,14 +119,14 @@ const Footer = () => {
                   className="flex items-center gap-2.5 text-sm text-primary-foreground/70 transition-colors hover:text-accent"
                 >
                   <Phone className="h-4 w-4 shrink-0" />
-                  +966 11 234 5678
+                  920031437
                 </a>
                 <a
-                  href="mailto:info@gs1sa.org"
+                  href="gs1sa@gs1.org.sa"
                   className="flex items-center gap-2.5 text-sm text-primary-foreground/70 transition-colors hover:text-accent"
                 >
                   <Mail className="h-4 w-4 shrink-0" />
-                  info@gs1sa.org
+                  gs1sa@gs1.org.sa
                 </a>
                 <div className="flex items-start gap-2.5 text-sm text-primary-foreground/70">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
