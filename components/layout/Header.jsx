@@ -64,8 +64,8 @@ const mainNavItems = [
       { title: "Management Board", href: "/about/board" },
       { title: "Our Strategy", href: "/about/strategy" },
       { title: "Our Partners", href: "/about/partners" },
-      { title: "Our Team", href: "/about/team" },
-      { title: "Success Stories", href: "/about/success-stories" },
+      // { title: "Our Team", href: "/about/team" },
+      // { title: "Success Stories", href: "/about/success-stories" },
     ],
   },
 ];

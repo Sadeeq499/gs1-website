@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { ShieldCheck } from "lucide-react";
 
 export const InsightsHero = ({ data }) => (
-  <section className="relative py-12 flex items-center text-white overflow-hidden rounded-b-[5rem] bg-primary">
+  <section className="relative py-12 flex items-center text-white overflow-hidden bg-primary">
     {/* Background Image Container */}
     <div className="absolute inset-0 z-0">
       <div className="relative w-full h-full animate-pulse [animation-duration:12s]">
