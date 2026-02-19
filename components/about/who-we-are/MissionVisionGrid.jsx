@@ -18,7 +18,7 @@ export const MissionVisionGrid = ({ data }) => (
               className="p-12 rounded-[3rem] bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-500 group"
             >
               <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-transform">
-                <IconComponent className="w-8 h-8 text-white" />
+                <IconComponent className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-3xl font-black text-white mb-6 tracking-tight">
                 {item.title}
