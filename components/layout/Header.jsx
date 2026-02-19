@@ -52,6 +52,10 @@ const mainNavItems = [
     href: "/industries",
   },
   {
+    title: "Blog",
+    href: "/blog",
+  },
+  {
     title: "About Us",
     href: "/about",
     items: [
@@ -114,7 +118,7 @@ export default function Header() {
               href="/contact"
               className="hover:text-secondary transition-colors flex items-center gap-1"
             >
-              Contact us
+              Contact
             </Link>
           </div>
         </div>
