@@ -101,6 +101,16 @@
   --sidebar-accent-foreground: oklch(0.312 0.126 259);
   --sidebar-border: oklch(0.762 0.005 247.9);
   --sidebar-ring: oklch(0.312 0.126 259);
+  --gs1-info: #f0f5fa ;
+}
+.bg-gs1-info{
+  background-color: var(--gs1-info);
+}
+.bg-gs1-earth{
+  background-image: url('/images/banner-about-page-earth.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .dark {
   --background: oklch(0.141 0.005 285.823); /* Keep dark base */
