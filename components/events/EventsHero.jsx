@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { EVENTS_DATA } from "./events-data";
-import conferenceImg from "@/public/images/conference.jpg";
+import conferenceImg from "@/public/images/hero.jpg";
 
 export const EventsHero = () => {
   const { hero } = EVENTS_DATA;

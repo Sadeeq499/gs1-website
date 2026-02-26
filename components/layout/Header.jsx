@@ -34,10 +34,7 @@ import { cn } from "@/lib/utils";
 
 const mainNavItems = [
   { title: "Home", href: "/" },
-  { title: "Standards", href: "/standards" },
-  { title: "Services", href: "/services" },
-  { title: "Industries", href: "/industries" },
-  {
+   {
     title: "About Us",
     href: "/about",
     items: [
@@ -48,6 +45,10 @@ const mainNavItems = [
       { title: "Our Partners", href: "/about/partners" },
     ],
   },
+  { title: "Standards", href: "/standards" },
+  { title: "Services", href: "/services" },
+  { title: "Industries", href: "/industries" },
+ 
 ];
 
 export default function Header() {
@@ -136,7 +137,7 @@ export default function Header() {
                           {item.title}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="absolute top-0 left-0">
-                          <ul className="grid w-[400px] gap-2 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white rounded-xl border-t-4 border-secondary shadow-2xl">
+                          <ul className="grid w-[400px] gap-2 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]  border-t-4 border-secondary ">
                             {item.items.map((subItem) => (
                               <ListItem
                                 key={subItem.title}

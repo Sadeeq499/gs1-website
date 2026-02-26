@@ -141,7 +141,7 @@ export function BarcodeTechnologySection() {
         </div>
 
         {/* Bottom Vision 2030 Banner */}
-        <div className="mt-14 overflow-hidden rounded-2xl bg-primary p-8 lg:p-12">
+        {/* <div className="mt-14 overflow-hidden rounded-2xl bg-primary p-8 lg:p-12">
           <div className="flex flex-col items-center gap-6 text-center lg:flex-row lg:text-left">
             <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-secondary">
               <ShieldCheck className="h-8 w-8 text-white" />
@@ -168,7 +168,7 @@ export function BarcodeTechnologySection() {
               </a>
             </Button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

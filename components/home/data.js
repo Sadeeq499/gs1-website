@@ -430,7 +430,7 @@ export const partners = [
   },
   { 
     name: "Ministry of Industry", 
-    logo: "https://www.mim.gov.sa/_next/image?url=https%3A%2F%2Fmim-cms-directus.mim.gov.sa%2Fassets%2F%2F51850a2b-a6b6-4d37-8f5b-24c7b11589d8.avif&w=3840&q=90",
+    logo: "https://my.gov.sa/files/agency_files/fufjoqziccotv71g6gtvfvbr15izqbn4.png",
     category: "Industrial Standards",
     url: "https://mim.gov.sa/"
   },
@@ -466,7 +466,7 @@ export const partners = [
   },
   { 
     name: "Local Content Authority", 
-    logo: "https://saudipedia.com/var/site/storage/images/9/8/0/7/6167089-1-eng-GB/56c4b2cc25b8-71326.jpg",
+    logo: "https://istitlaa.ncc.gov.sa/ar/PublishingImages/Logos/lcgpa.jpg",
     category: "Local Content",
     url: "https://lcgpa.gov.sa/"
   }

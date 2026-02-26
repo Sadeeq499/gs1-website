@@ -21,9 +21,9 @@ export const ProviderShowcase = () => {
               {providers.title} <span className="text-primary italic">{providers.titleHighlight}</span>
             </h2>
           </motion.div>
-          <div className="hidden md:flex items-center gap-2 text-muted-foreground text-xs font-bold uppercase tracking-widest pb-2">
+          {/* <div className="hidden md:flex items-center gap-2 text-muted-foreground text-xs font-bold uppercase tracking-widest pb-2">
             {providers.exploreText} <ChevronRight className="w-4 h-4 text-secondary animate-pulse" />
-          </div>
+          </div> */}
         </div>
 
         <div className="overflow-hidden rounded-xl" ref={emblaRef}>
