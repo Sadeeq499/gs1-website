@@ -38,48 +38,53 @@ export const PARTNERS_DATA = {
     exploreText: "Explore more",
     detailsText: "Partner Details",
     impactLabel: "Key Impact",
-    list: [
-      { 
-        name: "FSC", 
-        full: "Federation of Saudi Chambers", 
-        type: "Strategic Partner", 
-        logo: "https://upload.wikimedia.org/wikipedia/ar/5/52/Federation_of_Saudi_Chambers_Logo.png", 
-        desc: "The primary representative of the Saudi business community, ensuring global standards for local commerce.",
-        impact: "SME Support & Vision 2030"
-      },
-      { 
-        name: "SFDA", 
-        full: "Saudi Food & Drug Authority", 
-        type: "Regulatory Partner", 
-        logo: "https://upload.wikimedia.org/wikipedia/ar/thumb/a/a2/Saudi_Food_and_Drug_Authority_Logo.svg/1200px-Saudi_Food_and_Drug_Authority_Logo.svg.png",
-        desc: "Mandating GS1 DataMatrix for the National Drug Track and Trace System (Rasad).",
-        impact: "Healthcare Traceability"
-      },
-      { 
-        name: "ZATCA", 
-        full: "Zakat, Tax and Customs Authority", 
-        type: "Government Partner", 
-        logo: "", 
-        desc: "Collaborating on E-Invoicing (Fatoora) standards using Global Location Numbers (GLN).",
-        impact: "E-Invoicing & Customs"
-      },
-      { 
-        name: "SASO", 
-        full: "Saudi Standards & Quality Org", 
-        type: "Standards Partner", 
-        logo: "https://upload.wikimedia.org/wikipedia/ar/thumb/8/8e/SASO_Logo.svg/1200px-SASO_Logo.svg.png",
-        desc: "Standardizing product conformity (SABER) via Global Trade Item Numbers (GTIN).",
-        impact: "Technical Compliance"
-      },
-      { 
-        name: "MOH", 
-        full: "Ministry of Health", 
-        type: "Strategic Partner", 
-        logo: "https://upload.wikimedia.org/wikipedia/ar/thumb/b/be/Ministry_of_Health_Logo_%28Saudi_Arabia%29.svg/1200px-Ministry_of_Health_Logo_%28Saudi_Arabia%29.svg.png",
-        desc: "Adopting GS1 standards for medical device identification and patient safety.",
-        impact: "Patient Safety (UDI)"
-      }
-    ]
+   list: [
+    { 
+      name: "FSC", 
+      full: "Federation of Saudi Chambers", 
+      type: "Strategic Partner", 
+      logo: "/images/FSC.png", 
+      desc: "The primary representative of the Saudi business community, ensuring global standards for local commerce.",
+      impact: "SME Support & Vision 2030",
+      url: "https://fsc.org.sa"
+    },
+    { 
+      name: "SFDA", 
+      full: "Saudi Food & Drug Authority", 
+      type: "Regulatory Partner", 
+      logo: "/images/SFDA.png",
+      desc: "Mandating GS1 DataMatrix for the National Drug Track and Trace System (Rasad).",
+      impact: "Healthcare Traceability",
+      url: "https://www.sfda.gov.sa"
+    },
+    { 
+      name: "ZATCA", 
+      full: "Zakat, Tax and Customs Authority", 
+      type: "Government Partner", 
+      logo: "/images/ZATCA.svg", 
+      desc: "Collaborating on E-Invoicing (Fatoora) standards using Global Location Numbers (GLN).",
+      impact: "E-Invoicing & Customs",
+      url: "https://zatca.gov.sa"
+    },
+    { 
+      name: "SASO", 
+      full: "Saudi Standards & Quality Org", 
+      type: "Standards Partner", 
+      logo: "/images/SASO.png",
+      desc: "Standardizing product conformity (SABER) via Global Trade Item Numbers (GTIN).",
+      impact: "Technical Compliance",
+      url: "https://www.saso.gov.sa"
+    },
+    { 
+      name: "MOH", 
+      full: "Ministry of Health", 
+      type: "Strategic Partner", 
+      logo: "/images/MOH.svg",
+      desc: "Adopting GS1 standards for medical device identification and patient safety.",
+      impact: "Patient Safety (UDI)",
+      url: "https://www.moh.gov.sa"
+    }
+  ]
   },
   marketplace: {
     badge: "E-Commerce Enablement",
@@ -103,7 +108,7 @@ export const PARTNERS_DATA = {
       },
       {
         name: "Noon.com",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Noon_Logo.svg", // Replaced base64 for clarity
+        logo: "https://cdn.worldvectorlogo.com/logos/noon-2.svg", // Replaced base64 for clarity
         label: "Expand on Noon",
         description: "Unique product identification ensures accurate listing on Noon.",
         delay: 0.2

@@ -33,7 +33,7 @@ export const ProviderShowcase = () => {
                 <Card className="h-[420px] p-8 flex flex-col justify-between border-border/40 bg-card hover:border-secondary/50 shadow-sm hover:shadow-xl transition-all duration-500">
                   <div>
                     <div className="flex justify-between items-start mb-8">
-                      <div className="relative w-24 h-24 rounded-2xl border-[1.5px] border-secondary/20 p-3 flex items-center justify-center bg-white shadow-sm">
+                      <div className="relative w-24 h-24 rounded-2xl border-[1.5px] border-secondary/20 p-1 flex items-center justify-center bg-white shadow-sm">
                         {partner.logo ? <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain" /> : <Building2 className="w-12 h-12 text-primary" />}
                       </div>
                       <Verified className="w-6 h-6 text-secondary/30" />
@@ -47,9 +47,15 @@ export const ProviderShowcase = () => {
                       <span className="text-[10px] font-bold uppercase text-foreground/40">{providers.impactLabel}</span>
                       <Badge variant="outline" className="text-[10px] border-secondary/30 text-secondary">{partner.impact}</Badge>
                     </div>
-                    <div className="flex items-center text-xs font-bold text-primary cursor-pointer hover:underline group">
-                      {providers.detailsText} <ArrowUpRight className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </div>
+                      <a 
+                          href={partner.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center text-xs font-bold text-primary hover:underline group w-fit"
+                        >
+                          {providers.detailsText} 
+                          <ArrowUpRight className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </a>
                   </div>
                 </Card>
               </div>

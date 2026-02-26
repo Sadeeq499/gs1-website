@@ -15,7 +15,7 @@ export default function ContactHero() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-4xl mx-auto text-center text-white">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-7xl mx-auto text-center text-white">
           <Badge variant="outline" className="mb-6 px-4 py-2 text-sm border-white/30 text-white bg-white/10 backdrop-blur-sm">
             {hero.badge}
           </Badge>

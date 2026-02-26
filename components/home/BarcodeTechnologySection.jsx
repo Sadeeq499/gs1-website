@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import { tabs , tabContent ,stats } from "./data";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,144 +13,8 @@ import {
 } from "@/components/ui/card";
 import {
   ArrowRight,
-  QrCode,
   ShieldCheck,
-  Globe,
-  Layers,
-  ScanLine,
-  FileCheck,
-  Link2,
-  BarChart3,
 } from "lucide-react";
-
-const tabs = [
-  {
-    id: "2d-barcodes",
-    label: "2D Barcodes",
-    icon: QrCode,
-  },
-  {
-    id: "digital-link",
-    label: "GS1 Digital Link",
-    icon: Link2,
-  },
-  {
-    id: "zatca",
-    label: "ZATCA & Compliance",
-    icon: FileCheck,
-  },
-  {
-    id: "traceability",
-    label: "End-to-End Traceability",
-    icon: BarChart3,
-  },
-];
-
-const tabContent = {
-  "2d-barcodes": {
-    headline: "The Future of Barcodes Is Here",
-    description:
-      "2D barcodes pack exponentially more data into a single scan. From DataMatrix to QR codes powered by GS1 standards, Saudi businesses gain richer product information, consumer engagement, and supply chain intelligence -- all from one symbol.",
-    image: "/images/barcode-evolution.png",
-    features: [
-      {
-        icon: Layers,
-        title: "100x More Data",
-        text: "Encode product details, batch numbers, expiry dates, and URLs in a single 2D symbol.",
-      },
-      {
-        icon: ScanLine,
-        title: "Smartphone-Ready",
-        text: "Consumers scan with any smartphone camera -- no special apps or hardware needed.",
-      },
-      {
-        icon: Globe,
-        title: "Sunrise 2027 Ready",
-        text: "Prepare your business for the global GS1 migration from 1D to 2D barcodes by 2027.",
-      },
-    ],
-    cta: "Explore 2D Barcodes",
-  },
-  "digital-link": {
-    headline: "One Code. Infinite Connections.",
-    description:
-      "GS1 Digital Link transforms every barcode into a gateway to digital content. A single scan connects consumers, retailers, and regulators to product pages, authenticity checks, sustainability data, and more -- all through a standard web URI.",
-    image: "/images/digital-link.png",
-    features: [
-      {
-        icon: Link2,
-        title: "Web-Native Barcodes",
-        text: "Every product gets a unique URL that resolves to the right content for each audience.",
-      },
-      {
-        icon: Globe,
-        title: "Multi-Purpose Scans",
-        text: "Same code serves consumers, point-of-sale, warehouse, and regulatory systems.",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Anti-Counterfeit",
-        text: "Verify product authenticity instantly with GS1-powered digital verification.",
-      },
-    ],
-    cta: "Learn About Digital Link",
-  },
-  zatca: {
-    headline: "Seamless ZATCA E-Invoicing Compliance",
-    description:
-      "Saudi Arabia's ZATCA e-invoicing mandate requires GS1-compliant QR codes on every tax invoice. GS1 Saudi Arabia provides the standards, tools, and support to ensure your business meets Phase 2 integration requirements with confidence.",
-    image: "/images/zatca-compliance.png",
-    features: [
-      {
-        icon: FileCheck,
-        title: "Phase 2 Ready",
-        text: "Full compliance with ZATCA FATOORA integration requirements using GS1 standards.",
-      },
-      {
-        icon: ShieldCheck,
-        title: "Validated QR Codes",
-        text: "Generate compliant QR codes with seller info, VAT number, invoice totals, and timestamps.",
-      },
-      {
-        icon: BarChart3,
-        title: "Vision 2030 Aligned",
-        text: "Support Saudi Arabia's digital transformation goals with standards-based e-commerce.",
-      },
-    ],
-    cta: "Get ZATCA Compliant",
-  },
-  traceability: {
-    headline: "Track Every Product. Every Step.",
-    description:
-      "EPCIS 2.0 and GS1 standards deliver full supply chain visibility from raw materials to the end consumer. Saudi businesses gain real-time tracking, recall readiness, and the transparency that regulators and consumers demand.",
-    image: "/images/traceability-chain.png",
-    features: [
-      {
-        icon: Layers,
-        title: "EPCIS 2.0",
-        text: "Capture what, where, when, and why events across your entire supply chain.",
-      },
-      {
-        icon: ScanLine,
-        title: "Instant Recall",
-        text: "Pinpoint affected batches in minutes, not weeks -- protecting consumers and your brand.",
-      },
-      {
-        icon: Globe,
-        title: "Cross-Border Ready",
-        text: "Interoperable standards that work with global trading partners and regulatory systems.",
-      },
-    ],
-    cta: "Discover Traceability",
-  },
-};
-
-const stats = [
-  { value: "2M+", label: "Barcodes Issued in KSA" },
-  { value: "150+", label: "Countries Connected" },
-  { value: "99.9%", label: "Scan Accuracy Rate" },
-  { value: "2027", label: "Global Sunrise Deadline" },
-];
 
 export function BarcodeTechnologySection() {
   const [activeTab, setActiveTab] = useState("2d-barcodes");
@@ -237,7 +102,7 @@ export function BarcodeTechnologySection() {
                 className="mt-6 bg-secondary text-white hover:bg-secondary/90"
                 asChild
               >
-                <a href="#">
+                <a href={`/solutions/${content.slug}`}>
                   {content.cta}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>

@@ -3,6 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { slides } from "./data";
 import { ArrowRight, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,41 +14,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const slides = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80",
-    title: "The Global Language of Business",
-    highlight: "Business",
-    description:
-      "GS1 Saudi Arabia empowers your supply chain with global standards for identification, capturing, and sharing information.",
-    primaryCta: "Get a Barcode",
-    secondaryCta: "Explore Services",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&q=80",
-    title: "Seamless Retail Experience",
-    highlight: "Transform",
-    description:
-      "Enhance customer satisfaction and operational efficiency with our cutting-edge retail solutions and standards.",
-    primaryCta: "Retail Solutions",
-    secondaryCta: "Learn More",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80",
-    title: "Connect with Confidence",
-    highlight: "Globally",
-    description:
-      "Join a network of over 2 million companies worldwide using GS1 standards to do business with confidence.",
-    primaryCta: "Become a Member",
-    secondaryCta: "Our Network",
-  },
-];
+
 
 export default function Hero() {
   return (

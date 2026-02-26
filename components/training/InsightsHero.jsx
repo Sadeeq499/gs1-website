@@ -13,12 +13,12 @@ export const InsightsHero = ({ data }) => (
     <div className="container mx-auto px-4 relative z-10">
       <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} className="space-y-6">
         <Badge className="bg-secondary text-primary font-bold border-none px-4 py-1">{data.badge}</Badge>
-        <h1 className="text-3xl lg:text-5xl font-black tracking-tighter leading-tight">
+        <h1 className="text-3xl lg:text-5xl font-black tracking-tighter">
           {data.title} <br />
-          <span className="text-secondary italic">{data.titleHighlight}</span> <br />
+          <span className="text-secondary">{data.titleHighlight}</span> <br />
           {data.titleSuffix}
         </h1>
-        <p className="text-xl text-white/80 leading-relaxed">{data.description}</p>
+        <p className="text-xl text-white/80 max-w-3xl">{data.description}</p>
         <div className="flex gap-8 pt-8 border-t border-white/70">
           {data.stats.map((stat, i) => (
             <div key={i}>

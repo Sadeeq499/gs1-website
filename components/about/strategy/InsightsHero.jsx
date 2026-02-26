@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { Rocket } from "lucide-react";
 
 export const InsightsHero = ({ data }) => (
-  <section className="relative py-12 flex items-center text-white overflow-hidden rounded-b-[4rem] bg-primary">
+  <section className="relative py-12 flex items-center text-white overflow-hidden bg-primary">
     {/* Background Image with CSS Ken Burns effect */}
     <div className="absolute inset-0 z-0">
       <div className="relative w-full h-full animate-pulse [animation-duration:8s]">
@@ -36,13 +36,13 @@ export const InsightsHero = ({ data }) => (
         
         {/* Main Title Section */}
         <div className="space-y-6">
-          <h1 className="text-3xl lg:text-5xl font-black text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white">
             {data.title} <br />
-            <span className="text-secondary italic">{data.titleHighlight}</span> <br />
+            <span className="text-secondary">{data.titleHighlight}</span> <br />
             <span className="opacity-90">{data.titleSuffix}</span>
           </h1>
           
-          <p className="text-xl lg:text-2xl text-white/70 leading-relaxed font-light mt-8">
+          <p className="text-xl lg:text-2xl text-white/70 font-light mt-8">
             {data.description}
           </p>
         </div>

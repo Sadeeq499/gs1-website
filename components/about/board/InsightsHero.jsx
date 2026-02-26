@@ -34,21 +34,21 @@ export const InsightsHero = ({ data }) => (
         
         {/* Leadership Typography */}
         <div className="space-y-6">
-          <h1 className="text-3xl lg:text-6xl font-black text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white">
             {data.title} <br />
-            <span className="text-secondary italic drop-shadow-md">{data.titleHighlight}</span> <br />
+            <span className="text-secondary drop-shadow-md">{data.titleHighlight}</span> <br />
             <span className="opacity-80">{data.titleSuffix}</span>
           </h1>
           
           <Separator className="bg-white/10 w-full" />
           
-          <p className="text-lg lg:text-xl text-white/60 leading-relaxed font-light mt-8">
+          <p className="text-lg lg:text-xl text-white/60 font-light mt-8">
             {data.description}
           </p>
         </div>
 
         {/* Governance Stats Row */}
-        <div className="flex flex-wrap items-center gap-8 lg:gap-16 pt-12 border-t border-white/5">
+        {/* <div className="flex flex-wrap items-center gap-8 lg:gap-16 pt-12 border-t border-white/5">
           {data.stats.map((stat, i) => (
             <div key={i} className="flex items-center gap-8 lg:gap-16 group">
               <div className="space-y-1">
@@ -60,20 +60,19 @@ export const InsightsHero = ({ data }) => (
                 </div>
               </div>
               
-              {/* Vertical Separator for Tiers */}
               {i < data.stats.length - 1 && (
                 <Separator orientation="vertical" className="h-10 bg-white/10 hidden md:block" />
               )}
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
 
     {/* Elegant Bottom Marker */}
-    <div className="absolute bottom-12 left-12 animate-in fade-in slide-in-from-left duration-1000 delay-1000">
+    {/* <div className="absolute bottom-12 left-12 animate-in fade-in slide-in-from-left duration-1000 delay-1000">
       <div className="h-[2px] w-24 bg-secondary" />
       <div className="mt-4 text-[10px] font-bold uppercase tracking-widest text-white/20">Executive Tier</div>
-    </div>
+    </div> */}
   </section>
 );

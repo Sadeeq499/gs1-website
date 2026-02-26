@@ -47,9 +47,9 @@ export default async function IndustryPage({ params }) {
 
         {/* Section 2: Deep Dive (Full Width Text) */}
         {industry.description2 && (
-          <section className="max-w-4xl mx-auto text-center space-y-12 animate-in mt-8 fade-in duration-1000 delay-500">
+          <section className="max-w-7xl mx-auto text-center space-y-12 animate-in mt-8 fade-in duration-1000 delay-500">
             <p className="text-xl md:text-2xl font-light text-slate-700 dark:text-slate-200 leading-relaxed italic border-l-4 border-secondary pl-6 md:pl-0 md:border-l-0 md:border-t-4 md:pt-8">
-              "{industry.description2}"
+              &ldquo;{industry.description2}&rdquo;
             </p>
 
             {/* <div className="relative group w-full max-w-5xl mx-auto">

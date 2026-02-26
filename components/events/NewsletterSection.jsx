@@ -13,7 +13,7 @@ export const NewsletterSection = () => {
       <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <Card className="max-w-4xl mx-auto p-12 border-none shadow-2xl bg-white rounded-[2rem]">
+        <Card className="max-w-7xl mx-auto p-12 border-none shadow-2xl bg-white rounded-[2rem]">
           <div className="text-center space-y-4 max-w-2xl mx-auto">
             <div className="w-16 h-16 bg-secondary/10 flex items-center justify-center rounded-2xl mx-auto mb-6">
               <Mail className="w-8 h-8 text-secondary" />

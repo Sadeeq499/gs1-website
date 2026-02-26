@@ -5,7 +5,7 @@ export const StrategyRoadmap = ({ data }) => (
     <div className="container mx-auto px-4">
       <h2 className="text-4xl font-black text-center mb-20">{data.title}</h2>
       
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {data.steps.map((step, i) => (
           <div key={i} className="flex group">
             {/* Timeline Line & Dot */}

@@ -1,0 +1,429 @@
+// data/terms.js
+// ─────────────────────────────────────────────────────────────
+// Single source of truth – all Terms & Conditions content.
+// Edit ONLY this file to update any text on the page.
+// ─────────────────────────────────────────────────────────────
+
+export const TERMS_META = {
+  title: "Terms & Conditions",
+  subtitle:
+    "The following Terms and Conditions shall apply to all Members of the Product Numbering and Administrative Services Company – GS1 Saudi Arabia.",
+  lastUpdated: "2025",
+  version: "v4.0",
+  organization: "GS1 Saudi Arabia",
+  website: "www.gs1.org.sa",
+};
+
+export const TERMS_FOOTER = {
+  note: "By becoming a member of GS1 Saudi Arabia, you confirm that you have read, understood, and agreed to these Terms and Conditions in their entirety.",
+  contact: {
+    label: "Questions about these Terms?",
+    action: "Contact GS1 Saudi Arabia",
+    href: "mailto:info@gs1.org.sa",
+  },
+};
+
+// ─────────────────────────────────────────────────────────────
+// All 23 sections. Each section may have:
+//   items[]      → numbered definition rows  { id, term, definition }
+//   clauses[]    → numbered sub-clauses      { id, title?, text, sub? }
+//   paragraphs[] → plain paragraph strings
+// ─────────────────────────────────────────────────────────────
+export const TERMS_SECTIONS = [
+  // ── 1 ──────────────────────────────────────────────────────
+  {
+    id: "definitions",
+    number: "1",
+    title: "Terms and Definitions",
+    lead: "Unless the context indicates otherwise, the following expressions shall have the meanings assigned to them hereunder:",
+    type: "definitions",
+    items: [
+      { id: "1.1",  term: "Kingdom",                                    definition: "shall mean Kingdom of Saudi Arabia." },
+      { id: "1.2",  term: "Company",                                    definition: "shall mean the Product Numbering and Administrative Services Company – GS1 KSA, affiliated with the Federation of Saudi Chambers, a Member of the international GS1 Organization, and the exclusive representative of GS1 within the Kingdom." },
+      { id: "1.3",  term: "Terms and Conditions",                       definition: "shall mean the terms and conditions governing the granting of licenses and admission to Company membership." },
+      { id: "1.4",  term: "Member",                                     definition: "shall mean any company, establishment, office, association, authority, legal entity, or individual registered as a subscriber with the Company and who has paid the registration and annual subscription fees." },
+      { id: "1.5",  term: "Members",                                    definition: "shall mean all subscribers of the Company constituting its General Assembly." },
+      { id: "1.6",  term: "Articles of Association and Internal Regulations", definition: "shall mean the Company's Articles of Association and internal regulations." },
+      { id: "1.7",  term: "Application Form",                           definition: "shall mean the membership application form submitted by the applicant to join the Company's membership." },
+      { id: "1.8",  term: "Membership Fees",                            definition: "shall mean the licensing or membership fees for the Company's annual service as specified upon submission of the application." },
+      { id: "1.9",  term: "Annual Service Fees",                        definition: "shall mean the fees for issuing and using numbering system identifiers as specified upon submission of the application, as may be amended from time to time pursuant to Clause 4.2." },
+      { id: "1.10", term: "Additional Fees",                            definition: "shall mean any amount imposed by the Company in accordance with specific conditions applicable to a particular business sector and/or for the provision of additional services." },
+      { id: "1.11", term: "Legal Owner of the Trademark",               definition: "shall mean the person or entity that has officially registered the trademark in the Commercial Register or with the competent authority for trademark protection. \"Trademark Owner\" shall mean the person or entity that uses the trademark in the market to distinguish its products or services. Such person may be the legal owner of the trademark or a licensee authorized by the legal owner." },
+      { id: "1.12", term: "Business Day",                               definition: "shall mean any day of the week except Friday, Saturday, or an official public holiday in the Kingdom." },
+      { id: "1.13", term: "Commencement Date",                          definition: "shall mean the date on which the membership application form is accepted and activated." },
+      { id: "1.14", term: "Electronic Form",                            definition: "shall mean the form completed and submitted through the website or any other channel provided by the Company." },
+      { id: "1.15", term: "GS1 Numbers",                                definition: "shall mean the company's global numbering prefix at GS1 and other numbers issued and licensed by the Company for use in accordance with these Terms and Conditions." },
+      { id: "1.16", term: "GS1 Numbering System",                       definition: "shall mean numbering identifiers and standards published and promoted by the Company from time to time." },
+      { id: "1.17", term: "Information Provider",                       definition: "shall mean the original source of product data used in the GS1 Global Organization's online services, such as True Source. Information Providers manage product data approved by trademark owners and subsequently make it available to True Source." },
+      { id: "1.18", term: "Intellectual Property",                      definition: "shall mean, without limitation, all existing and/or future rights relating to discoveries, inventions, patents, improvements, methods of work, techniques, utility models, trademarks, service marks, logos, database rights, designs, information, copyrights, confidential information, know-how, processes, trade secrets, semiconductor topography rights, trade names, and any equivalents of the foregoing anywhere in the world, whether registered or unregistered, and includes any applications for registration thereof." },
+      { id: "1.19", term: "License/Membership",                         definition: "shall mean the authorization granted by the Company to the Member under these Terms and Conditions to utilize and benefit from GS1 Global Organization numbers and the electronic services provided to members." },
+      { id: "1.20", term: "Authorized Person",                          definition: "shall mean the individual permitted by the Member to access and use the Company's website services." },
+      { id: "1.21", term: "Member Data",                                definition: "shall mean all data and/or information related to the Member entered into the system through electronic services by the Member, its authorized or delegated person, or by the Company on its behalf." },
+      { id: "1.22", term: "Description of Electronic Member Services",  definition: "shall mean the statement of Member services published on the Company's website from time to time." },
+      { id: "1.23", term: "Products or Services",                       definition: "shall mean (1) products or services manufactured, provided, and/or sold by the Member; and/or (2) assets and/or locations to be identified; and/or (3) any other application of GS1 identifiers specified in the GS1 Global Numbering System as selected by the Member from time to time." },
+      { id: "1.24", term: "Product Data",                               definition: "shall mean all data and/or information provided by the Member relating to its products and/or services." },
+      { id: "1.25", term: "Relationship Dependent Data (RDD)",          definition: "shall mean product data that may vary from one business partner to another, including marketing terms, prices, discounts, logistics agreements, payment terms, and required quantities." },
+      { id: "1.26", term: "Representative",                             definition: "shall mean any third party authorized to act on behalf of the Company to provide services to the Company's members." },
+      { id: "1.27", term: "Subscription Year",                          definition: "shall mean the Gregorian year commencing from the date of activation of the Member's membership and continuing for one full calendar year, ending on the corresponding date of the following year, and renewed automatically." },
+      { id: "1.28", term: "Trademarks",                                 definition: "shall mean all trademarks, brands, and service marks, whether registered or unregistered, including any applications for registration, associated with the Company and/or the GS1 Global Numbering System." },
+      { id: "1.29", term: "Product Identification Number",              definition: "shall mean an online service that allows users to store and manage their product data in a secure environment." },
+      { id: "1.30", term: "Users",                                      definition: "shall mean employees of the Member authorized by the Member to use the Member services online." },
+      { id: "1.31", term: "Website",                                    definition: "shall mean the Company's website (www.gs1.org.sa) and other related websites." },
+    ],
+  },
+
+  // ── 2 ──────────────────────────────────────────────────────
+  {
+    id: "grant-of-license",
+    number: "2",
+    title: "Grant of License",
+    type: "clauses",
+    clauses: [
+      { id: "2.1", text: "The Company shall grant the Member a non-exclusive, non-transferable and non-assignable license to any third party to allocate GS1 numbers issued to the Member to use solely in connection with its products and services. Such license shall be automatically renewable unless terminated or expired pursuant to the provisions of Clause 16." },
+      { id: "2.2", text: "During the term hereof, GS1 numbers may be allocated exclusively to products by the Member. However, once GS1 number is allocated to a product by the Member, it may not be used with another product even if the previous product is commercially discontinued." },
+      { id: "2.3", text: "The Member shall be prohibited from using this license to issue identification numbers or grant the same to any third party. Such license shall be valid solely for the Member to whom it has been granted by the Company. In the event of violation, the Company shall have the right to apply cancellation, termination, suspension, or cessation Clauses stipulated in these Terms and Conditions." },
+      { id: "2.4", text: "The Company shall reserve the right to make data pertaining to the Member available to any third parties, including, but not limited to, GS1 numbers, and data of Members, products and services defined by the Members." },
+      { id: "2.5", text: "The Member agrees that it shall responsible for providing the Company with all the data required to manage its membership, addresses, contact numbers pertaining to the Member and its products and services' data and other relevant information. Such Member shall bear the consequences of providing the Company with any misinformation." },
+    ],
+  },
+
+  // ── 3 ──────────────────────────────────────────────────────
+  {
+    id: "commencement-date",
+    number: "3",
+    title: "Commencement Date",
+    type: "clauses",
+    clauses: [
+      { id: "3.1", text: "These Terms and Conditions shall come into force between the Company and the Member on the date the membership is accepted and activated." },
+    ],
+  },
+
+  // ── 4 ──────────────────────────────────────────────────────
+  {
+    id: "fees",
+    number: "4",
+    title: "Fees",
+    type: "clauses",
+    clauses: [
+      {
+        id: "4.1",
+        title: "Fees Payable",
+        text: "The registration and membership fees are the fees for registration and for obtaining the license or membership granted to the Member by the company. Such fees shall be non-refundable and shall be paid within fifteen (15) days from the commencement date of the license and acquisition of membership.\n\nThe membership renewal fees shall be the annual subscription fees paid in consideration of the services provided by the Company to the Member. Such fees shall non-refundable and shall be paid within fifteen (15) days from the date of issuance of the invoice.",
+      },
+      {
+        id: "4.2",
+        title: "Amount of Fees",
+        text: "As of the activation of the membership and issuance of the license, the fees shall be calculated as specified on the electronic portal upon submission of the application for membership or renewal of the annual membership subscription. The annual membership subscription fees shall be calculated for a full calendar year starting from the date of registration and activation of the license/membership with the Company and ending on the corresponding date of the following year. The Member shall take into consideration and be committed to the renewal of subscription, as the fees shall be automatically charged for the services provided for the Member for the subsequent renewal period, starting from the day following the end of the preceding period.",
+      },
+      { id: "4.3", text: "The Company shall have the right to amend the applicable amount of fees from time to time, in accordance with its Articles of Association and By-laws." },
+      { id: "4.4", text: "The Company's policy allows the Member to subscribe to and activate new required services at any time during the validity period of membership/license. The subscription period for the newly activated services shall commence from their activation date and shall expire on the same date as the initial membership period expires. The fees of all added services shall also be calculated for the subsequent renewal period." },
+      { id: "4.5", text: "Access to the services provided by the Company to the Member through the electronic portal shall be suspended immediately upon the expiration of the annual subscription until the due fees are paid after which access shall be automatically renewed. The Member shall remain obliged to renew the membership/license annually unless it is terminated in accordance with Clause 16." },
+      {
+        id: "4.6",
+        title: "Late Payment Fees",
+        text: "In the event of any delay by the Member in paying any fees payable to the Company under these Terms and Conditions by the date specified in the above Articles, a penalty of five thousand (5,000) Saudi Riyals shall be imposed per year of delay.",
+        highlight: true,
+      },
+    ],
+  },
+
+  // ── 5 ──────────────────────────────────────────────────────
+  {
+    id: "members-conduct",
+    number: "5",
+    title: "Members' Conduct and Undertakings",
+    type: "clauses",
+    clauses: [
+      { id: "5.1", title: "No Prejudice to the Company's Reputation", text: "The Member, its employees, agents, and/or subcontractors undertake that, at any time during the validity of the license or beyond its expiration or termination, and/or in connection with the provision of online membership services, they shall not be, whether directly or indirectly, involved in any act, matter, or conduct that may in any way harm or adversely affect the reputation or position of the Company or the services provided for its members." },
+      { id: "5.2", title: "Compliance with Standards",                  text: "The Member shall adhere to the standards and technical specifications set forth in the Company's instructions and guidelines, as well as in the GS1 Global Numbering System as announced by the Company and/or the Global Numbering Organization from time to time." },
+      {
+        id: "5.3",
+        title: "Compliance Manual",
+        text: "(1) To ensure compliance with these Terms and Conditions in a manner consistent with applicable legal and regulatory requirements, particularly those relating to confidentiality, privacy, and members' rights, the Member shall provide the Global Numbering Organization (GS1), through the Company, with any information that may be requested in connection with the Member's use of GS1 numbers and online membership services.\n\n(2) When applying GS1 numbers to physical products, the Member shall grant its distributors the right of access to the GS1 for the purpose of inspecting the products.",
+      },
+      {
+        id: "5.4",
+        title: "Suspension",
+        text: "The Company shall have the right to suspend or restrict the Member's or user's access to the website if it is proven that they have breached any of their obligations, particularly in the following cases:\n\n(1) If the Company determines, at its sole discretion, that the conduct or actions of the Member and/or users may harm the reputation and/or goodwill of the Company.\n\n(2) Or if the Company determines, at its sole discretion, that the Member and/or user has failed or may fail to fulfill their obligations under these Terms and Conditions.\n\n(3) Or if the Member fails to pay the fees when due.",
+      },
+      { id: "5.5", text: "The user(s) shall use the service provided by the Company for lawful purposes only, and undertakes not to use the same to publish any information and/or data that may affect the use or functionality of the service. The user further undertakes that it shall prevent any third party from using their password and ensure the use of up-to-date antivirus software." },
+    ],
+  },
+
+  // ── 6 ──────────────────────────────────────────────────────
+  {
+    id: "use-of-gs1-numbers",
+    number: "6",
+    title: "Use of GS1 Numbers and Other Intellectual Property",
+    type: "clauses",
+    clauses: [
+      {
+        id: "6.1",
+        text: "The Member shall have the right to use the global numbers granted thereto by the Company, the Global Language of Business Company (GS1KSA), solely during the term of the license, in connection with the numbering of products and/or the provision and identification of services in accordance with the Global Numbering System. The Member shall be prohibited from the following:",
+        sub: [
+          { id: "6.1.1", text: "Using any numbers purported to be issued by the Company, or any numbers that replicate or in any manner resemble the GS1 system numbers." },
+          { id: "6.1.2", text: "Using any numbers that have been assigned by the GS1 to the Company and/or stored in the GS1 system and have not been assigned to any third person." },
+          { id: "6.1.3", text: "Assigning the licensed GS1 numbers to any third parties." },
+        ],
+      },
+      { id: "6.2", title: "Prohibition of Number Change",   text: "The Member shall, in no way whatsoever, change or modify the GS1 numbers licensed thereto, or add any additional numbers to those numbers licensed thereto." },
+      { id: "6.3", title: "Ownership of Numbers",           text: "All members acknowledge that the Company shall, in all cases, be the sole and exclusive owner and holder of all rights in the GS1 numbers and all related intellectual property rights. The Member shall not, at any time, do or cause any act that may in any manner infringe upon the rights of the Company or its licensees to the GS1 numbers or any related intellectual property rights. Accordingly, all members acknowledge that the GS1 numbers shall be exclusive property of the Company, and the Member shall have no rights to the GS1 numbers or any associated intellectual property rights, except as specifically stated in these Terms and Conditions." },
+      { id: "6.4", title: "Unauthorized Assignment",        text: "No Member shall allow or assign the numbers issued thereto to another Member of the Company or to any other party, or allow such party to use the same." },
+      {
+        id: "6.5",
+        title: "Non-Contestation and Misuse of GS1 Numbers",
+        text: "No Member, during the term of this license or beyond its termination or expiration, shall:\n\n(1) File any lawsuit or claim of any kind challenging the validity or ownership of the GS1 numbers or any intellectual property rights related to such numbers.\n\n(2) Apply for the registration of any related intellectual property rights without obtaining the prior written consent of GS1, including any design that incorporates, is identical to, or similar to the GS1 numbers, or any other intellectual property rights.",
+      },
+      { id: "6.6", text: "The use of GS1 numbers shall be subject to the license granted by the Company under these Terms and Conditions." },
+      {
+        id: "6.7",
+        title: "Allocation",
+        text: "The Company may terminate the subscription and cancel the allocation of the GS1 number granted to the Member, as well as blocking the numbers granted to the Member from all GS1-related platforms, while retaining the right to review the Member's prior use of the GS1 numbers allocated by the Company, if:\n\n(1) The GS1 numbers allocated to the Member by the Company have not been used by the Member for their intended purpose.\n\n(2) The GS1 numbers allocated to the Member by the Company are used by the Member in a manner inconsistent with the policies regulating the use of GS1 numbers, as notified to the Member from time to time.\n\n(3) The GS1 numbers allocated to the Member by the Company are used by the Member for purposes that may harm or adversely affect the operation of the Company's system and/or the GS1 numbering system.\n\n(4) The GS1 numbers allocated to the Member by the Company are used by the Member in violation with these Terms and Conditions.\n\n(5) The Company reserves the right to impose a penalty or claim the Member for compensation for such violation.",
+      },
+    ],
+  },
+
+  // ── 7 ──────────────────────────────────────────────────────
+  {
+    id: "trademarks-marketing",
+    number: "7",
+    title: "Use of Trademarks upon Marketing and Promoting the Member's Products and Services",
+    type: "clauses",
+    clauses: [
+      { id: "7.1", text: "The Member may not use the Company's trademarks in relation to the products and/or services in any marketing or promotional materials without obtaining prior approval from the Company." },
+      { id: "7.2", text: "In order to obtain the aforementioned approval, the Member shall submit a request to the Company accompanied by samples of the proposed marketing and promotional materials for approval at least (15) fifteen business days prior to the prescribed date of publishing. The Company shall have the discretionary power to award or refuse the approval without compensating the Member for any costs, expenses and/or expenditures incurred in the event that approval is refused." },
+      { id: "7.3", text: "In the event that the Member has been given the approval under this Clause (7) to use the trademarks for marketing and promotion, it shall ensure that the trademarks are correctly copied." },
+    ],
+  },
+
+  // ── 8 ──────────────────────────────────────────────────────
+  {
+    id: "ip-infringement",
+    number: "8",
+    title: "Intellectual Property Infringement",
+    type: "paragraphs",
+    paragraphs: [
+      "The Member shall immediately notify the Company in writing, if there is any infringement upon the intellectual property rights related to GS1 numbers, Company's trademarks or the online members' services. The Member shall also provide all the necessary information in relation to such infringement as requested by the Company. The Member shall have no right to make any declarations or settlements in this regard. In such case the Company shall have the right to take the necessary legal actions, monitor or control any actions that may be taken in similar cases.",
+    ],
+  },
+
+  // ── 9 ──────────────────────────────────────────────────────
+  {
+    id: "members-portal",
+    number: "9",
+    title: "Members' Services via Company's Portal (Website)",
+    type: "clauses",
+    clauses: [
+      { id: "9.1",  text: "The Company may provide the members with some of its services via its website. The Member undertakes that it shall use such services only as per the description of the online members' services." },
+      { id: "9.2",  text: "The Company shall not provide the members from its subscribers with any warranty that the online services shall be available at any time, uninterrupted or error-free." },
+      { id: "9.3",  text: "The Member shall be responsible before the Company for registering the user licensed to use the online members' services. Moreover, the Member shall be responsible before the Company for not disclosing to third parties the passwords and other identification procedures issued to the user licensed by the Company." },
+      { id: "9.4",  text: "Once the members' services are provided via the Company's portal, the Member represents and warrants that the Company shall not incur any liability towards the Member or any third party regarding the use of such online members' services, and/or regarding doing or refraining from doing any act by the Company or any third party in connection with providing the online members' services. The Company reserves the right to impose charges in connection with the use of these online members' services at any time for providing the members with additional services." },
+      { id: "9.5",  text: "The Member shall be responsible before the Company for entering and retrieving its data concerning the online members' services. The Member undertakes that it shall keep a copy of all members' data regarding the online members' services." },
+      { id: "9.6",  text: "The Company shall not be responsible for comments, data and information published on website by other members or third parties whatever their contents are." },
+      { id: "9.7",  text: "The members' data and information shall be deemed confidential. The Company solely shall have the right to use, copy, distribute and disclose the members' data and information to third parties for any legitimate purpose, including product and/or service date provided by the members. The Company shall also have the right to disclose the identity of the Member or user to any third party who may claim that this Member or user has published or uploaded any materials that constitute a violation of its intellectual property or privacy." },
+      { id: "9.8",  text: "The Member may not use the website or any of the online members' services to do anything that may violate any laws and/or regulations applicable to the Company, at the GS1 or in the Kingdom of Saudi Arabia, or represent any fraud, defamation, discrimination, offensive, bothering, damage or attempt to harm any person. The Member may not transfer the malicious software or codes designed to adversely affect the operation of computer software and/or hardware." },
+      { id: "9.9",  text: "The Member shall compensate the Company for all claims, procedures, cases, losses, damages, expenses and costs (including legal costs arising from the claims filed by third parties against the Company and vice versa concerning the use of the online members' services, preparing and/or entering the member's data on the Company's system, along with other systems operated by third parties on behalf of the Company)." },
+      { id: "9.10", text: "The Company reserves the right to terminate or change the online members' services at any time upon notifying the Member." },
+      { id: "9.11", text: "The Member acknowledges and agrees that the intellectual property of the online members' services shall at all times be owned exclusively by the Company." },
+      { id: "9.12", text: "Expiry of the license shall automatically terminate the Member's right to use the online members' services. Furthermore, any suspension of the license shall suspend the Member's right to use the online members' services." },
+      { id: "9.13", text: "The Company shall enter into contract from time to time with third parties to provide the online members' services. The members shall be committed towards such third parties according to the same Terms and Conditions provided for herein." },
+    ],
+  },
+
+  // ── 10 ─────────────────────────────────────────────────────
+  {
+    id: "barcode-upload",
+    number: "10",
+    title: "Services of Uploading Barcodes",
+    type: "clauses",
+    clauses: [
+      { id: "10.1", text: "Services of uploading barcodes shall be provided as a part of the online members' services." },
+      { id: "10.2", text: "The Company shall not provide any declaration or warranty that the barcodes generated from the submitted images shall be scannable. The Member shall be fully responsible for verifying that all barcodes generated from the submitted images, which have been correctly uploaded by scanning, are scannable." },
+    ],
+  },
+
+  // ── 11 ─────────────────────────────────────────────────────
+  {
+    id: "compliance",
+    number: "11",
+    title: "Compliance with the Terms and Conditions Policies",
+    type: "clauses",
+    clauses: [
+      { id: "11.1", text: "The Member shall be subject to these Terms and Conditions and any amendments made thereto. The Member shall also comply with the standards, specifications, policies, and terms of use related to the GS1 Global Identification Numbers issued by the Company, including any modifications made from time to time. The Member acknowledges that any amendments to the Terms and Conditions or to the standards and specifications may be made without prior notice, and further acknowledges that the standards, specifications, policies, and terms of use shall form an integral part of these Terms and Conditions." },
+      { id: "11.2", text: "Failure to comply with such standards, specifications, policies, and terms of use may result in the cancellation of the GS1 Global Identification Numbers issued to the Member and termination of membership in accordance with these Terms and Conditions." },
+    ],
+  },
+
+  // ── 12 ─────────────────────────────────────────────────────
+  {
+    id: "contract-survival",
+    number: "12",
+    title: "Contract Survival",
+    type: "clauses",
+    clauses: [
+      { id: "12.1", text: "The covenants and acknowledgement set forth in Clauses 4.1, 4.2, 4.3, 4.4, 5.1, 6, 7, 8, 9, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, and 23 shall remain valid and in full force and effect following the termination or expiration of the license for any reason. Such provisions shall not be deemed merged, cancelled, or waived by the Company upon such termination or expiration." },
+    ],
+  },
+
+  // ── 13 ─────────────────────────────────────────────────────
+  {
+    id: "indemnity",
+    number: "13",
+    title: "Indemnity and Limitation of Liability",
+    type: "clauses",
+    clauses: [
+      { id: "13.1", text: "The Member agrees that it shall fully indemnify the Company against any damages caused by the Member, its users or agents to the Company." },
+      { id: "13.2", text: "Notwithstanding any other provision indicated in these Terms and Conditions, the Company shall not be liable, whether legally, financially, or otherwise, to the Member for any loss or damage, whether direct, indirect, special, incidental, punitive, or consequential, arising from negligence, fault, omission, act, or breach by the Company and/or its employees and/or subcontractors, including, without being limited to, loss of contracts, business, clients, revenues, profits, use, data, savings or anticipated savings, investments, goodwill, or reputation; as well as additional capital or administrative costs, whether foreseeable or not, and whether arising under statute, regulation, contract, equity, or tort (including negligence), and in connection with these Terms and Conditions." },
+      { id: "13.3", text: "Without prejudice to Clause 13.2, the Company's total aggregate liability to the Member or any third party arising out of tort, equity, or otherwise in connection with these Terms and Conditions shall be limited to the amount of the membership fees paid by the Member to the Company." },
+    ],
+  },
+
+  // ── 14 ─────────────────────────────────────────────────────
+  {
+    id: "confidentiality",
+    number: "14",
+    title: "Confidentiality",
+    type: "clauses",
+    clauses: [
+      {
+        id: "14.1",
+        text: "The Member shall keep confidential the information and data pertaining to the Company that is treated as proprietary, confidential, or commercially sensitive. The Member shall not exploit, misuse, or disclose such information to any third party without the Company's prior written consent. The Member may disclose such information only in the following cases:\n\n(1) Where disclosure is necessary for the performance of the Member's duties under the license and on a need-to-know basis only;\n\n(2) Where disclosure is required by the Company to complete a written authorization;\n\n(3) Or as required by the laws and regulations of the Kingdom.",
+      },
+    ],
+  },
+
+  // ── 15 ─────────────────────────────────────────────────────
+  {
+    id: "assignment",
+    number: "15",
+    title: "Assignment and Sub-licensing",
+    type: "clauses",
+    clauses: [
+      { id: "15.1", text: "The Member may not assign the license and/or transfer its ownership to any third party and/or sublicense and/or subcontract any or all of its rights and/or obligations under the license. For avoidance of doubt, if any products, services, and/or business activities related to the use of such products and/or services are wholly or partially excluded from the Member's commercial operations or sold to a third party, the Member, or the buyer of such products and/or services and/or business operations from which such products and/or services have been excluded, shall not be permitted to use the GS1 numbers and/or online Member services in connection with such products and/or services without the prior written consent of the Company." },
+    ],
+  },
+
+  // ── 16 ─────────────────────────────────────────────────────
+  {
+    id: "termination",
+    number: "16",
+    title: "Termination",
+    type: "clauses",
+    clauses: [
+      {
+        id: "16.1",
+        title: "Termination of Membership by the Company",
+        text: "Subject to other termination cases set forth in these Terms and Conditions, the Company shall have the right to terminate the membership and/or suspend the license in accordance with these Terms and Conditions, in any of the following cases:\n\n(1) Failure by the Member(s) to pay the license/membership fees on their due date.\n\n(2) \"Default\", if the Member commits any breach of the provisions of these Terms and Conditions, which form an integral part of the contract concluded between the Member and the Company.\n\n(3) \"Bankruptcy\", if the Member is declared bankrupt, undergoes voluntary or compulsory liquidation, transfers or assigns ownership to a third party, or if any of the cases stipulated in the Saudi Law applies.\n\n(4) \"Insolvency\", if the Member is declared insolvent, transfers or assigns their liabilities to a third party, or if any of the cases stipulated in the Saudi Law applies.\n\n(5) \"Membership Suspension\", the license/membership shall be deemed suspended if the Member gets delayed in payment of the subscription fees for a consecutive period of 90 days.\n\n(6) \"Termination of Principal License\", the license granted to the Member shall be automatically cancelled if the Company, for any reason, ceases to hold the licensing rights required to issue GS1 numbers in Saudi Arabia.",
+      },
+      {
+        id: "16.2",
+        title: "Termination of Subscription by the Member",
+        text: "Subject to the foregoing, the Member may terminate the subscription and cancel the license under any other circumstances by providing the Company with a written notice of not less than thirty (30) days, provided that the Member has no outstanding obligations. Such termination shall be subject to the Company's approval and completion of the necessary procedures.\n\nThe Member shall not be entitled, in the event of termination by the Member or in the case referred to in Paragraph (6) above, to any refund of fees or amounts paid to the Company or due to the Member for any period preceding the termination notice. In all cases, the Member shall remain liable to promptly settle all subscription fees and any other dues, and all outstanding amounts shall be settled from the beginning of the subscription until the date of the Company's approval of the termination.\n\nThe member's request to terminate the subscription shall not be accepted unless the following two conditions are met:\n\n(1) The member's commercial activity has been suspended.\n\n(2) The Member has withdrawn all of its products bearing the codes from the market upon termination of the agreement and has submitted a proof thereof.",
+      },
+      { id: "16.3", title: "No Relief of Obligations", text: "The termination of this License shall not relieve the Member from any liability arising from any breach of its terms that occurs prior to such termination." },
+    ],
+  },
+
+  // ── 17 ─────────────────────────────────────────────────────
+  {
+    id: "consequences-termination",
+    number: "17",
+    title: "Consequences of Termination, Expiry, Suspension, or Revocation of the License",
+    type: "clauses",
+    clauses: [
+      {
+        id: "17.1",
+        text: "Upon the termination, expiration, suspension, or revocation of the license granted to the Member, all rights granted to the Member under this License shall immediately cease, and the Member shall promptly comply with the following:",
+        sub: [
+          { id: "17.1.1", title: "Cessation of Applying GS1 Numbers to Products", text: "The Member shall cease to apply GS1 numbers to products manufactured or sold by them." },
+          { id: "17.1.2", title: "Cessation of Use of Online Member Services",     text: "The Member shall immediately cease to use the online Member services." },
+          { id: "17.1.3", title: "Cessation of Use of Intellectual Property Rights", text: "The Member shall cease all forms of direct or indirect use of GS1 numbers, online Member services, and related intellectual property rights, except for those related to the products sold prior to the date of termination, expiration, suspension, or revocation." },
+        ],
+      },
+    ],
+  },
+
+  // ── 18 ─────────────────────────────────────────────────────
+  {
+    id: "dispute-resolution",
+    number: "18",
+    title: "Dispute Resolution",
+    type: "clauses",
+    clauses: [
+      { id: "18.1", text: "Any dispute, disagreement, or claim arising out of or relating hereto this document, including any breach, termination, or invalidity thereof, shall be resolved by arbitration that is managed by the Saudi Center for Commercial Arbitration (\"the Center\") in accordance with the Center's Arbitration Rules. The Company shall have the right, if the domicile of the disputing party is outside the Riyadh region, to refer the dispute for resolution to any arbitration center affiliated with the Saudi Chambers of Commerce. The proceedings shall be initiated in accordance with the arbitration rules applicable to such centers." },
+      { id: "18.2", title: "Governing Law", text: "These Terms and Conditions shall be governed by the Company's by-laws, as well as by the laws and regulations in force in the Kingdom of Saudi Arabia. Arabic shall be deemed the official language." },
+      { id: "18.3", title: "Incurring Costs", text: "The adjudged Member shall incur all arbitration and legal fees incurred by the Company, as well as any expert fees or other related costs, if applicable." },
+    ],
+  },
+
+  // ── 19 ─────────────────────────────────────────────────────
+  {
+    id: "notices",
+    number: "19",
+    title: "Notices",
+    type: "clauses",
+    clauses: [
+      {
+        id: "19.1",
+        text: "All notices and other communications shall be made through the Company's available means of communication, including providing the Company's membership documents to Members as required or permitted under this License, or for purposes of membership management or calling for General Assembly or Board of Directors meetings. Such notices shall be delivered to the Members by one of the following methods, at the Company's discretion:\n\n(1) Electronically, by the email address registered on the Company's system.\n\n(2) By hand.\n\n(3) By any of the communication methods approved by the Company.",
+      },
+      { id: "19.2", text: "Any notice or other communication delivered by any of the above methods shall be deemed valid and productive of their legal effect from the date sent or delivered by hand." },
+      { id: "19.3", text: "If the Company, at its sole discretion, decides to send notices to the Members by mail, such notices shall be served on the address previously registered on system at the time of registration, or if subsequently updated, to any other address that GS1 Saudi Arabia Members may notify from time to time, each Member shall provide the Company with a valid email address to receive correspondence from the Company via email in accordance with this Clause." },
+    ],
+  },
+
+  // ── 20 ─────────────────────────────────────────────────────
+  {
+    id: "data-protection",
+    number: "20",
+    title: "Data Protection",
+    type: "clauses",
+    clauses: [
+      { id: "20.1", title: "Use of Personal Data",    text: "The Company shall use the data obtained from Members for general administrative purposes, including, but not limited to, creating Members database and issuing Members' invoices from time to time, unless the Member/authorizer indicates that they do not wish to receive such information. The Company may also use the contact information of such Members to communicate via email, telephone, or any available and approved communication methods to be informed about the Company's activities and developments related to their membership in the Company." },
+      { id: "20.2", title: "Access to Personal Data", text: "In accordance with the Company's by-laws, Members shall have the right, except in certain cases, to obtain a copy of any information pertaining thereto that is held by the Company upon payment of the prescribed fees. Members seeking such information shall submit a request to the Company's Data Protection Officer in relation to these Terms and Conditions." },
+    ],
+  },
+
+  // ── 21 ─────────────────────────────────────────────────────
+  {
+    id: "general-provisions",
+    number: "21",
+    title: "General Provisions",
+    type: "clauses",
+    clauses: [
+      { id: "21.1", title: "Waiver",            text: "No waiver by any party of these Terms and Conditions, or any party's consent to any act, shall be deemed a waiver of the exercise of any rights, unless such waiver is made in writing and signed by the relevant party." },
+      { id: "21.2", title: "Termination",       text: "If the Center and the Member agree that any provision of these Terms and Conditions shall not be enforced, or if such provision is declared void or becomes unenforceable, such provision shall be removed from the Terms without affecting the validity or enforceability of the remaining provisions." },
+      { id: "21.3", text: "All services provided by the Company shall comply with the standards and policies of GS1." },
+      { id: "21.4", title: "Entire Agreement",  text: "These Terms and Conditions, along with any amendments or additions thereto in accordance with Clause (11), shall constitute the entire agreement between the Company and the Member and supersede any prior agreement between the parties with respect to the matters subject to these Terms and Conditions." },
+      { id: "21.5", text: "The GS1 Saudi Arabia has the right to register the subscriber in its services in the shareholders' register with the number of shares it deems appropriate. As a result, the subscriber becomes a member of the General Assembly. However, the subscriber is not permitted to dispose of the allocated shares in any manner, nor are they entitled to any profits or financial returns from these shares. The Center has the right to withdraw these shares and remove the shareholder from the shareholders' register at any time, without any conditions or restrictions." },
+    ],
+  },
+
+  // ── 22 ─────────────────────────────────────────────────────
+  {
+    id: "online-services-description",
+    number: "22",
+    title: "Description of the Online Services Provided by the Company",
+    type: "clauses",
+    clauses: [
+      { id: "22.1", text: "The Company's online services shall combine a set of tools with knowledge center, aiming to assist the Member with maximizing the benefits of their subscription to the services provided by the Company across various sectors, such as the commercial sector (retail, logistics, medical, and others). The services shall include basic features, intuitive self-service, management of GS1 identifiers, the GS1 Identification Guide source, barcode generation, knowledge resource center, discussion forums, as well as industry news. Such services shall be made available to Members \"24 hours\" a day and shall be complementary to the membership service team." },
+    ],
+  },
+
+  // ── 23 ─────────────────────────────────────────────────────
+  {
+    id: "online-services-details",
+    number: "23",
+    title: "Details of the Company's Online Services",
+    type: "clauses",
+    clauses: [
+      { id: "23.1", title: "Self-Service",              text: "The Member may access their profile and all subscribed services via the Company's portal and utilize such services, such as the numbers licensed to the Member's entity, the service for registering and allocating such numbers to specific products, services, and locations, and others." },
+      { id: "23.2", title: "Number Validator",           text: "The Member may use such tool if they need to review or generate verification or validation digits for the GS1 data sequence, taking into account that the creation of such a tool is performed automatically through the \"My Numbers\" service." },
+      { id: "23.3", title: "Barcode Image Generation",   text: "Once a GS1 number or identifier is assigned to a member for a specific product or an available service, the Member shall be able to generate the text or edit ready-to-use graphics compatible with the barcode image." },
+      { id: "23.4", title: "Additional Services",        text: "Shall include all services available on the Company's portal, as well as the technological solutions provided by the Company in accordance with GS1 standards." },
+      { id: "23.5", title: "News",                       text: "Shall keep the Member updated of the latest news related to the Member's industrial, commercial, or service sector." },
+      { id: "23.6", title: "Product Data",               text: "Members and/or the information provider shall be responsible for the accuracy and completeness of the data entered onto the system. If the information provider gets the license certified by the trademark owner to transfer the product data in order to be automatically updated on their behalf, such responsibility shall be solely laid on the trademark owner, without any whatsoever responsibility on the part of the Company." },
+      { id: "23.7", title: "System Standards",           text: "These standards shall be compatible with most modern operating systems." },
+    ],
+  },
+];

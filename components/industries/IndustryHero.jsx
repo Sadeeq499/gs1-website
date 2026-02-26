@@ -20,10 +20,10 @@ export function IndustryHero() {
       {/* Content Container */}
       <div className="relative h-full container mx-auto px-4 md:px-12 flex flex-col justify-center text-white">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
             Industries Served
           </h1>
-          <p className="text-xl md:text-2xl font-light leading-snug text-white/95">
+          <p className="text-xl md:text-2xl font-light text-white/95">
             Standardizing operations across healthcare, retail, logistics, and
             beyond for a connected world.
           </p>

@@ -29,13 +29,13 @@ export const AboutHero = ({ data }) => (
           {data.badge}
         </Badge>
         
-        <h1 className="text-3xl lg:text-5xl font-black tracking-tighter leading-[0.9]">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter">
           {data.title} <br />
-          <span className="text-secondary italic">{data.titleHighlight}</span> <br />
+          <span className="text-secondary">{data.titleHighlight}</span> <br />
           {data.titleSuffix}
         </h1>
 
-        <p className="text-lg text-white/70 leading-relaxed">
+        <p className="text-lg text-white/70">
           {data.description}
         </p>
 

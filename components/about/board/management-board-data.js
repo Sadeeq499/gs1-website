@@ -32,6 +32,23 @@ export const BOARD_DATA = {
         role: "Chief Executive Officer",
         desc: "Directing the digital transformation of Saudi supply chains through GS1 global identifiers.",
       }
+    ],
+    executiveTeam: {
+      role: "Executive Management",
+      name: "Leadership Operations",
+      desc: "Our specialized technical team manages global identification standards and digital ecosystem implementation across the Kingdom.",
+      image: "https://plus.unsplash.com/premium_photo-1723291359453-aea7e6bcbebd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWFuYWdlbWVudHxlbnwwfHwwfHx8MA%3D%3D?auto=format&fit=crop&q=80&w=800"
+    }
+  },
+  executiveManagement: {
+    title: "Executive",
+    highlight: "Management Team",
+    description: "Our diverse leadership team brings together decades of experience in supply chain, digital transformation, and international standards.",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop", // Professional team meeting
+    pillars: [
+      { title: "Strategic Planning", desc: "Aligning local operations with GS1 global mandates." },
+      { title: "Technical Innovation", desc: "Driving the adoption of RFID and 2D barcodes in KSA." },
+      { title: "Member Engagement", desc: "Supporting over 10,000+ companies in the Kingdom." }
     ]
   },
   committees: {

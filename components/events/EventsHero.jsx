@@ -36,13 +36,13 @@ export const EventsHero = () => {
               {hero.badge}
             </Badge>
             
-            <h1 className="text-4xl lg:text-7xl font-black tracking-tighter leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter">
               {hero.title} <br />
-              <span className="text-secondary italic">{hero.titleHighlight}</span> <br />
+              <span className="text-secondary">{hero.titleHighlight}</span> <br />
               {hero.titleSuffix}
             </h1>
             
-            <p className="text-lg text-white/80 max-w-xl leading-relaxed">
+            <p className="text-lg text-white/80 max-w-xl">
               {hero.description}
             </p>
             

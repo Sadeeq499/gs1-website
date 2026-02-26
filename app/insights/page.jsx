@@ -15,7 +15,7 @@ export default function Page() {
       
       {/* Real Content Section: Why GS1 SA? */}
       <section className="container mx-auto px-4 py-24 border-t border-slate-100">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl font-black text-primary mb-6">Securing the Saudi Supply Chain</h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
             As of 2026, over 10,000 Saudi companies rely on GS1 standards to comply with 

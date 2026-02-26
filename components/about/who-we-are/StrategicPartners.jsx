@@ -11,7 +11,7 @@ export const StrategicPartners = ({ data }) => (
         {data.logos.map((partner, i) => (
           <Card key={i} className="border-none shadow-sm hover:shadow-xl transition-all duration-500 rounded-3xl group cursor-default">
             <CardContent className="p-8">
-              <div className="w-12 h-12 bg-primary/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+              <div className="h-12 bg-primary/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
                 <span className="font-black text-primary group-hover:text-white">{partner.name}</span>
               </div>
               <p className="text-sm font-medium text-slate-600 leading-snug">

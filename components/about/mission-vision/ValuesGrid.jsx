@@ -8,7 +8,7 @@ export const ValuesGrid = ({ data }) => (
       <h2 className="text-4xl font-black text-primary mb-16">
         {data.heading} <span className="text-secondary italic">{data.highlight}</span>
       </h2>
-      <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto">
         {data.items.map((item, i) => {
           const Icon = iconMap[item.icon];
           return (

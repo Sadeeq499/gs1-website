@@ -4,7 +4,7 @@ export const BoardCommittees = ({ data }) => (
   <section className="py-24 bg-white">
     <div className="container mx-auto px-4">
       <h2 className="text-3xl font-black text-primary mb-12 text-center">{data.title}</h2>
-      <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto">
         {data.items.map((item, i) => (
           <div key={i} className="space-y-6 animate-in fade-in duration-1000">
             <h4 className="text-xl font-bold text-primary group-hover:text-secondary transition-colors">

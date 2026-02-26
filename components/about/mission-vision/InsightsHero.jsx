@@ -19,7 +19,7 @@ export const InsightsHero = ({ data }) => (
     </div>
 
     <div className="container mx-auto px-4 relative z-10">
-      <div className="max-w-4xl space-y-10 animate-in fade-in slide-in-from-bottom-10 duration-1000">
+      <div className="max-w-7xl space-y-10 animate-in fade-in slide-in-from-bottom-10 duration-1000">
         
         {/* The Badge + Separator + Icon Row */}
         <div className="flex items-center gap-4">
@@ -33,16 +33,16 @@ export const InsightsHero = ({ data }) => (
           <Compass className="w-6 h-6 text-secondary animate-pulse" />
         </div>
         
-        <h1 className="text-3xl lg:text-5xl font-black tracking-tighter">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter">
           {data.title} <br />
-          <span className="text-secondary italic">{data.titleHighlight}</span> <br />
+          <span className="text-secondary">{data.titleHighlight}</span> <br />
           <span className="opacity-90">{data.titleSuffix}</span>
         </h1>
 
         {/* Separator to break the description from the header */}
         <Separator className="bg-white/40 w-full" />
 
-        <p className="text-xl lg:text-2xl text-white/70 leading-relaxed font-light">
+        <p className="text-xl lg:text-2xl text-white/70 font-light">
           {data.description}
         </p>
 

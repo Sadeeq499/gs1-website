@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowUpRight } from "lucide-react";
 
 export function NewsGrid({ news }) {
   return (
@@ -11,7 +10,6 @@ export function NewsGrid({ news }) {
               <CardContent className="p-8">
                 <div className="flex justify-between items-start mb-6">
                   <span className="text-[10px] font-black uppercase tracking-widest text-secondary">{item.category}</span>
-                  <ArrowUpRight className="w-5 h-5 text-primary opacity-20 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                 </div>
                 <h4 className="text-xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors leading-tight">
                   {item.title}

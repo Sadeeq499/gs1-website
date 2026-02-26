@@ -19,7 +19,7 @@ export default function WhoWeArePage() {
       
       <GovernanceSection data={data.governance} />
       
-      <StrategicPartners data={data.partners} />
+      {/* <StrategicPartners data={data.partners} /> */}
     </main>
   );
 }
