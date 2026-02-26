@@ -90,10 +90,10 @@ export const EventsGrid = () => {
                           <MapPin className="w-4 h-4 text-primary/60" />
                           {event.location}
                         </div>
-                        <Button className="w-full mt-4 bg-gs1-info hover:bg-primary hover:text-secondary text-primary font-bold transition-all duration-300 group/btn">
+                        {/* <Button className="w-full mt-4 bg-gs1-info hover:bg-primary hover:text-secondary text-primary font-bold transition-all duration-300 group/btn">
                           {EVENTS_DATA.register}
                           <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </Button>
+                        </Button> */}
                       </div>
                     </div>
                   </Card>

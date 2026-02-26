@@ -21,7 +21,7 @@ export const MISSION_VISION_DATA = {
     title: "A Unified Language for",
     titleHighlight: "National Commerce",
     description: "To be the primary catalyst for a digital, transparent, and globally integrated Saudi supply chain. We envision a future where every Saudi SME and Enterprise speaks the same digital language, enabling seamless trade from the Red Sea to the global market.",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200"
+    image: "/images/degital.jpg"
   },
   mission: {
     tag: "Our Mission",

@@ -1,73 +1,116 @@
 "use client";
-import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
+
+import * as React from "react";
 import Image from "next/image";
-import EventsImg from "@/public/images/events.jpg";
+import { motion } from "framer-motion";
+import { Calendar, MapPin} from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
-export const InsightsHero = ({ data }) => {
+
+export function InsightsHero({ sliderNews }) {
+  const plugin = React.useRef(
+    Autoplay({ delay: 6000, stopOnInteraction: true })
+  );
+
   return (
-    <section className="relative flex items-center text-white py-14 overflow-hidden">
-      {/* Background with Next.js Optimization */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={EventsImg}
-          alt="GS1 Saudi Arabia Knowledge Hub"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Modern GS1 Blue Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent backdrop-blur-[1px]" />
-      </div>
+    <section className="relative w-full h-[500px] lg:h-[600px] overflow-hidden bg-[#002c5c]">
+      <Carousel
+        plugins={[plugin.current]}
+        className="w-full h-full"
+        opts={{ loop: true }}
+      >
+        <CarouselContent className="h-full ml-0">
+          {sliderNews.map((item) => (
+            <CarouselItem key={item.id} className="relative w-full h-full pl-0">
+              {/* Image & Brand Overlay */}
+              <div className="absolute inset-0 w-full h-full">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  priority={item.id === 1}
+                />
+                {/* Deep Blue Brand Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#002c5c] via-[#002c5c]/80 to-transparent" />
+              </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className=" space-y-8">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-          >
-            <Badge className="bg-secondary text-white font-bold border-none px-6 py-1.5 rounded-full">
-              {data.badge}
-            </Badge>
-          </motion.div>
+              {/* Dynamic Content */}
+              <div className="absolute inset-0 flex items-center">
+                <div className="container px-6 lg:px-12 mx-auto">
+                  <div className="max-w-4xl space-y-8">
+                    <motion.div
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.7, ease: "easeOut" }}
+                    >
+                      <Badge className="bg-secondary hover:bg-secondary text-white border-none px-4 py-1.5 mb-6 flex w-fit items-center gap-2 shadow-lg">
+                        {item.icon}
+                        {item.badge}
+                      </Badge>
+                      
+                      <h1 className="md:text-5xl lg:text-6xl font-black tracking-tight text-white">
+                        {item.title} <br />
+                        <span className="text-secondary">{item.highlight}</span>
+                      </h1>
+                      
+                      <p className="mt-8 text-xl text-white/90 max-w-2xl font-light">
+                        {item.description}
+                      </p>
 
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black drop-shadow-2xl"
-          >
-            {data.title} <br />
-            <span className="text-secondary">{data.titleHighlight}</span> <br />
-            {data.titleSuffix}
-          </motion.h1>
-
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="text-md text-white/70 max-w-xl"
-          >
-            {data.description}
-          </motion.p>
-
-          {/* Dynamic Stats Row */}
-          <div className="flex gap-12 pt-10 border-t border-white/10">
-            {data.stats.map((stat, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + i * 0.1 }}
-              >
-                <div className="text-3xl font-black text-secondary">{stat.value}</div>
-                <div className="text-[10px] text-white/50 uppercase tracking-[0.2em] font-bold">
-                  {stat.label}
+                      {/* Meta Details Bar */}
+                      <div className="flex flex-wrap gap-10 mt-10 pt-10 border-t border-white/20">
+                        <div className="flex items-center gap-3">
+                          <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center">
+                            <Calendar className="h-5 w-5 text-secondary" />
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-white/50 text-[10px] uppercase tracking-widest font-bold">When</span>
+                            <span className="text-white font-semibold text-sm">{item.date}</span>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center gap-3">
+                          <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center">
+                            <MapPin className="h-5 w-5 text-secondary" />
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-white/50 text-[10px] uppercase tracking-widest font-bold">Where</span>
+                            <span className="text-white font-semibold text-sm">{item.location}</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="pt-12">
+                        {/* <Button 
+                          size="lg" 
+                          className="bg-secondary hover:bg-secondary text-white font-black rounded-full px-12 h-16 text-lg uppercase tracking-wider transition-all hover:scale-105 active:scale-95"
+                        >
+                          {item.cta} <ArrowRight className="ml-3 h-6 w-6" />
+                        </Button> */}
+                      </div>
+                    </motion.div>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+        {/* Enhanced Navigation UI */}
+        <div className="absolute bottom-50 right-12 flex gap-4 z-30">
+          <CarouselPrevious className="static translate-y-0 h-16 w-16 border-white/20 bg-white/5 text-white hover:bg-white hover:text-[#002c5c] backdrop-blur-xl transition-all duration-300" />
+          <CarouselNext className="static translate-y-0 h-16 w-16 border-white/20 bg-white/5 text-white hover:bg-white hover:text-[#002c5c] backdrop-blur-xl transition-all duration-300" />
         </div>
-      </div>
+      </Carousel>
     </section>
   );
-};
+}

@@ -25,10 +25,10 @@ export const MarketplaceSync = () => {
               ))}
             </div>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button size="lg" className="bg-secondary text-white font-bold hover:bg-secondary/90 px-8">{marketplace.ctaPrimary}</Button>
+              {/* <Button size="lg" className="bg-secondary text-white font-bold hover:bg-secondary/90 px-8">{marketplace.ctaPrimary}</Button>
               <Button size="lg" variant="outline" className="border-primary text-primary px-8 group">
                 {marketplace.ctaSecondary} <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </Button>
+              </Button> */}
             </div>
           </div>
 

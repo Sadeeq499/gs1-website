@@ -12,7 +12,7 @@ export default function EventsPage() {
     <div className="flex flex-col w-full min-h-screen bg-background">
       <EventsHero />
       <EventsGrid />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
     </div>
   );
 }

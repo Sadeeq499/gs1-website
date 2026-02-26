@@ -1,15 +1,15 @@
 import { INSIGHTS_DATA } from "@/components/insights/insights-data";
 import { InsightsHero } from "@/components/insights/InsightsHero";
 import { NewsGrid } from "@/components/insights/NewsGrid";
-import { NewsSlider } from "@/components/insights/NewsSlider";
+import NewsInsights from "@/components/insights/NewsInsights";
 
 export default function Page() {
   return (
     <main className="min-h-screen">
       {/* Existing Hero component remains unchanged, just uses data prop */}
-      <InsightsHero data={INSIGHTS_DATA.hero} />
+      <InsightsHero sliderNews={INSIGHTS_DATA.sliderNews} />
       
-      <NewsSlider slides={INSIGHTS_DATA.slider} />
+      <NewsInsights cardData={INSIGHTS_DATA.spotlightCards} />
       
       <NewsGrid news={INSIGHTS_DATA.news} />
       

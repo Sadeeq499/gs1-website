@@ -62,8 +62,7 @@ export function Partners() {
       `}</style>
 
       <div className="w-full max-w-5xl mx-auto px-4 mb-16 text-center">
-        <h2 className="text-3xl font-bold text-slate-900">Our Network</h2>
-        <p className="text-slate-500 mt-2">Our Network Of Strategic partners</p>
+        <h2 className="text-3xl font-bold text-primary">Our Strategic Partners</h2>
       </div>
 
       <div className="slider-container relative w-full">

@@ -89,13 +89,13 @@ export default async function SolutionPage({ params }) {
             <p className="text-lg md:text-xl text-slate-700 leading-relaxed font-light">
               <span className="font-bold text-slate-900">{solution.title}</span> {solution.description}
             </p>
-            <div className="border-t border-slate-100 pt-6 flex flex-wrap gap-4 justify-center">
+            {/* <div className="border-t border-slate-100 pt-6 flex flex-wrap gap-4 justify-center">
                 {solution.idealFor?.map((item, i) => (
                     <Badge key={i} variant="secondary" className="px-4 py-2 text-base bg-slate-100 text-slate-700 border-slate-200 hover:bg-orange-500 hover:text-white transition-all cursor-default">
                         <Users className="h-4 w-4 mr-2" /> {item}
                     </Badge>
                 ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -143,13 +143,13 @@ export default async function SolutionPage({ params }) {
                   </p>
                   
                   {/* Contextual Badges based on data features */}
-                  <div className="flex flex-wrap gap-3">
+                  {/* <div className="flex flex-wrap gap-3">
                     {solution.features?.slice(idx, idx + 2).map((feature, fIdx) => (
                         <div key={fIdx} className="flex items-center gap-2 bg-slate-50 border border-slate-200 px-4 py-2 rounded-full text-slate-700 text-sm font-medium">
                             <CheckCircle2 className="h-4 w-4 text-green-500" /> {feature}
                         </div>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}
@@ -170,9 +170,9 @@ export default async function SolutionPage({ params }) {
           <p className="max-w-3xl mx-auto text-lg text-slate-300 leading-relaxed">
             We provide the framework for the Kingdom&apos;s digital future, ensuring every product, location, and asset is identified correctly within the global supply chain.
           </p>
-          <Button size="lg" className="bg-orange-500 hover:bg-white hover:text-orange-500 rounded-full px-10 py-7 text-lg font-bold transition-all shadow-xl shadow-orange-500/20">
+          {/* <Button size="lg" className="bg-orange-500 hover:bg-white hover:text-orange-500 rounded-full px-10 py-7 text-lg font-bold transition-all shadow-xl shadow-orange-500/20">
             Get Started with {solution.acronym || "GS1"} <ArrowRight className="ml-2" />
-          </Button>
+          </Button> */}
         </div>
       </section>
 
@@ -218,9 +218,9 @@ export default async function SolutionPage({ params }) {
                     and how <span className="text-orange-400">{solution.title}</span> can be tailored for your success.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-12 py-8 text-xl font-bold shadow-2xl shadow-orange-500/30">
+                    {/* <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-12 py-8 text-xl font-bold shadow-2xl shadow-orange-500/30">
                         Consult an Expert <ArrowRight className="ml-3" />
-                    </Button>
+                    </Button> */}
                 </div>
             </div>
           </div>

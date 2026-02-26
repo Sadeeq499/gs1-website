@@ -17,7 +17,7 @@ export default function PartnersPage() {
       <RegulatoryGrid />
       <ProviderShowcase />
       <MarketplaceSync />
-      <PartnerCTA />
+      {/* <PartnerCTA /> */}
     </div>
   );
 }
