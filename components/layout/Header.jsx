@@ -34,11 +34,7 @@ import { cn } from "@/lib/utils";
 
 const mainNavItems = [
   { title: "Home", href: "/" },
-<<<<<<< HEAD
-   {
-=======
   {
->>>>>>> 7c84eb3bb221cd56c3268ce6e2b24dba84624bc1
     title: "About Us",
     href: "/about",
     items: [
@@ -52,10 +48,6 @@ const mainNavItems = [
   { title: "Standards", href: "/standards" },
   { title: "Services", href: "/services" },
   { title: "Industries", href: "/industries" },
-<<<<<<< HEAD
- 
-=======
->>>>>>> 7c84eb3bb221cd56c3268ce6e2b24dba84624bc1
 ];
 
 export default function Header() {
