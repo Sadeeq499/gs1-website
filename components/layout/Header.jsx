@@ -34,7 +34,11 @@ import { cn } from "@/lib/utils";
 
 const mainNavItems = [
   { title: "Home", href: "/" },
+<<<<<<< HEAD
    {
+=======
+  {
+>>>>>>> 7c84eb3bb221cd56c3268ce6e2b24dba84624bc1
     title: "About Us",
     href: "/about",
     items: [
@@ -48,7 +52,10 @@ const mainNavItems = [
   { title: "Standards", href: "/standards" },
   { title: "Services", href: "/services" },
   { title: "Industries", href: "/industries" },
+<<<<<<< HEAD
  
+=======
+>>>>>>> 7c84eb3bb221cd56c3268ce6e2b24dba84624bc1
 ];
 
 export default function Header() {
@@ -67,7 +74,7 @@ export default function Header() {
     <header
       className={cn(
         "w-full z-50 sticky top-0 font-sans transition-all duration-300",
-        isScrolled ? "shadow-md" : ""
+        isScrolled ? "shadow-md" : "",
       )}
     >
       {/* Top Bar - Dark Blue */}
@@ -77,16 +84,28 @@ export default function Header() {
             The Global Language of Business
           </span>
           <div className="flex items-center gap-6">
-            <Link href="/insights" className="hover:text-secondary transition-colors">
+            <Link
+              href="/insights"
+              className="hover:text-secondary transition-colors"
+            >
               Insights & News
             </Link>
-            <Link href="/events" className="hover:text-secondary transition-colors">
+            <Link
+              href="/events"
+              className="hover:text-secondary transition-colors"
+            >
               Events
             </Link>
-            <Link href="/training" className="hover:text-secondary transition-colors">
+            <Link
+              href="/training"
+              className="hover:text-secondary transition-colors"
+            >
               Training
             </Link>
-            <Link href="/contact" className="hover:text-secondary transition-colors">
+            <Link
+              href="/contact"
+              className="hover:text-secondary transition-colors"
+            >
               Contact
             </Link>
           </div>
@@ -96,7 +115,6 @@ export default function Header() {
       {/* Main Navigation Bar */}
       <div className="bg-white border-b border-gray-100 relative">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          
           {/* Dual Logo Section */}
           <div className="flex items-center gap-3 md:gap-5">
             <Link href="/" className="flex items-center group">
@@ -117,7 +135,7 @@ export default function Header() {
             {/* FSC Logo */}
             <div className="relative h-7 w-14 lg:h-9 lg:w-18 transition-opacity">
               <Image
-                src="/images/fsc.png" 
+                src="/images/fsc.png"
                 alt="FSC Logo"
                 fill
                 className="object-contain object-left"
@@ -154,7 +172,7 @@ export default function Header() {
                           href={item.href}
                           className={cn(
                             "text-[14px] font-semibold text-primary hover:text-secondary px-4 py-2 block transition-colors",
-                            pathname === item.href && "text-secondary"
+                            pathname === item.href && "text-secondary",
                           )}
                         >
                           {item.title}
@@ -180,12 +198,18 @@ export default function Header() {
                 <div className="bg-green-500/10 rounded-full p-0.5">
                   <ShieldCheck className="h-3.5 w-3.5 text-green-700 stroke-[3px]" />
                 </div>
-                <span className="text-[12px] tracking-tight">Verified By GS1</span>
+                <span className="text-[12px] tracking-tight">
+                  Verified By GS1
+                </span>
               </Link>
             </Button>
 
             {/* Language */}
-            <Button variant="ghost" size="sm" className="gap-1.5 text-primary font-bold">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="gap-1.5 text-primary font-bold"
+            >
               <Globe className="h-4 w-4" />
               <span className="text-xs">العربية</span>
             </Button>
@@ -207,10 +231,15 @@ export default function Header() {
 
           {/* Mobile Menu Trigger */}
           <div className="xl:hidden flex items-center gap-3">
-            <Button variant="ghost" size="icon" className="text-primary bg-green-50 hover:bg-green-100" asChild>
-               <Link href="/verify/product" className="lg:hidden">
-                  <ShieldCheck className="h-6 w-6 text-green-600" />
-               </Link>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-primary bg-green-50 hover:bg-green-100"
+              asChild
+            >
+              <Link href="/verify/product" className="lg:hidden">
+                <ShieldCheck className="h-6 w-6 text-green-600" />
+              </Link>
             </Button>
             <Sheet>
               <SheetTrigger asChild>
@@ -218,60 +247,7 @@ export default function Header() {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[320px] sm:w-[400px] overflow-y-auto">
-                <SheetHeader className="border-b pb-6 mb-6">
-                  <SheetTitle className="flex items-center gap-3">
-                    <Image src="/logo-gs1.svg" alt="GS1" width={60} height={30} />
-                    <div className="h-6 w-px bg-gray-200" />
-                    <Image src="/images/fsc.png" alt="FSC" width={40} height={20} />
-                  </SheetTitle>
-                </SheetHeader>
-
-                <nav className="flex flex-col gap-2">
-                  {mainNavItems.map((item) => (
-                    <div key={item.title}>
-                      {item.items ? (
-                        <div className="py-2">
-                          <h4 className="font-bold text-primary px-2 mb-2">{item.title}</h4>
-                          <div className="pl-4 border-l-2 border-gray-100 flex flex-col gap-1">
-                            {item.items.map((subItem) => (
-                              <SheetClose asChild key={subItem.title}>
-                                <Link
-                                  href={subItem.href}
-                                  className="text-muted-foreground hover:text-secondary py-2 text-sm block transition-colors"
-                                >
-                                  {subItem.title}
-                                </Link>
-                              </SheetClose>
-                            ))}
-                          </div>
-                        </div>
-                      ) : (
-                        <SheetClose asChild>
-                          <Link
-                            href={item.href}
-                            className="font-bold text-primary py-3 px-2 hover:bg-gray-50 rounded-md block transition-colors"
-                          >
-                            {item.title}
-                          </Link>
-                        </SheetClose>
-                      )}
-                    </div>
-                  ))}
-                </nav>
-
-                <div className="mt-8 flex flex-col gap-3 pt-6 border-t">
-                  <Button className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold h-12">
-                    Get a barcode
-                  </Button>
-                  <Button asChild variant="outline" className="w-full h-12 border-primary text-primary font-bold">
-                    <Link href="/login">MO Zone Login</Link>
-                  </Button>
-                  <Button variant="ghost" className="w-full gap-2 text-muted-foreground justify-center">
-                    <Globe className="h-4 w-4" /> Switch to Arabic
-                  </Button>
-                </div>
-              </SheetContent>
+              <MobileMenuContent pathname={pathname} />
             </Sheet>
           </div>
         </div>
@@ -280,34 +256,252 @@ export default function Header() {
   );
 }
 
+function MobileMenuContent({ pathname }) {
+  const [openSection, setOpenSection] = React.useState(null);
+
+  const toggleSection = (title) => {
+    setOpenSection((prev) => (prev === title ? null : title));
+  };
+
+  return (
+    <SheetContent
+      side="right"
+      className="w-[300px] sm:w-[340px] p-0 flex flex-col overflow-hidden"
+    >
+      {/* Sheet Header with logos */}
+      <SheetHeader className="px-4 pt-4 pb-3 border-b border-gray-100 bg-white shrink-0">
+        <SheetTitle asChild>
+          <div className="flex items-center gap-2">
+            <div className="relative h-7 w-14">
+              <Image
+                src="/logo-gs1.svg"
+                alt="GS1"
+                fill
+                className="object-contain object-left"
+              />
+            </div>
+            <div className="h-6 w-px bg-gray-200" />
+            <div className="relative h-6 w-12">
+              <Image
+                src="/images/fsc.png"
+                alt="FSC"
+                fill
+                className="object-contain object-left"
+              />
+            </div>
+          </div>
+        </SheetTitle>
+      </SheetHeader>
+
+      {/* Utility Row */}
+      <div className="flex items-center justify-between px-4 py-2.5 bg-gray-50 border-b border-gray-100 shrink-0">
+        <Link
+          href="/login"
+          className="flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-secondary transition-colors"
+        >
+          <div className="bg-primary/10 rounded-full p-1">
+            <User className="h-3 w-3 text-primary" />
+          </div>
+          Sign in
+        </Link>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="gap-1.5 text-xs font-semibold text-primary h-7 px-2"
+        >
+          <Globe className="h-3.5 w-3.5" />
+          العربية
+        </Button>
+      </div>
+
+      {/* Scrollable Nav */}
+      <nav className="flex-1 overflow-y-auto px-2 py-2">
+        {mainNavItems.map((item) => {
+          const isActive =
+            pathname === item.href || pathname?.startsWith(item.href + "/");
+          const isOpen = openSection === item.title;
+
+          return (
+            <div key={item.title} className="mb-1">
+              {item.items ? (
+                <div className="rounded-xl overflow-hidden">
+                  {/* Accordion toggle */}
+                  <button
+                    onClick={() => toggleSection(item.title)}
+                    className={cn(
+                      "w-full flex items-center justify-between px-3 py-2.5 text-left rounded-lg transition-all duration-200 font-semibold text-sm",
+                      isOpen
+                        ? "bg-primary text-white"
+                        : "text-primary hover:bg-primary/5",
+                    )}
+                  >
+                    <span>{item.title}</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={cn(
+                        "transition-transform duration-300 shrink-0",
+                        isOpen ? "rotate-180" : "rotate-0",
+                      )}
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+
+                  {/* Sub-items */}
+                  <div
+                    className={cn(
+                      "overflow-hidden transition-all duration-300 ease-in-out",
+                      isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
+                    )}
+                  >
+                    <div className="mx-2 mb-2 rounded-xl bg-gray-50 border border-gray-100 overflow-hidden">
+                      {item.items.map((subItem, idx) => {
+                        const isSubActive = pathname === subItem.href;
+                        return (
+                          <SheetClose asChild key={subItem.title}>
+                            <Link
+                              href={subItem.href}
+                              className={cn(
+                                "flex items-center gap-2.5 px-3 py-2 text-sm transition-colors",
+                                idx !== item.items.length - 1 &&
+                                  "border-b border-gray-100",
+                                isSubActive
+                                  ? "text-secondary font-semibold bg-secondary/5"
+                                  : "text-gray-600 hover:text-primary hover:bg-white font-medium",
+                              )}
+                            >
+                              <div
+                                className={cn(
+                                  "w-1.5 h-1.5 rounded-full shrink-0",
+                                  isSubActive ? "bg-secondary" : "bg-gray-300",
+                                )}
+                              />
+                              {subItem.title}
+                            </Link>
+                          </SheetClose>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <SheetClose asChild>
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "flex items-center px-3 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200",
+                      isActive
+                        ? "bg-secondary/10 text-secondary"
+                        : "text-primary hover:bg-primary/5",
+                    )}
+                  >
+                    {item.title}
+                    {isActive && (
+                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-secondary" />
+                    )}
+                  </Link>
+                </SheetClose>
+              )}
+            </div>
+          );
+        })}
+
+        {/* Quick Links */}
+        <div className="mt-3 pt-3 border-t border-gray-100">
+          <p className="px-3 text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">
+            Quick Links
+          </p>
+          {[
+            { title: "Insights & News", href: "/insights", icon: FileText },
+            { title: "Events", href: "/events", icon: Calendar },
+            { title: "Training", href: "/training", icon: ShieldCheck },
+            { title: "Contact", href: "/contact", icon: User },
+          ].map(({ title, href, icon: Icon }) => (
+            <SheetClose asChild key={title}>
+              <Link
+                href={href}
+                className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs text-gray-500 hover:text-primary hover:bg-gray-50 transition-all duration-200 font-medium"
+              >
+                <Icon className="h-3.5 w-3.5 shrink-0 text-gray-400" />
+                {title}
+              </Link>
+            </SheetClose>
+          ))}
+        </div>
+      </nav>
+
+      {/* Sticky CTA Footer */}
+      <div className="shrink-0 px-3 py-3 border-t border-gray-100 bg-white space-y-2">
+        <Button
+          asChild
+          className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold h-10 text-sm rounded-xl shadow-sm"
+        >
+          <a
+            href="http://213.136.82.130:1323/register/account-setup"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get a Barcode
+          </a>
+        </Button>
+        <SheetClose asChild>
+          <Button
+            asChild
+            variant="outline"
+            className="w-full h-10 border-primary/30 text-primary font-bold text-sm rounded-xl hover:bg-primary/5"
+          >
+            <a
+              href="http://213.136.82.130:1323/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sign Up
+            </a>
+          </Button>
+        </SheetClose>
+      </div>
+    </SheetContent>
+  );
+}
+
 // 1. Add this CSS to your globals.css or a style tag to ensure smooth movement
 // .NavigationMenuViewport { transition: width, height, 300ms ease; }
 
 // 2. Updated ListItem with 'ref' and 'passHref' fix
-const ListItem = React.forwardRef(({ className, title, children, href, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <Link
-          href={href}
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-all duration-200 hover:bg-slate-50 group",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-semibold leading-none group-hover:text-secondary transition-colors">
-            {title}
-          </div>
-          {children && (
-            <p className="line-clamp-2 text-xs leading-snug text-muted-foreground pt-1">
-              {children}
-            </p>
-          )}
-        </Link>
-      </NavigationMenuLink>
-    </li>
-  );
-});
+const ListItem = React.forwardRef(
+  ({ className, title, children, href, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <Link
+            href={href}
+            ref={ref}
+            className={cn(
+              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-all duration-200 hover:bg-slate-50 group",
+              className,
+            )}
+            {...props}
+          >
+            <div className="text-sm font-semibold leading-none group-hover:text-secondary transition-colors">
+              {title}
+            </div>
+            {children && (
+              <p className="line-clamp-2 text-xs leading-snug text-muted-foreground pt-1">
+                {children}
+              </p>
+            )}
+          </Link>
+        </NavigationMenuLink>
+      </li>
+    );
+  },
+);
 ListItem.displayName = "ListItem";

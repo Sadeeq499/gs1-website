@@ -32,7 +32,7 @@ export default function MembersTab() {
   return (
     <div>
       <SearchBar
-        placeholder={TAB.placeholder}
+        // placeholder={TAB.placeholder}
         onSearch={handleSearch}
         isLoading={isFetching}
       />
@@ -56,7 +56,7 @@ export default function MembersTab() {
               icon={TAB.icon}
               title={TAB.label}
               description={TAB.description}
-              example={TAB.placeholder}
+              // example={TAB.placeholder}
             />
           )}
         </div>

@@ -137,7 +137,7 @@ export default function OtherKeysTab() {
           </div>
 
           {/* Notify me */}
-          <div className="mt-8 rounded-2xl border border-border bg-card/80 p-6 backdrop-blur">
+          {/* <div className="mt-8 rounded-2xl border border-border bg-card/80 p-6 backdrop-blur">
             <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F26334]/10">
@@ -166,12 +166,12 @@ export default function OtherKeysTab() {
                 </form>
               )}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* ── Enterprise CTA ──────────────────────────────────── */}
-      <section className="rounded-2xl bg-[#002C6C] p-8 text-white">
+      {/* <section className="rounded-2xl bg-[#002C6C] p-8 text-white">
         <div className="grid gap-8 lg:grid-cols-2">
           <div>
             <h3 className="mb-3 text-2xl font-bold">{ENTERPRISE.title}</h3>
@@ -202,7 +202,7 @@ export default function OtherKeysTab() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
