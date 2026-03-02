@@ -1,159 +1,122 @@
 import React from "react";
-import { Eye, Target, Share2, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, MoveRight } from "lucide-react";
+import { standardsPillars } from "./data"; // Path to your data.js
 
-const pillars = [
-  {
-    id: "identify",
-    title: "Identify",
-    subtitle: "Unique Identification",
-    description:
-      "GS1 identification keys uniquely track products, locations, assets, and services across the entire supply chain with unparalleled precision.",
-    icon: Eye,
-    image: "https://gs1eg.org/wp-content/uploads/2025/07/GS1-Standards-4.png",
-    stats: [
-      { label: "Product Types", value: "100M+" },
-      { label: "Accuracy Rate", value: "99.9%" },
-    ],
-    colorClass: "text-primary",
-    bgClass: "bg-primary",
-  },
-  {
-    id: "capture",
-    title: "Capture",
-    subtitle: "Data Capture",
-    description:
-      "GS1 standards streamline operations, reduce errors, and enhance supply chain efficiency through advanced barcode and RFID data capture technologies.",
-    icon: Target,
-    image: "https://gs1eg.org/wp-content/uploads/2025/07/GS1-Standards-2.png",
-    stats: [
-      { label: "Scan Speed", value: "<1s" },
-      { label: "Error Reduction", value: "83%" },
-    ],
-    colorClass: "text-secondary",
-    bgClass: "bg-secondary",
-  },
-  {
-    id: "share",
-    title: "Share",
-    subtitle: "Data Sharing",
-    description:
-      "GS1 standards streamline the sharing of master data, transaction data, and event data between trading partners seamlessly and securely.",
-    icon: Share2,
-    image: "https://gs1eg.org/wp-content/uploads/2025/07/GS1-Standards-3.png",
-    stats: [
-      { label: "Partners Connected", value: "500K+" },
-      { label: "Data Points Shared", value: "1B+/day" },
-    ],
-    colorClass: "text-primary",
-    bgClass: "bg-primary",
-  },
-];
-
-function PillarCard({ pillar, index }) {
-  const Icon = pillar.icon;
+const PillarCard = ({ pillar, index }) => {
   const isReversed = index % 2 !== 0;
 
   return (
-    <div className="group relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-      {/* Content side */}
-      <div className={`flex flex-col gap-6 ${isReversed ? "lg:order-2" : ""}`}>
-        {/* Number + label */}
-        <div className="flex items-center gap-4">
-          <span
-            className={`text-7xl md:text-8xl font-bold opacity-10 leading-none ${pillar.colorClass}`}
-          >
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          <div>
-            <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground">
-              {pillar.subtitle}
-            </p>
-            <h3 className="text-3xl md:text-4xl font-bold text-foreground">
+    <div className="group relative border-b border-slate-100 last:border-0 pb-24 mb-24 last:mb-0 last:pb-0">
+      <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+        
+        {/* Content Side */}
+        <div className={`space-y-8 ${isReversed ? "lg:order-2" : ""}`}>
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
+                Phase {String(index + 1).padStart(2, "0")}
+              </span>
+              <div className="h-px w-8 bg-slate-200" />
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#FE5000]">
+                {pillar.acronym}
+              </span>
+            </div>
+            <h3 className="text-4xl lg:text-5xl font-bold text-[#002C6C] tracking-tight">
               {pillar.title}
             </h3>
           </div>
-        </div>
 
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          {pillar.description}
-        </p>
+          <p className="text-lg text-slate-600 leading-relaxed font-light max-w-xl">
+            {pillar.description.split('.')[0]}. {pillar.shortDescription}
+          </p>
 
-        {/* Stats */}
-        <div className="flex gap-8">
-          {pillar.stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col">
-              <span className={`text-2xl font-bold ${pillar.colorClass}`}>
-                {stat.value}
-              </span>
-              <span className="text-sm text-muted-foreground">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <button
-          className={`group/btn inline-flex items-center gap-2 text-sm font-semibold w-fit transition-colors ${pillar.colorClass}`}
-        >
-          Learn more about {pillar.title}
-          <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-        </button>
-      </div>
-
-      {/* Image side */}
-      <div className={`relative ${isReversed ? "lg:order-1" : ""}`}>
-        <div className="relative overflow-hidden rounded-2xl aspect-[4/3] group-hover:shadow-2xl transition-shadow duration-500">
-          <Image
-            src={pillar.image}
-            alt={`${pillar.title} - ${pillar.subtitle}`}
-            fill
-            className="object-contain transition-transform duration-700 group-hover:scale-110"
-          />
-          {/* Overlay */}
-          {/* <div
-            className={`absolute inset-0 opacity-40 mix-blend-multiply ${pillar.bgClass}`}
-          /> */}
-          {/* Icon floating */}
-          <div className="absolute bottom-6 right-6 w-16 h-16 rounded-2xl bg-card/90 backdrop-blur-sm flex items-center justify-center shadow-lg">
-            <Icon className={`w-8 h-8 ${pillar.colorClass}`} />
+          {/* Quick Features List */}
+          <div className="grid grid-cols-2 gap-4">
+            {pillar.features.slice(0, 2).map((feature, i) => (
+              <div key={i} className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                <p className="text-xs font-bold text-[#002C6C] mb-1">{feature.title}</p>
+                <p className="text-[11px] text-slate-500 leading-tight">{feature.detail}</p>
+              </div>
+            ))}
           </div>
+
+          <Link
+            href={`/standards/${pillar.slug}`}
+            className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#002C6C] group/link transition-all"
+          >
+            Explore {pillar.title} Framework
+            <div className="p-2 rounded-full border border-slate-200 group-hover/link:bg-[#002C6C] group-hover/link:text-white transition-all">
+              <MoveRight className="w-4 h-4" />
+            </div>
+          </Link>
         </div>
-        {/* Decorative accent */}
-        <div
-          className={`absolute -z-10 w-full h-full top-4 left-4 rounded-2xl opacity-10 ${pillar.bgClass}`}
-        />
+
+        {/* Visual Side */}
+        <div className={`relative ${isReversed ? "lg:order-1" : ""}`}>
+          <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-slate-50 border border-slate-100 shadow-sm group-hover:shadow-xl transition-shadow duration-500">
+            <Image
+              src={pillar.image || pillar.heroImage}
+              alt={pillar.title}
+              fill
+              className="object-contain object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* Subtle Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
+          </div>
+          
+          {/* Decorative Number background */}
+          <span className="absolute -bottom-10 -right-6 text-[12rem] font-bold text-slate-100/50 -z-10 select-none">
+             {index + 1}
+          </span>
+        </div>
+
       </div>
     </div>
   );
-}
+};
 
 const StandardsPillars = () => {
   return (
-    <section className="py-16  bg-background">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-primary/5 rounded-full px-5 py-2 mb-6">
-            <span className="text-sm font-medium text-primary tracking-wide">
-              Core Framework
-            </span>
+    <section className="py-32 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Section Header */}
+        <div className="max-w-3xl mb-32 space-y-6">
+          <div className="inline-block py-1 px-3 rounded bg-blue-50 text-[#002C6C] text-[10px] font-bold uppercase tracking-[0.2em]">
+             Official GS1 Framework
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6 text-balance">
-            The Three Pillars of GS1 Standards
+          <h2 className="text-5xl lg:text-6xl font-bold text-[#002C6C] tracking-tight leading-[1.1]">
+            The Three Pillars of <span className="text-[#FE5000]">Global Standards</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            A comprehensive framework that enables businesses worldwide to
-            identify, capture, and share data seamlessly across the supply
-            chain.
+          <p className="text-xl text-slate-500 font-light leading-relaxed">
+            Our framework enables businesses across the Kingdom to identify, capture, and share data, 
+            ensuring transparency and efficiency from local production to global consumption.
           </p>
         </div>
 
-        {/* Pillars */}
-        <div className="flex flex-col gap-24 md:gap-32">
-          {pillars.map((pillar, i) => (
-            <PillarCard key={pillar.id} pillar={pillar} index={i} />
+        {/* Pillars List */}
+        <div className="relative">
+          {standardsPillars.map((pillar, i) => (
+            <PillarCard key={pillar.slug} pillar={pillar} index={i} />
           ))}
+        </div>
+
+        {/* Bottom Professional CTA */}
+        <div className="mt-20 p-12 rounded-[2rem] bg-primary text-white flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+          <div className="relative z-10">
+            <h4 className="text-2xl font-bold mb-2">Ready to implement GS1 Standards?</h4>
+            <p className="text-slate-400 font-light">Join the global network of 2 million+ companies.</p>
+          </div>
+          <Link 
+            href="/get-started"
+            className="relative z-10 bg-[#FE5000] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all"
+          >
+            Become a Member
+          </Link>
+          {/* Background decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#FE5000] rounded-full blur-[100px] opacity-10 translate-x-1/2 -translate-y-1/2" />
         </div>
       </div>
     </section>
