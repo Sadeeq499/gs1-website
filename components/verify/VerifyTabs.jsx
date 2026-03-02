@@ -12,7 +12,7 @@ export default function VerifyTabs() {
     <>
       {/* Matches screenshot: light clean area for tabs */}
       <div className="bg-background relative bg-[#f9fafc]/50 pb-8">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <nav
             className="grid grid-cols-1 gap-4 py-6 sm:grid-cols-3 md:grid-cols-4 lg:gap-6"
             aria-label="Verify section navigation"
