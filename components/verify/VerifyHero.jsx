@@ -2,7 +2,7 @@
 export default function VerifyHero() {
   return (
     <div className="bg-background w-full">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 pb-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
           {/* Green Checkmark Icon */}
           <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-[#9bcf88] md:h-[90px] md:w-[90px]">
