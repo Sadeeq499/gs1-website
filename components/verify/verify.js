@@ -1,6 +1,3 @@
-// ============================================================
-//  verify/data.js  –  Single source of truth for the Verify section
-// ============================================================
 
 // ── Tab definitions ──────────────────────────────────────────
 export const VERIFY_TABS = [
@@ -45,13 +42,6 @@ export const VERIFY_TABS = [
     description: "Search by company",
   },
 ];
-
-// ── API endpoints ─────────────────────────────────────────────
-export const API = {
-  product: (barcode) =>
-    `https://gs1.org.sa/api/foreignGtin/getGtinProductDetails?barcode=${barcode}`,
-  location: (gln) => `https://gs1.org.sa/api/location?gln=${gln}`,
-};
 
 // ── Hero copy ─────────────────────────────────────────────────
 export const HERO = {

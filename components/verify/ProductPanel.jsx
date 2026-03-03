@@ -1,27 +1,54 @@
 "use client";
 
 import React, { useState } from "react";
-import { Search, Info } from "lucide-react";
+import { Search, Info, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import Image from "next/image";
+import { useProductGs1Verified } from "@/lib/hooks/useVerify";
+
+import IncorrectDataDialog from "./IncorrectDataDialog";
 
 export default function ProductPanel() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [hasSearched, setHasSearched] = useState(false);
+  const [productData, setProductData] = useState(null);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
+  const {
+    mutateAsync: productGs1Verified,
+    isPending,
+    isLoading,
+  } = useProductGs1Verified();
+  const isMutating = isPending || isLoading;
+
+  const handleSearch = async (e) => {
+    if (e) e.preventDefault();
     if (!searchQuery) return;
-    // In a real app, this would perform a fetch or navigation
-    setHasSearched(true);
-    console.log("Searching GTIN:", searchQuery);
+    try {
+      const res = await productGs1Verified(searchQuery);
+      if (res?.success && res?.data) {
+        setProductData(res.data);
+      } else {
+        setProductData(null);
+      }
+    } catch (error) {
+      console.error(error);
+      setProductData(null);
+    }
   };
 
-  const handleExampleClick = () => {
+  const handleExampleClick = async () => {
     setSearchQuery("09506000140445");
-    setHasSearched(true);
+    try {
+      const res = await productGs1Verified("09506000140445");
+      if (res?.success && res?.data) {
+        setProductData(res.data);
+      } else {
+        setProductData(null);
+      }
+    } catch (error) {
+      console.error(error);
+      setProductData(null);
+    }
   };
 
   return (
@@ -44,11 +71,12 @@ export default function ProductPanel() {
           className="h-14 w-full pl-12 pr-32 text-lg border-slate-300 rounded-md focus-visible:ring-primary focus-visible:border-primary shadow-sm"
         />
 
-        {/* Search Button */}
         <Button
           type="submit"
-          className="absolute right-0 top-0 bottom-0 h-14 rounded-l-none rounded-r-md bg-secondary text-white hover:bg-[#d9532b] px-8 text-base font-medium"
+          disabled={isMutating}
+          className="absolute right-0 top-0 bottom-0 h-14 rounded-l-none rounded-r-md bg-secondary text-white hover:bg-[#d9532b] px-8 text-base font-medium flex items-center gap-2"
         >
+          {isMutating && <Loader2 className="h-5 w-5 animate-spin" />}
           Search
         </Button>
       </form>
@@ -65,7 +93,7 @@ export default function ProductPanel() {
         </button>
       </div>
 
-      {hasSearched && (
+      {productData && productData.product && (
         <div className="mt-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
           {/* Banner */}
           <div className="flex bg-[#e8f5e9] border-l-[6px] border-[#2e7d32] p-4 mb-10 items-center">
@@ -94,7 +122,9 @@ export default function ProductPanel() {
             <Info className="h-5 w-5 text-slate-600 mr-2 shrink-0 stroke-[1.5]" />
             <p className="text-slate-800 text-[16px]">
               This number is registered to{" "}
-              <span className="font-bold text-black">GS1 Demo Account.</span>
+              <span className="font-bold text-black">
+                {productData.product.company?.name || "N/A"}.
+              </span>
             </p>
           </div>
 
@@ -120,77 +150,97 @@ export default function ProductPanel() {
 
             <TabsContent value="product" className="pt-8">
               <h2 className="text-[#0b1c5c] text-[26px] font-medium mb-8">
-                Sticky's Traditional Strawberry Jam Low Sugar 500 Gram
+                {productData.product.product?.description ||
+                  "Product Information"}
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-8">
                 {/* Image Placeholder */}
                 <div className="flex justify-start items-start pt-2">
                   <div className="w-full max-w-[200px] aspect-3/4 relative bg-white flex items-center justify-center">
-                    {/* Fallback mock image */}
-                    <img
-                      src="https://www.gs1.org/docs/09506000140445_A1C1.jpg"
-                      alt="Strawberry Jam"
-                      className="w-full h-full object-contain"
-                    />
+                    {productData.product.media?.images?.primary ? (
+                      <img
+                        src={productData.product.media.images.primary}
+                        alt="Product Image"
+                        className="w-full h-full object-contain"
+                      />
+                    ) : (
+                      <div className="text-slate-400">No Image Available</div>
+                    )}
                   </div>
                 </div>
 
                 {/* Attributes Table */}
                 <div className="w-full border-t border-[#0b1c5c]/20">
                   {[
-                    { label: "GTIN", value: "09506000140445", bold: true },
-                    { label: "Brand name", value: "(en) Sticky's", bold: true },
+                    {
+                      label: "GTIN",
+                      value: productData.product.gtin || productData.barcode,
+                      bold: true,
+                    },
+                    {
+                      label: "Brand name",
+                      value: productData.product.product?.brand,
+                      bold: true,
+                    },
                     {
                       label: "Product description",
-                      value:
-                        "(en) Sticky's Traditional Strawberry Jam Low Sugar 500 Gram",
+                      value: productData.product.product?.description,
                       bold: true,
                     },
                     {
                       label: "Product image URL",
-                      value:
-                        "(en) https://www.gs1.org/docs/09506000140445_A1C1.jpg",
+                      value: productData.product.media?.images?.primary,
                       link: true,
                       bold: true,
                     },
                     {
                       label: "Global product category",
-                      value: "10000217 Jams/Marmalades (Shelf Stable)",
+                      value: productData.product.product?.gpcCategory,
                       bold: true,
                     },
-                    { label: "Net content", value: "500 Gram", bold: true },
+                    {
+                      label: "Net content",
+                      value: productData.product.specifications?.netContent
+                        ? `${productData.product.specifications.netContent.value} ${productData.product.specifications.netContent.unit}`
+                        : undefined,
+                      bold: true,
+                    },
                     {
                       label: "Country of sale",
-                      value: "Whole world",
+                      value: productData.product.specifications?.countryOfSale
+                        ?.map((c) => c.code)
+                        .join(", "),
                       bold: true,
                     },
-                  ].map((row, i) => (
-                    <div
-                      key={i}
-                      className={`flex flex-col sm:flex-row py-3.5 border-b border-[#0b1c5c]/20 ${i % 2 === 1 ? "bg-[#f8fafd] px-3 -mx-3" : "px-3 -mx-3"}`}
-                    >
-                      <div className="w-full sm:w-[240px] shrink-0 text-[#64748b] font-bold text-[13px] uppercase tracking-wide pt-0.5">
-                        {row.label}
-                      </div>
+                  ]
+                    .filter((r) => r.value)
+                    .map((row, i) => (
                       <div
-                        className={`w-full text-[#0b1c5c] text-[15px] ${row.bold ? "font-bold" : ""}`}
+                        key={i}
+                        className={`flex flex-col sm:flex-row py-3.5 border-b border-[#0b1c5c]/20 ${i % 2 === 1 ? "bg-[#f8fafd] px-3 -mx-3" : "px-3 -mx-3"}`}
                       >
-                        {row.link ? (
-                          <a
-                            href={row.value.split(" ")[1]}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-[#0369a1] hover:underline break-all block mt-1 sm:mt-0"
-                          >
-                            {row.value}
-                          </a>
-                        ) : (
-                          <div className="mt-1 sm:mt-0">{row.value}</div>
-                        )}
+                        <div className="w-full sm:w-[240px] shrink-0 text-[#64748b] font-bold text-[13px] uppercase tracking-wide pt-0.5">
+                          {row.label}
+                        </div>
+                        <div
+                          className={`w-full text-[#0b1c5c] text-[15px] ${row.bold ? "font-bold" : ""}`}
+                        >
+                          {row.link ? (
+                            <a
+                              href={row.value}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-[#0369a1] hover:underline break-all block mt-1 sm:mt-0"
+                            >
+                              {row.value}
+                            </a>
+                          ) : (
+                            <div className="mt-1 sm:mt-0">{row.value}</div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
                 </div>
               </div>
             </TabsContent>
@@ -204,76 +254,157 @@ export default function ProductPanel() {
                 {[
                   {
                     label: "Company Name",
-                    value: "GS1 Demo Account",
+                    value: productData.product.company?.name,
                     bold: true,
                   },
-                  {
-                    label: "Address",
-                    value: (
-                      <div className="flex flex-col gap-1 mt-1 sm:mt-0">
-                        <div className="font-bold">GS1</div>
-                        <div className="font-bold">
-                          Avenue Louise 326 Blue Tower
-                        </div>
-                        <div className="font-bold">
-                          BRUXELLES, Région de Bruxelles-Capitale
-                        </div>
-                        <div className="font-bold">B-1050</div>
-                        <div className="font-bold">Belgium</div>
-                      </div>
-                    ),
-                  },
+                  productData.product.company?.address?.street ||
+                  productData.product.company?.address?.locality ||
+                  productData.product.company?.address?.region ||
+                  productData.product.company?.address?.countryCode
+                    ? {
+                        label: "Address",
+                        value: (
+                          <div className="flex flex-col gap-1 mt-1 sm:mt-0">
+                            {productData.product.company.address.formatted ? (
+                              <div className="font-bold">
+                                {productData.product.company.address.formatted}
+                              </div>
+                            ) : (
+                              <>
+                                {productData.product.company.address.street && (
+                                  <div className="font-bold">
+                                    {productData.product.company.address.street}
+                                  </div>
+                                )}
+                                {productData.product.company.address
+                                  .streetLine2 && (
+                                  <div className="font-bold">
+                                    {
+                                      productData.product.company.address
+                                        .streetLine2
+                                    }
+                                  </div>
+                                )}
+                                {(productData.product.company.address
+                                  .locality ||
+                                  productData.product.company.address
+                                    .region) && (
+                                  <div className="font-bold">
+                                    {[
+                                      productData.product.company.address
+                                        .locality,
+                                      productData.product.company.address
+                                        .region,
+                                    ]
+                                      .filter(Boolean)
+                                      .join(", ")}
+                                  </div>
+                                )}
+                                {productData.product.company.address
+                                  .postalCode && (
+                                  <div className="font-bold">
+                                    {
+                                      productData.product.company.address
+                                        .postalCode
+                                    }
+                                  </div>
+                                )}
+                                {productData.product.company.address
+                                  .countryCode && (
+                                  <div className="font-bold">
+                                    {
+                                      productData.product.company.address
+                                        .countryCode
+                                    }
+                                  </div>
+                                )}
+                              </>
+                            )}
+                          </div>
+                        ),
+                      }
+                    : null,
                   {
                     label: "Website",
-                    value: "https://website.com",
+                    value: productData.product.company?.website?.trim()
+                      ? productData.product.company.website
+                      : undefined,
                     link: true,
                     bold: true,
                   },
-                  { label: "License Key", value: "95060001404", bold: true },
+                  {
+                    label: "License Key",
+                    value: productData.product.company?.gcp,
+                    bold: true,
+                  },
                   {
                     label: "License Type",
-                    value: "GS1 Company Prefix",
+                    value: productData.product.company?.licenseType,
                     bold: true,
                   },
                   {
                     label: "Global Location Number (GLN)",
-                    value: "9506248700180",
+                    value: productData.product.company?.gln,
                     bold: true,
                   },
                   {
                     label: "Licensing GS1 Member Organisation",
-                    value: "GS1 Global Office",
+                    value: productData.product.company?.memberOrganization,
                     bold: true,
                   },
-                ].map((row, i) => (
-                  <div
-                    key={i}
-                    className={`flex flex-col sm:flex-row py-4 border-b border-[#0b1c5c]/20 ${i % 2 === 1 ? "bg-[#f8fafd] px-3 -mx-3" : "px-3 -mx-3"}`}
-                  >
-                    <div className="w-full sm:w-[280px] shrink-0 text-[#64748b] font-bold text-[13px] uppercase tracking-wide pt-0.5">
-                      {row.label}
-                    </div>
+                ]
+                  .filter((r) => r && r.value)
+                  .map((row, i) => (
                     <div
-                      className={`w-full text-[#0b1c5c] text-[15px] ${row.bold ? "font-bold" : ""}`}
+                      key={i}
+                      className={`flex flex-col sm:flex-row py-4 border-b border-[#0b1c5c]/20 ${i % 2 === 1 ? "bg-[#f8fafd] px-3 -mx-3" : "px-3 -mx-3"}`}
                     >
-                      {row.link ? (
-                        <a
-                          href={row.value}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="text-[#0369a1] hover:underline block mt-1 sm:mt-0"
-                        >
-                          {row.value}
-                        </a>
-                      ) : (
-                        <div className="mt-1 sm:mt-0">{row.value}</div>
-                      )}
+                      <div className="w-full sm:w-[280px] shrink-0 text-[#64748b] font-bold text-[13px] uppercase tracking-wide pt-0.5">
+                        {row.label}
+                      </div>
+                      <div
+                        className={`w-full text-[#0b1c5c] text-[15px] ${row.bold ? "font-bold" : ""}`}
+                      >
+                        {row.link ? (
+                          <a
+                            href={row.value}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-[#0369a1] hover:underline block mt-1 sm:mt-0"
+                          >
+                            {row.value}
+                          </a>
+                        ) : (
+                          <div className="mt-1 sm:mt-0">{row.value}</div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </TabsContent>
           </Tabs>
+
+          {/* Footer Info */}
+          <div className="mt-12 pt-4">
+            <IncorrectDataDialog />
+            <p className="text-slate-600 text-[15px] font-medium">
+              This data has been provided by{" "}
+              {productData.product.company?.name || "the company"} and was last
+              updated on{" "}
+              {productData.product.company?.dates?.updated ||
+              productData.product.metadata?.dateUpdated
+                ? new Date(
+                    productData.product.company?.dates?.updated ||
+                      productData.product.metadata?.dateUpdated,
+                  ).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })
+                : "unknown date"}
+              .
+            </p>
+          </div>
         </div>
       )}
     </div>
