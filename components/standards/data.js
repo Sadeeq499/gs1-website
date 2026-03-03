@@ -7,8 +7,8 @@ export const standardsPillars = [
     shortDescription: "The foundation of the GS1 System, providing unique identities for products, services, and locations globally.",
     overviewTitle: "Standardized Identification for Global Trade",
     description: "GS1 Identification Keys are the core of our standards. They allow organizations to assign standard identifiers to products, documents, and physical locations. In the Kingdom of Saudi Arabia, these keys are essential for enabling seamless trade and regulatory compliance within the global supply chain.",
-    heroImage: "/images/identify.jpg",
     accentColor: "#002C6C",
+    heroImage:"https://gs1eg.org/wp-content/uploads/2025/07/GS1-Standards-4.png",
     modules: [
       {
         title: "GTIN (Global Trade Item Number)",
@@ -25,16 +25,16 @@ export const standardsPillars = [
         description: "The 'License Plate' for logistics units. End-to-end tracking for pallets and crates from factory to consumer.",
         image: "/images/SSCC.png"
       },
-      {
-        title: "GSRN (Service Relation Number)",
-        description: "Identifies service provider/recipient relationships, such as a patient in an SFDA healthcare context.",
-        image: "/images/GSRN.png"
-      },
-      {
-        title: "GDTI (Document Type Identifier)",
-        description: "Enables document type identification, widely used in customs (FASAH) and administrative automation.",
-        image: "/images/GDTI.png"
-      }
+      // {
+      //   title: "GSRN (Service Relation Number)",
+      //   description: "Identifies service provider/recipient relationships, such as a patient in an SFDA healthcare context.",
+      //   image: "/images/GSRN.png"
+      // },
+      // {
+      //   title: "GDTI (Document Type Identifier)",
+      //   description: "Enables document type identification, widely used in customs (FASAH) and administrative automation.",
+      //   image: "/images/GDTI.png"
+      // }
     ],
     featuresTitle: "Strategic Benefits of GS1 Identification",
     features: [
@@ -54,8 +54,8 @@ export const standardsPillars = [
     shortDescription: "Bridging physical products to digital systems through standardized barcodes and RFID.",
     overviewTitle: "Precision in Automated Data Capture",
     description: "GS1 Capture standards define how data is encoded within physical carriers—barcodes and RFID tags. This allows machines to read information instantly, speeding up transactions across Saudi retail, logistics, and healthcare sectors.",
-    heroImage: "/images/capture.jpg",
     accentColor: "#FE5000",
+    heroImage:"https://gs1eg.org/wp-content/uploads/2025/07/GS1-Standards-2.png",
     modules: [
       {
         title: "Linear Barcodes (EAN/UPC)",
@@ -72,11 +72,11 @@ export const standardsPillars = [
         description: "Connects consumers to landing pages, nutritional info, and warranty details using smartphones.",
         image: "/images/Digital Link.png"
       },
-      {
-        title: "EPC/RFID",
-        description: "Radio Frequency ID. Bulk scanning and real-time tracking without direct line-of-sight.",
-        image: "/images/EPCRFID.png"
-      }
+      // {
+      //   title: "EPC/RFID",
+      //   description: "Radio Frequency ID. Bulk scanning and real-time tracking without direct line-of-sight.",
+      //   image: "/images/EPCRFID.png"
+      // }
     ],
     featuresTitle: "Why Data Capture Matters",
     features: [
@@ -96,8 +96,8 @@ export const standardsPillars = [
     shortDescription: "Enabling seamless communication and master data synchronization between partners.",
     overviewTitle: "Synchronized Interoperability",
     description: "GS1 Share standards ensure that trading partners—from manufacturers in Riyadh to retailers in Jeddah—use the same verified master data, transaction details, and event visibility for a seamless supply chain.",
-    heroImage: "/images/share.png",
     accentColor: "#0072CE",
+    heroImage:"https://gs1eg.org/wp-content/uploads/2025/07/GS1-Standards-3.png",
    modules: [
       {
         title: "GDSN (Global Data Sync)",
@@ -114,11 +114,11 @@ export const standardsPillars = [
         description: "Supply chain traceability. Partners share event data on 'What, Where, When, and Why' a movement occurred.",
         image: "/images/EPCIS.png"
       },
-      {
-        title: "Global Data Model",
-        description: "A framework for consistent product data structured for omni-channel commerce and digital catalogs.",
-        image: "/images/Global Data Model.png"
-      }
+      // {
+      //   title: "Global Data Model",
+      //   description: "A framework for consistent product data structured for omni-channel commerce and digital catalogs.",
+      //   image: "/images/Global Data Model.png"
+      // }
     ],  
     featuresTitle: "The Power of Shared Data",
     features: [

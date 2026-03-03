@@ -2,14 +2,14 @@ import React from "react";
 
 export default function IndustryDetailHero({ industry }) {
   return (
-    <div className="relative h-[40vh] min-h-[300px] w-full overflow-hidden">
+    <div className="relative h-[400px] min-h-[450px] w-full overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={industry.heroImage || industry.image}
           alt={industry.title}
           className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-950/70 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/50 to-transparent" />
       </div>
 
       <div className="relative h-full container mx-auto px-4 md:px-6 flex flex-col justify-center">

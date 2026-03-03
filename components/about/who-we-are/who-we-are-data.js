@@ -22,7 +22,7 @@ export const WHO_WE_ARE_DATA = {
     title: "Driving the Kingdom’s",
     titleHighlight: "Digital Future",
     description: "GS1 Saudi Arabia (locally known as the Saudi Barcode Center) is the sole authorized entity responsible for promoting and guiding the adoption of GS1 standards across industries in the Kingdom. From retail automation to life-saving healthcare traceability, we provide the common foundation for Saudi businesses to identify, capture, and share vital data globally.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200",
+    image: "/images/sliders/s4.jpg",
     buttonText: "Download Corporate Profile"
   },
 

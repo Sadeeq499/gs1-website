@@ -2,20 +2,20 @@ import React from "react";
 
 const ServiceHero = () => {
   return (
-    <div className="relative w-full h-[300px] md:h-[350px] overflow-hidden font-sans">
+    <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden font-sans">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            'url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop")',
+            'url("/images/sliders/s4.jpg")',
         }}
         role="img"
         aria-label="GS1 Services background"
       />
 
       {/* Overlay: Gradient from solid primary to transparent/primary */}
-      <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/80 to-primary/40" />
+      <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/60 to-primary/20" />
 
       {/* Content Container */}
       <div className="relative h-full container mx-auto px-4 md:px-12 flex flex-col justify-center text-white">

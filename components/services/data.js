@@ -256,7 +256,7 @@ export const servicesDetails = [
       feature:
         "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=1200",
       banner:
-        "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000",
+        "/images/solutions-construction.png",
     },
   },
   {
