@@ -183,14 +183,14 @@ export default function Header() {
             <Button
               asChild
               variant="outline"
-              className="relative hidden xl:flex items-center gap-2 border-green-500/30 text-green-800 px-4 py-2 rounded-full font-bold hover:bg-green-50 transition-all group overflow-hidden"
+              className="relative hidden xl:flex items-center gap-2 border border-green-200 bg-linear-to-b from-green-50 to-green-100/50 hover:from-green-100 hover:to-green-200/50 text-green-900 px-4 py-2 rounded-full font-bold shadow-sm hover:shadow-md transition-all duration-300 group overflow-hidden"
             >
-              <Link href="/verify/product">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-500/5 to-transparent -translate-x-full group-hover:animate-shimmer" />
-                <div className="bg-green-500/10 rounded-full p-0.5">
-                  <ShieldCheck className="h-3.5 w-3.5 text-green-700 stroke-[3px]" />
+              <Link href="/verified-by-gs1">
+                <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/60 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                <div className="bg-green-600/90 group-hover:bg-green-600 rounded-full p-1 shadow-inner flex items-center justify-center transition-colors">
+                  <ShieldCheck className="h-3.5 w-3.5 text-white stroke-[3px]" />
                 </div>
-                <span className="text-[12px] tracking-tight">
+                <span className="text-[13px] tracking-tight">
                   Verified By GS1
                 </span>
               </Link>
@@ -207,30 +207,43 @@ export default function Header() {
             </Button>
 
             {/* Sign In */}
-            <Link
-              href="/login"
+            <a
+              href="http://213.136.82.130:1323/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs font-bold text-primary hover:text-secondary transition-colors"
             >
               <User className="h-4 w-4" />
               <span>Sign in</span>
-            </Link>
+            </a>
 
             {/* Main CTA */}
-            <Button className="bg-secondary text-white hover:bg-secondary/90 font-bold px-5 rounded-md shadow-md hover:shadow-lg transition-all text-xs">
-              Get a barcode
+            <Button
+              asChild
+              className="bg-secondary text-white hover:bg-secondary/90 font-bold px-5 rounded-md shadow-md hover:shadow-lg transition-all text-xs"
+            >
+              <a
+                href="http://213.136.82.130:1323/register/account-setup"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get a barcode
+              </a>
             </Button>
           </div>
 
           {/* Mobile Menu Trigger */}
           <div className="xl:hidden flex items-center gap-3">
             <Button
-              variant="ghost"
+              variant="outline"
               size="icon"
-              className="text-primary bg-green-50 hover:bg-green-100"
+              className="bg-linear-to-b from-green-50 to-green-100/50 border-green-200 hover:from-green-100 hover:to-green-200/50 rounded-full shadow-sm"
               asChild
             >
-              <Link href="/verify/product" className="lg:hidden">
-                <ShieldCheck className="h-6 w-6 text-green-600" />
+              <Link href="/verified-by-gs1" className="xl:hidden">
+                <div className="bg-green-600/90 rounded-full p-1 shadow-inner flex items-center justify-center">
+                  <ShieldCheck className="h-4 w-4 text-white stroke-[2.5px]" />
+                </div>
               </Link>
             </Button>
             <Sheet>

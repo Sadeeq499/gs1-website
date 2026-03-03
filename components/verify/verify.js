@@ -9,7 +9,7 @@ export const VERIFY_TABS = [
     href: "/verify/product",
     label: "Verify Product",
     labelAr: "التحقق من منتج",
-    icon: "📦",
+    icon: "/icons/verify/product.svg",
     searchable: true,
     placeholder: "Enter GTIN (e.g. 6280000000000)",
     description: "Search by GTIN barcode number",
@@ -19,7 +19,7 @@ export const VERIFY_TABS = [
     href: "/verify/location",
     label: "Verify Location",
     labelAr: "التحقق من الموقع",
-    icon: "📍",
+    icon: "/icons/verify/location.svg",
     searchable: true,
     placeholder: "Enter GLN (e.g. 6280000000000)",
     description: "Search by Global Location Number",
@@ -27,12 +27,22 @@ export const VERIFY_TABS = [
   {
     id: "other",
     href: "/verify/other",
-    label: "Other Keys",
+    label: "Verify other keys",
     labelAr: "مفاتيح أخرى",
-    icon: "🔑",
+    icon: "/icons/verify/other.svg",
     searchable: false,
     placeholder: "",
-    description: "Explore upcoming GS1 key types",
+    description: "Search by other keys",
+  },
+  {
+    id: "company",
+    href: "/verify/company",
+    label: "Find company",
+    labelAr: "البحث عن شركة",
+    icon: "/icons/verify/company.svg",
+    searchable: true,
+    placeholder: "Search by company",
+    description: "Search by company",
   },
 ];
 
@@ -40,8 +50,7 @@ export const VERIFY_TABS = [
 export const API = {
   product: (barcode) =>
     `https://gs1.org.sa/api/foreignGtin/getGtinProductDetails?barcode=${barcode}`,
-  location: (gln) =>
-    `https://gs1.org.sa/api/location?gln=${gln}`,
+  location: (gln) => `https://gs1.org.sa/api/location?gln=${gln}`,
 };
 
 // ── Hero copy ─────────────────────────────────────────────────
@@ -168,9 +177,25 @@ export const MEMBERS_COLUMNS = [
 
 // ── Status badge config ───────────────────────────────────────
 export const STATUS_CONFIG = {
-  Active: { dot: "bg-green-500", text: "text-green-600 dark:text-green-400", label: "Active" },
-  active: { dot: "bg-green-500", text: "text-green-600 dark:text-green-400", label: "Active" },
-  Inactive: { dot: "bg-red-500", text: "text-red-500 dark:text-red-400", label: "Inactive" },
-  inactive: { dot: "bg-yellow-500", text: "text-yellow-600 dark:text-yellow-400", label: "Inactive" },
+  Active: {
+    dot: "bg-green-500",
+    text: "text-green-600 dark:text-green-400",
+    label: "Active",
+  },
+  active: {
+    dot: "bg-green-500",
+    text: "text-green-600 dark:text-green-400",
+    label: "Active",
+  },
+  Inactive: {
+    dot: "bg-red-500",
+    text: "text-red-500 dark:text-red-400",
+    label: "Inactive",
+  },
+  inactive: {
+    dot: "bg-yellow-500",
+    text: "text-yellow-600 dark:text-yellow-400",
+    label: "Inactive",
+  },
   default: { dot: "bg-gray-400", text: "text-gray-500", label: "Unknown" },
 };

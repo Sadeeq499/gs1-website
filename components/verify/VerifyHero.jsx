@@ -1,43 +1,38 @@
 // components/verify/VerifyHero.jsx
-import { HERO } from "./verify";
-
 export default function VerifyHero() {
   return (
-    <div className="relative w-full h-[300px] md:h-[400px] overflow-hidden font-sans">
-      {/* Background Image - Modern Corporate/Tech Look */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop")',
-        }}
-        role="img"
-        aria-label="GS1 Verification background"
-      />
-
-      {/* Overlay: Gradient from solid brand blue to transparent */}
-      {/* Note: I've used #002C6C (GS1 Blue) to match your previous theme */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#002C6C] via-[#002C6C]/80 to-transparent" />
-
-      {/* Content Container */}
-      <div className="relative h-full container mx-auto px-4 md:px-12 flex flex-col justify-center text-white">
-        <div className="max-w-3xl">
-          {/* Badge */}
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium tracking-wide text-white/90 backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#F26334] animate-pulse" />
-            {HERO.badge}
+    <div className="bg-background w-full">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-6">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center">
+          {/* Green Checkmark Icon */}
+          <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-[#9bcf88] md:h-[90px] md:w-[90px]">
+            <svg
+              className="h-10 w-10 text-white md:h-12 md:w-12"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3.5"
+              viewBox="0 0 24 24"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
           </div>
 
-          {/* Title */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight leading-tight">
-            {HERO.title}
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-lg md:text-xl font-light leading-snug text-white/90 max-w-2xl">
-            {HERO.subtitle}
-          </p>
+          {/* Text Content */}
+          <div className="flex flex-col gap-2">
+            <h1 className="text-4xl font-light text-[#002C6C] md:text-[44px]">
+              Verified by GS1
+            </h1>
+          </div>
         </div>
+
+        {/* Paragraph */}
+        <p className="mt-6 max-w-[800px] text-[15px] leading-relaxed text-[#333333] md:text-[16px]">
+          Verified by GS1 makes it easy to search, look up and verify
+          information on barcode numbers (GTIN, UPC, EAN), locations (GLN),
+          companies or other GS1 identification keys (SSCC).
+        </p>
       </div>
     </div>
   );
