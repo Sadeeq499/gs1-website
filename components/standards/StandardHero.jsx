@@ -2,20 +2,20 @@ import React from "react";
 
 const StandardHero = () => {
   return (
-    <div className="relative w-full h-[300px] md:h-[350px] overflow-hidden font-sans">
+    <div className="relative w-full h-[350px] md:h-[400px] overflow-hidden font-sans">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            'url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2664&auto=format&fit=crop")',
+            'url("/images/sliders/s5.jpg")',
         }}
         role="img"
         aria-label="Standards and services background"
       />
 
       {/* Overlay: Gradient from solid primary to transparent/primary */}
-      <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/80 to-primary/40" />
+      <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/50 to-primary/10" />
 
       {/* Content Container */}
       <div className="relative h-full container mx-auto px-4 md:px-12 flex flex-col justify-center text-white">

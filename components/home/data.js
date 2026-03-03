@@ -377,7 +377,7 @@ export const slides = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80",
+      "/images/sliders/s1.png",
     title: "The Global Language of Business",
     highlight: "Business",
     description:
@@ -388,7 +388,7 @@ export const slides = [
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&q=80",
+      "/images/sliders/s2.png",
     title: "Seamless Retail Experience",
     highlight: "Transform",
     description:
@@ -399,7 +399,7 @@ export const slides = [
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80",
+      "/images/sliders/s3.png",
     title: "Connect with Confidence",
     highlight: "Globally",
     description:

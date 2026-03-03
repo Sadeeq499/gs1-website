@@ -60,7 +60,7 @@ const PillarCard = ({ pillar, index }) => {
               src={pillar.image || pillar.heroImage}
               alt={pillar.title}
               fill
-              className="object-contain object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-contain object-contain transition-transform duration-700 group-hover:scale-105"
             />
             {/* Subtle Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
