@@ -9,9 +9,12 @@ export default function QueryProvider({ children }) {
     () =>
       new QueryClient({
         defaultOptions: {
-          queries: { refetchOnWindowFocus: false },
+          queries: {
+            refetchOnWindowFocus: false,
+            retry: false,
+          },
         },
-      })
+      }),
   );
   return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
 }
