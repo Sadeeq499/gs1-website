@@ -231,90 +231,115 @@ export default function LocationPanel() {
               <div className="w-full border-t border-[#0b1c5c]/20">
                 {[
                   {
-                    label: "Company Name (English)",
-                    value: companyData?.names?.english,
+                    label: "Company Name",
+                    value:
+                      companyData?.names?.english ||
+                      companyData?.names?.arabic ||
+                      "Unknown",
                     bold: true,
                   },
                   {
-                    label: "Company Name (Arabic)",
-                    value: companyData?.names?.arabic,
+                    label: "Address",
+                    value:
+                      companyData?.address?.city ||
+                      companyData?.address?.state ||
+                      companyData?.address?.country ? (
+                        <div className="flex flex-col gap-1 mt-1 sm:mt-0">
+                          {companyData?.address?.district && (
+                            <div className="font-bold">
+                              {companyData?.address?.district}
+                            </div>
+                          )}
+                          {(companyData?.address?.city ||
+                            companyData?.address?.state) && (
+                            <div className="font-bold">
+                              {[
+                                companyData?.address?.city,
+                                companyData?.address?.state,
+                              ]
+                                .filter(Boolean)
+                                .join(", ")}
+                            </div>
+                          )}
+                          {companyData?.address?.country && (
+                            <div className="font-bold">
+                              {companyData?.address?.country}
+                            </div>
+                          )}
+                          {companyData?.address?.zipCode && (
+                            <div className="font-bold">
+                              Zip Code: {companyData?.address?.zipCode}
+                            </div>
+                          )}
+                          {companyData?.address?.poBox && (
+                            <div className="font-bold">
+                              PO Box: {companyData?.address?.poBox}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        "Unknown"
+                      ),
+                  },
+                  {
+                    label: "Website",
+                    value: companyData?.contact?.website?.trim() || "Unknown",
+                    link: !!companyData?.contact?.website?.trim(),
                     bold: true,
                   },
                   {
-                    label: "License Key (GCP)",
-                    value: companyData?.membership?.gcpGLNID,
+                    label: "License Key",
+                    value: companyData?.membership?.gcpGLNID || "Unknown",
                     bold: true,
                   },
                   {
                     label: "License Type",
-                    value: companyData?.membership?.gcpType,
-                  },
-                  {
-                    label: "Membership Category",
-                    value: companyData?.membership?.membershipCategory,
-                  },
-                  {
-                    label: "Status",
-                    value: companyData?.membership?.status,
+                    value: companyData?.membership?.gcpType || "Unknown",
                     bold: true,
                   },
-                  { label: "Email", value: companyData?.contact?.email },
-                  { label: "Mobile", value: companyData?.contact?.mobile },
                   {
-                    label: "Website",
-                    value: companyData?.contact?.website,
-                    link: true,
+                    label: "Global Location Number (GLN)",
+                    value: glnData?.glnNumber || companyData?.gln || "Unknown",
+                    bold: true,
                   },
                   {
-                    label: "CR Number",
-                    value: companyData?.registration?.crNumber,
+                    label: "Licensing GS1 Member Organisation",
+                    value:
+                      companyData?.memberOrganization || "GS1 Saudi Arabia",
+                    bold: true,
                   },
-                  {
-                    label: "CR Activity",
-                    value: companyData?.registration?.crActivity,
-                  },
-                  {
-                    label: "Address PO Box",
-                    value: companyData?.address?.poBox,
-                  },
-                ]
-                  .filter(
-                    (row) =>
-                      row.value != null &&
-                      row.value !== "n/a" &&
-                      row.value !== "null" &&
-                      row.value !== "",
-                  )
-                  .map((row, i) => (
-                    <div
-                      key={i}
-                      className={`flex flex-col sm:flex-row py-4 border-b border-[#0b1c5c]/20 ${i % 2 === 1 ? "bg-[#f8fafd] px-3 -mx-3" : "px-3 -mx-3"}`}
-                    >
-                      <div className="w-full sm:w-[280px] shrink-0 text-[#64748b] font-bold text-[13px] uppercase tracking-wide pt-0.5">
-                        {row.label}
-                      </div>
-                      <div
-                        className={`w-full text-[#0b1c5c] text-[15px] ${row.bold ? "font-bold" : ""}`}
-                      >
-                        {row.link ? (
-                          <a
-                            href={
-                              row.value.startsWith("http")
-                                ? row.value
-                                : `https://${row.value}`
-                            }
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-[#0369a1] hover:underline block mt-1 sm:mt-0"
-                          >
-                            {row.value}
-                          </a>
-                        ) : (
-                          <div className="mt-1 sm:mt-0">{row.value}</div>
-                        )}
-                      </div>
+                ].map((row, i) => (
+                  <div
+                    key={i}
+                    className={`flex flex-col sm:flex-row py-4 border-b border-[#0b1c5c]/20 ${i % 2 === 1 ? "bg-[#f8fafd] px-3 -mx-3" : "px-3 -mx-3"}`}
+                  >
+                    <div className="w-full sm:w-[320px] shrink-0 text-[#64748b] font-bold text-[13px] uppercase tracking-wide pt-0.5">
+                      {row.label}
                     </div>
-                  ))}
+                    <div
+                      className={`w-full text-[#0b1c5c] text-[15px] ${row.bold && row.value !== "Unknown" ? "font-bold" : "min-h-[22px]"}`}
+                    >
+                      {row.link && row.value !== "Unknown" ? (
+                        <a
+                          href={
+                            row.value.startsWith("http")
+                              ? row.value
+                              : `https://${row.value}`
+                          }
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-[#0369a1] hover:underline block mt-1 sm:mt-0 break-all"
+                        >
+                          {row.value}
+                        </a>
+                      ) : (
+                        <div className="mt-1 sm:mt-0 text-slate-500">
+                          {row.value}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
             </TabsContent>
           </Tabs>

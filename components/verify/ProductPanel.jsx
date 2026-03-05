@@ -254,132 +254,136 @@ export default function ProductPanel() {
                 {[
                   {
                     label: "Company Name",
-                    value: productData.product.company?.name,
+                    value: productData.product.company?.name || "Unknown",
                     bold: true,
                   },
-                  productData.product.company?.address?.street ||
-                  productData.product.company?.address?.locality ||
-                  productData.product.company?.address?.region ||
-                  productData.product.company?.address?.countryCode
-                    ? {
-                        label: "Address",
-                        value: (
-                          <div className="flex flex-col gap-1 mt-1 sm:mt-0">
-                            {productData.product.company.address.formatted ? (
-                              <div className="font-bold">
-                                {productData.product.company.address.formatted}
-                              </div>
-                            ) : (
-                              <>
-                                {productData.product.company.address.street && (
-                                  <div className="font-bold">
-                                    {productData.product.company.address.street}
-                                  </div>
-                                )}
-                                {productData.product.company.address
-                                  .streetLine2 && (
-                                  <div className="font-bold">
-                                    {
-                                      productData.product.company.address
-                                        .streetLine2
-                                    }
-                                  </div>
-                                )}
-                                {(productData.product.company.address
-                                  .locality ||
-                                  productData.product.company.address
-                                    .region) && (
-                                  <div className="font-bold">
-                                    {[
-                                      productData.product.company.address
-                                        .locality,
-                                      productData.product.company.address
-                                        .region,
-                                    ]
-                                      .filter(Boolean)
-                                      .join(", ")}
-                                  </div>
-                                )}
-                                {productData.product.company.address
-                                  .postalCode && (
-                                  <div className="font-bold">
-                                    {
-                                      productData.product.company.address
-                                        .postalCode
-                                    }
-                                  </div>
-                                )}
-                                {productData.product.company.address
-                                  .countryCode && (
-                                  <div className="font-bold">
-                                    {
-                                      productData.product.company.address
-                                        .countryCode
-                                    }
-                                  </div>
-                                )}
-                              </>
-                            )}
-                          </div>
-                        ),
-                      }
-                    : null,
+                  {
+                    label: "Address",
+                    value:
+                      productData.product.company?.address?.street ||
+                      productData.product.company?.address?.locality ||
+                      productData.product.company?.address?.region ||
+                      productData.product.company?.address?.countryCode ? (
+                        <div className="flex flex-col gap-1 mt-1 sm:mt-0">
+                          {productData.product.company.address.formatted ? (
+                            <div className="font-bold">
+                              {productData.product.company.address.formatted}
+                            </div>
+                          ) : (
+                            <>
+                              {productData.product.company.address.street && (
+                                <div className="font-bold">
+                                  {productData.product.company.address.street}
+                                </div>
+                              )}
+                              {productData.product.company.address
+                                .streetLine2 && (
+                                <div className="font-bold">
+                                  {
+                                    productData.product.company.address
+                                      .streetLine2
+                                  }
+                                </div>
+                              )}
+                              {(productData.product.company.address.locality ||
+                                productData.product.company.address.region) && (
+                                <div className="font-bold">
+                                  {[
+                                    productData.product.company.address
+                                      .locality,
+                                    productData.product.company.address.region,
+                                  ]
+                                    .filter(Boolean)
+                                    .join(", ")}
+                                </div>
+                              )}
+                              {productData.product.company.address
+                                .postalCode && (
+                                <div className="font-bold">
+                                  {
+                                    productData.product.company.address
+                                      .postalCode
+                                  }
+                                </div>
+                              )}
+                              {productData.product.company.address
+                                .countryCode && (
+                                <div className="font-bold">
+                                  {
+                                    productData.product.company.address
+                                      .countryCode
+                                  }
+                                </div>
+                              )}
+                            </>
+                          )}
+                        </div>
+                      ) : (
+                        "Unknown"
+                      ),
+                  },
                   {
                     label: "Website",
-                    value: productData.product.company?.website?.trim()
-                      ? productData.product.company.website
-                      : undefined,
-                    link: true,
+                    value:
+                      productData.product.company?.website?.trim() || "Unknown",
+                    link: !!productData.product.company?.website?.trim(),
                     bold: true,
                   },
                   {
                     label: "License Key",
-                    value: productData.product.company?.gcp,
+                    value: productData.product.company?.gcp || "Unknown",
                     bold: true,
                   },
                   {
                     label: "License Type",
-                    value: productData.product.company?.licenseType,
+                    value:
+                      productData.product.company?.licenseType || "Unknown",
                     bold: true,
                   },
                   {
                     label: "Global Location Number (GLN)",
-                    value: productData.product.company?.gln,
+                    value: productData.product.company?.gln || "Unknown",
                     bold: true,
                   },
                   {
                     label: "Licensing GS1 Member Organisation",
-                    value: productData.product.company?.memberOrganization,
+                    value:
+                      productData.product.company?.memberOrganization ||
+                      "Unknown",
                     bold: true,
                   },
-                ]
-                  .filter((r) => r && r.value)
-                  .map((row, i) => (
-                    <div
-                      key={i}
-                      className={`flex flex-col sm:flex-row py-4 border-b border-[#0b1c5c]/20 ${i % 2 === 1 ? "bg-[#f8fafd] px-3 -mx-3" : "px-3 -mx-3"}`}
-                    >
-                      <div className="w-full sm:w-[280px] shrink-0 text-[#64748b] font-bold text-[13px] uppercase tracking-wide pt-0.5">
-                        {row.label}
-                      </div>
-                      <div
-                        className={`w-full text-[#0b1c5c] text-[15px] ${row.bold ? "font-bold" : ""}`}
-                      >
-                        {row.link ? (
-                          <a
-                            href={row.value}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-[#0369a1] hover:underline block mt-1 sm:mt-0"
-                          >
-                            {row.value}
-                          </a>
-                        ) : (
-                          <div className="mt-1 sm:mt-0">{row.value}</div>
-                        )}
-                      </div>
+                ].map((row, i) => (
+                  <div
+                    key={i}
+                    className={`flex flex-col sm:flex-row py-4 border-b border-[#0b1c5c]/20 ${i % 2 === 1 ? "bg-[#f8fafd] px-3 -mx-3" : "px-3 -mx-3"}`}
+                  >
+                    <div className="w-full sm:w-[320px] shrink-0 text-[#64748b] font-bold text-[13px] uppercase tracking-wide pt-0.5">
+                      {row.label}
                     </div>
-                  ))}
+                    <div
+                      className={`w-full text-[#0b1c5c] text-[15px] ${row.bold && row.value !== "Unknown" ? "font-bold" : "min-h-[22px]"}`}
+                    >
+                      {row.link && row.value !== "Unknown" ? (
+                        <a
+                          href={
+                            row.value.startsWith("http")
+                              ? row.value
+                              : `https://${row.value}`
+                          }
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-[#0369a1] hover:underline block mt-1 sm:mt-0 break-all"
+                        >
+                          {row.value}
+                        </a>
+                      ) : (
+                        <div className="mt-1 sm:mt-0 text-slate-500">
+                          {row.value}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
             </TabsContent>
           </Tabs>
