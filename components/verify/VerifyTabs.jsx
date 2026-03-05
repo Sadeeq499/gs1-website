@@ -4,6 +4,7 @@ import { useState } from "react";
 import { VERIFY_TABS } from "./verify";
 import ProductPanel from "./ProductPanel";
 import LocationPanel from "./LocationPanel";
+import OtherKeysPanel from "./OtherKeysPanel";
 
 export default function VerifyTabs() {
   const [activeTab, setActiveTab] = useState("product");
@@ -114,11 +115,7 @@ export default function VerifyTabs() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12">
         {activeTab === "product" && <ProductPanel />}
         {activeTab === "location" && <LocationPanel />}
-        {activeTab === "other" && (
-          <div className="p-8 text-center text-slate-500 bg-white rounded-xl shadow-sm">
-            Verify other keys coming soon
-          </div>
-        )}
+        {activeTab === "other" && <OtherKeysPanel />}
         {activeTab === "company" && (
           <div className="p-8 text-center text-slate-500 bg-white rounded-xl shadow-sm">
             Find company coming soon
