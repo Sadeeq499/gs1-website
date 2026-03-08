@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/routing";
+import { useTranslations, useLocale } from "next-intl";
 import {
   Menu,
   Globe,
@@ -32,27 +32,37 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
-const mainNavItems = [
-  { title: "Home", href: "/" },
+const getMainNavItems = (t) => [
+  { title: t("nav.home"), href: "/" },
   {
-    title: "About Us",
+    title: t("nav.aboutUs"),
     href: "/about",
     items: [
-      { title: "Who We Are", href: "/about/who-we-are" },
-      { title: "Mission & Vision", href: "/about/mission-vision" },
-      { title: "Management Board", href: "/about/board" },
-      { title: "Our Strategy", href: "/about/strategy" },
-      { title: "Our Partners", href: "/about/partners" },
+      { title: t("nav.whoWeAre"), href: "/about/who-we-are" },
+      { title: t("nav.missionVision"), href: "/about/mission-vision" },
+      { title: t("nav.managementBoard"), href: "/about/board" },
+      { title: t("nav.ourStrategy"), href: "/about/strategy" },
+      { title: t("nav.ourPartners"), href: "/about/partners" },
     ],
   },
-  { title: "Standards", href: "/standards" },
-  { title: "Services", href: "/services" },
-  { title: "Industries", href: "/industries" },
+  { title: t("nav.standards"), href: "/standards" },
+  { title: t("nav.services"), href: "/services" },
+  { title: t("nav.industries"), href: "/industries" },
 ];
 
 export default function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const t = useTranslations("header");
+  const locale = useLocale();
+  const router = useRouter();
+
+  const mainNavItems = getMainNavItems(t);
+
+  const toggleLanguage = () => {
+    const nextLocale = locale === "en" ? "ar" : "en";
+    router.replace(pathname, { locale: nextLocale });
+  };
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -73,32 +83,32 @@ export default function Header() {
       <div className="bg-primary text-white hidden lg:block">
         <div className="container mx-auto px-4 h-10 flex justify-between items-center text-xs font-medium">
           <span className="opacity-90 tracking-wide uppercase text-[10px]">
-            The Global Language of Business
+            {t("topBar.slogan")}
           </span>
           <div className="flex items-center gap-6">
             <Link
               href="/insights"
               className="hover:text-secondary transition-colors"
             >
-              Insights & News
+              {t("topBar.insights")}
             </Link>
             <Link
               href="/events"
               className="hover:text-secondary transition-colors"
             >
-              Events
+              {t("topBar.events")}
             </Link>
             <Link
               href="/training"
               className="hover:text-secondary transition-colors"
             >
-              Training
+              {t("topBar.training")}
             </Link>
             <Link
               href="/contact"
               className="hover:text-secondary transition-colors"
             >
-              Contact
+              {t("topBar.contact")}
             </Link>
           </div>
         </div>
@@ -191,7 +201,7 @@ export default function Header() {
                   <ShieldCheck className="h-3.5 w-3.5 text-white stroke-[3px]" />
                 </div>
                 <span className="text-[13px] tracking-tight">
-                  Verified By GS1
+                  {t("actions.verifiedByGs1")}
                 </span>
               </Link>
             </Button>
@@ -200,10 +210,11 @@ export default function Header() {
             <Button
               variant="ghost"
               size="sm"
-              className="gap-1.5 text-primary font-bold"
+              onClick={toggleLanguage}
+              className="gap-1.5 text-primary font-bold cursor-pointer"
             >
               <Globe className="h-4 w-4" />
-              <span className="text-xs">العربية</span>
+              <span className="text-xs">{t("language.toggle")}</span>
             </Button>
 
             {/* Sign In */}
@@ -214,7 +225,7 @@ export default function Header() {
               className="flex items-center gap-1.5 text-xs font-bold text-primary hover:text-secondary transition-colors"
             >
               <User className="h-4 w-4" />
-              <span>Sign in</span>
+              <span>{t("actions.signIn")}</span>
             </a>
 
             {/* Main CTA */}
@@ -227,7 +238,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Get a barcode
+                {t("actions.getBarcode")}
               </a>
             </Button>
           </div>
@@ -252,7 +263,12 @@ export default function Header() {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <MobileMenuContent pathname={pathname} />
+              <MobileMenuContent
+                pathname={pathname}
+                t={t}
+                toggleLanguage={toggleLanguage}
+                mainNavItems={mainNavItems}
+              />
             </Sheet>
           </div>
         </div>
@@ -261,7 +277,7 @@ export default function Header() {
   );
 }
 
-function MobileMenuContent({ pathname }) {
+function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
   const [openSection, setOpenSection] = React.useState(null);
 
   const toggleSection = (title) => {
@@ -307,15 +323,16 @@ function MobileMenuContent({ pathname }) {
           <div className="bg-primary/10 rounded-full p-1">
             <User className="h-3 w-3 text-primary" />
           </div>
-          Sign in
+          {t("actions.signIn")}
         </Link>
         <Button
           variant="ghost"
           size="sm"
+          onClick={toggleLanguage}
           className="gap-1.5 text-xs font-semibold text-primary h-7 px-2"
         >
           <Globe className="h-3.5 w-3.5" />
-          العربية
+          {t("language.toggle")}
         </Button>
       </div>
 
@@ -422,13 +439,17 @@ function MobileMenuContent({ pathname }) {
         {/* Quick Links */}
         <div className="mt-3 pt-3 border-t border-gray-100">
           <p className="px-3 text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">
-            Quick Links
+            {t("actions.quickLinks")}
           </p>
           {[
-            { title: "Insights & News", href: "/insights", icon: FileText },
-            { title: "Events", href: "/events", icon: Calendar },
-            { title: "Training", href: "/training", icon: ShieldCheck },
-            { title: "Contact", href: "/contact", icon: User },
+            { title: t("topBar.insights"), href: "/insights", icon: FileText },
+            { title: t("topBar.events"), href: "/events", icon: Calendar },
+            {
+              title: t("topBar.training"),
+              href: "/training",
+              icon: ShieldCheck,
+            },
+            { title: t("topBar.contact"), href: "/contact", icon: User },
           ].map(({ title, href, icon: Icon }) => (
             <SheetClose asChild key={title}>
               <Link
@@ -454,7 +475,7 @@ function MobileMenuContent({ pathname }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Get a Barcode
+            {t("actions.getBarcode")}
           </a>
         </Button>
         <SheetClose asChild>
@@ -468,7 +489,7 @@ function MobileMenuContent({ pathname }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Sign Up
+              {t("actions.signUp")}
             </a>
           </Button>
         </SheetClose>

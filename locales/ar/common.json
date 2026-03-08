@@ -1,0 +1,33 @@
+{
+  "header": {
+    "topBar": {
+      "slogan": "اللغة العالمية للأعمال",
+      "insights": "الرؤى والآفاق",
+      "events": "الفعاليات",
+      "training": "التدريب",
+      "contact": "اتصل بنا"
+    },
+    "nav": {
+      "home": "الرئيسية",
+      "aboutUs": "من نحن",
+      "whoWeAre": "من نحن",
+      "missionVision": "الرؤية والرسالة",
+      "managementBoard": "مجلس الإدارة",
+      "ourStrategy": "استراتيجيتنا",
+      "ourPartners": "شركاؤنا",
+      "standards": "المعايير",
+      "services": "الخدمات",
+      "industries": "القطاعات"
+    },
+    "actions": {
+      "verifiedByGs1": "مُوثق من GS1",
+      "signIn": "تسجيل الدخول",
+      "getBarcode": "احصل على باركود",
+      "quickLinks": "روابط سريعة",
+      "signUp": "إنشاء حساب"
+    },
+    "language": {
+      "toggle": "English"
+    }
+  }
+}

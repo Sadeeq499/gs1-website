@@ -1,0 +1,33 @@
+{
+  "header": {
+    "topBar": {
+      "slogan": "The Global Language of Business",
+      "insights": "Insights & News",
+      "events": "Events",
+      "training": "Training",
+      "contact": "Contact"
+    },
+    "nav": {
+      "home": "Home",
+      "aboutUs": "About Us",
+      "whoWeAre": "Who We Are",
+      "missionVision": "Mission & Vision",
+      "managementBoard": "Management Board",
+      "ourStrategy": "Our Strategy",
+      "ourPartners": "Our Partners",
+      "standards": "Standards",
+      "services": "Services",
+      "industries": "Industries"
+    },
+    "actions": {
+      "verifiedByGs1": "Verified By GS1",
+      "signIn": "Sign in",
+      "getBarcode": "Get a barcode",
+      "quickLinks": "Quick Links",
+      "signUp": "Sign Up"
+    },
+    "language": {
+      "toggle": "العربية"
+    }
+  }
+}
