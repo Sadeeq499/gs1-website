@@ -2,11 +2,16 @@ import React from "react";
 import VerifyHero from "@/components/verify/VerifyHero";
 import VerifyTabs from "@/components/verify/VerifyTabs";
 
-export const metadata = {
-  title: "Verified by GS1 | GS1 Saudi Arabia",
-  description:
-    "Verified by GS1 is a program that certifies the authenticity of products, locations, and member organisations registered with GS1 Saudi Arabia.",
-};
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "verify" });
+  return {
+    title: t("metadata.title"),
+    description: t("metadata.description"),
+  };
+}
 
 function page() {
   return (

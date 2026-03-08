@@ -7,8 +7,11 @@ import LocationPanel from "./LocationPanel";
 import OtherKeysPanel from "./OtherKeysPanel";
 import CompanyPanel from "./CompanyPanel";
 
+import { useTranslations } from "next-intl";
+
 export default function VerifyTabs() {
   const [activeTab, setActiveTab] = useState("product");
+  const t = useTranslations("verify.tabs");
 
   return (
     <>
@@ -92,7 +95,7 @@ export default function VerifyTabs() {
                           : "text-[#002C6C] group-hover:text-[#0b1c5c]"
                       }`}
                     >
-                      {tab.label}
+                      {t(`${tab.id}.label`)}
                     </span>
 
                     {/* Subtitle / description */}
@@ -103,7 +106,7 @@ export default function VerifyTabs() {
                           : "text-slate-500 group-hover:text-slate-600"
                       }`}
                     >
-                      {tab.description}
+                      {t(`${tab.id}.description`)}
                     </span>
                   </div>
                 </button>

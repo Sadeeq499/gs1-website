@@ -7,11 +7,15 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useProductGs1Verified } from "@/lib/hooks/useVerify";
 
+import { useTranslations, useLocale } from "next-intl";
 import IncorrectDataDialog from "./IncorrectDataDialog";
 
 export default function ProductPanel() {
   const [searchQuery, setSearchQuery] = useState("");
   const [productData, setProductData] = useState(null);
+  const t = useTranslations("verify.panels");
+  const tCommon = useTranslations("verify.panels.common");
+  const locale = useLocale();
 
   const {
     mutateAsync: productGs1Verified,
@@ -67,7 +71,7 @@ export default function ProductPanel() {
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Enter GTIN (e.g. 6280000000000)"
+          placeholder={t("product.placeholder")}
           className="h-14 w-full pl-12 pr-32 text-lg border-slate-300 rounded-md focus-visible:ring-primary focus-visible:border-primary shadow-sm"
         />
 
@@ -77,13 +81,13 @@ export default function ProductPanel() {
           className="absolute right-0 top-0 bottom-0 h-14 rounded-l-none rounded-r-md bg-secondary text-white hover:bg-[#d9532b] px-8 text-base font-medium flex items-center gap-2"
         >
           {isMutating && <Loader2 className="h-5 w-5 animate-spin" />}
-          Search
+          {tCommon("search")}
         </Button>
       </form>
 
       {/* Example link below */}
       <div className="mt-4 pl-1 text-[15px] text-slate-700">
-        Example search:{" "}
+        {tCommon("exampleSearch")}{" "}
         <button
           type="button"
           onClick={handleExampleClick}
@@ -119,11 +123,13 @@ export default function ProductPanel() {
                 </span>
               </div>
             </div>
-            <Info className="h-5 w-5 text-slate-600 mr-2 shrink-0 stroke-[1.5]" />
+            <div className="bg-white/50 p-1 rounded-full mr-2">
+              <Info className="h-5 w-5 text-slate-600 shrink-0 stroke-[1.5]" />
+            </div>
             <p className="text-slate-800 text-[16px]">
-              This number is registered to{" "}
+              {tCommon("registeredTo")}{" "}
               <span className="font-bold text-black">
-                {productData.product.company?.name || "N/A"}.
+                {productData.product.company?.name || tCommon("unknown")}.
               </span>
             </p>
           </div>
@@ -138,20 +144,20 @@ export default function ProductPanel() {
                 value="product"
                 className="relative flex-none rounded-none bg-transparent pb-3 pt-2 px-1 text-[16px] font-medium text-slate-500 hover:text-[#0b1c5c] data-[state=active]:text-[#0b1c5c] data-[state=active]:shadow-none data-[state=active]:bg-transparent after:hidden border-x-0 border-t-0 border-b-2 border-transparent data-[state=active]:border-b-[#d9532b] transition-none translate-y-px"
               >
-                Product information
+                {tCommon("productInfo")}
               </TabsTrigger>
               <TabsTrigger
                 value="company"
                 className="relative flex-none rounded-none bg-transparent pb-3 pt-2 px-1 text-[16px] font-medium text-slate-500 hover:text-[#0b1c5c] data-[state=active]:text-[#0b1c5c] data-[state=active]:shadow-none data-[state=active]:bg-transparent after:hidden border-x-0 border-t-0 border-b-2 border-transparent data-[state=active]:border-b-[#d9532b] transition-none translate-y-px"
               >
-                Company information
+                {tCommon("companyInfo")}
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="product" className="pt-8">
               <h2 className="text-[#0b1c5c] text-[26px] font-medium mb-8">
                 {productData.product.product?.description ||
-                  "Product Information"}
+                  tCommon("productInfo")}
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-8">
@@ -165,7 +171,7 @@ export default function ProductPanel() {
                         className="w-full h-full object-contain"
                       />
                     ) : (
-                      <div className="text-slate-400">No Image Available</div>
+                      <div className="text-slate-400">{tCommon("noImage")}</div>
                     )}
                   </div>
                 </div>
@@ -174,40 +180,40 @@ export default function ProductPanel() {
                 <div className="w-full border-t border-[#0b1c5c]/20">
                   {[
                     {
-                      label: "GTIN",
+                      label: t("product.attributes.gtin"),
                       value: productData.product.gtin || productData.barcode,
                       bold: true,
                     },
                     {
-                      label: "Brand name",
+                      label: t("product.attributes.brand"),
                       value: productData.product.product?.brand,
                       bold: true,
                     },
                     {
-                      label: "Product description",
+                      label: t("product.attributes.description"),
                       value: productData.product.product?.description,
                       bold: true,
                     },
                     {
-                      label: "Product image URL",
+                      label: t("product.attributes.image"),
                       value: productData.product.media?.images?.primary,
                       link: true,
                       bold: true,
                     },
                     {
-                      label: "Global product category",
+                      label: t("product.attributes.gpc"),
                       value: productData.product.product?.gpcCategory,
                       bold: true,
                     },
                     {
-                      label: "Net content",
+                      label: t("product.attributes.netContent"),
                       value: productData.product.specifications?.netContent
                         ? `${productData.product.specifications.netContent.value} ${productData.product.specifications.netContent.unit}`
                         : undefined,
                       bold: true,
                     },
                     {
-                      label: "Country of sale",
+                      label: t("product.attributes.countryOfSale"),
                       value: productData.product.specifications?.countryOfSale
                         ?.map((c) => c.code)
                         .join(", "),
@@ -247,18 +253,19 @@ export default function ProductPanel() {
 
             <TabsContent value="company" className="pt-8">
               <h2 className="text-[#0b1c5c] text-[26px] font-medium mb-8">
-                Information about the company that licenced this GTIN
+                {tCommon("infoAboutCompanyLicenced")}
               </h2>
 
               <div className="w-full border-t border-[#0b1c5c]/20">
                 {[
                   {
-                    label: "Company Name",
-                    value: productData.product.company?.name || "Unknown",
+                    label: t("company.attributes.name"),
+                    value:
+                      productData.product.company?.name || tCommon("unknown"),
                     bold: true,
                   },
                   {
-                    label: "Address",
+                    label: t("company.attributes.address"),
                     value:
                       productData.product.company?.address?.street ||
                       productData.product.company?.address?.locality ||
@@ -319,37 +326,41 @@ export default function ProductPanel() {
                           )}
                         </div>
                       ) : (
-                        "Unknown"
+                        tCommon("unknown")
                       ),
                   },
                   {
-                    label: "Website",
+                    label: t("company.attributes.website"),
                     value:
-                      productData.product.company?.website?.trim() || "Unknown",
+                      productData.product.company?.website?.trim() ||
+                      tCommon("unknown"),
                     link: !!productData.product.company?.website?.trim(),
                     bold: true,
                   },
                   {
-                    label: "License Key",
-                    value: productData.product.company?.gcp || "Unknown",
-                    bold: true,
-                  },
-                  {
-                    label: "License Type",
+                    label: t("company.attributes.licenseKey"),
                     value:
-                      productData.product.company?.licenseType || "Unknown",
+                      productData.product.company?.gcp || tCommon("unknown"),
                     bold: true,
                   },
                   {
-                    label: "Global Location Number (GLN)",
-                    value: productData.product.company?.gln || "Unknown",
+                    label: t("company.attributes.licenseType"),
+                    value:
+                      productData.product.company?.licenseType ||
+                      tCommon("unknown"),
                     bold: true,
                   },
                   {
-                    label: "Licensing GS1 Member Organisation",
+                    label: t("company.attributes.gln"),
+                    value:
+                      productData.product.company?.gln || tCommon("unknown"),
+                    bold: true,
+                  },
+                  {
+                    label: t("company.attributes.mo"),
                     value:
                       productData.product.company?.memberOrganization ||
-                      "Unknown",
+                      tCommon("unknown"),
                     bold: true,
                   },
                 ].map((row, i) => (
@@ -361,9 +372,9 @@ export default function ProductPanel() {
                       {row.label}
                     </div>
                     <div
-                      className={`w-full text-[#0b1c5c] text-[15px] ${row.bold && row.value !== "Unknown" ? "font-bold" : "min-h-[22px]"}`}
+                      className={`w-full text-[#0b1c5c] text-[15px] ${row.bold && row.value !== tCommon("unknown") ? "font-bold" : "min-h-[22px]"}`}
                     >
-                      {row.link && row.value !== "Unknown" ? (
+                      {row.link && row.value !== tCommon("unknown") ? (
                         <a
                           href={
                             row.value.startsWith("http")
@@ -391,21 +402,21 @@ export default function ProductPanel() {
           {/* Footer Info */}
           <div className="mt-12 pt-4">
             <IncorrectDataDialog />
-            <p className="text-slate-600 text-[15px] font-medium">
-              This data has been provided by{" "}
-              {productData.product.company?.name || "the company"} and was last
-              updated on{" "}
+            <p className="text-slate-600 text-[15px] font-medium mt-6">
+              {tCommon("providedBy")}{" "}
+              {productData.product.company?.name || tCommon("unknown")}{" "}
+              {tCommon("lastUpdated")}{" "}
               {productData.product.company?.dates?.updated ||
               productData.product.metadata?.dateUpdated
                 ? new Date(
                     productData.product.company?.dates?.updated ||
                       productData.product.metadata?.dateUpdated,
-                  ).toLocaleDateString("en-GB", {
+                  ).toLocaleDateString(locale === "ar" ? "ar-SA" : "en-GB", {
                     day: "numeric",
                     month: "short",
                     year: "numeric",
                   })
-                : "unknown date"}
+                : tCommon("unknownDate")}
               .
             </p>
           </div>

@@ -1,5 +1,9 @@
+import { useTranslations } from "next-intl";
+
 // components/verify/VerifyHero.jsx
 export default function VerifyHero() {
+  const t = useTranslations("verify.hero");
+
   return (
     <div className="bg-background w-full">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-6">
@@ -22,16 +26,14 @@ export default function VerifyHero() {
           {/* Text Content */}
           <div className="flex flex-col gap-2">
             <h1 className="text-4xl font-light text-[#002C6C] md:text-[44px]">
-              Verified by GS1
+              {t("title")}
             </h1>
           </div>
         </div>
 
         {/* Paragraph */}
         <p className="mt-6 max-w-[800px] text-[15px] leading-relaxed text-[#333333] md:text-[16px]">
-          Verified by GS1 makes it easy to search, look up and verify
-          information on barcode numbers (GTIN, UPC, EAN), locations (GLN),
-          companies or other GS1 identification keys (SSCC).
+          {t("description")}
         </p>
       </div>
     </div>

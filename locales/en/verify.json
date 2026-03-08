@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "title": "Verified by GS1 | GS1 Saudi Arabia",
+    "description": "Verified by GS1 is a program that certifies the authenticity of products, locations, and member organisations registered with GS1 Saudi Arabia."
+  },
+  "hero": {
+    "title": "Verified by GS1",
+    "description": "Verified by GS1 makes it easy to search, look up and verify information on barcode numbers (GTIN, UPC, EAN), locations (GLN), companies or other GS1 identification keys (SSCC)."
+  },
+  "tabs": {
+    "product": {
+      "label": "Verify Product",
+      "description": "Search by GTIN barcode number"
+    },
+    "location": {
+      "label": "Verify Location",
+      "description": "Search by Global Location Number"
+    },
+    "other": {
+      "label": "Verify other keys",
+      "description": "Search by other keys"
+    },
+    "company": {
+      "label": "Find company",
+      "description": "Search by company"
+    }
+  },
+  "panels": {
+    "common": {
+      "search": "Search",
+      "exampleSearch": "Example search:",
+      "registeredTo": "This number is registered to",
+      "registeredToLocation": "This location number is registered to",
+      "registeredToKey": "This key is registered to",
+      "companyInfo": "Company information",
+      "productInfo": "Product information",
+      "locationInfo": "Location information",
+      "keyInfo": "Key Information",
+      "providedBy": "This data has been provided by",
+      "lastUpdated": "and was last updated on",
+      "unknownDate": "unknown date",
+      "unknown": "Unknown",
+      "itemsPerPage": "Items per page",
+      "of": "of",
+      "infoAboutCompanyLicenced": "Information about the company that licenced this GTIN",
+      "infoAboutCompany": "Information about the company",
+      "noImage": "No Image Available"
+    },
+    "product": {
+      "placeholder": "Enter GTIN (e.g. 6280000000000)",
+      "attributes": {
+        "gtin": "GTIN",
+        "brand": "Brand name",
+        "description": "Product description",
+        "image": "Product image URL",
+        "gpc": "Global product category",
+        "netContent": "Net content",
+        "countryOfSale": "Country of sale"
+      }
+    },
+    "location": {
+      "placeholder": "Enter a Global Location Number (GLN)",
+      "errorLoading": "Error loading location data.",
+      "attributes": {
+        "gln": "GLN",
+        "nameEn": "Location Name (English)",
+        "nameAr": "Location Name (Arabic)",
+        "addressEn": "Address (English)",
+        "addressAr": "Address (Arabic)",
+        "postalCode": "Postal Code",
+        "poBox": "PO Box",
+        "identification": "Identification Type",
+        "physical": "Physical Location",
+        "status": "Status",
+        "coordinates": "Coordinates"
+      }
+    },
+    "company": {
+      "placeholder": "Search by company",
+      "searchCompany": "Search Company",
+      "memberOrg": "Member Organisation",
+      "gln": "GLN",
+      "searchPlaceholder": "Search by company",
+      "errorLoading": "Error loading company data.",
+      "loadingState": "Loading companies...",
+      "noResults": "No companies found",
+      "tryDifferent": "Try a different search term",
+      "attributes": {
+        "name": "Company Name",
+        "address": "Address",
+        "city": "City",
+        "country": "Country",
+        "website": "Website",
+        "licenseKey": "License Key",
+        "licenseType": "License Type",
+        "gln": "Global Location Number (GLN)",
+        "mo": "Licensing GS1 Member Organisation"
+      },
+      "modal": {
+        "title": "Company Details",
+        "description": "Detailed information about the registered company",
+        "licenseKey": "License Key (GCP)",
+        "gln": "GLN",
+        "nameEn": "Company Name (English)",
+        "nameAr": "Company Name (Arabic)",
+        "city": "City",
+        "state": "State / Region",
+        "country": "Country",
+        "website": "Website",
+        "gcpType": "GCP Type",
+        "source": "Source",
+        "nationalAddress": "National Address"
+      }
+    },
+    "other": {
+      "placeholder": "Enter a GS1 Key",
+      "selectKeyType": "Select a GS1 key type",
+      "errorLoading": "Error loading details.",
+      "comingSoon": "Coming soon",
+      "ssccDetails": "SSCC Details",
+      "availableKeys": "Available GS1 Keys",
+      "upcomingKeys": "Upcoming GS1 Keys",
+      "upcomingFeatures": "Upcoming Platform Features",
+      "enterpriseTitle": "Need enterprise-scale verification?",
+      "enterpriseBody": "Process thousands of GS1 keys simultaneously with our REST API, analytics dashboard, and priority SLA.",
+      "enterpriseCta": "Contact GS1 Saudi Arabia",
+      "enterpriseCtaSecondary": "API Documentation",
+      "attributes": {
+        "sscc": "SSCC Number",
+        "type": "Type",
+        "productName": "Product Name",
+        "hsnSku": "HSN/SKU",
+        "vendorId": "Vendor ID",
+        "vendorName": "Vendor Name",
+        "quantity": "Quantity",
+        "boxOf": "Box Of",
+        "carton": "Carton",
+        "useBy": "Use By Date",
+        "expiration": "Expiration Date",
+        "shipDate": "Ship Date",
+        "shipTo": "Ship To",
+        "poNumber": "PO Number",
+        "vendorItemNo": "Vendor Item No",
+        "countryId": "Country ID"
+      }
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "unknown": "Unknown"
+    },
+    "incorrectData": {
+      "trigger": "Are these details shown above incorrect?",
+      "title": "Reporting incorrect data",
+      "p1": "As GS1, we provide the platform where barcode information is registered by the companies themselves.",
+      "p2": "If you notice any inaccuracies in the data provided, please let us know by completing the simple form below. We will then share this feedback with the company that licensed the barcode.",
+      "labels": {
+        "name": "Full Name",
+        "email": "Email Address",
+        "description": "Please describe what is incorrect",
+        "notRobot": "I'm not a robot"
+      },
+      "placeholders": {
+        "name": "Enter your name",
+        "email": "Enter your email",
+        "description": "Tell us what's wrong..."
+      },
+      "submit": "Report incorrect details",
+      "close": "Close"
+    },
+    "incorrectDataDialog": {
+      "trigger": "My information is incorrect, what should i do?",
+      "title": "I've queried for my own information in Verified by GS1, but the information displayed is not correct, what should I do?",
+      "description": "Details on handling incorrect information in Verified by GS1 Saudi Arabia.",
+      "content": {
+        "p1": "If you are the brand owner or manufacturer of the product and got your identifier (e.g. GTIN™, GLN or GCP) from <gs1>GS1 Saudi Arabia</gs1>, the company and product information returned through the Verified by GS1 service is based upon the information that you provided to GS1 Saudi Arabia as part of your membership application and GTIN™ issuance process. If you wish to update the information shown, please log in to your GS1 Saudi Arabia member portal or contact us to inform us of the change.",
+        "p2": "Sometimes brand owners and manufacturers obtain barcode numbers from websites or parties other than a GS1 Member Organisation. These may be GTINS™ originally issued by a GS1 Member Organisation and now resold by a third party, or they may be barcode numbers created and issued by the third party. Please be aware that in the GS1 system, it is not possible to sell or transfer identifiers such as GTINs™ issued by GS1 Member Organisations. Once assigned to a party by GS1 Saudi Arabia, the identifier is forever associated in the GS1 registries to that party (save for rare exceptions related to duly documented business transfer situations described in the GS1 standards).",
+        "p3": "Whether the numbers are resold GS1 identifiers or other barcode numbers that have been invented by a third party, the third parties providing such barcode numbers are acting outside of the GS1 system. GS1 Saudi Arabia can only provide you with the data that we have, and we are unable to assist you regarding barcode numbers provided by third parties."
+      }
+    }
+  }
+}

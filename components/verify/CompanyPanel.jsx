@@ -29,6 +29,8 @@ import {
 } from "@/components/ui/table";
 import { useCompanyVerified } from "@/lib/hooks/useVerify";
 import { useDebounce } from "@/lib/hooks/useDebounce";
+import { useTranslations } from "next-intl";
+
 import CompanyDetailModal from "./CompanyDetailModal";
 
 const PAGE_SIZE_OPTIONS = [10, 20, 50, 100];
@@ -39,6 +41,8 @@ export default function CompanyPanel() {
   const [limit, setLimit] = useState(10);
   const [selectedCompany, setSelectedCompany] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const t = useTranslations("verify.panels.company");
+  const tCommon = useTranslations("verify.panels.common");
 
   // Debounce the search input by 500ms
   const debouncedSearch = useDebounce(searchQuery, 500);
@@ -83,7 +87,7 @@ export default function CompanyPanel() {
             setSearchQuery(e.target.value);
             setPage(1);
           }}
-          placeholder="Search by company name..."
+          placeholder={t("placeholder")}
           className="h-12 w-full pl-11 pr-4 text-[15px] border-slate-300 rounded-md focus-visible:ring-primary focus-visible:border-primary shadow-sm"
         />
 
@@ -97,7 +101,7 @@ export default function CompanyPanel() {
       {/* ── Error ─────────────────────────────────────── */}
       {isError && (
         <div className="text-red-500 bg-red-50 p-4 rounded-md border border-red-200 mb-6">
-          <p className="font-medium">Error loading company data.</p>
+          <p className="font-medium">{t("errorLoading")}</p>
           <p className="text-sm mt-1">
             {error?.response?.data?.error ||
               error?.message ||
@@ -112,16 +116,16 @@ export default function CompanyPanel() {
           <TableHeader>
             <TableRow className="bg-[#f0f4f8] hover:bg-[#f0f4f8] border-b border-slate-200">
               <TableHead className="text-[#3a4a5c] font-semibold text-[13px] uppercase tracking-wide py-3 px-5 w-[160px]">
-                License Key
+                {t("attributes.licenseKey")}
               </TableHead>
               <TableHead className="text-[#3a4a5c] font-semibold text-[13px] uppercase tracking-wide py-3 px-5">
-                Company Name
+                {t("attributes.name")}
               </TableHead>
               <TableHead className="text-[#3a4a5c] font-semibold text-[13px] uppercase tracking-wide py-3 px-5 w-[160px]">
-                City
+                {tCommon("unknown")}
               </TableHead>
               <TableHead className="text-[#3a4a5c] font-semibold text-[13px] uppercase tracking-wide py-3 px-5 w-[160px]">
-                Country
+                {tCommon("unknown")}
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -133,7 +137,7 @@ export default function CompanyPanel() {
                   <div className="flex items-center justify-center">
                     <Loader2 className="h-6 w-6 animate-spin text-[#0b1c5c]" />
                     <span className="ml-3 text-slate-500">
-                      Loading companies…
+                      {t("loadingState")}
                     </span>
                   </div>
                 </TableCell>
@@ -144,9 +148,9 @@ export default function CompanyPanel() {
                   <div className="flex flex-col items-center justify-center text-slate-400">
                     <Building2 className="h-10 w-10 mb-3 stroke-[1.2]" />
                     <p className="font-medium text-slate-500">
-                      No companies found
+                      {t("noResults")}
                     </p>
-                    <p className="text-sm mt-1">Try a different search term</p>
+                    <p className="text-sm mt-1">{t("tryDifferent")}</p>
                   </div>
                 </TableCell>
               </TableRow>
@@ -193,7 +197,7 @@ export default function CompanyPanel() {
         <div className="flex items-center justify-end gap-6 mt-4 px-1 text-sm text-slate-600">
           {/* Items per page */}
           <div className="flex items-center gap-2">
-            <span className="whitespace-nowrap">Items per page</span>
+            <span className="whitespace-nowrap">{tCommon("itemsPerPage")}</span>
             <Select value={String(limit)} onValueChange={handlePageSizeChange}>
               <SelectTrigger className="h-8 w-[68px] text-sm border-slate-300">
                 <SelectValue />
@@ -210,7 +214,7 @@ export default function CompanyPanel() {
 
           {/* Range info */}
           <span className="whitespace-nowrap tabular-nums">
-            {rangeStart}-{rangeEnd} of {totalCount}
+            {rangeStart}-{rangeEnd} {tCommon("of")} {totalCount}
           </span>
 
           {/* Navigation buttons */}

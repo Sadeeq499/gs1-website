@@ -15,11 +15,16 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useSccVerified } from "@/lib/hooks/useVerify";
 import IncorrectDataDialog from "./IncorrectDataDialog";
 
+import { useTranslations, useLocale } from "next-intl";
+
 export default function OtherKeysPanel() {
   const [selectedKeyType, setSelectedKeyType] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [submittedQuery, setSubmittedQuery] = useState("");
   const [submittedType, setSubmittedType] = useState("");
+  const t = useTranslations("verify.panels");
+  const tCommon = useTranslations("verify.panels.common");
+  const locale = useLocale();
 
   const {
     data: responseData,
@@ -56,7 +61,7 @@ export default function OtherKeysPanel() {
           <div className="w-full sm:w-[300px] shrink-0 relative z-10 hover:bg-slate-50 transition-colors rounded-t-md sm:rounded-l-md sm:rounded-tr-none border-b sm:border-b-0">
             <Select value={selectedKeyType} onValueChange={setSelectedKeyType}>
               <SelectTrigger className="h-14 w-full px-4 text-[15px] border-0 bg-transparent rounded-t-md sm:rounded-l-md sm:rounded-tr-none focus:ring-0 focus:ring-offset-0 text-slate-800 font-medium shadow-none outline-none">
-                <SelectValue placeholder="Select a GS1 key type" />
+                <SelectValue placeholder={t("other.selectKeyType")} />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="SSCC">
@@ -65,25 +70,25 @@ export default function OtherKeysPanel() {
                 <SelectItem value="GRAI" disabled>
                   GRAI - Global Returnable Asset
                   <span className="text-[10px] font-bold uppercase tracking-wider opacity-60 ml-2">
-                    (Coming soon)
+                    ({t("other.comingSoon")})
                   </span>
                 </SelectItem>
                 <SelectItem value="GIAI" disabled>
                   GIAI - Global Individual Asset
                   <span className="text-[10px] font-bold uppercase tracking-wider opacity-60 ml-2">
-                    (Coming soon)
+                    ({t("other.comingSoon")})
                   </span>
                 </SelectItem>
                 <SelectItem value="GSRN" disabled>
                   GSRN - Global Service Relation
                   <span className="text-[10px] font-bold uppercase tracking-wider opacity-60 ml-2">
-                    (Coming soon)
+                    ({t("other.comingSoon")})
                   </span>
                 </SelectItem>
                 <SelectItem value="GDTI" disabled>
                   GDTI - Global Document Type
                   <span className="text-[10px] font-bold uppercase tracking-wider opacity-60 ml-2">
-                    (Coming soon)
+                    ({t("other.comingSoon")})
                   </span>
                 </SelectItem>
               </SelectContent>
@@ -102,7 +107,7 @@ export default function OtherKeysPanel() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Enter a GS1 Key"
+              placeholder={t("other.placeholder")}
               className="h-14 w-full pl-12 pr-[100px] sm:pr-32 text-lg border-0 bg-transparent rounded-none focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none outline-none placeholder:font-normal"
             />
 
@@ -113,7 +118,7 @@ export default function OtherKeysPanel() {
               className="absolute right-0 top-0 bottom-0 h-14 rounded-l-none rounded-br-md rounded-tr-none sm:rounded-tr-md sm:rounded-br-md bg-secondary text-white hover:bg-[#d9532b] px-6 sm:px-8 text-base font-medium flex items-center gap-2"
             >
               {isFetching && <Loader2 className="h-5 w-5 animate-spin" />}
-              Search
+              {tCommon("search")}
             </Button>
           </div>
         </div>
@@ -121,7 +126,7 @@ export default function OtherKeysPanel() {
 
       {/* Example link below */}
       <div className="mt-4 sm:ml-[316px] pl-1 text-[15px] text-slate-700">
-        Example search:{" "}
+        {tCommon("exampleSearch")}{" "}
         <button
           type="button"
           onClick={handleExampleClick}
@@ -133,7 +138,7 @@ export default function OtherKeysPanel() {
 
       {isError && (
         <div className="mt-12 text-red-500 bg-red-50 p-4 rounded-md border border-red-200">
-          <p className="font-medium">Error loading details.</p>
+          <p className="font-medium">{t("other.errorLoading")}</p>
           <p className="text-sm mt-1">
             {error?.response?.data?.error ||
               error?.response?.data?.message ||
@@ -171,12 +176,12 @@ export default function OtherKeysPanel() {
             </div>
             <Info className="h-5 w-5 text-slate-600 mr-2 shrink-0 stroke-[1.5]" />
             <p className="text-slate-800 text-[16px]">
-              This key is registered to{" "}
+              {tCommon("registeredToKey")}{" "}
               <span className="font-bold text-black">
                 {companyData?.names?.english ||
                   companyData?.names?.arabic ||
                   companyData?.companyName ||
-                  "the licensed company"}
+                  tCommon("unknown")}
                 .
               </span>
             </p>
@@ -191,52 +196,85 @@ export default function OtherKeysPanel() {
                 value="details"
                 className="relative flex-none rounded-none bg-transparent pb-3 pt-2 px-1 text-[16px] font-medium text-slate-500 hover:text-[#0b1c5c] data-[state=active]:text-[#0b1c5c] data-[state=active]:shadow-none data-[state=active]:bg-transparent after:hidden border-x-0 border-t-0 border-b-2 border-transparent data-[state=active]:border-b-[#d9532b] transition-none translate-y-px"
               >
-                Key Information
+                {tCommon("keyInfo")}
               </TabsTrigger>
               <TabsTrigger
                 value="company"
                 className="relative flex-none rounded-none bg-transparent pb-3 pt-2 px-1 text-[16px] font-medium text-slate-500 hover:text-[#0b1c5c] data-[state=active]:text-[#0b1c5c] data-[state=active]:shadow-none data-[state=active]:bg-transparent after:hidden border-x-0 border-t-0 border-b-2 border-transparent data-[state=active]:border-b-[#d9532b] transition-none translate-y-px"
               >
-                Company Information
+                {tCommon("companyInfo")}
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="details" className="pt-8">
               <h2 className="text-[#0b1c5c] text-[26px] font-medium mb-8">
-                {submittedType || "SSCC"} Details
+                {submittedType || "SSCC"} {t("other.ssccDetails")}
               </h2>
 
               <div className="w-full border-t border-[#0b1c5c]/20">
                 {[
                   {
-                    label: "SSCC Number",
+                    label: t("other.attributes.sscc"),
                     value: ssccData.ssccNumber,
                     bold: true,
                   },
-                  { label: "Type", value: ssccData.type },
+                  { label: t("other.attributes.type"), value: ssccData.type },
                   {
-                    label: "Product Name",
+                    label: t("other.attributes.productName"),
                     value: ssccData.product?.productName,
                   },
-                  { label: "HSN/SKU", value: ssccData.product?.hsnSku },
-                  { label: "Vendor ID", value: ssccData.vendor?.vendorId },
-                  { label: "Vendor Name", value: ssccData.vendor?.vendorName },
-                  { label: "Quantity", value: ssccData.quantity?.qty },
-                  { label: "Box Of", value: ssccData.quantity?.boxof },
-                  { label: "Carton", value: ssccData.quantity?.carton },
-                  { label: "Use By Date", value: ssccData.dates?.useBy },
                   {
-                    label: "Expiration Date",
+                    label: t("other.attributes.hsnSku"),
+                    value: ssccData.product?.hsnSku,
+                  },
+                  {
+                    label: t("other.attributes.vendorId"),
+                    value: ssccData.vendor?.vendorId,
+                  },
+                  {
+                    label: t("other.attributes.vendorName"),
+                    value: ssccData.vendor?.vendorName,
+                  },
+                  {
+                    label: t("other.attributes.quantity"),
+                    value: ssccData.quantity?.qty,
+                  },
+                  {
+                    label: t("other.attributes.boxOf"),
+                    value: ssccData.quantity?.boxof,
+                  },
+                  {
+                    label: t("other.attributes.carton"),
+                    value: ssccData.quantity?.carton,
+                  },
+                  {
+                    label: t("other.attributes.useBy"),
+                    value: ssccData.dates?.useBy,
+                  },
+                  {
+                    label: t("other.attributes.expiration"),
                     value: ssccData.dates?.expirationDate,
                   },
-                  { label: "Ship Date", value: ssccData.dates?.shipDate },
-                  { label: "Ship To", value: ssccData.logistics?.shipTo },
-                  { label: "PO Number", value: ssccData.logistics?.poNumber },
                   {
-                    label: "Vendor Item No",
+                    label: t("other.attributes.shipDate"),
+                    value: ssccData.dates?.shipDate,
+                  },
+                  {
+                    label: t("other.attributes.shipTo"),
+                    value: ssccData.logistics?.shipTo,
+                  },
+                  {
+                    label: t("other.attributes.poNumber"),
+                    value: ssccData.logistics?.poNumber,
+                  },
+                  {
+                    label: t("other.attributes.vendorItemNo"),
                     value: ssccData.logistics?.vendorItemNo,
                   },
-                  { label: "Country ID", value: ssccData.logistics?.countryId },
+                  {
+                    label: t("other.attributes.countryId"),
+                    value: ssccData.logistics?.countryId,
+                  },
                 ]
                   .filter(
                     (row) =>
@@ -265,21 +303,23 @@ export default function OtherKeysPanel() {
 
             <TabsContent value="company" className="pt-8">
               <h2 className="text-[#0b1c5c] text-[26px] font-medium mb-8">
-                Information about the company
+                {tCommon("infoAboutCompany")}
               </h2>
 
               <div className="w-full border-t border-[#0b1c5c]/20">
                 {[
                   {
-                    label: "Company Name",
+                    label: t("company.attributes.name"),
                     value:
-                      companyData?.names?.english ||
-                      companyData?.names?.arabic ||
-                      "Unknown",
+                      (locale === "ar"
+                        ? companyData?.names?.arabic
+                        : companyData?.names?.english) ||
+                      companyData?.companyName ||
+                      tCommon("unknown"),
                     bold: true,
                   },
                   {
-                    label: "Address",
+                    label: t("company.attributes.address"),
                     value:
                       companyData?.address?.city ||
                       companyData?.address?.state ||
@@ -318,35 +358,39 @@ export default function OtherKeysPanel() {
                           )}
                         </div>
                       ) : (
-                        "Unknown"
+                        tCommon("unknown")
                       ),
                   },
                   {
-                    label: "Website",
-                    value: companyData?.contact?.website?.trim() || "Unknown",
+                    label: t("company.attributes.website"),
+                    value:
+                      companyData?.contact?.website?.trim() ||
+                      tCommon("unknown"),
                     link: !!companyData?.contact?.website?.trim(),
                     bold: true,
                   },
                   {
-                    label: "License Key",
-                    value: companyData?.membership?.gcpGLNID || "Unknown",
+                    label: t("company.attributes.licenseKey"),
+                    value:
+                      companyData?.membership?.gcpGLNID || tCommon("unknown"),
                     bold: true,
                   },
                   {
-                    label: "License Type",
-                    value: companyData?.membership?.gcpType || "Unknown",
+                    label: t("company.attributes.licenseType"),
+                    value:
+                      companyData?.membership?.gcpType || tCommon("unknown"),
                     bold: true,
                   },
                   {
-                    label: "Global Location Number (GLN)",
+                    label: t("company.attributes.gln"),
                     value:
                       companyData?.gln ||
                       companyData?.membership?.gcpGLNID ||
-                      "Unknown", // fallback since standard is often GLN=GCP
+                      tCommon("unknown"), // fallback since standard is often GLN=GCP
                     bold: true,
                   },
                   {
-                    label: "Licensing GS1 Member Organisation",
+                    label: t("company.attributes.mo"),
                     value:
                       companyData?.memberOrganization || "GS1 Saudi Arabia",
                     bold: true,
@@ -360,9 +404,9 @@ export default function OtherKeysPanel() {
                       {row.label}
                     </div>
                     <div
-                      className={`w-full text-[#0b1c5c] text-[15px] ${row.bold && row.value !== "Unknown" ? "font-bold" : "min-h-[22px]"}`}
+                      className={`w-full text-[#0b1c5c] text-[15px] ${row.bold && row.value !== tCommon("unknown") ? "font-bold" : "min-h-[22px]"}`}
                     >
-                      {row.link && row.value !== "Unknown" ? (
+                      {row.link && row.value !== tCommon("unknown") ? (
                         <a
                           href={
                             row.value.startsWith("http")
@@ -391,10 +435,12 @@ export default function OtherKeysPanel() {
           <div className="mt-12 pt-4">
             <IncorrectDataDialog />
             <p className="text-slate-600 text-[15px] font-medium mt-6">
-              This data has been provided by{" "}
-              {companyData?.names?.english ||
-                companyData?.names?.arabic ||
-                "the company"}
+              {tCommon("providedBy")}{" "}
+              {(locale === "ar"
+                ? companyData?.names?.arabic
+                : companyData?.names?.english) ||
+                companyData?.companyName ||
+                tCommon("unknown")}
               .
             </p>
           </div>

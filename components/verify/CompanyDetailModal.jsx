@@ -9,6 +9,7 @@ import {
   Hash,
   ExternalLink,
 } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
 import {
   Dialog,
   DialogContent,
@@ -26,60 +27,63 @@ import {
  *  - onOpenChange : callback to toggle visibility
  */
 export default function CompanyDetailModal({ company, open, onOpenChange }) {
+  const t = useTranslations("verify.panels.company.modal");
+  const locale = useLocale();
+
   if (!company) return null;
 
   // Helper to render a detail row
   const rows = [
     {
       icon: Key,
-      label: "License Key (GCP)",
+      label: t("licenseKey"),
       value: company.gcpGLNID,
     },
     {
       icon: Hash,
-      label: "GLN",
+      label: t("gln"),
       value: company.gln,
     },
     {
       icon: Building2,
-      label: "Company Name (English)",
+      label: t("nameEn"),
       value: company.company_name_eng,
     },
     {
       icon: Building2,
-      label: "Company Name (Arabic)",
+      label: t("nameAr"),
       value: company.company_name_arabic,
       dir: "rtl",
     },
     {
       icon: MapPin,
-      label: "City",
+      label: t("city"),
       value: company.city,
     },
     {
       icon: MapPin,
-      label: "State / Region",
+      label: t("state"),
       value: company.state,
     },
     {
       icon: Globe,
-      label: "Country",
+      label: t("country"),
       value: company.country,
     },
     {
       icon: Globe,
-      label: "Website",
+      label: t("website"),
       value: company.website,
       isLink: true,
     },
     {
       icon: Hash,
-      label: "GCP Type",
+      label: t("gcpType"),
       value: company.gcp_type,
     },
     {
       icon: Hash,
-      label: "Source",
+      label: t("source"),
       value: company.user_source,
     },
   ];
@@ -92,10 +96,12 @@ export default function CompanyDetailModal({ company, open, onOpenChange }) {
           <DialogHeader>
             <DialogTitle className="text-white text-[20px] font-semibold leading-tight flex items-center gap-3">
               <Building2 className="h-5 w-5 shrink-0 stroke-[1.5]" />
-              {company.company_name_eng || "Company Details"}
+              {(locale === "ar"
+                ? company.company_name_arabic
+                : company.company_name_eng) || t("title")}
             </DialogTitle>
             <DialogDescription className="text-white/60 text-sm mt-1.5">
-              Detailed information about the registered company
+              {t("description")}
             </DialogDescription>
           </DialogHeader>
         </div>
@@ -158,7 +164,7 @@ export default function CompanyDetailModal({ company, open, onOpenChange }) {
           {company.national_address && (
             <div className="mt-4 p-4 bg-[#f8fafd] rounded-lg border border-slate-100">
               <p className="text-[12px] font-semibold uppercase tracking-wider text-slate-400 mb-1">
-                National Address
+                {t("nationalAddress")}
               </p>
               <p className="text-[15px] text-slate-800">
                 {company.national_address}

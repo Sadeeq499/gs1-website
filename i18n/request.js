@@ -15,6 +15,7 @@ const namespaces = [
   "events",
   "insights",
   "solutions",
+  "verify",
 ];
 
 async function loadMessages(locale) {

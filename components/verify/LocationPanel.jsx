@@ -8,9 +8,14 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useGlnVerified } from "@/lib/hooks/useVerify";
 import IncorrectDataDialog from "./IncorrectDataDialog";
 
+import { useTranslations, useLocale } from "next-intl";
+
 export default function LocationPanel() {
   const [searchQuery, setSearchQuery] = useState("");
   const [submittedGln, setSubmittedGln] = useState("");
+  const t = useTranslations("verify.panels");
+  const tCommon = useTranslations("verify.panels.common");
+  const locale = useLocale();
 
   const {
     data: responseData,
@@ -51,7 +56,7 @@ export default function LocationPanel() {
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Enter a Global Location Number (GLN)"
+          placeholder={t("location.placeholder")}
           className="h-14 w-full pl-12 pr-32 text-lg border-slate-300 rounded-md focus-visible:ring-primary focus-visible:border-primary shadow-sm"
         />
 
@@ -62,13 +67,13 @@ export default function LocationPanel() {
           className="absolute right-0 top-0 bottom-0 h-14 rounded-l-none rounded-r-md bg-secondary text-white hover:bg-[#d9532b] px-8 text-base font-medium flex items-center gap-2"
         >
           {isFetching && <Loader2 className="h-5 w-5 animate-spin" />}
-          Search
+          {tCommon("search")}
         </Button>
       </form>
 
       {/* Example link below */}
       <div className="mt-4 pl-1 text-[15px] text-slate-700">
-        Example search:{" "}
+        {tCommon("exampleSearch")}{" "}
         <button
           type="button"
           onClick={handleExampleClick}
@@ -80,7 +85,7 @@ export default function LocationPanel() {
 
       {isError && (
         <div className="mt-12 text-red-500 bg-red-50 p-4 rounded-md border border-red-200">
-          <p className="font-medium">Error loading location data.</p>
+          <p className="font-medium">{t("location.errorLoading")}</p>
           <p className="text-sm mt-1">
             {error?.response?.data?.error ||
               error?.message ||
@@ -115,13 +120,15 @@ export default function LocationPanel() {
                 </span>
               </div>
             </div>
-            <Info className="h-5 w-5 text-slate-600 mr-2 shrink-0 stroke-[1.5]" />
+            <dir className="bg-white/50 p-1 rounded-full mr-2">
+              <Info className="h-5 w-5 text-slate-600 shrink-0 stroke-[1.5]" />
+            </dir>
             <p className="text-slate-800 text-[16px]">
-              This location number is registered to{" "}
+              {tCommon("registeredToLocation")}{" "}
               <span className="font-bold text-black">
                 {companyData?.names?.english ||
                   companyData?.names?.arabic ||
-                  "the licensed company"}
+                  tCommon("unknown")}
                 .
               </span>
             </p>
@@ -136,45 +143,52 @@ export default function LocationPanel() {
                 value="location"
                 className="relative flex-none rounded-none bg-transparent pb-3 pt-2 px-1 text-[16px] font-medium text-slate-500 hover:text-[#0b1c5c] data-[state=active]:text-[#0b1c5c] data-[state=active]:shadow-none data-[state=active]:bg-transparent after:hidden border-x-0 border-t-0 border-b-2 border-transparent data-[state=active]:border-b-[#d9532b] transition-none translate-y-px"
               >
-                Location information
+                {tCommon("locationInfo")}
               </TabsTrigger>
               <TabsTrigger
                 value="company"
                 className="relative flex-none rounded-none bg-transparent pb-3 pt-2 px-1 text-[16px] font-medium text-slate-500 hover:text-[#0b1c5c] data-[state=active]:text-[#0b1c5c] data-[state=active]:shadow-none data-[state=active]:bg-transparent after:hidden border-x-0 border-t-0 border-b-2 border-transparent data-[state=active]:border-b-[#d9532b] transition-none translate-y-px"
               >
-                Company information
+                {tCommon("companyInfo")}
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="location" className="pt-8">
               <h2 className="text-[#0b1c5c] text-[26px] font-medium mb-8">
-                {glnData?.location?.nameEn ||
-                  glnData?.location?.nameAr ||
-                  "Location Information"}
+                {(locale === "ar"
+                  ? glnData?.location?.nameAr
+                  : glnData?.location?.nameEn) || tCommon("locationInfo")}
               </h2>
 
               <div className="w-full border-t border-[#0b1c5c]/20">
                 {[
-                  { label: "GLN", value: glnData.glnNumber, bold: true },
                   {
-                    label: "Location Name (English)",
+                    label: t("location.attributes.gln"),
+                    value: glnData.glnNumber,
+                    bold: true,
+                  },
+                  {
+                    label: t("location.attributes.nameEn"),
                     value: glnData.location?.nameEn,
                   },
                   {
-                    label: "Location Name (Arabic)",
+                    label: t("location.attributes.nameAr"),
                     value: glnData.location?.nameAr,
                   },
                   {
-                    label: "Address (English)",
+                    label: t("location.attributes.addressEn"),
                     value: glnData.location?.addressEn,
                   },
                   {
-                    label: "Address (Arabic)",
+                    label: t("location.attributes.addressAr"),
                     value: glnData.location?.addressAr,
                   },
-                  { label: "Postal Code", value: glnData.location?.postalCode },
                   {
-                    label: "PO Box",
+                    label: t("location.attributes.postalCode"),
+                    value: glnData.location?.postalCode,
+                  },
+                  {
+                    label: t("location.attributes.poBox"),
                     value:
                       glnData.location?.poBox !== "null" &&
                       glnData.location?.poBox !== ""
@@ -182,16 +196,20 @@ export default function LocationPanel() {
                         : null,
                   },
                   {
-                    label: "Identification Type",
+                    label: t("location.attributes.identification"),
                     value: glnData.identification,
                   },
                   {
-                    label: "Physical Location",
+                    label: t("location.attributes.physical"),
                     value: glnData.physicalLocation,
                   },
-                  { label: "Status", value: glnData.status, bold: true },
                   {
-                    label: "Coordinates",
+                    label: t("location.attributes.status"),
+                    value: glnData.status,
+                    bold: true,
+                  },
+                  {
+                    label: t("location.attributes.coordinates"),
                     value:
                       glnData.coordinates?.latitude &&
                       glnData.coordinates?.longitude
@@ -225,21 +243,21 @@ export default function LocationPanel() {
 
             <TabsContent value="company" className="pt-8">
               <h2 className="text-[#0b1c5c] text-[26px] font-medium mb-8">
-                Information about the company
+                {tCommon("infoAboutCompany")}
               </h2>
 
               <div className="w-full border-t border-[#0b1c5c]/20">
                 {[
                   {
-                    label: "Company Name",
+                    label: t("company.attributes.name"),
                     value:
-                      companyData?.names?.english ||
-                      companyData?.names?.arabic ||
-                      "Unknown",
+                      (locale === "ar"
+                        ? companyData?.names?.arabic
+                        : companyData?.names?.english) || tCommon("unknown"),
                     bold: true,
                   },
                   {
-                    label: "Address",
+                    label: t("company.attributes.address"),
                     value:
                       companyData?.address?.city ||
                       companyData?.address?.state ||
@@ -278,32 +296,39 @@ export default function LocationPanel() {
                           )}
                         </div>
                       ) : (
-                        "Unknown"
+                        tCommon("unknown")
                       ),
                   },
                   {
-                    label: "Website",
-                    value: companyData?.contact?.website?.trim() || "Unknown",
+                    label: t("company.attributes.website"),
+                    value:
+                      companyData?.contact?.website?.trim() ||
+                      tCommon("unknown"),
                     link: !!companyData?.contact?.website?.trim(),
                     bold: true,
                   },
                   {
-                    label: "License Key",
-                    value: companyData?.membership?.gcpGLNID || "Unknown",
+                    label: t("company.attributes.licenseKey"),
+                    value:
+                      companyData?.membership?.gcpGLNID || tCommon("unknown"),
                     bold: true,
                   },
                   {
-                    label: "License Type",
-                    value: companyData?.membership?.gcpType || "Unknown",
+                    label: t("company.attributes.licenseType"),
+                    value:
+                      companyData?.membership?.gcpType || tCommon("unknown"),
                     bold: true,
                   },
                   {
-                    label: "Global Location Number (GLN)",
-                    value: glnData?.glnNumber || companyData?.gln || "Unknown",
+                    label: t("company.attributes.gln"),
+                    value:
+                      glnData?.glnNumber ||
+                      companyData?.gln ||
+                      tCommon("unknown"),
                     bold: true,
                   },
                   {
-                    label: "Licensing GS1 Member Organisation",
+                    label: t("company.attributes.mo"),
                     value:
                       companyData?.memberOrganization || "GS1 Saudi Arabia",
                     bold: true,
@@ -317,9 +342,9 @@ export default function LocationPanel() {
                       {row.label}
                     </div>
                     <div
-                      className={`w-full text-[#0b1c5c] text-[15px] ${row.bold && row.value !== "Unknown" ? "font-bold" : "min-h-[22px]"}`}
+                      className={`w-full text-[#0b1c5c] text-[15px] ${row.bold && row.value !== tCommon("unknown") ? "font-bold" : "min-h-[22px]"}`}
                     >
-                      {row.link && row.value !== "Unknown" ? (
+                      {row.link && row.value !== tCommon("unknown") ? (
                         <a
                           href={
                             row.value.startsWith("http")
@@ -348,10 +373,10 @@ export default function LocationPanel() {
           <div className="mt-12 pt-4">
             <IncorrectDataDialog />
             <p className="text-slate-600 text-[15px] font-medium mt-6">
-              This data has been provided by{" "}
-              {companyData?.names?.english ||
-                companyData?.names?.arabic ||
-                "the company"}
+              {tCommon("providedBy")}{" "}
+              {(locale === "ar"
+                ? companyData?.names?.arabic
+                : companyData?.names?.english) || tCommon("unknown")}
               .
             </p>
           </div>
