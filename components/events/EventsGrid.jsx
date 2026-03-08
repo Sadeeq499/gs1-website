@@ -3,27 +3,35 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Clock, ArrowRight, Video, SearchX } from "lucide-react";
-import { EVENTS_DATA } from "./events-data";
-export const EventsGrid = () => {
-  const [activeFilter, setActiveFilter] = useState("All Events");
+import {
+  Calendar,
+  MapPin,
+  Clock,
+  ArrowRight,
+  Video,
+  SearchX,
+} from "lucide-react";
 
-  const filteredEvents = activeFilter === "All Events" 
-    ? EVENTS_DATA.upcoming 
-    : EVENTS_DATA.upcoming.filter(e => e.category === activeFilter);
+export const EventsGrid = ({ data }) => {
+  const [activeFilter, setActiveFilter] = useState(data.filters[0]);
+
+  const filteredEvents =
+    activeFilter === data.filters[0]
+      ? data.upcoming
+      : data.upcoming.filter((e) => e.category === activeFilter);
 
   return (
     <section className="py-24 container mx-auto px-4 min-h-[600px]">
       {/* Smart Filters */}
       <div className="flex flex-wrap gap-3 mb-12 justify-center">
-        {EVENTS_DATA.filters.map((filter) => (
+        {data.filters.map((filter) => (
           <Button
             key={filter}
             variant={activeFilter === filter ? "default" : "outline"}
             onClick={() => setActiveFilter(filter)}
             className={`rounded-full px-8 transition-all ${
-              activeFilter === filter 
-                ? "bg-primary text-white" 
+              activeFilter === filter
+                ? "bg-primary text-white"
                 : "hover:border-primary hover:text-primary border-border"
             }`}
           >
@@ -36,7 +44,7 @@ export const EventsGrid = () => {
       <div className="relative">
         <AnimatePresence mode="wait">
           {filteredEvents.length > 0 ? (
-            <motion.div 
+            <motion.div
               key="grid"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -60,16 +68,20 @@ export const EventsGrid = () => {
                         </span>
                       </div>
                       <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-sm">
-                        {event.type === "Online" ? <Video className="w-4 h-4 text-primary" /> : <MapPin className="w-4 h-4 text-primary" />}
+                        {event.type === "Online" ? (
+                          <Video className="w-4 h-4 text-primary" />
+                        ) : (
+                          <MapPin className="w-4 h-4 text-primary" />
+                        )}
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent z-10" />
                       <div className="w-full h-full bg-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-700">
                         <Calendar className="w-12 h-12 text-primary/10" />
                       </div>
                     </div>
 
                     {/* Content Area */}
-                    <div className="p-6 flex flex-col flex-grow">
+                    <div className="p-6 flex flex-col grow">
                       <div className="flex items-center gap-2 text-secondary font-bold text-sm mb-3">
                         <Calendar className="w-4 h-4" />
                         {event.date}
@@ -113,24 +125,24 @@ export const EventsGrid = () => {
                 <div className="w-24 h-24 bg-gs1-info rounded-full flex items-center justify-center">
                   <SearchX className="w-12 h-12 text-primary/40" />
                 </div>
-                <motion.div 
-                  animate={{ scale: [1, 1.2, 1] }} 
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
                   transition={{ repeat: Infinity, duration: 3 }}
-                  className="absolute -top-1 -right-1 w-6 h-6 bg-secondary rounded-full border-4 border-white" 
+                  className="absolute -top-1 -right-1 w-6 h-6 bg-secondary rounded-full border-4 border-white"
                 />
               </div>
               <h3 className="text-2xl font-bold text-primary mb-3">
-                {EVENTS_DATA.emptyState.title}
+                {data.emptyState.title}
               </h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                {EVENTS_DATA.emptyState.description}
+                {data.emptyState.description}
               </p>
-              <Button 
-                variant="outline" 
-                onClick={() => setActiveFilter("All Events")}
+              <Button
+                variant="outline"
+                onClick={() => setActiveFilter(data.filters[0])}
                 className="rounded-full border-primary text-primary hover:bg-primary hover:text-white px-8"
               >
-                {EVENTS_DATA.emptyState.clearBtn}
+                {data.emptyState.clearBtn}
               </Button>
             </motion.div>
           )}

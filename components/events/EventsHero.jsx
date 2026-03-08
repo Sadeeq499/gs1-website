@@ -3,12 +3,9 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import { EVENTS_DATA } from "./events-data";
 import conferenceImg from "@/public/images/hero.jpg";
 
-export const EventsHero = () => {
-  const { hero } = EVENTS_DATA;
-
+export const EventsHero = ({ data: hero }) => {
   return (
     <section className="relative flex items-center text-white py-14 overflow-hidden">
       {/* Background Image Implementation */}
@@ -22,12 +19,13 @@ export const EventsHero = () => {
         />
         {/* Dark Blue Overlay with Blur to match your style */}
         <div className="absolute inset-0 bg-primary/30" />
+        <div className="absolute inset-0 bg-linear-to-r from-primary/60 via-primary/40 to-transparent" />
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid  gap-12 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }} 
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-6"
@@ -35,17 +33,16 @@ export const EventsHero = () => {
             <Badge className="bg-secondary text-white font-bold border-none px-4 py-1">
               {hero.badge}
             </Badge>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter">
               {hero.title} <br />
-              <span className="text-secondary">{hero.titleHighlight}</span> <br />
+              <span className="text-secondary">{hero.titleHighlight}</span>{" "}
+              <br />
               {hero.titleSuffix}
             </h1>
-            
-            <p className="text-lg text-white/80 max-w-xl">
-              {hero.description}
-            </p>
-            
+
+            <p className="text-lg text-white/80 max-w-xl">{hero.description}</p>
+
             {/* <div className="flex gap-8 pt-8 border-t border-white/10">
               {hero.stats.map((stat, i) => (
                 <motion.div 
@@ -60,7 +57,7 @@ export const EventsHero = () => {
               ))}
             </div> */}
           </motion.div>
-          
+
           {/* Right side is kept empty to let the background image show through clearly */}
         </div>
       </div>

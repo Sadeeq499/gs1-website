@@ -12,6 +12,8 @@ const namespaces = [
   "about",
   "contact",
   "training",
+  "events",
+  "insights",
 ];
 
 async function loadMessages(locale) {

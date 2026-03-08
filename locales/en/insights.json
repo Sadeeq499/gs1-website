@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "title": "Insights & News | GS1 Saudi Arabia",
+    "description": "Latest 2026 updates on SFDA RSD mandates, ZATCA integration, and the Kingdom's roadmap to 2D barcodes."
+  },
+  "hero": {
+    "badge": "Knowledge Center",
+    "title": "Supply Chain",
+    "titleHighlight": "Intelligence",
+    "titleSuffix": "& Vision 2030",
+    "description": "Stay informed with the latest updates on global standards, regulatory mandates, and digital transformation initiatives shaping the future of commerce in Saudi Arabia."
+  },
+  "spotlight": {
+    "badge": "GS1 Saudi Arabia Insights",
+    "title": "Spotlight",
+    "highlight": "Insights",
+    "description": "Expert analysis on global standards, regulatory compliance, and the future of supply chains in the Kingdom.",
+    "items": [
+      {
+        "tag": "Urgent",
+        "title": "SFDA RSD Update: Veterinary Serialization 2026",
+        "desc": "Mandatory GS1 DataMatrix implementation for all veterinary pharmaceutical products in the Kingdom enters force in Q1 2026.",
+        "readTime": "4 min read"
+      },
+      {
+        "tag": "Global",
+        "title": "KSA to Host UN Global Supply Chain Forum",
+        "desc": "Riyadh has been selected as the 2026 hub to discuss digital trade corridors and GS1's role in the resilience initiative.",
+        "readTime": "6 min read"
+      },
+      {
+        "tag": "Retail",
+        "title": "The 2D Sunrise: KSA Retailers Pilot QR Codes",
+        "desc": "Following the GS1 Global Roadmap, major Saudi retailers are now upgrading POS systems to scan GS1 Digital Link by 2027.",
+        "readTime": "5 min read"
+      }
+    ]
+  },
+  "newsGrid": {
+    "heading": "Latest Updates",
+    "items": [
+      {
+        "category": "Healthcare",
+        "title": "King Faisal Hospital Achieves 99% Traceability",
+        "excerpt": "A landmark achievement in patient safety using GLN (Global Location Numbers) for bedside medication verification."
+      },
+      {
+        "category": "Regulatory",
+        "title": "ZATCA Phase 2: Wave 22 Integration Guidelines",
+        "excerpt": "New technical requirements for businesses with turnover exceeding 1M SAR to integrate with the Fatoora portal."
+      },
+      {
+        "category": "Innovation",
+        "title": "The Future of 'Manih' & GS1 Standards",
+        "excerpt": "How SASO is integrating GS1 identifiers to streamline the issuance of Certificates of Conformity on the SABER platform."
+      }
+    ]
+  },
+  "whySection": {
+    "title": "Securing the Saudi Supply Chain",
+    "description": "As of 2026, over 10,000 Saudi companies rely on GS1 standards to comply with ZATCA, SFDA, and SASO requirements. Our standards aren't just barcodes—they are the digital language of Vision 2030."
+  }
+}
