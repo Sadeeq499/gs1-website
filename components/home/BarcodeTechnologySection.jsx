@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { tabs , tabContent ,stats } from "./data";
+import { tabs, tabContent, stats } from "./data";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,14 +11,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  ArrowRight,
-  ShieldCheck,
-} from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function BarcodeTechnologySection() {
   const [activeTab, setActiveTab] = useState("2d-barcodes");
-  const content = tabContent[activeTab];
+  const t = useTranslations("home.technology");
+  const translatedTabs = t.raw("tabs");
+  const translatedStats = t.raw("stats");
+
+  const content = translatedTabs[activeTab];
+  const baseContent = tabContent[activeTab];
 
   return (
     <section className=" py-20">
@@ -26,21 +29,19 @@ export function BarcodeTechnologySection() {
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
           <Badge className="bg-primary/10 text-primary hover:bg-primary/15 font-bold border-primary/20">
-            Standards & Technology
+            {t("badge")}
           </Badge>
           <h2 className="mt-4 text-primary text-3xl font-bold tracking-tight  md:text-4xl lg:text-5xl">
-            Next-Generation Barcode Solutions for Saudi Arabia
+            {t("title")}
           </h2>
           <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
-            From 2D barcodes and GS1 Digital Link to ZATCA compliance and
-            end-to-end traceability -- one unified platform powering the
-            {" Kingdom's"} digital transformation.
+            {t("description")}
           </p>
         </div>
 
         {/* Stats Row */}
         <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {stats.map((stat) => (
+          {translatedStats.map((stat) => (
             <div
               key={stat.label}
               className="rounded-xl border border-border/50 bg-accent p-6 text-center transition-colors hover:bg-accent/50"
@@ -71,7 +72,7 @@ export function BarcodeTechnologySection() {
                 }`}
               >
                 <Icon className="h-4 w-4" />
-                {tab.label}
+                {translatedTabs[tab.id].label}
               </button>
             );
           })}
@@ -83,11 +84,11 @@ export function BarcodeTechnologySection() {
           <Card className="group overflow-hidden border-0 shadow-lg lg:col-span-3">
             <div className="relative h-64 overflow-hidden lg:h-80">
               <img
-                src={content.image}
+                src={baseContent.image}
                 alt={content.headline}
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/30 to-transparent" />
               <div className="absolute bottom-0 left-0 p-6 lg:p-8">
                 <h3 className="text-2xl font-bold text-primary-foreground lg:text-3xl">
                   {content.headline}
@@ -102,9 +103,12 @@ export function BarcodeTechnologySection() {
                 className="mt-6 bg-secondary text-white hover:bg-secondary/90"
                 asChild
               >
-                <a href={`/solutions/${content.slug}`}>
+                <a
+                  href={`/solutions/${baseContent.slug}`}
+                  className="flex items-center"
+                >
                   {content.cta}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4 rtl:-scale-x-100 rtl:mr-2 rtl:ml-0" />
                 </a>
               </Button>
             </CardContent>
@@ -112,8 +116,8 @@ export function BarcodeTechnologySection() {
 
           {/* Feature cards stack - spans 2 cols */}
           <div className="flex flex-col gap-6 lg:col-span-2">
-            {content.features.map((feature) => {
-              const Icon = feature.icon;
+            {content.features.map((feature, index) => {
+              const Icon = baseContent.features[index].icon;
               return (
                 <Card
                   key={feature.title}

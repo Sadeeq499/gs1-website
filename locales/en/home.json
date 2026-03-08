@@ -1,0 +1,143 @@
+{
+  "hero": {
+    "badge": "Member of GS1 Global Organization",
+    "slides": [
+      {
+        "title": "The Global Language of ",
+        "highlight": "Business",
+        "description": "GS1 Saudi Arabia empowers your supply chain with global standards for identification, capturing, and sharing information.",
+        "primaryCta": "Get a Barcode",
+        "secondaryCta": "Explore Services"
+      },
+      {
+        "title": "Seamless Retail Experience ",
+        "highlight": "Transform",
+        "description": "Enhance customer satisfaction and operational efficiency with our cutting-edge retail solutions and standards.",
+        "primaryCta": "Retail Solutions",
+        "secondaryCta": "Learn More"
+      },
+      {
+        "title": "Connect with Confidence ",
+        "highlight": "Globally",
+        "description": "Join a network of over 2 million companies worldwide using GS1 standards to do business with confidence.",
+        "primaryCta": "Become a Member",
+        "secondaryCta": "Our Network"
+      }
+    ]
+  },
+  "partners": {
+    "title": "Our Strategic Partners",
+    "viewProfile": "VIEW PROFILE",
+    "categories": {
+      "Strategic Host": "Strategic Host",
+      "Regulatory Partner": "Regulatory Partner",
+      "Governmental Support": "Governmental Support",
+      "Industrial Standards": "Industrial Standards",
+      "National Program": "National Program",
+      "Trade & Logistics": "Trade & Logistics",
+      "Quality Partner": "Quality Partner",
+      "Logistics Partner": "Logistics Partner",
+      "SME Support": "SME Support",
+      "Local Content": "Local Content"
+    }
+  },
+  "solutions": {
+    "badge": "Industry Solutions",
+    "title": "Powering Every Industry with Global Standards",
+    "description": "From healthcare to e-commerce, GS1 Saudi Arabia delivers scalable identification, traceability, and data standards that drive efficiency, compliance, and consumer trust.",
+    "viewAll": "View all industries"
+  },
+  "technology": {
+    "badge": "Standards & Technology",
+    "title": "Next-Generation Barcode Solutions for Saudi Arabia",
+    "description": "From 2D barcodes and GS1 Digital Link to ZATCA compliance and end-to-end traceability -- one unified platform powering the Kingdom's digital transformation.",
+    "stats": [
+      { "value": "2M+", "label": "Barcodes Issued in KSA" },
+      { "value": "150+", "label": "Countries Connected" },
+      { "value": "99.9%", "label": "Scan Accuracy Rate" },
+      { "value": "2027", "label": "Global Sunrise Deadline" }
+    ],
+    "tabs": {
+      "2d-barcodes": {
+        "label": "2D Barcodes",
+        "headline": "The Future of Barcodes Is Here",
+        "description": "2D barcodes pack exponentially more data into a single scan. From DataMatrix to QR codes powered by GS1 standards, Saudi businesses gain richer product information, consumer engagement, and supply chain intelligence -- all from one symbol.",
+        "features": [
+          {
+            "title": "100x More Data",
+            "text": "Encode product details, batch numbers, expiry dates, and URLs in a single 2D symbol."
+          },
+          {
+            "title": "Smartphone-Ready",
+            "text": "Consumers scan with any smartphone camera -- no special apps or hardware needed."
+          },
+          {
+            "title": "Sunrise 2027 Ready",
+            "text": "Prepare your business for the global GS1 migration from 1D to 2D barcodes by 2027."
+          }
+        ],
+        "cta": "Explore 2D Barcodes"
+      },
+      "digital-link": {
+        "label": "GS1 Digital Link",
+        "headline": "One Code. Infinite Connections.",
+        "description": "GS1 Digital Link transforms every barcode into a gateway to digital content. A single scan connects consumers, retailers, and regulators to product pages, authenticity checks, sustainability data, and more -- all through a standard web URI.",
+        "features": [
+          {
+            "title": "Web-Native Barcodes",
+            "text": "Every product gets a unique URL that resolves to the right content for each audience."
+          },
+          {
+            "title": "Multi-Purpose Scans",
+            "text": "Same code serves consumers, point-of-sale, warehouse, and regulatory systems."
+          },
+          {
+            "title": "Anti-Counterfeit",
+            "text": "Verify product authenticity instantly with GS1-powered digital verification."
+          }
+        ],
+        "cta": "Learn About Digital Link"
+      },
+      "zatca": {
+        "label": "ZATCA & Compliance",
+        "headline": "Seamless ZATCA E-Invoicing Compliance",
+        "description": "Saudi Arabia's ZATCA e-invoicing mandate requires GS1-compliant QR codes on every tax invoice. GS1 Saudi Arabia provides the standards, tools, and support to ensure your business meets Phase 2 integration requirements with confidence.",
+        "features": [
+          {
+            "title": "Phase 2 Ready",
+            "text": "Full compliance with ZATCA FATOORA integration requirements using GS1 standards."
+          },
+          {
+            "title": "Validated QR Codes",
+            "text": "Generate compliant QR codes with seller info, VAT number, invoice totals, and timestamps."
+          },
+          {
+            "title": "Vision 2030 Aligned",
+            "text": "Support Saudi Arabia's digital transformation goals with standards-based e-commerce."
+          }
+        ],
+        "cta": "Get ZATCA Compliant"
+      },
+      "traceability": {
+        "label": "End-to-End Traceability",
+        "headline": "Track Every Product. Every Step.",
+        "description": "EPCIS 2.0 and GS1 standards deliver full supply chain visibility from raw materials to the end consumer. Saudi businesses gain real-time tracking, recall readiness, and the transparency that regulators and consumers demand.",
+        "features": [
+          {
+            "title": "EPCIS 2.0",
+            "text": "Capture what, where, when, and why events across your entire supply chain."
+          },
+          {
+            "title": "Instant Recall",
+            "text": "Pinpoint affected batches in minutes, not weeks -- protecting consumers and your brand."
+          },
+          {
+            "title": "Cross-Border Ready",
+            "text": "Interoperable standards that work with global trading partners and regulatory systems."
+          }
+        ],
+        "cta": "Discover Traceability"
+      }
+    }
+  }
+}

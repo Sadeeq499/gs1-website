@@ -1,8 +1,7 @@
 import React from "react";
-import ServiceHero from "../../components/services/ServiceHero";
-import ServicesSection from "../../components/services/ServicesSection";
-
-import ServicesCTA from "../../components/services/ServicesCTA";
+import ServiceHero from "@/components/services/ServiceHero";
+import ServicesSection from "@/components/services/ServicesSection";
+import ServicesCTA from "@/components/services/ServicesCTA";
 
 function ServicesPage() {
   return (

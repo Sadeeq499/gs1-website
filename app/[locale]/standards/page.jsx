@@ -1,7 +1,7 @@
 import React from "react";
-import StandardHero from "../../components/standards/StandardHero";
+import StandardHero from "@/components/standards/StandardHero";
 
-import StandardsPillars from "../../components/standards/StandardsPillars";
+import StandardsPillars from "@/components/standards/StandardsPillars";
 
 function StandardsPage() {
   return (

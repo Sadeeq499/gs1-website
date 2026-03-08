@@ -29,5 +29,56 @@
     "language": {
       "toggle": "العربية"
     }
+  },
+  "footer": {
+    "brand": {
+      "name": "Saudi Arabia",
+      "description": "The global language of business. Empowering Saudi enterprises with world-class standards for supply chain excellence and digital transformation."
+    },
+    "contact": {
+      "location": "Riyadh, Kingdom of Saudi Arabia"
+    },
+    "sections": {
+      "Core Services": {
+        "title": "Core Services",
+        "links": {
+          "Product ID (GTIN)": "Product ID (GTIN)",
+          "Location ID (GLN)": "Location ID (GLN)",
+          "Pallet ID (SSCC)": "Pallet ID (SSCC)",
+          "SEC Compliance": "SEC Compliance",
+          "Tobacco Traceability": "Tobacco Traceability"
+        }
+      },
+      "Tech Solutions": {
+        "title": "Tech Solutions",
+        "links": {
+          "2D Barcode Sunrise": "2D Barcode Sunrise",
+          "GS1 Digital Link": "GS1 Digital Link",
+          "ZATCA E-Invoicing": "ZATCA E-Invoicing",
+          "End-to-End Traceability": "End-to-End Traceability"
+        }
+      },
+      "Resources": {
+        "title": "Resources",
+        "links": {
+          "Training & Events": "Training & Events",
+          "Barcode Check": "Barcode Check",
+          "Verified by GS1": "Verified by GS1"
+        }
+      },
+      "Company": {
+        "title": "Company",
+        "links": {
+          "Who we are": "Who we are",
+          "Leadership": "Leadership",
+          "Contact": "Contact"
+        }
+      }
+    },
+    "legal": {
+      "Terms & Conditions": "Terms & Conditions"
+    },
+    "copyright": "© {year} GS1 Saudi Arabia. All rights reserved.",
+    "slogan": "Global Language of Business"
   }
 }

@@ -29,5 +29,56 @@
     "language": {
       "toggle": "English"
     }
+  },
+  "footer": {
+    "brand": {
+      "name": "السعودية",
+      "description": "اللغة العالمية للأعمال. تمكين الشركات السعودية بمعايير عالمية المستوى للتميز في سلسلة التوريد والتحول الرقمي."
+    },
+    "contact": {
+      "location": "الرياض، المملكة العربية السعودية"
+    },
+    "sections": {
+      "Core Services": {
+        "title": "الخدمات الأساسية",
+        "links": {
+          "Product ID (GTIN)": "رقم المنتج (GTIN)",
+          "Location ID (GLN)": "رقم الموقع (GLN)",
+          "Pallet ID (SSCC)": "رقم المنصة (SSCC)",
+          "SEC Compliance": "امتثال الشركة السعودية للكهرباء",
+          "Tobacco Traceability": "تتبع التبغ"
+        }
+      },
+      "Tech Solutions": {
+        "title": "الحلول التقنية",
+        "links": {
+          "2D Barcode Sunrise": "الباركود ثنائي الأبعاد",
+          "GS1 Digital Link": "الرابط الرقمي GS1",
+          "ZATCA E-Invoicing": "الفوترة الإلكترونية (هيئة الزكاة)",
+          "End-to-End Traceability": "التتبع الشامل"
+        }
+      },
+      "Resources": {
+        "title": "الموارد",
+        "links": {
+          "Training & Events": "التدريب والفعاليات",
+          "Barcode Check": "فحص الباركود",
+          "Verified by GS1": "تحقق GS1"
+        }
+      },
+      "Company": {
+        "title": "الشركة",
+        "links": {
+          "Who we are": "من نحن",
+          "Leadership": "القيادة",
+          "Contact": "اتصل بنا"
+        }
+      }
+    },
+    "legal": {
+      "Terms & Conditions": "الشروط والأحكام"
+    },
+    "copyright": "© {year} GS1 السعودية. جميع الحقوق محفوظة.",
+    "slogan": "اللغة العالمية للأعمال"
   }
 }

@@ -1,18 +1,22 @@
 "use client";
 
 import React from "react";
-import { partners } from "./data";
-
+import { partners as dataPartners } from "./data";
+import { useTranslations } from "next-intl";
 
 export function Partners() {
-  const duplicatedPartners = [...partners, ...partners];
+  const t = useTranslations("home");
 
   return (
     <section className="py-24 bg-white overflow-hidden">
       <style jsx>{`
         @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
         .animate-scroll {
           display: flex;
@@ -35,7 +39,8 @@ export function Partners() {
         .flip-card:hover .flip-card-inner {
           transform: rotateY(180deg);
         }
-        .flip-front, .flip-back {
+        .flip-front,
+        .flip-back {
           position: absolute;
           width: 100%;
           height: 100%;
@@ -44,7 +49,7 @@ export function Partners() {
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 10px 40px -15px rgba(0,0,0,0.1);
+          box-shadow: 0 10px 40px -15px rgba(0, 0, 0, 0.1);
         }
         .flip-front {
           background: white;
@@ -62,20 +67,21 @@ export function Partners() {
       `}</style>
 
       <div className="w-full max-w-5xl mx-auto px-4 mb-16 text-center">
-        <h2 className="text-3xl font-bold text-primary">Our Strategic Partners</h2>
+        <h2 className="text-3xl font-bold text-primary">
+          {t("partners.title")}
+        </h2>
       </div>
 
       <div className="slider-container relative w-full">
         {/* Gradients */}
-        <div className="absolute inset-y-0 left-0 w-48 z-10 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-48 z-10 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-48 z-10 bg-linear-to-r from-white via-white/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-48 z-10 bg-linear-to-l from-white via-white/80 to-transparent pointer-events-none" />
 
-        <div className="animate-scroll py-10">
-          {duplicatedPartners.map((partner, index) => (
+        <div className="animate-scroll py-10 hover:pause">
+          {[...dataPartners, ...dataPartners].map((partner, index) => (
             <div key={index} className="mx-2 md:mx-4">
               <div className="flip-card h-40 w-40 md:h-48 md:w-48">
                 <div className="flip-card-inner">
-                  
                   {/* Front: Logo */}
                   <div className="flip-front">
                     <img
@@ -91,19 +97,18 @@ export function Partners() {
                       {partner.name}
                     </p>
                     <p className="text-[9px] text-blue-200 tracking-widest uppercase mb-4">
-                      {partner.category}
+                      {t(`partners.categories.${partner.category}`)}
                     </p>
-                    
-                    <a 
-                      href={partner.url} 
-                      target="_blank" 
+
+                    <a
+                      href={partner.url}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="px-5 py-2 bg-white text-[#002c5c] text-[10px] font-bold rounded-full hover:bg-blue-50 transition-colors duration-300 shadow-lg"
                     >
-                      VIEW PROFILE
+                      {t("partners.viewProfile")}
                     </a>
                   </div>
-
                 </div>
               </div>
             </div>
