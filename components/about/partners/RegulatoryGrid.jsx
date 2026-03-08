@@ -1,19 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { PARTNERS_DATA } from "./partners-data";
 
 // Correct path: Public folder assets are served from the root "/"
-const logos = [
-  "/images/SFDA.png",
-  "/images/ZATCA.svg",
-  "/images/SASO.png",
-];
+const logos = ["/images/SFDA.png", "/images/ZATCA.svg", "/images/SASO.png"];
 
-export const RegulatoryGrid = () => (
+export const RegulatoryGrid = ({ data: regulatory }) => (
   <section className="py-24 container mx-auto px-4">
     <div className="grid md:grid-cols-3 gap-6">
-      {PARTNERS_DATA.regulatory.map((item, i) => {
+      {regulatory.map((item, i) => {
         // Use the logos array index to match the current item
         const logoSrc = logos[i];
 

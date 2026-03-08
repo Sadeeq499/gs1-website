@@ -5,7 +5,8 @@ export const GovernanceSection = ({ data }) => (
     <div className="container mx-auto px-4 text-center">
       <div className="max-w-2xl mx-auto mb-16">
         <h2 className="text-4xl font-black text-primary">
-          {data.title} <span className="text-secondary italic">{data.titleHighlight}</span>
+          {data.title}{" "}
+          <span className="text-secondary">{data.titleHighlight}</span>
         </h2>
         <p className="text-muted-foreground mt-4 leading-relaxed">
           {data.desc}
@@ -14,8 +15,8 @@ export const GovernanceSection = ({ data }) => (
 
       <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
         {data.members.map((member, i) => (
-          <div 
-            key={i} 
+          <div
+            key={i}
             className="flex items-center gap-6 p-8 bg-white rounded-[2rem] shadow-sm hover:shadow-xl transition-shadow border border-slate-100 group"
           >
             <div className="w-20 h-20 rounded-full bg-primary/5 flex items-center justify-center group-hover:bg-primary transition-colors">
@@ -30,9 +31,7 @@ export const GovernanceSection = ({ data }) => (
               <p className="text-secondary font-black text-[10px] uppercase tracking-widest">
                 {member.role}
               </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                {member.org}
-              </p>
+              <p className="text-xs text-muted-foreground mt-1">{member.org}</p>
             </div>
           </div>
         ))}

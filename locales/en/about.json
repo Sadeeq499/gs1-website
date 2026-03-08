@@ -1,0 +1,345 @@
+{
+  "board": {
+    "metadata": {
+      "title": "Management Board | GS1 Saudi Arabia",
+      "description": "The leadership driving the global standards landscape in the Kingdom of Saudi Arabia."
+    },
+    "hero": {
+      "badge": "Executive Governance",
+      "title": "Leadership &",
+      "titleHighlight": "Strategic Oversight",
+      "titleSuffix": "of GS1 SA",
+      "description": "Our board of directors consists of distinguished leaders from the public and private sectors, ensuring our standards align with the highest levels of Saudi Vision 2030.",
+      "stats": [
+        { "value": "Board", "label": "Strategic Direction" },
+        { "value": "Executive", "label": "Operational Excellence" },
+        { "value": "Global", "label": "Standard Alignment" }
+      ]
+    },
+    "boardSection": {
+      "heading": "The Management",
+      "highlight": "Board",
+      "description": "Providing the vision and governance required to foster a world-class digital ecosystem in the Kingdom.",
+      "members": [
+        {
+          "name": "Mr. Hassan Al-Huwaizi",
+          "role": "Chairman of the Board",
+          "desc": "Former Chairman of the Federation of Saudi Chambers, leading the Kingdom's private sector growth."
+        },
+        {
+          "name": "Dr. Abdullah Al Fahed",
+          "role": "Chief Executive Officer",
+          "desc": "Directing the digital transformation of Saudi supply chains through GS1 global identifiers."
+        }
+      ],
+      "executiveTeam": {
+        "role": "Executive Management",
+        "name": "Leadership Operations",
+        "desc": "Our specialized technical team manages global identification standards and digital ecosystem implementation across the Kingdom."
+      }
+    },
+    "committees": {
+      "title": "Board Committees",
+      "items": [
+        {
+          "title": "Technical Standards Committee",
+          "desc": "Ensures local adoption of global barcode and RFID standards."
+        },
+        {
+          "title": "Audit & Risk Committee",
+          "desc": "Maintains financial integrity and data security for our members."
+        },
+        {
+          "title": "Vision 2030 Alignment Taskforce",
+          "desc": "Bridges the gap between GS1 standards and NIDLP goals."
+        }
+      ]
+    }
+  },
+  "missionVision": {
+    "metadata": {
+      "title": "Mission & Vision | GS1 Saudi Arabia",
+      "description": "Our strategic roadmap for a digitally integrated Saudi supply chain by 2030."
+    },
+    "hero": {
+      "badge": "Strategic North Star",
+      "title": "Defining the Future of",
+      "titleHighlight": "National Traceability",
+      "titleSuffix": "and Global Trust",
+      "description": "Our Mission and Vision are the blueprints for a Saudi Arabia where every product tells a story of quality, safety, and digital excellence.",
+      "stats": [
+        { "value": "2030", "label": "National Goal" },
+        { "value": "Digital", "label": "Language" },
+        { "value": "Unified", "label": "Standards" }
+      ]
+    },
+    "dividerLabel": "Since 1999",
+    "vision": {
+      "tag": "Our Vision",
+      "title": "A Unified Language for",
+      "titleHighlight": "National Commerce",
+      "description": "To be the primary catalyst for a digital, transparent, and globally integrated Saudi supply chain. We envision a future where every Saudi SME and Enterprise speaks the same digital language, enabling seamless trade from the Red Sea to the global market."
+    },
+    "mission": {
+      "tag": "Our Mission",
+      "title": "Empowering the Kingdom's",
+      "titleHighlight": "Economic Pillars",
+      "description": "To empower Saudi organizations with global standards that enhance efficiency, safety, and regulatory compliance. We bridge the gap between local production and global standards, ensuring KSA's logistics sector remains a world leader.",
+      "points": [
+        {
+          "title": "Universal Standards",
+          "desc": "Implementing GS1 systems across Retail, Healthcare, and Logistics."
+        },
+        {
+          "title": "Regulatory Synergy",
+          "desc": "Supporting SFDA and ZATCA in national traceability mandates."
+        },
+        {
+          "title": "SME Acceleration",
+          "desc": "Helping Saudi businesses reach global marketplaces like Amazon and Noon."
+        }
+      ]
+    },
+    "values": {
+      "heading": "The Values Driving",
+      "highlight": "Our Progress",
+      "items": [
+        {
+          "title": "Integrity",
+          "desc": "Ensuring the absolute accuracy of the Kingdom's product data.",
+          "icon": "ShieldCheck"
+        },
+        {
+          "title": "Innovation",
+          "desc": "Pioneering the shift to 2D barcodes and RFID by 2027.",
+          "icon": "Zap"
+        },
+        {
+          "title": "Collaboration",
+          "desc": "Working as one with government authorities and private sectors.",
+          "icon": "Users"
+        }
+      ]
+    }
+  },
+  "partners": {
+    "metadata": {
+      "title": "Strategic Partners | GS1 Saudi Arabia",
+      "description": "Explore the ecosystem of GS1 Saudi Arabia's strategic partners, including SFDA, ZATCA, and SASO, driving global standards and Saudi Vision 2030."
+    },
+    "hero": {
+      "badge": "GS1 SA Ecosystem",
+      "title": "Building the Future of",
+      "titleHighlight": "Saudi Trade",
+      "titleSuffix": "through Collaboration",
+      "description": "At GS1 Saudi Arabia, we partner with government authorities and industry leaders to drive Vision 2030 through standardized digital transformation and global identification.",
+      "ctaText": "Become a Partner"
+    },
+    "regulatory": [
+      {
+        "title": "SFDA",
+        "sub": "Drug Traceability",
+        "desc": "Implementing GS1 DataMatrix for the RSD system to ensure pharmaceutical safety."
+      },
+      {
+        "title": "ZATCA",
+        "sub": "E-Invoicing",
+        "desc": "Phase 2 Fatoora integration utilizing GLNs for seamless B2B transaction identification."
+      },
+      {
+        "title": "SASO",
+        "sub": "SABER Platform",
+        "desc": "Product conformity and GTIN registration requirements for the Saudi market."
+      }
+    ],
+    "providers": {
+      "badge": "GS1 SA NETWORK",
+      "title": "Strategic",
+      "titleHighlight": "Partnerships",
+      "exploreText": "Explore more",
+      "detailsText": "Partner Details",
+      "impactLabel": "Key Impact",
+      "list": [
+        {
+          "name": "FSC",
+          "full": "Federation of Saudi Chambers",
+          "type": "Strategic Partner",
+          "desc": "The primary representative of the Saudi business community, ensuring global standards for local commerce.",
+          "impact": "SME Support & Vision 2030"
+        },
+        {
+          "name": "SFDA",
+          "full": "Saudi Food & Drug Authority",
+          "type": "Regulatory Partner",
+          "desc": "Mandating GS1 DataMatrix for the National Drug Track and Trace System (Rasad).",
+          "impact": "Healthcare Traceability"
+        },
+        {
+          "name": "ZATCA",
+          "full": "Zakat, Tax and Customs Authority",
+          "type": "Government Partner",
+          "desc": "Collaborating on E-Invoicing (Fatoora) standards using Global Location Numbers (GLN).",
+          "impact": "E-Invoicing & Customs"
+        },
+        {
+          "name": "SASO",
+          "full": "Saudi Standards & Quality Org",
+          "type": "Standards Partner",
+          "desc": "Standardizing product conformity (SABER) via Global Trade Item Numbers (GTIN).",
+          "impact": "Technical Compliance"
+        },
+        {
+          "name": "MOH",
+          "full": "Ministry of Health",
+          "type": "Strategic Partner",
+          "desc": "Adopting GS1 standards for medical device identification and patient safety.",
+          "impact": "Patient Safety (UDI)"
+        }
+      ]
+    },
+    "marketplace": {
+      "badge": "E-Commerce Enablement",
+      "title": "Unlock the Kingdom's",
+      "titleHighlight": "Digital Marketplaces",
+      "description": "GS1 Saudi Arabia provides the authentic GTINs and identifiers required to list and sell your products on major platforms, ensuring global discoverability and consumer trust.",
+      "features": [
+        "Official & Verified Product Identification",
+        "Direct API Integration Readiness",
+        "Global Standards Compliance"
+      ],
+      "ctaPrimary": "Get Your GTINs",
+      "ctaSecondary": "Learn More",
+      "platforms": [
+        {
+          "name": "Amazon.sa",
+          "label": "Sell on Amazon",
+          "description": "GTINs are mandatory for listing on Amazon's global catalog."
+        },
+        {
+          "name": "Noon.com",
+          "label": "Expand on Noon",
+          "description": "Unique product identification ensures accurate listing on Noon."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Partner?",
+      "description": "Join the global network of 116 countries and thousands of Saudi companies.",
+      "primaryBtn": "Apply as Provider",
+      "secondaryBtn": "Inquire Now"
+    }
+  },
+  "strategy": {
+    "metadata": {
+      "title": "Strategy & Roadmap | GS1 Saudi Arabia",
+      "description": "The GS1 Saudi Arabia 2027 Strategic Roadmap: Driving 2D migration and Vision 2030 supply chain excellence."
+    },
+    "hero": {
+      "badge": "2024 - 2027 Roadmap",
+      "title": "Architecting the",
+      "titleHighlight": "Future of Trade",
+      "titleSuffix": "in the Kingdom",
+      "description": "Aligning global standards with Saudi Vision 2030 to build a seamless, digital, and globally competitive national supply chain.",
+      "stats": [
+        { "value": "Sunrise", "label": "2027 Goal" },
+        { "value": "100%", "label": "Traceability" },
+        { "value": "NIDLP", "label": "Partner" }
+      ]
+    },
+    "pillars": {
+      "title": "The Three Strategic",
+      "highlight": "Pillars",
+      "items": [
+        {
+          "title": "Digital Link Migration",
+          "desc": "Transitioning the Saudi retail landscape from traditional 1D barcodes to GS1 Digital Link QR codes by 2027."
+        },
+        {
+          "title": "Regulatory Alignment",
+          "desc": "Deepening integration with SFDA (Rasad) and ZATCA (Fatoora) to ensure 100% compliance for Saudi businesses."
+        },
+        {
+          "title": "Export Readiness",
+          "desc": "Equipping Saudi manufacturers with global identifiers (GTIN/GLN) to seamlessly enter international marketplaces."
+        }
+      ]
+    },
+    "roadmap": {
+      "title": "Road to 2027",
+      "steps": [
+        { "year": "2024", "task": "Nationwide 2D Awareness & Pilot Programs" },
+        { "year": "2025", "task": "ZATCA Phase 2 Integration & GLN Expansion" },
+        {
+          "year": "2026",
+          "task": "Full SFDA Veterinary & Medical Device Serialization"
+        },
+        { "year": "2027", "task": "Sunrise 2027: Global 2D Barcode Adoption" }
+      ]
+    }
+  },
+  "whoWeAre": {
+    "metadata": {
+      "title": "Who We Are | GS1 Saudi Arabia",
+      "description": "The official sole authorized entity for GS1 standards in the Kingdom, driving the digital language of Saudi business."
+    },
+    "hero": {
+      "badge": "Since 1999",
+      "title": "The Global Language of",
+      "titleHighlight": "Saudi Business",
+      "titleSuffix": "Innovation",
+      "description": "Operating as the Saudi Barcode Center under the Federation of Saudi Chambers, we are the architects of the Kingdom's digital supply chain ecosystem.",
+      "stats": [
+        { "value": "2M+", "label": "Global Users" },
+        { "value": "18K+", "label": "KSA Members" },
+        { "value": "10B", "label": "Daily Scans" }
+      ]
+    },
+    "about": {
+      "badge": "Our Identity",
+      "title": "Driving the Kingdom’s",
+      "titleHighlight": "Digital Future",
+      "description": "GS1 Saudi Arabia (locally known as the Saudi Barcode Center) is the sole authorized entity responsible for promoting and guiding the adoption of GS1 standards across industries in the Kingdom. From retail automation to life-saving healthcare traceability, we provide the common foundation for Saudi businesses to identify, capture, and share vital data globally.",
+      "buttonText": "Download Corporate Profile"
+    },
+    "missionVision": [
+      {
+        "title": "Our Vision",
+        "desc": "To be the primary catalyst for a digital, transparent, and globally integrated Saudi supply chain by 2030."
+      },
+      {
+        "title": "Our Mission",
+        "desc": "To empower Saudi organizations with global standards that enhance efficiency, safety, and regulatory compliance."
+      }
+    ],
+    "governance": {
+      "title": "Leadership &",
+      "titleHighlight": "Governance",
+      "desc": "Our board of directors consists of industry leaders from the public and private sectors, ensuring alignment with national economic goals.",
+      "members": [
+        {
+          "name": "Mr. Hassan Al-Huwaizi",
+          "role": "Chairman",
+          "org": "Federation of Saudi Chambers"
+        },
+        {
+          "name": "Board of Directors",
+          "role": "Strategic Oversight",
+          "org": "Public & Private Sector Leaders"
+        }
+      ]
+    },
+    "partners": {
+      "title": "Strategic Partnerships",
+      "subtitle": "Collaborating with national authorities to enforce global standards.",
+      "logos": [
+        {
+          "name": "SFDA",
+          "link": "Advancing drug safety through Rasad integration"
+        },
+        { "name": "ZATCA", "link": "Powering Fatoora with GLN identification" },
+        { "name": "SASO", "link": "Strengthening import compliance via SABER" },
+        { "name": "NUPCO", "link": "Optimizing healthcare logistics" }
+      ]
+    }
+  }
+}

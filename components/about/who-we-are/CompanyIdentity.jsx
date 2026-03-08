@@ -12,10 +12,10 @@ export const CompanyIdentity = ({ data }) => (
           </Badge>
           <h2 className="text-4xl lg:text-5xl font-black text-primary leading-tight">
             {data.title} <br />
-            <span className="text-secondary italic">{data.titleHighlight}</span>
+            <span className="text-secondary">{data.titleHighlight}</span>
           </h2>
           <div className="space-y-6">
-            <p className="text-lg text-muted-foreground leading-relaxed italic border-l-4 border-secondary pl-6">
+            <p className="text-lg text-muted-foreground leading-relaxed border-l-4 border-secondary pl-6">
               {data.description}
             </p>
             <div className="flex items-center gap-4 text-primary font-bold">
@@ -23,7 +23,11 @@ export const CompanyIdentity = ({ data }) => (
               <span>Official Member of GS1 Global Network</span>
             </div>
           </div>
-          <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-full px-8 h-14" asChild>
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary/90 rounded-full px-8 h-14"
+            asChild
+          >
             {/* <button>
               <FileDown className="mr-2 w-5 h-5" /> {data.buttonText}
             </button> */}
@@ -33,10 +37,10 @@ export const CompanyIdentity = ({ data }) => (
         <div className="relative group">
           <div className="absolute -inset-4 bg-secondary/10 rounded-[3rem] rotate-3 group-hover:rotate-0 transition-transform duration-700" />
           <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl">
-            <img 
-              src={data.image} 
-              alt="GS1 Saudi Arabia HQ" 
-              className="w-full h-[550px] object-cover group-hover:scale-105 transition-transform duration-700" 
+            <img
+              src={data.image}
+              alt="GS1 Saudi Arabia HQ"
+              className="w-full h-[550px] object-cover group-hover:scale-105 transition-transform duration-700"
             />
           </div>
         </div>

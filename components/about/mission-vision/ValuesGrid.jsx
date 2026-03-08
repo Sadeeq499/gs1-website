@@ -6,7 +6,7 @@ export const ValuesGrid = ({ data }) => (
   <section className="py-24">
     <div className="container mx-auto px-4 text-center">
       <h2 className="text-4xl font-black text-primary mb-16">
-        {data.heading} <span className="text-secondary italic">{data.highlight}</span>
+        {data.heading} <span className="text-secondary">{data.highlight}</span>
       </h2>
       <div className="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto">
         {data.items.map((item, i) => {
@@ -17,7 +17,9 @@ export const ValuesGrid = ({ data }) => (
                 <Icon className="w-10 h-10 text-primary group-hover:text-white transition-colors" />
               </div>
               <h4 className="text-2xl font-bold text-primary">{item.title}</h4>
-              <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+              <p className="text-muted-foreground leading-relaxed">
+                {item.desc}
+              </p>
             </div>
           );
         })}
