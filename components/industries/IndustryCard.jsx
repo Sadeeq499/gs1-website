@@ -1,8 +1,11 @@
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export function IndustryCard({ industry, className }) {
+  const t = useTranslations("industries");
+
   return (
     <div
       className={cn(
@@ -15,7 +18,7 @@ export function IndustryCard({ industry, className }) {
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent z-10" />
         <img
           src={industry.image}
-          alt={industry.title}
+          alt={t(`cards.${industry.slug}.title`)}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
         />
@@ -24,16 +27,18 @@ export function IndustryCard({ industry, className }) {
       {/* Content */}
       <div className="flex flex-1 flex-col p-6">
         <h3 className="mb-2 text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/80 group-hover:text-primary transition-colors">
-          <span className="text-primary">{industry.title}</span>
+          <span className="text-primary">
+            {t(`cards.${industry.slug}.title`)}
+          </span>
         </h3>
 
         <p className="mb-6 text-muted-foreground leading-relaxed line-clamp-3 group-hover:text-foreground/80 transition-colors">
-          {industry.description}
+          {t(`cards.${industry.slug}.description`)}
         </p>
 
         <div className="mt-auto pt-4 border-t border-border/40 flex items-center justify-between">
           <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider group-hover:text-secondary transition-colors">
-            Learn more
+            {t("learn_more")}
           </span>
           <div className="h-8 w-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary transition-all duration-300 group-hover:bg-secondary group-hover:text-white group-hover:scale-110">
             <ArrowRight className="h-4 w-4" />
@@ -46,7 +51,9 @@ export function IndustryCard({ industry, className }) {
         href={industry.href}
         className="absolute inset-0 z-30 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-3xl"
       >
-        <span className="sr-only">View {industry.title}</span>
+        <span className="sr-only">
+          View {t(`cards.${industry.slug}.title`)}
+        </span>
       </Link>
     </div>
   );

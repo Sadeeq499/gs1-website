@@ -1,0 +1,70 @@
+{
+  "hero": {
+    "title": "Industries Served",
+    "subtitle": "Standardizing operations across healthcare, retail, logistics, and beyond for a connected world."
+  },
+  "page": {
+    "meta_title": "Industries Served | GS1 Saudi Arabia",
+    "meta_description": "Discover how GS1 standards drive efficiency, safety, and visibility across healthcare, retail, logistics, and more.",
+    "transforming_title": "Transforming Business Across Sectors",
+    "transforming_subtitle": "GS1 standards are the common language of business, enabling seamless communication and interoperability worldwide.",
+    "why_trust_title": "Why Industries Trust GS1",
+    "why_trust_subtitle": "Our neutral, non-profit platform ensures that data can be shared seamlessly between trading partners, regardless of size or sector.",
+    "benefits_0": "Global Interoperability",
+    "benefits_1": "Improved Supply Chain Visibility",
+    "benefits_2": "Regulatory Compliance",
+    "benefits_3": "Enhanced Consumer Safety",
+    "benefits_4": "Counterfeit Prevention",
+    "stats": {
+      "companies_value": "2M+",
+      "companies": "Companies Worldwide",
+      "countries_value": "150+",
+      "countries": "Countries",
+      "scans_value": "10B+",
+      "scans": "Daily Scans"
+    }
+  },
+  "cards": {
+    "healthcare-pharma": {
+      "title": "Healthcare & Pharma",
+      "description": "Ensure patient safety with end-to-end traceability for pharmaceuticals, medical devices, and hospital supplies using GS1 standards."
+    },
+    "retail-fmcg": {
+      "title": "Retail & FMCG",
+      "description": "Streamline point-of-sale, inventory management, and omnichannel commerce with globally recognized barcodes and data standards."
+    },
+    "logistics-supply-chain": {
+      "title": "Logistics & Supply Chain",
+      "description": "Gain real-time visibility across your entire supply chain with standardized identification and EPCIS event tracking."
+    },
+    "food-safety-agriculture": {
+      "title": "Food Safety & Agriculture",
+      "description": "Meet regulatory compliance and build consumer trust with farm-to-fork traceability powered by GS1 Digital Link."
+    },
+    "e-commerce-digital": {
+      "title": "E-Commerce & Digital",
+      "description": "Enable seamless product discovery, authentication, and enriched digital experiences with GS1-powered QR codes."
+    },
+    "construction-assets": {
+      "title": "Construction & Assets",
+      "description": "Track fixed assets, building materials, and equipment with reliable identification standards that reduce loss and improve audits."
+    },
+    "apparel-fashion": {
+      "title": "Apparel & Fashion",
+      "description": "Optimize inventory accuracy and combat counterfeiting with item-level tagging and RFID standards tailored for the fashion industry."
+    },
+    "government-public-sector": {
+      "title": "Government & Public Sector",
+      "description": "Enhance public procurement, safety, and operational efficiency with standardized identification and data exchange protocols."
+    },
+    "technical-industries": {
+      "title": "Technical Industries",
+      "description": "Standardizing complex technical components and machinery for better interoperability and maintenance."
+    },
+    "humanitarian-logistics": {
+      "title": "Humanitarian Logistics",
+      "description": "Ensuring aid reaches those in need with efficient tracking and transparency in humanitarian operations."
+    }
+  },
+  "learn_more": "Learn more"
+}

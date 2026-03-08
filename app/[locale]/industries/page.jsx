@@ -3,14 +3,20 @@ import { IndustryCard } from "@/components/industries/IndustryCard";
 import { IndustryHero } from "@/components/industries/IndustryHero";
 import { industries } from "@/components/industries/data";
 import { CheckCircle2 } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-export const metadata = {
-  title: "Industries Served | GS1 Saudi Arabia",
-  description:
-    "Discover how GS1 standards drive efficiency, safety, and visibility across healthcare, retail, logistics, and more.",
-};
+export async function generateMetadata({ params: { locale } }) {
+  const t = await getTranslations({ locale, namespace: "industries.page" });
+  return {
+    title: t("meta_title"),
+    description: t("meta_description"),
+  };
+}
 
 export default function IndustriesPage() {
+  const t = useTranslations("industries.page");
+
   return (
     <div className="relative flex min-h-screen flex-col">
       {/* Hero Section */}
@@ -23,11 +29,10 @@ export default function IndustriesPage() {
           <section>
             <div className="mx-auto max-w-2xl text-center mb-16">
               <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl text-balance">
-                Transforming Business Across Sectors
+                {t("transforming_title")}
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                GS1 standards are the common language of business, enabling
-                seamless communication and interoperability worldwide.
+                {t("transforming_subtitle")}
               </p>
             </div>
 
@@ -43,25 +48,17 @@ export default function IndustriesPage() {
             <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-2 lg:gap-8 items-center">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl mb-6">
-                  Why Industries Trust GS1
+                  {t("why_trust_title")}
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
-                  Our neutral, non-profit platform ensures that data can be
-                  shared seamlessly between trading partners, regardless of size
-                  or sector.
+                  {t("why_trust_subtitle")}
                 </p>
                 <ul className="space-y-4">
-                  {[
-                    "Global Interoperability",
-                    "Improved Supply Chain Visibility",
-                    "Regulatory Compliance",
-                    "Enhanced Consumer Safety",
-                    "Counterfeit Prevention",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3">
+                  {[0, 1, 2, 3, 4].map((index) => (
+                    <li key={index} className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-secondary" />
                       <span className="font-medium text-foreground">
-                        {item}
+                        {t(`benefits_${index}`)}
                       </span>
                     </li>
                   ))}
@@ -71,28 +68,28 @@ export default function IndustriesPage() {
                 <div className="aspect-square rounded-2xl bg-linear-to-br from-primary/20 to-secondary/20 p-8 rotate-3 shadow-xl backdrop-blur-3xl">
                   <div className="h-full w-full rounded-xl bg-white/50 border border-white/20 p-6 flex flex-col justify-center items-center text-center">
                     <span className="text-6xl font-bold text-primary mb-2">
-                      2M+
+                      {t("stats.companies_value")}
                     </span>
                     <span className="text-xl font-medium text-muted-foreground">
-                      Companies Worldwide
+                      {t("stats.companies")}
                     </span>
 
                     <div className="w-full h-px bg-border my-6" />
 
                     <span className="text-6xl font-bold text-secondary mb-2">
-                      150+
+                      {t("stats.countries_value")}
                     </span>
                     <span className="text-xl font-medium text-muted-foreground">
-                      Countries
+                      {t("stats.countries")}
                     </span>
 
                     <div className="w-full h-px bg-border my-6" />
 
                     <span className="text-6xl font-bold text-primary mb-2">
-                      10B+
+                      {t("stats.scans_value")}
                     </span>
                     <span className="text-xl font-medium text-muted-foreground">
-                      Daily Scans
+                      {t("stats.scans")}
                     </span>
                   </div>
                 </div>
@@ -100,7 +97,6 @@ export default function IndustriesPage() {
             </div>
           </section>
         </div>
-
       </main>
     </div>
   );
