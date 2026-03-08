@@ -1,20 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
-import contactImage from "@/public/images/contact.jpg";
+
 export default function ContactHero({ data: hero }) {
   return (
-    <section className="relative py-12 lg:py-15 overflow-hidden">
-      <div className="absolute inset-0 w-full h-full">
-        <Image
-          src={contactImage}
-          alt="Background"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-linear-to-r from-primary/60 via-primary/40 to-transparent" />
+    <section className="relative py-12 lg:py-16 overflow-hidden bg-primary">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/95 to-[#002c5c]" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -22,20 +15,20 @@ export default function ContactHero({ data: hero }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-7xl mx-auto text-center text-white"
+          className="max-w-7xl mx-auto text-center text-white space-y-4"
         >
           <Badge
             variant="outline"
-            className="mb-6 px-4 py-2 text-sm border-white/30 text-white bg-white/10 backdrop-blur-sm"
+            className="px-4 py-1 text-sm border-white/30 text-white bg-white/10 backdrop-blur-sm font-bold"
           >
             {hero.badge}
           </Badge>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
             {hero.title}{" "}
             <span className="text-secondary">{hero.titleHighlight}</span>{" "}
             {hero.titleSuffix}
           </h1>
-          <p className="text-lg text-white/90 max-w-2xl mx-auto drop-shadow">
+          <p className="text-lg text-white/90 max-w-2xl mx-auto">
             {hero.description}
           </p>
         </motion.div>
