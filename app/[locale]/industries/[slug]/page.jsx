@@ -2,14 +2,30 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { industryDetails } from "@/components/industries/data";
 import IndustryDetailHero from "@/components/industries/industries-detail/IndustryDetailHero";
+import { getTranslations } from "next-intl/server";
 
 export default async function IndustryPage({ params }) {
   const { slug } = await params;
-  const industry = industryDetails[slug];
+  const industryData = industryDetails[slug];
 
-  if (!industry) {
+  if (!industryData) {
     notFound();
   }
+
+  const tCard = await getTranslations(`industries.cards.${slug}`);
+  const tDetail = await getTranslations("industries.detail_page");
+
+  const industry = {
+    ...industryData,
+    title: tCard("title"),
+    description: tCard("description"),
+    description1: tCard.has("description1")
+      ? tCard("description1")
+      : industryData.description1,
+    description2: tCard.has("description2")
+      ? tCard("description2")
+      : industryData.description2,
+  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 font-sans selection:bg-primary/10">
@@ -22,11 +38,11 @@ export default async function IndustryPage({ params }) {
           <div className="space-y-6 animate-in slide-in-from-bottom-5 duration-700 delay-200">
             <div className="inline-block">
               <span className="text-primary font-bold tracking-wider uppercase text-sm border-b-2 border-primary/20 pb-1">
-                Overview
+                {tDetail("overview")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight">
-              Transforming {industry.title} with Standards
+              {tDetail("transforming_title", { title: industry.title })}
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               {industry.description1 || industry.description}
@@ -38,7 +54,7 @@ export default async function IndustryPage({ params }) {
             <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-2xl shadow-slate-200/50 dark:shadow-slate-900/50">
               <img
                 src={industry.image1 || "/images/placeholder.jpg"}
-                alt={`${industry.title} overview`}
+                alt={`${industry.title} ${tDetail("overview")}`}
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
             </div>
