@@ -1,0 +1,210 @@
+{
+  "hero": {
+    "title": "Our Services",
+    "subtitle": "Empowering your business with global standards and solutions for efficiency, visibility, and growth."
+  },
+  "section": {
+    "badge": "Comprehensive Solutions",
+    "title": "GS1 Saudi Arabia Services",
+    "description": "We provide a range of services designed to help you identify, capture, and share information efficiently.",
+    "learn_more": "Learn more"
+  },
+  "cta": {
+    "title": "Ready to Streamline Your Business?",
+    "description": "Join thousands of businesses using GS1 standards to drive efficiency and growth. Get started today with the global language of business.",
+    "get_barcode": "Get a Barcode",
+    "contact_us": "Contact Us"
+  },
+  "detail": {
+    "key_capabilities": "Key Capabilities",
+    "get": "Get",
+    "started": "Started",
+    "standardized": "Standardized",
+    "standardized_desc": "Globally recognized identification for seamless trade.",
+    "empower": "Empower your supply chain with our universal {acronym} solutions",
+    "why_choose": "Why Choose {acronym}?",
+    "ideal_for": "Ideal For"
+  },
+  "items": {
+    "global-trade-item-number": {
+      "title": "Global Trade Item Number (GTIN)",
+      "shortName": "GTIN",
+      "description": "Uniquely identify your products with GTINs (barcodes) to sell in retail stores and online marketplaces globally.",
+      "detailTitle": "Global Trade Item Number",
+      "acronym": "GTIN",
+      "shortDescription": "The global standard for uniquely identifying products.",
+      "detailDescription": "The Global Trade Item Number (GTIN) is the industry standard for the unique identification of trade items. It is the number you see beneath the barcode on almost every product in the world. By using a GTIN, you ensure that your product is uniquely identified within the global supply chain, preventing confusion with other products and facilitating smooth transactions across borders.",
+      "modules": [
+        {
+          "title": "Universal Barcode Provision",
+          "description": "Globally accepted barcode standards with unique assignment for products, assets, and hardware. Suitable for local and international supply chains."
+        },
+        {
+          "title": "1D & 2D Barcode Solutions",
+          "description": "Implementation of linear barcodes, QR codes, and DataMatrix. Supports item-level, carton-level, and pallet-level identification."
+        },
+        {
+          "title": "Serialization Systems",
+          "description": "Unique serial numbers for every individual product to ensure end-to-end item-level traceability and regulatory compliance."
+        },
+        {
+          "title": "Supply Chain Traceability",
+          "description": "Establish parent-child relationships between items, cartons, and pallets for full visibility across manufacturing and warehousing."
+        }
+      ],
+      "features": [
+        "Ensure global compliance and interoperability",
+        "Improve supply chain transparency and accuracy",
+        "Reduce errors, counterfeiting, and manual processes",
+        "Enable complete product traceability and recall readiness",
+        "Support future standards and digital transformation"
+      ],
+      "idealFor": [
+        "Retail & Consumer Goods",
+        "Healthcare & Pharmaceuticals",
+        "Manufacturing & Logistics",
+        "Government & Public Sector"
+      ]
+    },
+    "global-location-number": {
+      "title": "Global Location Number (GLN)",
+      "shortName": "GLN",
+      "description": "Identify physical locations and legal entities to streamline supply chain communications and transactions.",
+      "detailTitle": "Global Location Number",
+      "acronym": "GLN",
+      "shortDescription": "Identify physical locations and legal entities uniquely.",
+      "detailDescription": "The Global Location Number (GLN) uniquely identifies physical locations and legal entities. From a single shelf in a warehouse to an entire shipping dock, GLN offers the precision needed for modern logistics and supply chain management. It eliminates costly errors associated with confusing delivery addresses.",
+      "modules": [
+        {
+          "title": "Precise Location Identification",
+          "description": "Identify specific functional areas within your business, from loading docks to hospital beds, with absolute precision."
+        },
+        {
+          "title": "Supply Chain Visibility",
+          "description": "Track the movement of goods between parties with certainty of origin and destination."
+        },
+        {
+          "title": "Electronic Data Interchange (EDI)",
+          "description": "Streamline order-to-cash processes by replacing manual address entries with unique location codes in digital messages."
+        }
+      ],
+      "features": [
+        "Streamline shipping and receiving processes",
+        "Avoid costly delivery errors",
+        "Essential for EDI transactions",
+        "Identify legal entities and physical locations"
+      ],
+      "idealFor": [
+        "Logistics Providers",
+        "Hospitals & Healthcare",
+        "Retail Chains",
+        "Warehousing"
+      ]
+    },
+    "serial-shipping-container-code": {
+      "title": "Serial Shipping Container Code (SSCC)",
+      "shortName": "SSCC",
+      "description": "Track and trace logistic units throughout the supply chain with a unique identifier for every pallet or shipment.",
+      "detailTitle": "Serial Shipping Container Code",
+      "acronym": "SSCC",
+      "shortDescription": "Track logistics units across the supply chain.",
+      "detailDescription": "The Serial Shipping Container Code (SSCC) acts as a license plate for your logistics units. It enables individual tracking of pallets, cases, and cartons as they move through the supply chain. It allows products to be received, tracked, and cross-docked without the need to open the package.",
+      "modules": [
+        {
+          "title": "License Plate Tracking",
+          "description": "Track every logistics unit individually with a unique serial number worldwide."
+        },
+        {
+          "title": "Automated Goods Receipt",
+          "description": "Scan one barcode to receive an entire pallet without checking individual items manually using Advance Ship Notices (ASN)."
+        },
+        {
+          "title": "Inventory Accuracy",
+          "description": "Improve stock visibility and reduce shrinkage during transport and storage."
+        }
+      ],
+      "features": [
+        "Accelerate cross-docking operations",
+        "Reduce transit and receiving times",
+        "Eliminate manual checking errors",
+        "Global standard for logistics labeling"
+      ],
+      "idealFor": [
+        "Freight & Logistics",
+        "Retail Distribution",
+        "Manufacturing",
+        "Export/Import"
+      ]
+    },
+    "saudi-electricity-company": {
+      "title": "Saudi Electricity Company (SEC)",
+      "shortName": "SEC",
+      "description": "Specialized barcoding and identification solutions for Saudi Electricity Company suppliers and vendors.",
+      "detailTitle": "Traceability for Utilities & Energy",
+      "acronym": "SEC",
+      "shortDescription": "Compliance solutions for Saudi Electricity Company (SEC) suppliers.",
+      "detailDescription": "Customized GS1 standards implementation for the energy sector, specifically designed to meet Saudi Electricity Company (SEC) requirements. We help suppliers implement Data Matrix barcodes for material tracking, incorporating Vendor Codes, PO Numbers, and Serial Numbers as mandated by SEC regulations.",
+      "modules": [
+        {
+          "title": "SEC Mandate Compliance",
+          "description": "Generate GS1 Data Matrix barcodes compliant with SEC's specific identifier requirements (Project Name, Vendor Code, PO Number)."
+        },
+        {
+          "title": "Material Identification",
+          "description": "Assign unique Global Trade Item Numbers (GTINs) to utility materials for seamless integration with SEC's SAP EWM system."
+        },
+        {
+          "title": "Serialized Asset Tracking",
+          "description": "Implement unique serial numbers (AI 21) for high-value assets to ensure lifetime traceability and maintenance tracking."
+        }
+      ],
+      "features": [
+        "Certified GS1 barcode generation for SEC vendors",
+        "Seamless integration with SAP EWM requirements",
+        "Verify material tags to prevent rejection at delivery",
+        "Expert guidance on technical specifications"
+      ],
+      "idealFor": [
+        "SEC Suppliers",
+        "Energy Contractors",
+        "Cable Manufacturers",
+        "Electrical Equipment Vendors"
+      ]
+    },
+    "tobacco-traceability": {
+      "title": "Tobacco Traceability",
+      "shortName": "Tobacco",
+      "description": "Special Category: Ensure compliance with tobacco regulations through our specialized tracking and tracing solutions.",
+      "detailTitle": "Tobacco Track & Trace",
+      "acronym": "Tax Stamp",
+      "shortDescription": "Regulatory compliance for ZATCA tobacco tracking.",
+      "detailDescription": "A comprehensive solution for tobacco manufacturers and importers to comply with Saudi Arabia's Track and Trace regulations. Our system ensures that every pack, carton, and master case is uniquely identified, aggregated, and traceable from production to point of sale, preventing illicit trade and ensuring tax compliance.",
+      "modules": [
+        {
+          "title": "Digital Tax Stamp Integration",
+          "description": "Seamlessly integrate GS1 identifiers with ZATCA's digital tax stamp system for automated reporting and verification."
+        },
+        {
+          "title": "Multi-Level Aggregation",
+          "description": "Link individual packs to cartons and master cases (Parent-Child relationships) to simplify logistics and customs clearance."
+        },
+        {
+          "title": "Anti-Illicit Trade",
+          "description": "Enable real-time verification of product authenticity to protect brand reputation and consumer safety."
+        }
+      ],
+      "features": [
+        "Full compliance with GCC and ZATCA regulations",
+        "Serialization for anti-counterfeiting",
+        "Real-time data sharing with regulatory bodies",
+        "End-to-end supply chain visibility"
+      ],
+      "idealFor": [
+        "Tobacco Manufacturers",
+        "Importers & Distributors",
+        "Duty-Free Operators",
+        "Compliance Officers"
+      ]
+    }
+  }
+}

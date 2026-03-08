@@ -4,7 +4,7 @@ import { routing } from "./routing";
 
 // Add new namespace filenames here — they auto-load and merge under their key.
 // e.g. adding "services" will load locales/{locale}/services.json → messages.services.*
-const namespaces = ["home", "industries"];
+const namespaces = ["home", "industries", "services"];
 
 async function loadMessages(locale) {
   const [common, ...namespacedModules] = await Promise.all([
@@ -15,7 +15,7 @@ async function loadMessages(locale) {
   return {
     ...common.default, // spread common keys at root (header, footer, etc.)
     ...Object.fromEntries(
-      namespaces.map((ns, i) => [ns, namespacedModules[i].default])
+      namespaces.map((ns, i) => [ns, namespacedModules[i].default]),
     ),
   };
 }

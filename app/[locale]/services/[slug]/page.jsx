@@ -9,14 +9,34 @@ import {
   Barcode,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getTranslations } from "next-intl/server";
 
 export default async function ServicePage({ params }) {
   const { slug } = await params;
-  const service = servicesDetails.find((s) => s.slug === slug);
+  const serviceData = servicesDetails.find((s) => s.slug === slug);
 
-  if (!service) {
+  if (!serviceData) {
     notFound();
   }
+
+  const t = await getTranslations("services.detail");
+  const tItem = await getTranslations(`services.items.${slug}`);
+
+  const service = {
+    ...serviceData,
+    title: tItem.has("detailTitle") ? tItem("detailTitle") : serviceData.title,
+    acronym: tItem.has("acronym") ? tItem("acronym") : serviceData.acronym,
+    description: tItem.has("detailDescription")
+      ? tItem("detailDescription")
+      : serviceData.description,
+    modules: tItem.has("modules") ? tItem.raw("modules") : serviceData.modules,
+    features: tItem.has("features")
+      ? tItem.raw("features")
+      : serviceData.features,
+    idealFor: tItem.has("idealFor")
+      ? tItem.raw("idealFor")
+      : serviceData.idealFor,
+  };
 
   // Fallback image handling
   const heroImg = service.images?.hero || service.heroImage;
@@ -37,7 +57,7 @@ export default async function ServicePage({ params }) {
             alt={service.title}
             className="w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-slate-900/90 via-slate-900/60 to-transparent" />
         </div>
         <div className="relative h-full container mx-auto px-4 md:px-8 flex flex-col justify-center">
           <div className="max-w-4xl space-y-6 animate-in slide-in-from-bottom-5 duration-700">
@@ -73,7 +93,7 @@ export default async function ServicePage({ params }) {
             <div className="lg:w-1/2 space-y-10">
               <div className="space-y-2">
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-                  Key Capabilities
+                  {t("key_capabilities")}
                 </h2>
                 <div className="h-1 w-20 bg-secondary rounded-full" />
               </div>
@@ -98,7 +118,7 @@ export default async function ServicePage({ params }) {
                   size="lg"
                   className="bg-secondary hover:bg-secondary/90 text-white px-8 rounded-full shadow-lg shadow-secondary/20"
                 >
-                  Get {service.acronym || "Started"}
+                  {t("get")} {service.acronym || t("started")}
                 </Button>
               </div>
             </div>
@@ -118,11 +138,11 @@ export default async function ServicePage({ params }) {
                   <div className="flex items-center gap-3 mb-2">
                     <Barcode className="text-secondary h-6 w-6" />
                     <span className="font-bold text-slate-900">
-                      Standardized
+                      {t("standardized")}
                     </span>
                   </div>
                   <p className="text-xs text-slate-500">
-                    Globally recognized identification for seamless trade.
+                    {t("standardized_desc")}
                   </p>
                 </div>
               </div>
@@ -137,11 +157,10 @@ export default async function ServicePage({ params }) {
         style={{ backgroundImage: `url('${bannerImg}')` }}
       >
         <div className="absolute inset-0 bg-slate-900/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-900 to-transparent" />
         <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 max-w-4xl mx-auto">
-            Empower your supply chain with our universal {service.acronym}{" "}
-            solutions
+            {t("empower", { acronym: service.acronym })}
           </h2>
         </div>
       </section>
@@ -155,7 +174,7 @@ export default async function ServicePage({ params }) {
               <div className="space-y-8">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold text-slate-900">
-                    Why Choose {service.acronym}?
+                    {t("why_choose", { acronym: service.acronym })}
                   </h3>
                   <div className="h-1 w-12 bg-secondary rounded-full" />
                 </div>
@@ -163,7 +182,7 @@ export default async function ServicePage({ params }) {
                   {service.features &&
                     service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3 group">
-                        <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                        <div className="mt-1 shrink-0 w-6 h-6 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
                           <CheckCircle2 className="w-4 h-4 text-green-600" />
                         </div>
                         <span className="text-slate-600 font-medium group-hover:text-slate-900 transition-colors">
@@ -178,7 +197,7 @@ export default async function ServicePage({ params }) {
               <div className="space-y-8 lg:border-l lg:border-slate-100 lg:pl-12">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold text-slate-900">
-                    Ideal For
+                    {t("ideal_for")}
                   </h3>
                   <div className="h-1 w-12 bg-primary rounded-full" />
                 </div>
