@@ -102,22 +102,6 @@ const StandardsPillars = () => {
             <PillarCard key={pillar.slug} pillar={pillar} index={i} />
           ))}
         </div>
-
-        {/* Bottom Professional CTA */}
-        <div className="mt-20 p-12 rounded-[2rem] bg-primary text-white flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
-          <div className="relative z-10">
-            <h4 className="text-2xl font-bold mb-2">Ready to implement GS1 Standards?</h4>
-            <p className="text-slate-400 font-light">Join the global network of 2 million+ companies.</p>
-          </div>
-          <Link 
-            href="/get-started"
-            className="relative z-10 bg-[#FE5000] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all"
-          >
-            Become a Member
-          </Link>
-          {/* Background decoration */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#FE5000] rounded-full blur-[100px] opacity-10 translate-x-1/2 -translate-y-1/2" />
-        </div>
       </div>
     </section>
   );
