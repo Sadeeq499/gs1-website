@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "title": "Solutions | GS1 Saudi Arabia",
+    "description": "Premium industrial solutions for the Saudi market."
+  },
+  "common": {
+    "breadcrumbHome": "Home",
+    "breadcrumbSolutions": "Solutions",
+    "strategicPillars": "Strategic Pillars",
+    "strategicPillarsDesc": "Deep dive into the core components that make our {acronym} a global standard.",
+    "moduleLabel": "Module",
+    "innovationTitle": "GS1 Saudi Arabia: Driving Innovation",
+    "innovationDesc": "We provide the framework for the Kingdom's digital future, ensuring every product, location, and asset is identified correctly within the global supply chain.",
+    "whyImplementationMatters": "Why Implementation Matters",
+    "whyImplementationMattersDesc": "The specific benefits of adopting {title} within your organizational workflow.",
+    "featureBenefit": "A key operational advantage designed to optimize your {acronym} performance and ensure regulatory compliance in Saudi Arabia.",
+    "ctaTitle": "Ready to Transform Your Business?",
+    "ctaDesc": "Connect with our experts at GS1 Saudi Arabia to discuss your specific needs and how {title} can be tailored for your success.",
+    "understandingTitle": "Understanding the Solution"
+  },
+  "items": {
+    "2d-barcodes": {
+      "title": "Next-Generation 2D Barcodes",
+      "acronym": "Sunrise 2027",
+      "shortDescription": "The biggest evolution in retail since the 1970s.",
+      "description": "By 2027, the world is moving from simple 1D barcodes to data-rich 2D symbols. GS1 Saudi Arabia is leading this transition, enabling businesses to provide more information than ever before through a single scan at the checkout counter.",
+      "modules": [
+        {
+          "title": "The Data Revolution",
+          "description": "Unlike traditional barcodes, 2D symbols (like QR codes and DataMatrix) can store expiry dates, batch numbers, and serial numbers. This allows retailers to automatically block the sale of expired items at the register."
+        },
+        {
+          "title": "Sustainability & Transparency",
+          "description": "Encode a product's entire journey into the barcode. Consumers can scan with their smartphones to see the carbon footprint, organic certifications, or 'Made in Saudi' heritage."
+        },
+        {
+          "title": "Operations & Efficiency",
+          "description": "Simplify your warehouse operations by scanning a single 2D code to capture all production data simultaneously. This reduces manual entry by 80%."
+        }
+      ],
+      "features": [
+        "Automated Expiry Management",
+        "Rich Consumer Engagement",
+        "Dynamic Pricing Support",
+        "Reduced Packaging Waste",
+        "Born in Saudi Visibility"
+      ]
+    },
+    "digital-link": {
+      "title": "GS1 Digital Link",
+      "acronym": "Digital Link",
+      "shortDescription": "Connecting every physical product to the digital world.",
+      "description": "GS1 Digital Link transforms the traditional barcode into a web-enabled gateway. It allows a single QR code to serve multiple purposes: retail checkout, consumer engagement, and regulatory tracking.",
+      "modules": [
+        {
+          "title": "One Code, Infinite Destinations",
+          "description": "Using 'Resolver' technology, a single QR code can send a customer to a promotional video or a technician to a repair manual, depending on who scans it."
+        },
+        {
+          "title": "Enhanced Brand Loyalty",
+          "description": "Turn your packaging into a direct marketing channel. Update recipes or share sustainability stories in real-time without changing physical printing."
+        }
+      ],
+      "features": [
+        "Web-Native Barcodes",
+        "Dynamic Content Updates",
+        "Anti-Counterfeiting Tools",
+        "No Special Apps Required"
+      ]
+    },
+    "zatca-compliance": {
+      "title": "ZATCA Compliance",
+      "acronym": "Fatoora",
+      "shortDescription": "Ensuring your E-Invoicing meets Saudi National Standards.",
+      "description": "GS1 Saudi Arabia provides the foundational identifiers (GLNs) and data structures necessary to comply with ZATCA's Fatoora mandate for Phase 2 integration.",
+      "modules": [
+        {
+          "title": "Technical Integration",
+          "description": "We provide the technical blueprints for encoding Seller, VAT, and Timestamp data into ZATCA-compliant QR codes."
+        },
+        {
+          "title": "Branch & Location Management",
+          "description": "Use Global Location Numbers (GLN) to identify every branch and warehouse in your tax filings accurately."
+        }
+      ],
+      "features": [
+        "ZATCA Phase 2 Compliant",
+        "Standardized XML Support",
+        "Validated Data Structures",
+        "Vision 2030 Alignment"
+      ]
+    },
+    "traceability": {
+      "title": "End-to-End Traceability",
+      "acronym": "Traceability",
+      "shortDescription": "Full supply chain visibility from farm to fork.",
+      "description": "Our traceability solutions utilize GS1 EPCIS standards to capture and share event data, allowing Saudi businesses to prove product origin and ensure cold chain integrity.",
+      "modules": [
+        {
+          "title": "Surgical Recall Management",
+          "description": "Identify exactly which specific batch in which city needs to be removed from shelves, minimizing waste and protecting reputation."
+        },
+        {
+          "title": "Cold Chain Monitoring",
+          "description": "Ensure temperature-sensitive goods like pharmaceuticals and fresh food are handled correctly throughout the entire journey."
+        }
+      ],
+      "features": [
+        "SFDA Tameni Integration",
+        "EPCIS 2.0 Standard",
+        "Real-time Event Tracking",
+        "Cold Chain Monitoring"
+      ]
+    }
+  }
+}
