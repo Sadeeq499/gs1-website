@@ -1,0 +1,675 @@
+{
+  "hero": {
+    "badge": "The Global Language of Business",
+    "title": "GS1 Standards",
+    "description": "Identify, capture, and share information automatically and accurately with the world's most widely used supply chain standards.",
+    "identify": "Identify",
+    "capture": "Capture",
+    "share": "Share"
+  },
+  "pillars": {
+    "badge": "The GS1 Framework",
+    "title": "Three Pillars of Global Standards",
+    "description": "Our framework enables businesses across the Kingdom to identify, capture, and share data — ensuring transparency and efficiency from local production to global consumption.",
+    "explore": "Explore Standard"
+  },
+  "items": {
+    "identify": {
+      "title": "Identify",
+      "acronym": "Global Identification Keys",
+      "shortDescription": "The foundation of the GS1 System, providing unique identities for products, services, and locations globally.",
+      "features": [
+        {
+          "title": "Global Uniqueness",
+          "detail": "Ensures no two products globally share the same ID."
+        },
+        {
+          "title": "Market Access",
+          "detail": "Required by KSA retailers and global marketplaces."
+        },
+        {
+          "title": "Regulatory Compliance",
+          "detail": "Meets SFDA requirements for healthcare tracking."
+        },
+        {
+          "title": "Data Integrity",
+          "detail": "Foundation for accurate master data synchronization."
+        }
+      ]
+    },
+    "capture": {
+      "title": "Capture",
+      "acronym": "Data Carriers (Barcodes & RFID)",
+      "shortDescription": "Bridging physical products to digital systems through standardized barcodes and RFID.",
+      "features": [
+        {
+          "title": "Processing Speed",
+          "detail": "Scan hundreds of items in seconds with RFID."
+        },
+        {
+          "title": "Zero Error Rate",
+          "detail": "Removes human error from manual data entry."
+        },
+        {
+          "title": "Real-time Visibility",
+          "detail": "Instant inventory updates across all channels."
+        },
+        {
+          "title": "Safety Recalls",
+          "detail": "Scan batch data for immediate product withdrawal."
+        }
+      ]
+    },
+    "share": {
+      "title": "Share",
+      "acronym": "Data Interchange (EDI & GDSN)",
+      "shortDescription": "Enabling seamless communication and master data synchronization between partners.",
+      "features": [
+        {
+          "title": "Trusted Source",
+          "detail": "Ensure product data comes from verified manufacturers."
+        },
+        {
+          "title": "Operational Efficiency",
+          "detail": "Automate orders and invoicing to save time/costs."
+        },
+        {
+          "title": "Traceability",
+          "detail": "Enable full end-to-end visibility for safety."
+        },
+        {
+          "title": "Consumer Trust",
+          "detail": "Provide accurate digital info to the end consumer."
+        }
+      ]
+    }
+  },
+  "details": {
+    "identify": {
+      "hero": {
+        "badge": "GS1 Standard — Pillar 01",
+        "title": "Identify",
+        "subtitle": "Global Identification Keys",
+        "description": "The foundation of the entire GS1 System. A universal language of unique identifiers that gives every product, location, and asset a distinct digital identity recognized across 116+ countries."
+      },
+      "stats": [
+        {
+          "value": "1B+",
+          "label": "Products Identified Daily"
+        },
+        {
+          "value": "116+",
+          "label": "Countries Covered"
+        },
+        {
+          "value": "2M+",
+          "label": "Companies Worldwide"
+        },
+        {
+          "value": "99.9%",
+          "label": "Scan Accuracy Rate"
+        }
+      ],
+      "overview": {
+        "eyebrow": "Why Identification Matters",
+        "title": "One Product. One Number. Recognized Everywhere.",
+        "paragraphs": [
+          "In today's interconnected economy, every product needs a universally recognized identity. GS1 Identification Keys provide that foundation — assigning a unique, globally unambiguous number to every trade item, logistics unit, location, and service relationship.",
+          "Within the Kingdom of Saudi Arabia, GS1 identification is not just a best practice — it is a regulatory requirement for sectors including pharmaceuticals (SFDA), food safety, and retail. By adopting GS1 Keys, Saudi businesses unlock seamless access to domestic and international markets.",
+          "Each key is structured to prevent duplication across the entire global supply chain, ensuring that whether a product is scanned in Riyadh, Rotterdam, or Rio de Janeiro, the same accurate information is retrieved instantly."
+        ]
+      },
+      "components": [
+        {
+          "acronym": "GTIN",
+          "name": "Global Trade Item Number",
+          "description": "The world's most widely used product identifier. Every retail product, from a bottle of water to a luxury watch, carries a GTIN encoded in its barcode. It is mandatory for listing on Amazon, Noon, and every major Saudi retailer.",
+          "useCases": [
+            "Retail point-of-sale scanning",
+            "E-commerce marketplace listings",
+            "Inventory management & replenishment",
+            "Product recall identification"
+          ]
+        },
+        {
+          "acronym": "GLN",
+          "name": "Global Location Number",
+          "description": "A 13-digit key that uniquely identifies physical locations (warehouses, stores, hospitals) and legal entities (companies, departments). GLN enables pinpoint accuracy in 'ship-to' and 'bill-to' processes across the Kingdom's logistics network.",
+          "useCases": [
+            "Warehouse & distribution center identification",
+            "Hospital & pharmacy location tracking",
+            "Customs clearance & FASAH integration",
+            "Precise ship-to address accuracy"
+          ]
+        },
+        {
+          "acronym": "SSCC",
+          "name": "Serial Shipping Container Code",
+          "description": "Think of the SSCC as a digital license plate for every pallet, crate, or shipping container. It enables complete traceability of logistics units from the factory floor in Jubail to the retail shelf in Jeddah — and beyond to global export destinations.",
+          "useCases": [
+            "Pallet & container-level tracking",
+            "Advanced Shipping Notices (ASN)",
+            "Cross-docking & warehouse receiving",
+            "End-to-end supply chain visibility"
+          ]
+        },
+        {
+          "acronym": "GSRN",
+          "name": "Global Service Relation Number",
+          "description": "Identifies the relationship between a service provider and a recipient. In KSA's healthcare sector, the GSRN is used to link patients to their medical records, prescriptions, and treatment histories across SFDA-regulated facilities.",
+          "useCases": [
+            "Patient identification in hospitals",
+            "Loyalty program member tracking",
+            "Insurance policy holder identification",
+            "Service subscription management"
+          ]
+        },
+        {
+          "acronym": "GDTI",
+          "name": "Global Document Type Identifier",
+          "description": "Enables unique identification of document types and individual documents. Widely used in customs automation through FASAH, corporate compliance, and administrative digitization initiatives aligned with Saudi Vision 2030.",
+          "useCases": [
+            "Customs documents & FASAH integration",
+            "Invoice & purchase order tracking",
+            "Regulatory compliance documentation",
+            "Digital government services"
+          ]
+        }
+      ],
+      "process": {
+        "eyebrow": "How It Works",
+        "title": "From Registration to Global Recognition",
+        "steps": [
+          {
+            "step": "01",
+            "title": "Join GS1 Saudi Arabia",
+            "description": "Register with GS1 KSA to receive your unique Company Prefix — the foundation of all your GS1 identification keys."
+          },
+          {
+            "step": "02",
+            "title": "Assign Your Keys",
+            "description": "Use your prefix to create GTINs for products, GLNs for locations, and SSCCs for shipments. Each key is globally unique."
+          },
+          {
+            "step": "03",
+            "title": "Encode & Apply",
+            "description": "Embed your identification keys into barcodes, QR codes, or RFID tags and apply them to products and packaging."
+          },
+          {
+            "step": "04",
+            "title": "Trade Globally",
+            "description": "Your products are now recognized by retailers, marketplaces, and regulatory bodies in 116+ countries worldwide."
+          }
+        ]
+      },
+      "benefits": {
+        "eyebrow": "Strategic Advantages",
+        "title": "Why Leading Saudi Businesses Choose GS1 Identification",
+        "items": [
+          {
+            "title": "Global Market Access",
+            "description": "GTINs are required by Amazon, Noon, Carrefour, and every major global retailer. Without them, your products simply cannot be listed."
+          },
+          {
+            "title": "Regulatory Compliance",
+            "description": "Meet SFDA, SASO, and Zakat Authority requirements. GS1 keys are the foundation of pharmaceutical serialization and food traceability mandates."
+          },
+          {
+            "title": "Operational Efficiency",
+            "description": "Eliminate manual data entry errors. Automated scanning of GS1 keys reduces processing time by up to 80% in warehouses and at checkout."
+          },
+          {
+            "title": "Data Integrity",
+            "description": "One source of truth. GS1 keys ensure that every partner in your supply chain references the exact same product, location, or shipment."
+          },
+          {
+            "title": "Consumer Confidence",
+            "description": "Customers trust products they can verify. GS1 identification enables product authentication and anti-counterfeiting measures."
+          },
+          {
+            "title": "Vision 2030 Alignment",
+            "description": "Support the Kingdom's digital transformation goals through standardized, interoperable identification across every sector of the economy."
+          }
+        ]
+      },
+      "industries": {
+        "eyebrow": "Industry Applications",
+        "title": "Identification Across Every Sector",
+        "items": [
+          {
+            "name": "Retail & FMCG",
+            "detail": "Mandatory GTIN for every product on every shelf and every e-commerce listing."
+          },
+          {
+            "name": "Healthcare & Pharma",
+            "detail": "SFDA-mandated serialization using GTIN + Serial Number for drug traceability."
+          },
+          {
+            "name": "Logistics & Transport",
+            "detail": "SSCC enables pallet-level tracking across the Kingdom's entire logistics network."
+          },
+          {
+            "name": "Food & Agriculture",
+            "detail": "Farm-to-fork traceability meeting SFDA food safety regulations."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "What is the difference between a GTIN and a barcode?",
+          "answer": "A GTIN is the number (the unique identifier). A barcode is the visual carrier (the lines or dots) that encodes that number so machines can read it. Think of it like the difference between your phone number and the contact card that stores it."
+        },
+        {
+          "question": "Is a GTIN mandatory for selling in Saudi Arabia?",
+          "answer": "Yes. All retail products sold in KSA must carry a valid GTIN. It is required by major retailers (Panda, Tamimi, Carrefour) and e-commerce platforms (Amazon.sa, Noon). SFDA also requires GTINs for pharmaceutical products."
+        },
+        {
+          "question": "How long does it take to get a GS1 Company Prefix?",
+          "answer": "After completing registration and payment with GS1 Saudi Arabia, your Company Prefix is typically issued within 2-3 business days."
+        },
+        {
+          "question": "Can I use the same GTIN globally?",
+          "answer": "Absolutely. That is the entire purpose of GS1. A GTIN assigned in Saudi Arabia is recognized and valid in all 116+ GS1 member countries. No re-registration is needed."
+        }
+      ],
+      "cta": {
+        "title": "Ready to Identify Your Products Globally?",
+        "description": "Join thousands of Saudi businesses already using GS1 identification keys to access domestic and international markets.",
+        "primaryButton": {
+          "label": "Get Your GS1 Prefix"
+        },
+        "secondaryButton": {
+          "label": "Talk to an Expert"
+        }
+      }
+    },
+    "capture": {
+      "hero": {
+        "badge": "GS1 Standard — Pillar 02",
+        "title": "Capture",
+        "subtitle": "Data Carriers — Barcodes & RFID",
+        "description": "The bridge between the physical and digital worlds. GS1 data carriers encode identification keys into barcodes, QR codes, and RFID tags — enabling machines to read product data in milliseconds."
+      },
+      "stats": [
+        {
+          "value": "10B+",
+          "label": "Barcodes Scanned Daily"
+        },
+        {
+          "value": "150+",
+          "label": "Barcode Types Supported"
+        },
+        {
+          "value": "<200ms",
+          "label": "Average Scan Time"
+        },
+        {
+          "value": "99.99%",
+          "label": "First-Scan Read Rate"
+        }
+      ],
+      "overview": {
+        "eyebrow": "Why Data Capture Matters",
+        "title": "Every Scan Tells a Story.",
+        "paragraphs": [
+          "Data capture is the mechanism that transforms static product identification into actionable, real-time information. When a barcode is scanned at a Saudi supermarket checkout, a warehouse dock, or a hospital pharmacy — data flows instantly into digital systems, eliminating manual entry and human error.",
+          "GS1 data carriers come in multiple formats designed for specific environments: linear barcodes for high-speed retail scanning, 2D DataMatrix codes for pharmaceutical serialization, and RFID tags for bulk inventory management without line-of-sight scanning.",
+          "The future is GS1 Digital Link — a QR code that connects consumers directly to rich product information, authenticity verification, nutritional data, and brand experiences, all through a simple smartphone scan."
+        ]
+      },
+      "components": [
+        {
+          "acronym": "EAN/UPC",
+          "name": "Linear Barcodes",
+          "description": "The classic barcode you see on every retail product worldwide. EAN-13 (used in KSA) and UPC-A (used in North America) encode the GTIN for lightning-fast point-of-sale scanning. Over 10 billion scans happen globally every single day.",
+          "useCases": [
+            "Supermarket & retail checkout",
+            "Warehouse receiving & shipping",
+            "Automated inventory counting",
+            "Product pricing & promotions"
+          ]
+        },
+        {
+          "acronym": "GS1-128",
+          "name": "Application Identifier Barcodes",
+          "description": "An advanced linear barcode that encodes not just the GTIN, but also batch numbers, expiry dates, serial numbers, and weight. It is the standard for logistics labels and regulated supply chains.",
+          "useCases": [
+            "Logistics shipping labels",
+            "Batch & expiry date encoding",
+            "Serial number tracking",
+            "Variable weight product labeling"
+          ]
+        },
+        {
+          "acronym": "DataMatrix",
+          "name": "GS1 DataMatrix",
+          "description": "A 2D barcode that packs massive amounts of data into a tiny space. Mandatory for SFDA pharmaceutical serialization in Saudi Arabia. It encodes GTIN, serial number, batch, and expiry — enabling full drug traceability from manufacturer to patient.",
+          "useCases": [
+            "Pharmaceutical serialization (SFDA)",
+            "Medical device identification",
+            "Small product marking",
+            "High-security document verification"
+          ]
+        },
+        {
+          "acronym": "Digital Link",
+          "name": "GS1 Digital Link QR Code",
+          "description": "The next generation of barcodes. A single QR code that works at the checkout scanner AND connects consumers to dynamic digital content — product pages, nutritional info, authenticity checks, and brand experiences. One code, infinite possibilities.",
+          "useCases": [
+            "Consumer product information",
+            "Brand engagement & marketing",
+            "Product authenticity verification",
+            "Regulatory information access"
+          ]
+        },
+        {
+          "acronym": "EPC/RFID",
+          "name": "Electronic Product Code / RFID",
+          "description": "Radio Frequency Identification enables scanning without line-of-sight. Read hundreds of tagged items simultaneously. Transforming inventory management in Saudi retail, logistics, and healthcare with real-time visibility.",
+          "useCases": [
+            "Bulk inventory scanning (no line of sight)",
+            "Real-time asset tracking",
+            "Apparel & fashion retail",
+            "Pharmaceutical cold chain monitoring"
+          ]
+        }
+      ],
+      "process": {
+        "eyebrow": "How It Works",
+        "title": "From Physical Product to Digital Data",
+        "steps": [
+          {
+            "step": "01",
+            "title": "Choose Your Carrier",
+            "description": "Select the right data carrier for your use case — linear barcode for retail, DataMatrix for pharma, RFID for logistics, or Digital Link for consumer engagement."
+          },
+          {
+            "step": "02",
+            "title": "Encode Your Data",
+            "description": "Embed your GS1 identification keys (GTIN, GLN, SSCC) along with supplementary data (batch, expiry, serial) into the chosen carrier format."
+          },
+          {
+            "step": "03",
+            "title": "Print or Apply",
+            "description": "Generate high-quality barcodes for product packaging, shipping labels, or embed RFID tags directly into products or pallets."
+          },
+          {
+            "step": "04",
+            "title": "Scan & Activate",
+            "description": "Every scan triggers instant data capture — updating POS systems, warehouse management, regulatory databases, and consumer-facing applications in real time."
+          }
+        ]
+      },
+      "benefits": {
+        "eyebrow": "Strategic Advantages",
+        "title": "Why GS1 Data Carriers Power the World's Supply Chains",
+        "items": [
+          {
+            "title": "Lightning-Fast Processing",
+            "description": "A single barcode scan replaces 20+ keystrokes of manual data entry. RFID can read 1,000+ items per second without line of sight."
+          },
+          {
+            "title": "Zero Error Rate",
+            "description": "Manual data entry has a 1-in-300 error rate. Barcode scanning achieves 1 error in 36 trillion characters scanned."
+          },
+          {
+            "title": "SFDA Compliance",
+            "description": "GS1 DataMatrix is the mandated carrier for pharmaceutical serialization in Saudi Arabia. Non-compliance means market exclusion."
+          },
+          {
+            "title": "Consumer Engagement",
+            "description": "GS1 Digital Link QR codes turn every product into a digital touchpoint — connecting consumers to rich brand experiences."
+          },
+          {
+            "title": "Real-Time Visibility",
+            "description": "Every scan creates a data event. Track products from factory to shelf in real time across the entire Kingdom."
+          },
+          {
+            "title": "Future-Proof Technology",
+            "description": "GS1 standards evolve with technology. From 1D barcodes to RFID to Digital Link, your investment is always current."
+          }
+        ]
+      },
+      "industries": {
+        "eyebrow": "Industry Applications",
+        "title": "Data Capture Powering Every Sector",
+        "items": [
+          {
+            "name": "Retail & E-commerce",
+            "detail": "10 billion daily scans at checkout. EAN/UPC is the universal language of retail."
+          },
+          {
+            "name": "Healthcare & Pharma",
+            "detail": "SFDA-mandated DataMatrix for drug serialization, patient safety, and recall management."
+          },
+          {
+            "name": "Logistics & Warehousing",
+            "detail": "GS1-128 and RFID for automated receiving, picking, and shipping across KSA."
+          },
+          {
+            "name": "Consumer Goods",
+            "detail": "Digital Link QR codes connecting every product to rich digital consumer experiences."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "What is the difference between a 1D barcode and a 2D barcode?",
+          "answer": "A 1D (linear) barcode uses parallel lines to encode data — typically just a GTIN number. A 2D barcode (DataMatrix, QR Code) uses patterns of squares to encode much more data — including batch numbers, expiry dates, serial numbers, and even URLs."
+        },
+        {
+          "question": "Is GS1 DataMatrix mandatory for pharmaceuticals in KSA?",
+          "answer": "Yes. The Saudi Food & Drug Authority (SFDA) mandates GS1 DataMatrix encoding for pharmaceutical serialization. Every drug package must carry a unique serial number encoded in a GS1 DataMatrix barcode."
+        },
+        {
+          "question": "What is GS1 Digital Link and why should I care?",
+          "answer": "GS1 Digital Link is a web-enabled QR code standard. Instead of just encoding a number, it encodes a URL that resolves to dynamic product information. One scan can serve the checkout scanner, the consumer, and the regulator simultaneously."
+        },
+        {
+          "question": "Can RFID replace barcodes entirely?",
+          "answer": "Not yet. RFID and barcodes are complementary technologies. RFID excels at bulk scanning and real-time tracking, while barcodes remain more cost-effective for individual product identification. Most leading supply chains use both."
+        }
+      ],
+      "cta": {
+        "title": "Modernize Your Data Capture Systems",
+        "description": "From linear barcodes to RFID to Digital Link — our experts will help you choose and implement the right GS1 data carriers.",
+        "primaryButton": {
+          "label": "Contact Technical Team"
+        },
+        "secondaryButton": {
+          "label": "Download Barcode Guide"
+        }
+      }
+    },
+    "share": {
+      "hero": {
+        "badge": "GS1 Standard — Pillar 03",
+        "title": "Share",
+        "subtitle": "Data Interchange — EDI, GDSN & EPCIS",
+        "description": "The power of GS1 is fully realized when data flows seamlessly between partners. Share standards enable automated, accurate, and secure exchange of product, transaction, and event data across the entire supply chain."
+      },
+      "stats": [
+        {
+          "value": "50K+",
+          "label": "Companies Using GDSN"
+        },
+        {
+          "value": "48M+",
+          "label": "Products Synchronized"
+        },
+        {
+          "value": "99.5%",
+          "label": "Order Accuracy with EDI"
+        },
+        {
+          "value": "80%",
+          "label": "Reduction in Manual Errors"
+        }
+      ],
+      "overview": {
+        "eyebrow": "Why Data Sharing Matters",
+        "title": "Connected Data. Connected Supply Chains.",
+        "paragraphs": [
+          "Identification and capture are only valuable when the data reaches the right partner at the right time. GS1 Share standards create the digital highways that connect manufacturers, distributors, retailers, regulators, and consumers in a seamless data ecosystem.",
+          "In Saudi Arabia, where supply chains span from local farms to global export markets, standardized data sharing eliminates the costly errors, delays, and inefficiencies caused by manual processes and proprietary data formats. Every trading partner speaks the same digital language.",
+          "From automated purchase orders via EDI, to synchronized product master data via GDSN, to real-time event visibility via EPCIS — GS1 Share standards transform fragmented supply chains into intelligent, responsive networks ready for the demands of Vision 2030."
+        ]
+      },
+      "components": [
+        {
+          "acronym": "GDSN",
+          "name": "Global Data Synchronisation Network",
+          "description": "The world's largest product data network. GDSN ensures that the product information a manufacturer publishes (ingredients, dimensions, images, allergens) is the exact same information retailers display on shelves and online. One change updates everywhere, automatically.",
+          "useCases": [
+            "Product master data synchronization",
+            "Retailer onboarding & listing",
+            "Nutritional & allergen data sharing",
+            "Product image & digital asset distribution"
+          ]
+        },
+        {
+          "acronym": "EDI",
+          "name": "Electronic Data Interchange",
+          "description": "The backbone of paperless B2B commerce. EDI automates the exchange of business documents — Purchase Orders, Invoices, Advance Shipping Notices, and Payment Advices — between trading partners in a standardized, machine-readable format.",
+          "useCases": [
+            "Automated purchase order processing",
+            "Electronic invoicing & payment",
+            "Advance Shipping Notices (ASN)",
+            "Inventory replenishment automation"
+          ]
+        },
+        {
+          "acronym": "EPCIS",
+          "name": "Electronic Product Code Information Services",
+          "description": "The visibility standard. EPCIS captures and shares supply chain events — answering What happened, Where it happened, When it happened, and Why. It is the foundation of traceability, recall management, and regulatory compliance.",
+          "useCases": [
+            "Full supply chain traceability",
+            "Product recall management",
+            "Cold chain temperature monitoring",
+            "Anti-counterfeiting verification"
+          ]
+        },
+        {
+          "acronym": "GDM",
+          "name": "Global Data Model",
+          "description": "A unified framework that structures product data consistently across all channels — physical retail, e-commerce, mobile apps, and digital catalogs. The GDM ensures that product data is complete, accurate, and formatted correctly for every touchpoint.",
+          "useCases": [
+            "Omni-channel commerce readiness",
+            "Digital catalog standardization",
+            "Cross-border trade data formatting",
+            "AI & analytics data preparation"
+          ]
+        }
+      ],
+      "process": {
+        "eyebrow": "How It Works",
+        "title": "From Isolated Data to Connected Intelligence",
+        "steps": [
+          {
+            "step": "01",
+            "title": "Standardize Your Data",
+            "description": "Structure your product, location, and transaction data according to GS1 global standards using the Global Data Model."
+          },
+          {
+            "step": "02",
+            "title": "Publish & Synchronize",
+            "description": "Upload your product master data to the GDSN. Trading partners subscribe and receive automatic updates whenever data changes."
+          },
+          {
+            "step": "03",
+            "title": "Automate Transactions",
+            "description": "Replace manual ordering, invoicing, and shipping documentation with EDI. Orders flow in minutes instead of days."
+          },
+          {
+            "step": "04",
+            "title": "Gain Full Visibility",
+            "description": "Implement EPCIS to capture and share supply chain events. Every partner sees the same real-time view of product movements."
+          }
+        ]
+      },
+      "benefits": {
+        "eyebrow": "Strategic Advantages",
+        "title": "Why Shared Data Transforms Supply Chains",
+        "items": [
+          {
+            "title": "Trusted Product Data",
+            "description": "GDSN ensures retailers display the manufacturer's verified data — correct ingredients, allergens, images, and descriptions. No discrepancies."
+          },
+          {
+            "title": "Automated Commerce",
+            "description": "EDI reduces order-to-delivery cycle time by up to 65%. Purchase orders that took days now complete in minutes."
+          },
+          {
+            "title": "End-to-End Traceability",
+            "description": "EPCIS enables farm-to-fork and factory-to-patient traceability. In a recall, affected products are identified in hours, not weeks."
+          },
+          {
+            "title": "Cost Reduction",
+            "description": "Automated data sharing eliminates manual data entry, reducing processing costs by up to 80% and cutting invoice disputes by 50%."
+          },
+          {
+            "title": "Regulatory Readiness",
+            "description": "SFDA, SASO, and international regulators increasingly require standardized data sharing. GS1 share standards ensure full compliance."
+          },
+          {
+            "title": "Consumer Transparency",
+            "description": "Consumers can trace products back to their source. Shared data builds brand trust and supports sustainability reporting."
+          }
+        ]
+      },
+      "industries": {
+        "eyebrow": "Industry Applications",
+        "title": "Shared Data Empowering Every Industry",
+        "items": [
+          {
+            "name": "Retail & FMCG",
+            "detail": "GDSN synchronization ensures accurate shelf labels, online listings, and promotional data."
+          },
+          {
+            "name": "Healthcare & Pharma",
+            "detail": "EPCIS-based traceability for drug authenticity and patient safety compliance."
+          },
+          {
+            "name": "Logistics & 3PL",
+            "detail": "EDI-automated ASN, invoicing, and proof-of-delivery across the Kingdom's logistics network."
+          },
+          {
+            "name": "Government & Customs",
+            "detail": "Standardized data interchange with FASAH and other government digital services."
+          }
+        ]
+      },
+      "faq": [
+        {
+          "question": "What is GDSN and why do I need it?",
+          "answer": "GDSN (Global Data Synchronisation Network) is a network of certified data pools that enables manufacturers and retailers to exchange standardized product data. You need it because retailers increasingly require GDSN for product onboarding — and it ensures your product data is accurate everywhere it appears."
+        },
+        {
+          "question": "How is EDI different from email or PDF invoices?",
+          "answer": "EDI is machine-to-machine communication. Unlike email or PDF, EDI documents are structured data that flows directly into ERP and accounting systems without human intervention. This eliminates manual data entry, reduces errors by 80%+, and speeds up processing from days to minutes."
+        },
+        {
+          "question": "What supply chain events does EPCIS track?",
+          "answer": "EPCIS tracks four dimensions of every supply chain event: WHAT (which products), WHERE (which locations), WHEN (timestamps), and WHY (business context like shipping, receiving, or transforming). This creates a complete, auditable history of every product's journey."
+        },
+        {
+          "question": "Can small businesses benefit from GS1 sharing standards?",
+          "answer": "Absolutely. GS1 KSA offers tiered solutions. Even small businesses benefit from GDSN (faster retailer onboarding), EDI (automated ordering), and EPCIS (traceability). Many cloud-based solutions make implementation accessible and affordable."
+        }
+      ],
+      "cta": {
+        "title": "Connect Your Supply Chain to the World",
+        "description": "Implement GS1 sharing standards to automate transactions, synchronize data, and gain full supply chain visibility.",
+        "primaryButton": {
+          "label": "Start GDSN Integration"
+        },
+        "secondaryButton": {
+          "label": "Explore EDI Solutions"
+        }
+      }
+    }
+  },
+  "common": {
+    "all_standards": "All Standards"
+  }
+}

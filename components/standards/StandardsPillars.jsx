@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Fingerprint, ScanBarcode, Share2 } from "lucide-react";
 import { standardsPillars } from "./data";
+import { useTranslations } from "next-intl";
 
 const pillarIcons = {
   identify: Fingerprint,
@@ -12,12 +13,10 @@ const pillarIcons = {
 
 const PillarCard = ({ pillar, index }) => {
   const Icon = pillarIcons[pillar.slug] || Fingerprint;
+  const t = useTranslations("standards");
 
   return (
-    <Link
-      href={`/standards/${pillar.slug}`}
-      className="group block"
-    >
+    <Link href={`/standards/${pillar.slug}`} className="group block">
       <div className="relative bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-slate-100 transition-all duration-500 hover:-translate-y-1">
         {/* Image */}
         <div className="relative h-56 bg-slate-50 overflow-hidden">
@@ -39,37 +38,40 @@ const PillarCard = ({ pillar, index }) => {
           <div className="flex items-center gap-2.5">
             <Icon className="w-4 h-4 text-[#FE5000]" />
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
-              {pillar.acronym}
+              {t(`items.${pillar.slug}.acronym`)}
             </span>
           </div>
 
           {/* Title */}
           <h3 className="text-2xl font-bold text-[#002C6C] tracking-tight">
-            {pillar.title}
+            {t(`items.${pillar.slug}.title`)}
           </h3>
 
           {/* Description */}
           <p className="text-sm text-slate-400 leading-relaxed line-clamp-2">
-            {pillar.shortDescription}
+            {t(`items.${pillar.slug}.shortDescription`)}
           </p>
 
           {/* Features */}
           <div className="grid grid-cols-2 gap-2.5 pt-2">
-            {pillar.features.slice(0, 4).map((feature, i) => (
-              <div
-                key={i}
-                className="px-3 py-2 bg-slate-50/80 rounded-lg border border-slate-100/80"
-              >
-                <p className="text-[11px] font-bold text-[#002C6C]">
-                  {feature.title}
-                </p>
-              </div>
-            ))}
+            {t
+              .raw(`items.${pillar.slug}.features`)
+              .slice(0, 4)
+              .map((feature, i) => (
+                <div
+                  key={i}
+                  className="px-3 py-2 bg-slate-50/80 rounded-lg border border-slate-100/80"
+                >
+                  <p className="text-[11px] font-bold text-[#002C6C]">
+                    {feature.title}
+                  </p>
+                </div>
+              ))}
           </div>
 
           {/* Link */}
           <div className="flex items-center gap-2 pt-2 text-sm font-bold text-[#002C6C] group-hover:text-[#FE5000] transition-colors">
-            <span>Explore Standard</span>
+            <span>{t("pillars.explore")}</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
@@ -79,21 +81,20 @@ const PillarCard = ({ pillar, index }) => {
 };
 
 const StandardsPillars = () => {
+  const t = useTranslations("standards.pillars");
   return (
     <section className="py-24 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="max-w-2xl mb-16 space-y-4">
           <div className="text-[10px] font-black uppercase tracking-[0.3em] text-[#FE5000]">
-            The GS1 Framework
+            {t("badge")}
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-[#002C6C] tracking-tight leading-snug">
-            Three Pillars of Global Standards
+            {t("title")}
           </h2>
           <p className="text-base text-slate-400 leading-relaxed">
-            Our framework enables businesses across the Kingdom to identify,
-            capture, and share data — ensuring transparency and efficiency from
-            local production to global consumption.
+            {t("description")}
           </p>
         </div>
 

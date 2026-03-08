@@ -68,11 +68,11 @@ const DynamicIcon = ({ name, className, ...props }) => {
 };
 
 export default function StandardDetailContent({ data }) {
-  const { hero, stats, overview, components, process, benefits, industries } = data;
+  const { hero, stats, overview, components, process, benefits, industries } =
+    data;
 
   return (
     <div className="bg-white min-h-screen font-sans antialiased text-slate-900">
-
       {/* ─────────────────────────────────────────────
           1. COMPACT HERO
       ───────────────────────────────────────────── */}
@@ -91,7 +91,7 @@ export default function StandardDetailContent({ data }) {
               className="group inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-white/40 hover:text-white/80 transition-colors"
             >
               <ChevronLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
-              All Standards
+              {data.allStandardsText || "All Standards"}
             </Link>
           </div>
 
@@ -197,7 +197,10 @@ export default function StandardDetailContent({ data }) {
                   {/* Left: Acronym */}
                   <div className="md:col-span-1 p-6 md:p-8 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-slate-100 bg-slate-50/50">
                     <div className="w-12 h-12 rounded-xl bg-[#002C6C]/6 flex items-center justify-center mb-3">
-                      <DynamicIcon name={comp.icon} className="w-5 h-5 text-[#002C6C]" />
+                      <DynamicIcon
+                        name={comp.icon}
+                        className="w-5 h-5 text-[#002C6C]"
+                      />
                     </div>
                     <div className="text-xl font-black text-[#002C6C] tracking-tight">
                       {comp.acronym}
@@ -216,7 +219,10 @@ export default function StandardDetailContent({ data }) {
                     </div>
                     <div className="grid sm:grid-cols-2 gap-1.5">
                       {comp.useCases.map((uc, j) => (
-                        <div key={j} className="flex items-center gap-2.5 text-sm text-slate-500">
+                        <div
+                          key={j}
+                          className="flex items-center gap-2.5 text-sm text-slate-500"
+                        >
                           <Check className="w-3.5 h-3.5 shrink-0 text-[#FE5000]" />
                           <span>{uc}</span>
                         </div>
@@ -291,7 +297,10 @@ export default function StandardDetailContent({ data }) {
                 className="group bg-white rounded-2xl p-7 border border-slate-100 hover:border-slate-200 hover:shadow-md transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-lg bg-[#002C6C]/6 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
-                  <DynamicIcon name={b.icon} className="w-5 h-5 text-[#002C6C]" />
+                  <DynamicIcon
+                    name={b.icon}
+                    className="w-5 h-5 text-[#002C6C]"
+                  />
                 </div>
                 <h3 className="text-base font-bold text-[#002C6C] mb-2">
                   {b.title}

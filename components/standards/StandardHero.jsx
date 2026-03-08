@@ -1,7 +1,9 @@
 import React from "react";
 import { Fingerprint, ScanBarcode, Share2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const StandardHero = () => {
+  const t = useTranslations("standards.hero");
   return (
     <section className="relative bg-[#002C6C] overflow-hidden">
       {/* Subtle decorative elements */}
@@ -16,34 +18,35 @@ const StandardHero = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/8">
             <div className="w-1.5 h-1.5 rounded-full bg-[#FE5000]" />
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
-              The Global Language of Business
+              {t("badge")}
             </span>
           </div>
 
           {/* Title */}
           <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight leading-[0.95]">
-            GS1 Standards
+            {t("title")}
           </h1>
 
           {/* Description */}
           <p className="text-lg md:text-xl font-light text-white/45 leading-relaxed max-w-2xl">
-            Identify, capture, and share information automatically and
-            accurately with the world&apos;s most widely used supply chain standards.
+            {t("description")}
           </p>
 
           {/* Three mini pillars */}
           <div className="flex flex-wrap gap-4 pt-4">
             {[
-              { icon: Fingerprint, label: "Identify" },
-              { icon: ScanBarcode, label: "Capture" },
-              { icon: Share2, label: "Share" },
+              { icon: Fingerprint, label: t("identify") },
+              { icon: ScanBarcode, label: t("capture") },
+              { icon: Share2, label: t("share") },
             ].map(({ icon: Icon, label }) => (
               <div
                 key={label}
                 className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/5 border border-white/6"
               >
                 <Icon className="w-4 h-4 text-[#FE5000]" />
-                <span className="text-sm font-semibold text-white/70">{label}</span>
+                <span className="text-sm font-semibold text-white/70">
+                  {label}
+                </span>
               </div>
             ))}
           </div>
