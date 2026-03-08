@@ -1,35 +1,55 @@
 import React from "react";
+import { Fingerprint, ScanBarcode, Share2 } from "lucide-react";
 
 const StandardHero = () => {
   return (
-    <div className="relative w-full h-[350px] md:h-[400px] overflow-hidden font-sans">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            'url("/images/sliders/s5.jpg")',
-        }}
-        role="img"
-        aria-label="Standards and services background"
-      />
+    <section className="relative bg-[#002C6C] overflow-hidden">
+      {/* Subtle decorative elements */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-white blur-3xl" />
+        <div className="absolute -bottom-40 -left-20 w-80 h-80 rounded-full bg-white blur-3xl" />
+      </div>
 
-      {/* Overlay: Gradient from solid primary to transparent/primary */}
-      <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/50 to-primary/10" />
+      <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28">
+        <div className="max-w-3xl space-y-6">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/8">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#FE5000]" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
+              The Global Language of Business
+            </span>
+          </div>
 
-      {/* Content Container */}
-      <div className="relative h-full container mx-auto px-4 md:px-12 flex flex-col justify-center text-white">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
+          {/* Title */}
+          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight leading-[0.95]">
             GS1 Standards
           </h1>
-          <p className="text-xl md:text-2xl font-light leading-snug text-white/95">
+
+          {/* Description */}
+          <p className="text-lg md:text-xl font-light text-white/45 leading-relaxed max-w-2xl">
             Identify, capture, and share information automatically and
-            accurately with the world's most widely used supply chain standards.
+            accurately with the world&apos;s most widely used supply chain standards.
           </p>
+
+          {/* Three mini pillars */}
+          <div className="flex flex-wrap gap-4 pt-4">
+            {[
+              { icon: Fingerprint, label: "Identify" },
+              { icon: ScanBarcode, label: "Capture" },
+              { icon: Share2, label: "Share" },
+            ].map(({ icon: Icon, label }) => (
+              <div
+                key={label}
+                className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/5 border border-white/6"
+              >
+                <Icon className="w-4 h-4 text-[#FE5000]" />
+                <span className="text-sm font-semibold text-white/70">{label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

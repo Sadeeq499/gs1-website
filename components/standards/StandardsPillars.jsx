@@ -1,103 +1,104 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MoveRight } from "lucide-react";
-import { standardsPillars } from "./data"; // Path to your data.js
+import { ArrowRight, Fingerprint, ScanBarcode, Share2 } from "lucide-react";
+import { standardsPillars } from "./data";
+
+const pillarIcons = {
+  identify: Fingerprint,
+  capture: ScanBarcode,
+  share: Share2,
+};
 
 const PillarCard = ({ pillar, index }) => {
-  const isReversed = index % 2 !== 0;
+  const Icon = pillarIcons[pillar.slug] || Fingerprint;
 
   return (
-    <div className="group relative border-b border-slate-100 last:border-0 pb-24 mb-24 last:mb-0 last:pb-0">
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-        
-        {/* Content Side */}
-        <div className={`space-y-8 ${isReversed ? "lg:order-2" : ""}`}>
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
-                Phase {String(index + 1).padStart(2, "0")}
-              </span>
-              <div className="h-px w-8 bg-slate-200" />
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#FE5000]">
-                {pillar.acronym}
-              </span>
-            </div>
-            <h3 className="text-4xl lg:text-5xl font-bold text-[#002C6C] tracking-tight">
-              {pillar.title}
-            </h3>
+    <Link
+      href={`/standards/${pillar.slug}`}
+      className="group block"
+    >
+      <div className="relative bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-xl hover:shadow-slate-100 transition-all duration-500 hover:-translate-y-1">
+        {/* Image */}
+        <div className="relative h-56 bg-slate-50 overflow-hidden">
+          <Image
+            src={pillar.heroImage}
+            alt={pillar.title}
+            fill
+            className="object-contain p-8 transition-transform duration-700 group-hover:scale-105"
+          />
+          {/* Number overlay */}
+          <div className="absolute top-4 left-4 w-9 h-9 rounded-lg bg-[#002C6C] text-white flex items-center justify-center text-xs font-black">
+            {String(index + 1).padStart(2, "0")}
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-7 space-y-4">
+          {/* Acronym tag */}
+          <div className="flex items-center gap-2.5">
+            <Icon className="w-4 h-4 text-[#FE5000]" />
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+              {pillar.acronym}
+            </span>
           </div>
 
-          <p className="text-lg text-slate-600 leading-relaxed font-light max-w-xl">
-            {pillar.description.split('.')[0]}. {pillar.shortDescription}
+          {/* Title */}
+          <h3 className="text-2xl font-bold text-[#002C6C] tracking-tight">
+            {pillar.title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-sm text-slate-400 leading-relaxed line-clamp-2">
+            {pillar.shortDescription}
           </p>
 
-          {/* Quick Features List */}
-          <div className="grid grid-cols-2 gap-4">
-            {pillar.features.slice(0, 2).map((feature, i) => (
-              <div key={i} className="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                <p className="text-xs font-bold text-[#002C6C] mb-1">{feature.title}</p>
-                <p className="text-[11px] text-slate-500 leading-tight">{feature.detail}</p>
+          {/* Features */}
+          <div className="grid grid-cols-2 gap-2.5 pt-2">
+            {pillar.features.slice(0, 4).map((feature, i) => (
+              <div
+                key={i}
+                className="px-3 py-2 bg-slate-50/80 rounded-lg border border-slate-100/80"
+              >
+                <p className="text-[11px] font-bold text-[#002C6C]">
+                  {feature.title}
+                </p>
               </div>
             ))}
           </div>
 
-          <Link
-            href={`/standards/${pillar.slug}`}
-            className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#002C6C] group/link transition-all"
-          >
-            Explore {pillar.title} Framework
-            <div className="p-2 rounded-full border border-slate-200 group-hover/link:bg-[#002C6C] group-hover/link:text-white transition-all">
-              <MoveRight className="w-4 h-4" />
-            </div>
-          </Link>
-        </div>
-
-        {/* Visual Side */}
-        <div className={`relative ${isReversed ? "lg:order-1" : ""}`}>
-          <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-slate-50 border border-slate-100 shadow-sm group-hover:shadow-xl transition-shadow duration-500">
-            <Image
-              src={pillar.image || pillar.heroImage}
-              alt={pillar.title}
-              fill
-              className="object-contain object-contain transition-transform duration-700 group-hover:scale-105"
-            />
-            {/* Subtle Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
+          {/* Link */}
+          <div className="flex items-center gap-2 pt-2 text-sm font-bold text-[#002C6C] group-hover:text-[#FE5000] transition-colors">
+            <span>Explore Standard</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </div>
-          
-          {/* Decorative Number background */}
-          <span className="absolute -bottom-10 -right-6 text-[12rem] font-bold text-slate-100/50 -z-10 select-none">
-             {index + 1}
-          </span>
         </div>
-
       </div>
-    </div>
+    </Link>
   );
 };
 
 const StandardsPillars = () => {
   return (
-    <section className="py-32 bg-white overflow-hidden">
+    <section className="py-24 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        
         {/* Section Header */}
-        <div className="max-w-3xl mb-32 space-y-6">
-          <div className="inline-block py-1 px-3 rounded bg-blue-50 text-[#002C6C] text-[10px] font-bold uppercase tracking-[0.2em]">
-             Official GS1 Framework
+        <div className="max-w-2xl mb-16 space-y-4">
+          <div className="text-[10px] font-black uppercase tracking-[0.3em] text-[#FE5000]">
+            The GS1 Framework
           </div>
-          <h2 className="text-5xl lg:text-6xl font-bold text-[#002C6C] tracking-tight leading-[1.1]">
-            The Three Pillars of <span className="text-[#FE5000]">Global Standards</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#002C6C] tracking-tight leading-snug">
+            Three Pillars of Global Standards
           </h2>
-          <p className="text-xl text-slate-500 font-light leading-relaxed">
-            Our framework enables businesses across the Kingdom to identify, capture, and share data, 
-            ensuring transparency and efficiency from local production to global consumption.
+          <p className="text-base text-slate-400 leading-relaxed">
+            Our framework enables businesses across the Kingdom to identify,
+            capture, and share data — ensuring transparency and efficiency from
+            local production to global consumption.
           </p>
         </div>
 
-        {/* Pillars List */}
-        <div className="relative">
+        {/* Cards Grid */}
+        <div className="grid md:grid-cols-3 gap-6">
           {standardsPillars.map((pillar, i) => (
             <PillarCard key={pillar.slug} pillar={pillar} index={i} />
           ))}
