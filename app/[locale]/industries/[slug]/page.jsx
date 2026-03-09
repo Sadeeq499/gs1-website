@@ -28,7 +28,7 @@ export default async function IndustryPage({ params }) {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950 font-sans selection:bg-primary/10">
+    <div className="min-h-screen bg-white dark:bg-slate-950 selection:bg-primary/10">
       <IndustryDetailHero industry={industry} />
 
       {/* Main Content */}

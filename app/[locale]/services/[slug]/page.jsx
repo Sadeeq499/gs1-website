@@ -48,7 +48,7 @@ export default async function ServicePage({ params }) {
     "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000";
 
   return (
-    <div className="bg-slate-50 font-sans text-slate-900 overflow-x-hidden selection:bg-orange-100 selection:text-orange-900">
+    <div className="bg-slate-50  text-slate-900 overflow-x-hidden selection:bg-orange-100 selection:text-orange-900">
       {/* 1. Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] w-full bg-slate-900">
         <div className="absolute inset-0">

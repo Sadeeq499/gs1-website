@@ -72,7 +72,7 @@ export default function StandardDetailContent({ data }) {
     data;
 
   return (
-    <div className="bg-white min-h-screen font-sans antialiased text-slate-900">
+    <div className="bg-white min-h-screen  antialiased text-slate-900">
       {/* ─────────────────────────────────────────────
           1. COMPACT HERO
       ───────────────────────────────────────────── */}

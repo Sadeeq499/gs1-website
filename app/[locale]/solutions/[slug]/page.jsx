@@ -65,7 +65,7 @@ export default async function SolutionPage({ params }) {
   const featureIcons = [Zap, Star, Globe, ShieldCheck, CheckCircle2];
 
   return (
-    <div className="bg-slate-50 font-sans text-slate-900 overflow-x-hidden selection:bg-orange-100 selection:text-orange-900">
+    <div className="bg-slate-50  text-slate-900 overflow-x-hidden selection:bg-orange-100 selection:text-orange-900">
       {/* 1. New Streamlined Hero Section */}
       <section className="relative py-12 lg:py-16 overflow-hidden bg-primary">
         {/* Dynamic Background Gradient */}

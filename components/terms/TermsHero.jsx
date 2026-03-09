@@ -4,7 +4,7 @@ import { FileText, Calendar, ShieldCheck } from "lucide-react";
 
 export default function TermsHero() {
   return (
-    <div className="relative w-full min-h-[350px] md:h-[400px] overflow-hidden font-sans">
+    <div className="relative w-full min-h-[350px] md:h-[400px] overflow-hidden">
       {/* Background Image - Modern Office/Legal Vibe */}
       <div
         className="absolute inset-0 bg-cover bg-center"
