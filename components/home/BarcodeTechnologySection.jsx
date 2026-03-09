@@ -31,7 +31,7 @@ export function BarcodeTechnologySection() {
           <Badge className="bg-primary/10 text-primary hover:bg-primary/15 font-bold border-primary/20">
             {t("badge")}
           </Badge>
-          <h2 className="mt-4 text-primary text-3xl font-bold tracking-tight  md:text-4xl lg:text-5xl">
+          <h2 className="mt-4 text-primary text-3xl font-bold tracking-tight leading-normal lg:leading-snug md:text-4xl lg:text-5xl">
             {t("title")}
           </h2>
           <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">

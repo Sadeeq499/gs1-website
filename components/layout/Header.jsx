@@ -75,13 +75,13 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "w-full z-50 sticky top-0 font-sans transition-all duration-300",
+        "w-full z-50 sticky top-0 transition-all duration-300",
         isScrolled ? "shadow-md" : "",
       )}
     >
       {/* Top Bar - Dark Blue */}
       <div className="bg-primary text-white hidden lg:block">
-        <div className="container mx-auto px-4 h-10 flex justify-between items-center text-xs font-medium">
+        <div className=" mx-auto px-4 h-10 flex justify-between items-center text-xs font-medium">
           <span className="opacity-90 tracking-wide uppercase text-[10px]">
             {t("topBar.slogan")}
           </span>
@@ -116,7 +116,7 @@ export default function Header() {
 
       {/* Main Navigation Bar */}
       <div className="bg-white border-b border-gray-100 relative">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div className=" mx-auto px-4 py-3 flex justify-between items-center">
           {/* Dual Logo Section */}
           <div className="flex items-center gap-3 md:gap-5">
             <Link href="/" className="flex items-center group">
@@ -153,7 +153,7 @@ export default function Header() {
                   <NavigationMenuItem key={item.title}>
                     {item.items ? (
                       <>
-                        <NavigationMenuTrigger className="text-[14px] font-semibold text-primary hover:text-secondary bg-transparent hover:bg-transparent focus:bg-transparent focus:text-secondary data-[state=open]:text-secondary transition-colors">
+                        <NavigationMenuTrigger className="text-[16px] font-normal text-primary hover:text-secondary bg-transparent hover:bg-transparent focus:bg-transparent focus:text-secondary data-[state=open]:text-secondary transition-colors">
                           {item.title}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="absolute top-0 left-0">
@@ -173,7 +173,7 @@ export default function Header() {
                         <Link
                           href={item.href}
                           className={cn(
-                            "text-[14px] font-semibold text-primary hover:text-secondary px-4 py-2 block transition-colors",
+                            "text-[16px] font-normal text-primary hover:text-secondary px-4 py-2 block transition-colors",
                             pathname === item.href && "text-secondary",
                           )}
                         >
@@ -351,7 +351,7 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
                   <button
                     onClick={() => toggleSection(item.title)}
                     className={cn(
-                      "w-full flex items-center justify-between px-3 py-2.5 text-left rounded-lg transition-all duration-200 font-semibold text-sm",
+                      "w-full flex items-center justify-between px-3 py-2.5 text-left rounded-lg transition-all duration-200 text-[16px] font-normal",
                       isOpen
                         ? "bg-primary text-white"
                         : "text-primary hover:bg-primary/5",
@@ -392,12 +392,12 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
                             <Link
                               href={subItem.href}
                               className={cn(
-                                "flex items-center gap-2.5 px-3 py-2 text-sm transition-colors",
+                                "flex items-center gap-2.5 px-3 py-2 text-[16px] font-normal transition-colors",
                                 idx !== item.items.length - 1 &&
                                   "border-b border-gray-100",
                                 isSubActive
-                                  ? "text-secondary font-semibold bg-secondary/5"
-                                  : "text-gray-600 hover:text-primary hover:bg-white font-medium",
+                                  ? "text-secondary bg-secondary/5"
+                                  : "text-gray-600 hover:text-primary hover:bg-white",
                               )}
                             >
                               <div
@@ -419,7 +419,7 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
                   <Link
                     href={item.href}
                     className={cn(
-                      "flex items-center px-3 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200",
+                      "flex items-center px-3 py-2.5 rounded-lg text-[16px] font-normal transition-all duration-200",
                       isActive
                         ? "bg-secondary/10 text-secondary"
                         : "text-primary hover:bg-primary/5",
@@ -516,7 +516,7 @@ const ListItem = React.forwardRef(
             )}
             {...props}
           >
-            <div className="text-sm font-semibold leading-none group-hover:text-secondary transition-colors">
+            <div className="text-[16px] font-normal leading-none group-hover:text-secondary transition-colors">
               {title}
             </div>
             {children && (

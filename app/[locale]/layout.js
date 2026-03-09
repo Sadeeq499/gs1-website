@@ -1,4 +1,5 @@
 import { Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -12,6 +13,11 @@ import { DirectionProvider } from "@/components/ui/direction";
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const droidKufi = localFont({
+  src: "../fonts/DroidKufi-Regular.ttf",
+  variable: "--font-droid-kufi",
 });
 
 export function generateStaticParams() {
@@ -67,7 +73,11 @@ export default async function RootLayout({ children, params }) {
 
   return (
     <html lang={locale} dir={dir}>
-      <body className={`${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistMono.variable} ${droidKufi.variable} antialiased ${
+          locale === "ar" ? "font-arabic" : ""
+        }`}
+      >
         <NextIntlClientProvider messages={messages}>
           <DirectionProvider direction={dir}>
             <QueryProvider>

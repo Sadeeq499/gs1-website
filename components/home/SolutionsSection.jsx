@@ -15,7 +15,7 @@ export function SolutionsSection() {
           <span className="inline-block rounded-full bg-secondary/10 px-4 py-1.5 text-sm font-semibold text-secondary">
             {t("badge")}
           </span>
-          <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-primary md:text-4xl lg:text-5xl">
+          <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight leading-normal lg:leading-snug text-primary md:text-4xl lg:text-5xl">
             {t("title")}
           </h2>
           <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">

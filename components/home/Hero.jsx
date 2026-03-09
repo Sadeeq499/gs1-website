@@ -62,7 +62,7 @@ export default function Hero() {
                       {t("hero.badge")}
                     </div>
 
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-lg">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight md:leading-snug text-white drop-shadow-lg">
                       {slide.title}
                       <span className="text-secondary">{slide.highlight}</span>
                     </h1>

@@ -15,7 +15,7 @@ const ServicesSection = () => {
   const t = useTranslations("services");
   return (
     <section className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4">
+      <div className=" mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 bg-primary/5 rounded-full px-5 py-2 mb-2">
@@ -23,7 +23,7 @@ const ServicesSection = () => {
               {t("section.badge")}
             </span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-primary">
+          <h2 className="text-3xl md:text-5xl font-bold leading-normal md:leading-snug text-primary">
             {t("section.title")}
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
