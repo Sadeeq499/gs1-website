@@ -1,10 +1,4 @@
-import {
-  Barcode,
-  ShieldCheck,
-  MapPin,
-  Package,
-  Cigarette,
-} from "lucide-react";
+import { Barcode, ShieldCheck, MapPin, Package, Cigarette } from "lucide-react";
 
 export const services = [
   {
@@ -64,8 +58,6 @@ export const services = [
   },
 ];
 
-
-
 export const servicesDetails = [
   {
     title: "Global Trade Item Number",
@@ -74,8 +66,6 @@ export const servicesDetails = [
     shortDescription: "The global standard for uniquely identifying products.",
     description:
       "The Global Trade Item Number (GTIN) is the industry standard for the unique identification of trade items. It is the number you see beneath the barcode on almost every product in the world. By using a GTIN, you ensure that your product is uniquely identified within the global supply chain, preventing confusion with other products and facilitating smooth transactions across borders.",
-    heroImage:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=2000",
     modules: [
       {
         title: "Universal Barcode Provision",
@@ -111,13 +101,7 @@ export const servicesDetails = [
       "Manufacturing & Logistics",
       "Government & Public Sector",
     ],
-    images: {
-      hero: "https://images.unsplash.com/photo-1589828952479-79737b8d8102?auto=format&fit=crop&q=80&w=2000",
-      feature:
-        "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=1200",
-      banner:
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000",
-    },
+    image: "/images/service-detail/gtin.png",
   },
   {
     title: "Global Location Number",
@@ -127,8 +111,6 @@ export const servicesDetails = [
       "Identify physical locations and legal entities uniquely.",
     description:
       "The Global Location Number (GLN) uniquely identifies physical locations and legal entities. From a single shelf in a warehouse to an entire shipping dock, GLN offers the precision needed for modern logistics and supply chain management. It eliminates costly errors associated with confusing delivery addresses.",
-    heroImage:
-      "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&q=80&w=2000",
     modules: [
       {
         title: "Precise Location Identification",
@@ -158,13 +140,7 @@ export const servicesDetails = [
       "Retail Chains",
       "Warehousing",
     ],
-    images: {
-      hero: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
-      feature:
-        "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1200",
-      banner:
-        "https://images.unsplash.com/photo-1516549655169-df83a0674514?auto=format&fit=crop&q=80&w=2000",
-    },
+    image: "/images/service-detail/gln.png",
   },
   {
     title: "Serial Shipping Container Code",
@@ -173,8 +149,6 @@ export const servicesDetails = [
     shortDescription: "Track logistics units across the supply chain.",
     description:
       "The Serial Shipping Container Code (SSCC) acts as a license plate for your logistics units. It enables individual tracking of pallets, cases, and cartons as they move through the supply chain. It allows products to be received, tracked, and cross-docked without the need to open the package.",
-    heroImage:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000",
     modules: [
       {
         title: "License Plate Tracking",
@@ -204,13 +178,7 @@ export const servicesDetails = [
       "Manufacturing",
       "Export/Import",
     ],
-    images: {
-      hero: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000",
-      feature:
-        "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&q=80&w=1200",
-      banner:
-        "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&q=80&w=2000",
-    },
+    image: "/images/service-detail/sscc.png",
   },
   {
     title: "Traceability for Utilities & Energy",
@@ -220,8 +188,6 @@ export const servicesDetails = [
       "Compliance solutions for Saudi Electricity Company (SEC) suppliers.",
     description:
       "Customized GS1 standards implementation for the energy sector, specifically designed to meet Saudi Electricity Company (SEC) requirements. We help suppliers implement Data Matrix barcodes for material tracking, incorporating Vendor Codes, PO Numbers, and Serial Numbers as mandated by SEC regulations.",
-    heroImage:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=2000",
     modules: [
       {
         title: "SEC Mandate Compliance",
@@ -251,13 +217,7 @@ export const servicesDetails = [
       "Cable Manufacturers",
       "Electrical Equipment Vendors",
     ],
-    images: {
-      hero: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=2000",
-      feature:
-        "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=1200",
-      banner:
-        "/images/solutions-construction.png",
-    },
+    image: "/images/service-detail/sec.png",
   },
   {
     title: "Tobacco Track & Trace",
@@ -266,8 +226,6 @@ export const servicesDetails = [
     shortDescription: "Regulatory compliance for ZATCA tobacco tracking.",
     description:
       "A comprehensive solution for tobacco manufacturers and importers to comply with Saudi Arabia's Track and Trace regulations. Our system ensures that every pack, carton, and master case is uniquely identified, aggregated, and traceable from production to point of sale, preventing illicit trade and ensuring tax compliance.",
-    heroImage:
-      "https://images.unsplash.com/photo-1534951474654-88dbcc4354bd?auto=format&fit=crop&q=80&w=2000", // Industrial manufacturing abstract
     modules: [
       {
         title: "Digital Tax Stamp Integration",
@@ -297,12 +255,6 @@ export const servicesDetails = [
       "Duty-Free Operators",
       "Compliance Officers",
     ],
-    images: {
-      hero: "https://images.unsplash.com/photo-1626266061368-46a813725c1e?auto=format&fit=crop&q=80&w=2000", // Warehouse/Logistics
-      feature:
-        "https://images.unsplash.com/photo-1565514020176-db7933f75cb2?auto=format&fit=crop&q=80&w=1200", // Tech/Scanning abstract
-      banner:
-        "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=2000", // Global trade map abstract
-    },
+    image: "/images/service-detail/tobacco.png",
   },
 ];

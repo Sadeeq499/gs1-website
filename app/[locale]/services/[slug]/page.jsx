@@ -39,33 +39,28 @@ export default async function ServicePage({ params }) {
   };
 
   // Fallback image handling
-  const heroImg = service.images?.hero || service.heroImage;
+  
   const featureImg =
-    service.images?.feature ||
+    service.image ||
     "https://images.unsplash.com/photo-1589828952479-79737b8d8102?auto=format&fit=crop&q=80&w=1200";
-  const bannerImg =
-    service.images?.banner ||
-    "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000";
+
 
   return (
     <div className="bg-slate-50  text-slate-900 overflow-x-hidden selection:bg-orange-100 selection:text-orange-900">
       {/* 1. Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] w-full bg-slate-900">
-        <div className="absolute inset-0">
-          <img
-            src={heroImg}
-            alt={service.title}
-            className="w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-linear-to-r from-slate-900/90 via-slate-900/60 to-transparent" />
+      <section className="relative w-full pt-20 pb-28 lg:pt-28 lg:pb-36 overflow-hidden bg-primary">
+        {/* Background Gradient */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/95 to-[#002c5c]" />
         </div>
-        <div className="relative h-full container mx-auto px-4 md:px-8 flex flex-col justify-center">
+        
+        <div className="relative z-10 container mx-auto px-4 md:px-8 flex flex-col justify-center text-white">
           <div className="max-w-4xl space-y-6 animate-in slide-in-from-bottom-5 duration-700">
-            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
               {service.title}
               {service.acronym && (
-                <span className="text-secondary ml-4 font-light">
-                  ({service.acronym})
+                <span className="text-secondary ml-4 font-bold bg-white/10 px-4 py-1.5 rounded-full text-2xl lg:text-4xl align-middle">
+                  {service.acronym}
                 </span>
               )}
             </h1>
@@ -88,7 +83,7 @@ export default async function ServicePage({ params }) {
       {/* 3. Feature Split Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-20">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Left: Content List */}
             <div className="lg:w-1/2 space-y-10">
               <div className="space-y-2">
@@ -100,118 +95,107 @@ export default async function ServicePage({ params }) {
 
               <div className="space-y-8">
                 {service.modules &&
-                  service.modules.map((module, idx) => (
-                    <div key={idx} className="group">
-                      <h3 className="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2 group-hover:text-primary transition-colors">
-                        <div className="w-2 h-2 rounded-full bg-secondary" />
-                        {module.title}
-                      </h3>
-                      <p className="text-slate-600 leading-relaxed pl-4 border-l-2 border-slate-100 group-hover:border-secondary/30 transition-colors">
-                        {module.description}
-                      </p>
-                    </div>
-                  ))}
+                  service.modules.map((module, idx) => {
+                    const icons = [
+                      <Barcode className="w-6 h-6 text-secondary" />,
+                      <ShieldCheck className="w-6 h-6 text-secondary" />,
+                      <Factory className="w-6 h-6 text-secondary" />,
+                    ];
+                    const SelectedIcon = icons[idx % icons.length];
+                    
+                    return (
+                      <div key={idx} className="flex gap-6 group">
+                        <div className="shrink-0">
+                          <div className="w-14 h-14 rounded-2xl bg-orange-50 text-secondary flex items-center justify-center shadow-sm group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                            {React.cloneElement(SelectedIcon, { className: "w-6 h-6 group-hover:text-white transition-colors" })}
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <h3 className="text-xl font-bold text-slate-800 transition-colors">
+                            {module.title}
+                          </h3>
+                          <p className="text-slate-500 leading-relaxed text-sm md:text-base">
+                            {module.description}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
               </div>
 
-              <div className="pt-4">
-                <Button
-                  size="lg"
-                  className="bg-secondary hover:bg-secondary/90 text-white px-8 rounded-full shadow-lg shadow-secondary/20"
-                >
-                  {t("get")} {service.acronym || t("started")}
-                </Button>
-              </div>
+
             </div>
 
-            {/* Right: Modern Image Card */}
-            <div className="lg:w-1/2 relative min-h-[400px]">
-              <div className="absolute inset-0 bg-blue-50 rounded-[3rem] transform rotate-3 scale-95" />
-              <div className="absolute inset-0 bg-orange-50 rounded-[3rem] transform -rotate-2 scale-95" />
-              <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                <img
-                  src={featureImg}
-                  alt="Feature"
-                  className="w-full h-full object-cover"
-                />
-                {/* Floating Badge */}
-                <div className="absolute bottom-6 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-slate-100 max-w-[200px]">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Barcode className="text-secondary h-6 w-6" />
-                    <span className="font-bold text-slate-900">
-                      {t("standardized")}
-                    </span>
-                  </div>
-                  <p className="text-xs text-slate-500">
-                    {t("standardized_desc")}
-                  </p>
-                </div>
-              </div>
+            {/* Right: Feature Image */}
+            <div className="lg:w-1/2 w-full">
+              <img
+                src={featureImg}
+                alt="Feature"
+                className="w-full h-auto object-cover rounded-2xl"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* 4. Full Width Visual Break */}
-      <section
-        className="relative py-32 md:py-40 bg-fixed bg-cover bg-center"
-        style={{ backgroundImage: `url('${bannerImg}')` }}
-      >
-        <div className="absolute inset-0 bg-slate-900/60" />
-        <div className="absolute inset-0 bg-linear-to-t from-slate-900 to-transparent" />
-        <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 max-w-4xl mx-auto">
-            {t("empower", { acronym: service.acronym })}
+      <section className="relative py-16 overflow-hidden bg-primary">
+        {/* Background Gradient */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/95 to-[#002c5c]" />
+        </div>
+        
+        <div className="container mx-auto px-4 md:px-8 relative z-10 flex flex-col items-center text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+            {t("empower_title")}
           </h2>
+          <p className="text-xl md:text-2xl text-slate-300 font-medium">
+            {t("empower_subtitle", { acronym: service.acronym })}
+          </p>
         </div>
       </section>
 
-      {/* 5. Bottom Detail Card (Competitor Style) */}
-      <section className="py-20 md:py-28 px-4 md:px-8 -mt-20 relative z-20">
-        <div className="container mx-auto">
-          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-16 border border-slate-100">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-              {/* Left: Brief List */}
-              <div className="space-y-8">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-slate-900">
-                    {t("why_choose", { acronym: service.acronym })}
-                  </h3>
-                  <div className="h-1 w-12 bg-secondary rounded-full" />
-                </div>
-                <ul className="space-y-4">
-                  {service.features &&
-                    service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 group">
-                        <div className="mt-1 shrink-0 w-6 h-6 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
-                          <CheckCircle2 className="w-4 h-4 text-green-600" />
-                        </div>
-                        <span className="text-slate-600 font-medium group-hover:text-slate-900 transition-colors">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                </ul>
-              </div>
+      {/* 5. Bottom Details Section */}
+      <section className="py-20 md:py-28 px-4 md:px-8 relative z-20">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            {/* Left: Brief List */}
+            <div className="space-y-8">
+              <h3 className="text-3xl font-bold text-slate-900">
+                {t("why_choose", { acronym: service.acronym })}
+              </h3>
+              <ul className="space-y-5">
+                {service.features &&
+                  service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-4 group">
+                      <div className="mt-1 shrink-0 flex items-center justify-center">
+                        <CheckCircle2 className="w-5 h-5 text-secondary" />
+                      </div>
+                      <span className="text-slate-500 font-medium group-hover:text-slate-900 transition-colors leading-relaxed">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+              </ul>
+            </div>
 
-              {/* Right: Ideal For + CTA */}
-              <div className="space-y-8 lg:border-l lg:border-slate-100 lg:pl-12">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-slate-900">
-                    {t("ideal_for")}
-                  </h3>
-                  <div className="h-1 w-12 bg-primary rounded-full" />
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  {service.idealFor &&
-                    service.idealFor.map((item, idx) => (
-                      <span
-                        key={idx}
-                        className="px-4 py-2 bg-slate-50 text-slate-600 rounded-lg text-sm font-semibold border border-slate-100 hover:border-slate-200 hover:bg-white hover:shadow-sm transition-all cursor-default"
-                      >
+            {/* Right: Ideal For Cards */}
+            <div className="space-y-8">
+              <h3 className="text-3xl font-bold text-slate-900">
+                {t("ideal_for")}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {service.idealFor &&
+                  service.idealFor.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="p-6 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center hover:shadow-md transition-shadow min-h-[100px]"
+                    >
+                      <span className="text-slate-800 font-medium text-sm md:text-base">
                         {item}
                       </span>
-                    ))}
-                </div>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>

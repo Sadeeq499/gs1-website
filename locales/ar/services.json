@@ -22,6 +22,8 @@
     "standardized": "قياسي",
     "standardized_desc": "تحديد هوية معترف به عالمياً لتبادل تجاري سلس.",
     "empower": "عزّز سلسلة التوريد بحلول {acronym} الشاملة",
+    "empower_title": "عزّز سلسلة التوريد",
+    "empower_subtitle": "بحلول {acronym} الشاملة",
     "why_choose": "لماذا تختار {acronym}؟",
     "ideal_for": "مثالي لـ"
   },
