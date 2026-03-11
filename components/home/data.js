@@ -442,33 +442,35 @@ export const stats = [
 export const slides = [
   {
     id: 1,
-    image: "/images/home-hero/phrama.png",
-    title: "Advancing Pharmaceutical Traceability with GS1 ",
+    image: "/images/home-hero/store.png",
+    title: "Unlock New Sales Channels with GS1 ",
     highlight: "Standards",
     description:
-      "GS1 Saudi Arabia enables pharmaceutical companies and healthcare providers to implement global identification standards such as barcodes, QR codes, and DataMatrix to ensure product safety, regulatory compliance, and end-to-end traceability across the healthcare supply chain.",
+      "GS1 Saudi Arabia empowers businesses to expand into retail and e-commerce with global barcodes. Boost product visibility and simplify data exchange across the supply chain.",
     primaryCta: "Get a Barcode",
     secondaryCta: "Explore Services",
   },
+
   {
     id: 2,
     image: "/images/home-hero/logistics.png",
     title: "Enhancing Logistics & Supply Chain Visibility with GS1 ",
     highlight: "Standards",
     description:
-      "Empowering logistics providers and supply chain partners with global barcode, QR, and identification standards — enabling real-time tracking, accurate product identification, and seamless data sharing.",
+      "Empowering logistics providers with global barcode, QR, and ID standards to enable real-time tracking, accurate product identification, and seamless data sharing.",
     primaryCta: "Get a Barcode",
     secondaryCta: "Explore Services",
   },
+
   {
     id: 3,
-    image: "/images/sliders/s3.png",
-    title: "Connect with Confidence",
-    highlight: "Globally",
+    image: "/images/home-hero/pharmaceutical.png",
+    title: "Advancing Pharmaceutical Traceability with GS1 ",
+    highlight: "Standards",
     description:
-      "Join a network of over 2 million companies worldwide using GS1 standards to do business with confidence.",
-    primaryCta: "Become a Member",
-    secondaryCta: "Our Network",
+      "Enable healthcare providers to implement global identification standards like barcodes, QR codes, and DataMatrix for product safety and regulatory compliance.",
+    primaryCta: "Get a Barcode",
+    secondaryCta: "Explore Services",
   },
 ];
 

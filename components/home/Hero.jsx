@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
@@ -69,7 +68,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative max-w-7xl mx-auto h-[320px] md:h-[360px] lg:h-[440px] overflow-hidden bg-[#002C6C]">
+    <section className="relative max-w-full mx-auto h-[320px] md:h-[360px] lg:h-[440px] overflow-hidden bg-[#002C6C]">
       {/* ════════════════════════════════════════
           MOBILE  ( < md )
           Full-width background image with
@@ -94,6 +93,7 @@ export default function Hero() {
                 className="object-cover"
                 priority
                 sizes="100vw"
+                unoptimized
               />
             </div>
 
@@ -214,6 +214,7 @@ export default function Hero() {
               className="object-cover object-center"
               priority
               sizes="60vw"
+              unoptimized
             />
           </motion.div>
         </AnimatePresence>
