@@ -8,7 +8,7 @@ export function Partners() {
   const t = useTranslations("home");
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-16 bg-white overflow-hidden">
       <style jsx>{`
         @keyframes scroll {
           0% {
@@ -77,7 +77,7 @@ export function Partners() {
         <div className="absolute inset-y-0 left-0 w-48 z-10 bg-linear-to-r from-white via-white/80 to-transparent pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-48 z-10 bg-linear-to-l from-white via-white/80 to-transparent pointer-events-none" />
 
-        <div className="animate-scroll py-10 hover:pause">
+        <div className="animate-scroll py-8 hover:pause">
           {[...dataPartners, ...dataPartners].map((partner, index) => (
             <div key={index} className="mx-2 md:mx-4">
               <div className="flip-card h-40 w-40 md:h-48 md:w-48">

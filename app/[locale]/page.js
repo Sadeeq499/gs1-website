@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Partners />
       <OurServices />
       <SolutionsSection />
       <BarcodeTechnologySection />
-      <Partners />
     </>
   );
 }
