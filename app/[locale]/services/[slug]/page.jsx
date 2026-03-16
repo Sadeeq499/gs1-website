@@ -55,7 +55,7 @@ export default async function ServicePage({ params }) {
 
         <div className="relative z-10 container mx-auto px-4 md:px-8 flex flex-col justify-center text-white">
           <div className="max-w-4xl space-y-6 animate-in slide-in-from-bottom-5 duration-700">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-tight">
               {service.title}
               {service.acronym && (
                 <span className="text-secondary ml-4 font-bold bg-white/10 px-4 py-1.5 rounded-full text-2xl lg:text-4xl align-middle">

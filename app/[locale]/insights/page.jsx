@@ -67,7 +67,7 @@ export default async function Page() {
       {/* Localized Why GS1 SA? Section */}
       <section className="container mx-auto px-4 py-32 border-t border-slate-100">
         <div className="max-w-7xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-primary">
             {localizedData.whySection.title}
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
