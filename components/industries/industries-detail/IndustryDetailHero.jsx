@@ -2,27 +2,22 @@ import React from "react";
 
 export default function IndustryDetailHero({ industry }) {
   return (
-    <div className="relative h-[400px] min-h-[450px] w-full overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src={industry.heroImage || industry.image}
-          alt={industry.title}
-          className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/50 to-transparent" />
+    <div className="relative w-full pt-20 pb-28 lg:pt-28 lg:pb-36 overflow-hidden bg-primary">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/95 to-[#002c5c]" />
       </div>
 
-      <div className="relative h-full container mx-auto px-4 md:px-6 flex flex-col justify-center">
-        <div className="max-w-3xl space-y-6 animate-in fade-in slide-in-from-bottom-5 duration-700">
-          <div className="space-y-2">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight text-balance">
+      <div className="relative h-full container mx-auto px-4 md:px-12 flex flex-col justify-center z-10 text-white">
+        <div className="max-w-4xl space-y-6 animate-in slide-in-from-bottom-5 duration-700">
+          <div className="space-y-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
               {industry.title}
             </h1>
+            <p className="text-lg md:text-xl font-light text-white/90 max-w-2xl leading-relaxed">
+              {industry.description}
+            </p>
           </div>
-
-          <p className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl text-pretty">
-            {industry.description}
-          </p>
         </div>
       </div>
     </div>

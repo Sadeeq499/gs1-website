@@ -4,7 +4,7 @@ export const industries = [
     slug: "healthcare-pharma",
     description:
       "Ensure patient safety with end-to-end traceability for pharmaceuticals, medical devices, and hospital supplies using GS1 standards.",
-    image: "/images/solutions-healthcare.png",
+    image: "/images/industries/helthcare.png",
     href: "/industries/healthcare-pharma",
   },
   {
@@ -12,7 +12,7 @@ export const industries = [
     slug: "retail-fmcg",
     description:
       "Streamline point-of-sale, inventory management, and omnichannel commerce with globally recognized barcodes and data standards.",
-    image: "/images/solutions-retail.png",
+    image: "/images/industries/solutions-retail.png",
     href: "/industries/retail-fmcg",
   },
   {
@@ -20,7 +20,7 @@ export const industries = [
     slug: "logistics-supply-chain",
     description:
       "Gain real-time visibility across your entire supply chain with standardized identification and EPCIS event tracking.",
-    image: "/images/solutions-logistics.jpg",
+    image: "/images/industries/logistics.png",
     href: "/industries/logistics-supply-chain",
   },
   {
@@ -28,7 +28,7 @@ export const industries = [
     slug: "food-safety-agriculture",
     description:
       "Meet regulatory compliance and build consumer trust with farm-to-fork traceability powered by GS1 Digital Link.",
-    image: "/images/solutions-food.jpg",
+    image: "/images/industries/food-agriculture.png",
     href: "/industries/food-safety-agriculture",
   },
   {
@@ -36,7 +36,7 @@ export const industries = [
     slug: "e-commerce-digital",
     description:
       "Enable seamless product discovery, authentication, and enriched digital experiences with GS1-powered QR codes.",
-    image: "/images/solutions-ecommerce.png",
+    image: "/images/industries/e-commerce.png",
     href: "/industries/e-commerce-digital",
   },
   {
@@ -52,8 +52,7 @@ export const industries = [
     slug: "apparel-fashion",
     description:
       "Optimize inventory accuracy and combat counterfeiting with item-level tagging and RFID standards tailored for the fashion industry.",
-    image:
-      "/images/fashion.png",
+    image: "/images/fashion.png",
     href: "/industries/apparel-fashion",
   },
   {
@@ -70,8 +69,7 @@ export const industries = [
     slug: "technical-industries",
     description:
       "Standardizing complex technical components and machinery for better interoperability and maintenance.",
-    image:
-      "/images/Technical Industries.png",
+    image: "/images/Technical Industries.png",
     href: "/industries/technical-industries",
   },
   {
@@ -79,8 +77,7 @@ export const industries = [
     slug: "humanitarian-logistics",
     description:
       "Ensuring aid reaches those in need with efficient tracking and transparency in humanitarian operations.",
-    image:
-      "/images/humanitarian-logistics.png",
+    image: "/images/humanitarian-logistics.png",
     href: "/industries/humanitarian-logistics",
   },
 ];
@@ -91,11 +88,7 @@ export const industryDetails = {
     slug: "healthcare-pharma",
     description:
       "Ensure patient safety with end-to-end traceability for pharmaceuticals, medical devices, and hospital supplies using GS1 standards.",
-    heroImage: "/images/solutions-healthcare.png",
-    image1:
-      "/images/solutions-healthcare.png",
-    // image2:
-    //   "https://images.unsplash.com/photo-1584036561566-b9374436444c?auto=format&fit=crop&q=80&w=2000",
+    image1: "/images/industries/helthcare.png",
     description1:
       "The healthcare industry faces unique challenges in ensuring patient safety, reducing medication errors, and securing the supply chain against counterfeit drugs. GS1 standards provide the foundation for end-to-end traceability, enabling manufacturers, distributors, and healthcare providers to track pharmaceuticals and medical devices from production to the point of care. By implementing Global Trade Item Numbers (GTINs) and 2D barcodes, stakeholders can instantly verify product authenticity and expiration dates.",
     description2:
@@ -106,12 +99,7 @@ export const industryDetails = {
     slug: "retail-fmcg",
     description:
       "Streamline point-of-sale, inventory management, and omnichannel commerce with globally recognized barcodes and data standards.",
-    heroImage:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2000",
-    image1:
-      "/images/sliders/s2.png",
-    // image2:
-    //   "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&q=80&w=2000",
+    image1: "/images/industries/solutions-retail.png",
     description1:
       "In the fast-paced world of Retail and FMCG, consumer expectations for product availability and information are higher than ever. GS1 standards enable a smarter supply chain by providing a common language for identifying, capturing, and sharing data about products and locations. From the warehouse to the checkout counter, GTINs and barcodes ensure that products are accurately identified, reducing errors and speeding up transactions. This foundation supports critical operations like automated ordering, inventory replenishment, and seamless omnichannel experiences.",
     description2:
@@ -122,12 +110,7 @@ export const industryDetails = {
     slug: "logistics-supply-chain",
     description:
       "Gain real-time visibility across your entire supply chain with standardized identification and EPCIS event tracking.",
-    heroImage:
-      "/images/sliders/s7.jpg",
-    image1:
-      "/images/logistics.jpg",
-    // image2:
-    //   "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=2000",
+    image1: "/images/industries/logistics.png",
     description1:
       "Efficient logistics rely on knowing exactly where shipments are at any given moment. GS1 standards like the Serial Shipping Container Code (SSCC) and Global Location Number (GLN) provide the backbone for real-time visibility across complex, multi-modal supply chains. By uniquely identifying logistic units—pallets, cases, and containers—companies can automate tracking from dispatch to delivery, significantly reducing manual interventions and the risk of lost inventory.",
     description2:
@@ -138,12 +121,7 @@ export const industryDetails = {
     slug: "food-safety-agriculture",
     description:
       "Meet regulatory compliance and build consumer trust with farm-to-fork traceability powered by GS1 Digital Link.",
-    heroImage:
-      "https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&q=80&w=2000",
-    image1:
-      "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=2000",
-    // image2:
-    //   "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=2000",
+    image1: "/images/industries/food-agriculture.png",
     description1:
       "Food safety is paramount, and consumers increasingly demand to know the story behind what they eat. GS1 standards facilitate complete farm-to-fork traceability, allowing producers, manufacturers, and retailers to track food products with precision. By capturing critical data points such as batch numbers and expiration dates in standardized barcodes, the industry can rapidly respond to food safety incidents, executing targeted recalls that minimize waste and protect public health.",
     description2:
@@ -154,12 +132,7 @@ export const industryDetails = {
     slug: "e-commerce-digital",
     description:
       "Enable seamless product discovery, authentication, and enriched digital experiences with GS1-powered QR codes.",
-    heroImage:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=2000",
-    image1:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=2000",
-    // image2:
-    //   "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=2000",
+    image1: "/images/industries/e-commerce.png",
     description1:
       "In the digital marketplace, accurate product data is critical for searchability and sales. GS1 GTINs are the trusted currency of e-commerce, required by major marketplaces like Amazon and Google Shopping to uniquely identify products. By using these global identifiers, brands ensure their products are discoverable, reducing listing errors and preventing conflicts with duplicate items. This foundation allows for a seamless shopping experience across platforms.",
     description2:
@@ -170,12 +143,7 @@ export const industryDetails = {
     slug: "construction-assets",
     description:
       "Track fixed assets, building materials, and equipment with reliable identification standards that reduce loss and improve audits.",
-    heroImage:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=2000",
-    image1:
-      "/images/solutions-construction.png",
-    // image2:
-    //   "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2000",
+    image1: "/images/solutions-construction.png",
     description1:
       "The construction industry faces challenges with asset visibility, material tracking, and project delays. GS1 standards offer a robust solution by uniquely identifying tools, equipment, and building materials using Global Asset Identifiers (GIAIs) and GTINs. This enables precise tracking from the manufacturer to the job site, reducing loss and theft while ensuring that the right materials are available when needed. Digital inventories become accurate, streamlining project management and reducing downtime.",
     description2:
@@ -186,12 +154,7 @@ export const industryDetails = {
     slug: "apparel-fashion",
     description:
       "Optimize inventory accuracy and combat counterfeiting with item-level tagging and RFID standards tailored for the fashion industry.",
-    heroImage:
-      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=2000",
-    image1:
-      "/images/fashion.png",
-    // image2:
-    //   "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=2000",
+    image1: "/images/fashion.png",
     description1:
       "For the fashion industry, inventory accuracy and speed are key to profitability. GS1 standards, particularly when combined with RFID technology, revolutionize how apparel is tracked. Item-level tagging with Electronic Product Codes (EPC) allows retailers to achieve over 99% inventory accuracy, enabling rapid cycle counts and ensuring that shelves are replenished instantly. This visibility creates a seamless omnichannel experience, where customers can confidently check store availability online.",
     description2:
@@ -202,12 +165,8 @@ export const industryDetails = {
     slug: "government-public-sector",
     description:
       "Enhance public procurement, safety, and operational efficiency with standardized identification and data exchange protocols.",
-    heroImage:
-      "https://images.unsplash.com/photo-1526304640152-d46196846548?auto=format&fit=crop&q=80&w=2000",
     image1:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000",
-    // image2:
-    //   "https://images.unsplash.com/photo-1555848962-6e79363ec58f?auto=format&fit=crop&q=80&w=2000",
     description1:
       "Governments rely on accurate data to ensure public safety, manage resources, and enforce regulations. GS1 standards provide a proven framework for enhancing public procurement and supply chain security. By mandating standardized identification for goods and services, public agencies can improve transparency, reduce fraud, and streamline logistics for everything from office supplies to defense equipment. This interoperability facilitates better cross-border trade management and customs processes.",
     description2:
@@ -218,12 +177,8 @@ export const industryDetails = {
     slug: "technical-industries",
     description:
       "Standardizing complex technical components and machinery for better interoperability and maintenance.",
-    heroImage:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000",
     image1:
       "https://images.unsplash.com/photo-1531297461136-2f556ac6e196?auto=format&fit=crop&q=80&w=2000",
-    // image2:
-    //   "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2000",
     description1:
       "Technical industries, including aerospace, automotive, and engineering, deal with complex machinery and millions of parts. GS1 standards facilitate the direct part marking (DPM) and unique identification of components, ensuring traceability throughout their lifecycle. This is crucial for verifying the authenticity of spare parts, preventing the use of counterfeit components that could compromise safety and performance in critical systems.",
     description2:
@@ -234,12 +189,8 @@ export const industryDetails = {
     slug: "humanitarian-logistics",
     description:
       "Ensuring aid reaches those in need with efficient tracking and transparency in humanitarian operations.",
-    heroImage:
-      "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=1000",
     image1:
       "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=2000",
-    // image2:
-    //   "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&q=80&w=2000",
     description1:
       "In humanitarian crises, speed and accuracy save lives. GS1 standards bring supply chain discipline to relief operations, ensuring that aid reaches the right people at the right time. By uniquely identifying relief items and shipments, organizations can track the flow of food, medicine, and shelter materials from donors to beneficiaries. This visibility prevents bottlenecks, reduces theft and diversion, and ensures accountability to donors and the public.",
     description2:

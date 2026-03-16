@@ -482,10 +482,10 @@ export const partners = [
     url: "https://fsc.org.sa/",
   },
   {
-    name: "Saudi Food & Drug Authority",
-    logo: "https://www.sfda.gov.sa/themes/custom/sfda/assets/images/sfda_logo_colored.svg",
+    name: "The Saudi Food and Drug Authority (SFDA)",
+    logo: "https://srcosa.com/wp-content/uploads/2016/11/SFDA.jpg",
     category: "Regulatory Partner",
-    url: "https://www.sfda.gov.sa/",
+    url: "https://www.sfda.gov.sa/en",
   },
   {
     name: "Ministry of Commerce",
