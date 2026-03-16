@@ -46,8 +46,8 @@ const getMainNavItems = (t) => [
       { title: t("nav.ourPartners"), href: "/about/partners" },
     ],
   },
-  { title: t("nav.standards"), href: "/standards" },
   { title: t("nav.services"), href: "/services" },
+  { title: t("nav.standards"), href: "/standards" },
   { title: t("nav.industries"), href: "/industries" },
 ];
 
@@ -104,21 +104,20 @@ export default function Header() {
       </div>
 
       {/* ── Middle Identity Bar ── */}
-      <div className="bg-white border-b border-gray-100 ">
-        <div className="mx-auto px-6 flex items-center justify-between gap-6" style={{minHeight:"90px", paddingTop:"8px", paddingBottom:"8px"}}>
+      <div className="bg-white border-b border-gray-100">
+        <div className="mx-auto px-4 sm:px-6 flex items-center justify-between gap-4 sm:gap-6" style={{ minHeight: "clamp(70px, 10vh, 90px)", paddingTop: "8px", paddingBottom: "8px" }}>
 
           {/* LEFT — GS1 logo + text only */}
-          <Link href="/" className="flex items-center gap-4 group shrink-0">
-            {/* explicit px size so Next.js fill renders correctly */}
+          <Link href="/" className="flex items-center gap-2 sm:gap-4 group shrink-0">
+            {/* responsive size container */}
             <div
-              className="relative shrink-0 transition-transform duration-200 group-hover:scale-105"
-              style={{ width: "140px", height: "80px" }}
+              className="relative w-[100px] h-[55px] sm:w-[140px] sm:h-[80px] shrink-0 transition-transform duration-200 group-hover:scale-105"
             >
               <Image
                 src="/logos/gs1-logo.png"
                 alt={t("brand.name")}
                 fill
-                sizes="120px"
+                sizes="(max-width: 640px) 100px, 140px"
                 className="object-contain"
                 priority
               />
@@ -304,13 +303,19 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
     >
       <SheetHeader className="px-4 pt-4 pb-3 border-b border-gray-100 bg-white shrink-0">
         <SheetTitle asChild>
-          <div className="flex items-center gap-2">
-            <div className="relative" style={{ width: "52px", height: "52px" }}>
-              <Image src="/logo-gs1.svg" alt="GS1" fill sizes="52px" className="object-contain object-left" />
+          <div className="flex items-center gap-3">
+            <div className="relative w-[80px] h-[45px]">
+              <Image src="/logos/gs1-logo.png" alt={t("brand.name")} fill sizes="80px" className="object-contain object-left" />
             </div>
             <div className="h-6 w-px bg-gray-200" />
-            <div className="relative" style={{ width: "52px", height: "40px" }}>
-              <Image src="/images/fsc.png" alt="FSC" fill sizes="52px" className="object-contain object-left" />
+            <div className="relative w-[80px] h-[40px]">
+              <Image 
+                src="https://saudisteelconference.com/_images/logo-federation.png" 
+                alt="FSC" 
+                fill 
+                sizes="80px" 
+                className="object-contain object-left" 
+              />
             </div>
           </div>
         </SheetTitle>
