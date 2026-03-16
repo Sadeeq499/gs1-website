@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getTranslations } from "next-intl/server";
+import ServicesCTA from "@/components/services/ServicesCTA";
 
 export default async function ServicePage({ params }) {
   const { slug } = await params;
@@ -201,6 +202,8 @@ export default async function ServicePage({ params }) {
           </div>
         </div>
       </section>
+
+      <ServicesCTA />
     </div>
   );
 }
