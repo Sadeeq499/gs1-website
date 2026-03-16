@@ -160,7 +160,7 @@ export default function Header() {
               className="bg-primary text-white hover:bg-primary/90 font-bold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all text-sm h-10"
             >
               <a
-                href="http://213.136.82.130:1323/register/account-setup"
+                href={process.env.NEXT_PUBLIC_MEMBER_REGISTER}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -174,7 +174,7 @@ export default function Header() {
               className="bg-secondary text-white hover:bg-secondary/90 font-bold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all text-sm h-10"
             >
               <a
-                href="http://213.136.82.130:1323/"
+                href={process.env.NEXT_PUBLIC_MEMBER_LOGIN}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -323,7 +323,7 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
 
       <div className="flex items-center justify-between px-4 py-2.5 bg-gray-50 border-b border-gray-100 shrink-0">
         <a
-          href="http://213.136.82.130:1323/"
+          href={process.env.NEXT_PUBLIC_MEMBER_LOGIN}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-secondary transition-colors"
@@ -441,7 +441,7 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
           asChild
           className="w-full bg-secondary hover:bg-secondary/90 text-white font-bold h-10 text-sm rounded-xl shadow-sm"
         >
-          <a href="http://213.136.82.130:1323/register/account-setup" target="_blank" rel="noopener noreferrer">
+          <a href={process.env.NEXT_PUBLIC_MEMBER_REGISTER} target="_blank" rel="noopener noreferrer">
             {t("actions.getBarcode")}
           </a>
         </Button>
@@ -451,7 +451,7 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
             variant="outline"
             className="w-full h-10 border-primary/30 text-primary font-bold text-sm rounded-xl hover:bg-primary/5"
           >
-            <a href="http://213.136.82.130:1323/" target="_blank" rel="noopener noreferrer">
+            <a href={process.env.NEXT_PUBLIC_MEMBER_LOGIN} target="_blank" rel="noopener noreferrer">
               {t("actions.signUp")}
             </a>
           </Button>

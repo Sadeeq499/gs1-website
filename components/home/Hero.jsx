@@ -163,7 +163,7 @@ export default function Hero() {
                     asChild
                   >
                     <a
-                      href="http://213.136.82.130:1323/register/account-setup"
+                      href={process.env.NEXT_PUBLIC_MEMBER_REGISTER}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -307,7 +307,7 @@ export default function Hero() {
                     asChild
                   >
                     <a
-                      href="http://213.136.82.130:1323/register/account-setup"
+                      href={process.env.NEXT_PUBLIC_MEMBER_REGISTER}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

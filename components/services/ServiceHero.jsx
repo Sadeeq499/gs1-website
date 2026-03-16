@@ -31,7 +31,7 @@ const ServiceHero = () => {
             className="relative overflow-hidden bg-secondary hover:bg-white hover:text-primary text-white font-black px-12 py-9 rounded-2xl shadow-[0_10px_35px_rgba(235,93,27,0.35)] hover:shadow-[0_15px_45px_rgba(255,255,255,0.25)] transition-all duration-500 h-auto text-2xl group cursor-pointer border-2 border-white/10 hover:border-white scale-100 hover:scale-105 active:scale-95"
           >
             <a 
-              href="http://213.136.82.130:1323/register/account-setup" 
+              href={process.env.NEXT_PUBLIC_MEMBER_REGISTER} 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center"

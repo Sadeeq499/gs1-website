@@ -24,7 +24,7 @@ const ServicesCTA = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
-              href="http://213.136.82.130:1323/register/account-setup"
+              href={process.env.NEXT_PUBLIC_MEMBER_REGISTER}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto"

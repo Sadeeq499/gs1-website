@@ -99,7 +99,7 @@ const ServicesSection = () => {
                         } rounded-lg shadow-sm hover:shadow-md cursor-pointer h-9 px-4 border-2 border-transparent scale-100 hover:scale-105 active:scale-95`}
                       >
                         <a 
-                          href="http://213.136.82.130:1323/register/account-setup" 
+                          href={process.env.NEXT_PUBLIC_MEMBER_REGISTER} 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="flex items-center shrink-0"
