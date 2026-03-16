@@ -6,12 +6,12 @@ import { Partners } from "@/components/home/Partners";
 
 export default function Home() {
   return (
-    <>
+    <div className="max-w-7xl mx-auto">
       <Hero />
       <Partners />
       <OurServices />
       <SolutionsSection />
       <BarcodeTechnologySection />
-    </>
+    </div>
   );
 }
