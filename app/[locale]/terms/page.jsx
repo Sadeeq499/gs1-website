@@ -1,17 +1,19 @@
-// app/terms/page.jsx  — Server Component
-// ⚡ This file contains ONLY component calls. All content is in data/terms.js.
-
+import { getTranslations } from "next-intl/server";
 import TermsHero      from "@/components/terms/TermsHero";
 import TermsSidebar   from "@/components/terms/TermsSidebar";
 import TermsMobileNav from "@/components/terms/TermsMobileNav";
 import TermsBody      from "@/components/terms/TermsBody";
 import TermsFooter    from "@/components/terms/TermsFooter";
 
-export const metadata = {
-  title: "Terms & Conditions | GS1 Saudi Arabia",
-  description:
-    "Terms and Conditions for all members of the Product Numbering and Administrative Services Company – GS1 Saudi Arabia.",
-};
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "terms" });
+
+  return {
+    title: `${t("meta.title")} | GS1 Saudi Arabia`,
+    description: t("meta.subtitle"),
+  };
+}
 
 export default function TermsPage() {
   return (

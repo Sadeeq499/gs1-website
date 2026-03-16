@@ -92,7 +92,7 @@ function ClauseBlock({ clause }) {
           {multiline(clause.text)}
           {/* sub-clauses */}
           {clause.sub && clause.sub.length > 0 && (
-            <div className="mt-3 space-y-2 pl-1">
+            <div className="mt-3 space-y-2 ps-1">
               {clause.sub.map((s) => (
                 <SubClause key={s.id} item={s} />
               ))}
@@ -128,7 +128,7 @@ export default function TermsSection({ section }) {
 
       {/* Definitions list */}
       {section.type === "definitions" && section.items && (
-        <div className="space-y-1.5 pl-12">
+        <div className="space-y-1.5 ps-12">
           {section.items.map((item, idx) => (
             <DefRow key={item.id} item={item} index={idx} />
           ))}
@@ -137,7 +137,7 @@ export default function TermsSection({ section }) {
 
       {/* Clauses */}
       {section.type === "clauses" && section.clauses && (
-        <div className="space-y-3 pl-12">
+        <div className="space-y-3 ps-12">
           {section.clauses.map((c) => (
             <ClauseBlock key={c.id} clause={c} />
           ))}
@@ -146,7 +146,7 @@ export default function TermsSection({ section }) {
 
       {/* Plain paragraphs */}
       {section.type === "paragraphs" && section.paragraphs && (
-        <div className="space-y-3 pl-12">
+        <div className="space-y-3 ps-12">
           {section.paragraphs.map((p, i) => (
             <div
               key={i}

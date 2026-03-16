@@ -2,15 +2,17 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { TERMS_SECTIONS } from "./terms";
+import { useTranslations } from "next-intl";
 import { BookOpen, ChevronRight } from "lucide-react";
 
 export default function TermsSidebar() {
-  const [active, setActive] = useState(TERMS_SECTIONS[0]?.id ?? "");
+  const t = useTranslations("terms");
+  const sections = t.raw("sections");
+  const [active, setActive] = useState(sections[0]?.id ?? "");
   const observerRef = useRef(null);
 
   useEffect(() => {
-    const headings = TERMS_SECTIONS.map((s) =>
+    const headings = sections.map((s) =>
       document.getElementById(`sec-${s.id}`)
     ).filter(Boolean);
 
@@ -29,7 +31,7 @@ export default function TermsSidebar() {
 
     headings.forEach((el) => observerRef.current.observe(el));
     return () => observerRef.current?.disconnect();
-  }, []);
+  }, [sections]);
 
   const goto = (id) =>
     document.getElementById(`sec-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -43,12 +45,12 @@ export default function TermsSidebar() {
             <BookOpen className="h-3.5 w-3.5 text-[#002C6C]" />
           </div>
           <span className="text-xs font-bold uppercase tracking-wider text-[#002C6C] dark:text-foreground">
-            Contents
+            {t("meta.tableOfContents")}
           </span>
         </div>
 
         <nav className="space-y-0.5 p-2">
-          {TERMS_SECTIONS.map((s) => {
+          {sections.map((s) => {
             const isActive = active === s.id;
             return (
               <button
@@ -82,8 +84,8 @@ export default function TermsSidebar() {
 
         <div className="m-2 mt-1 rounded-xl bg-[#F26334]/8 border border-[#F26334]/20 px-3 py-2.5">
           <p className="text-[11px] leading-relaxed text-muted-foreground">
-            <span className="font-semibold text-[#F26334]">GS1 Saudi Arabia</span>
-            {" — "}{TERMS_SECTIONS.length} sections
+            <span className="font-semibold text-[#F26334]">{t("meta.organization")}</span>
+            {" — "}{sections.length} {t("meta.sectionsCount")}
           </p>
         </div>
       </div>

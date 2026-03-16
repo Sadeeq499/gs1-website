@@ -2,10 +2,12 @@
 "use client";
 
 import { useState } from "react";
-import { TERMS_SECTIONS } from "./terms";
+import { useTranslations } from "next-intl";
 import { List, ChevronDown } from "lucide-react";
 
 export default function TermsMobileNav() {
+  const t = useTranslations("terms");
+  const sections = t.raw("sections");
   const [open, setOpen] = useState(false);
 
   const goto = (id) => {
@@ -21,9 +23,9 @@ export default function TermsMobileNav() {
       >
         <span className="flex items-center gap-2">
           <List className="h-4 w-4 text-[#002C6C]" />
-          Table of Contents
+          {t("meta.mobileTableOfContents")}
           <span className="ml-1 rounded-full bg-[#002C6C]/10 px-2 py-0.5 text-[10px] font-bold text-[#002C6C]">
-            {TERMS_SECTIONS.length}
+            {sections.length}
           </span>
         </span>
         <ChevronDown className={`h-4 w-4 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
@@ -31,7 +33,7 @@ export default function TermsMobileNav() {
 
       {open && (
         <div className="mt-1 max-h-72 overflow-y-auto rounded-xl border border-border bg-card shadow-lg">
-          {TERMS_SECTIONS.map((s, idx) => (
+          {sections.map((s, idx) => (
             <button
               key={s.id}
               onClick={() => goto(s.id)}

@@ -1,14 +1,16 @@
-// components/terms/TermsBody.jsx  — Server Component
-import { TERMS_SECTIONS } from "./terms";
+import { useTranslations } from "next-intl";
 import TermsSection from "@/components/terms/TermsSection";
 
 export default function TermsBody() {
+  const t = useTranslations("terms");
+  const sections = t.raw("sections");
+
   return (
     <div className="space-y-10">
-      {TERMS_SECTIONS.map((section, index) => (
+      {sections.map((section, index) => (
         <div key={section.id}>
           <TermsSection section={section} />
-          {index < TERMS_SECTIONS.length - 1 && (
+          {index < sections.length - 1 && (
             <div className="mt-10 h-px w-full bg-border/60" />
           )}
         </div>

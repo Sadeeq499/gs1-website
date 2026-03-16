@@ -1,8 +1,9 @@
-// components/terms/TermsFooter.jsx  — Server Component
-import { TERMS_FOOTER, TERMS_META } from "./terms";
+import { useTranslations } from "next-intl";
 import { ShieldCheck, Mail, ArrowUpRight } from "lucide-react";
 
 export default function TermsFooter() {
+  const t = useTranslations("terms");
+  
   return (
     <footer className="mt-14 space-y-5">
       {/* divider with shield */}
@@ -21,7 +22,7 @@ export default function TermsFooter() {
             <ShieldCheck className="h-5 w-5" />
           </div>
           <p className="text-[13.5px] leading-relaxed text-foreground/75">
-            {TERMS_FOOTER.note}
+            {t("footer.note")}
           </p>
         </div>
       </div>
@@ -29,25 +30,27 @@ export default function TermsFooter() {
       {/* contact CTA */}
       <div className="flex flex-col items-center gap-4 rounded-2xl border border-border bg-card px-6 py-6 sm:flex-row sm:justify-between">
         <div>
-          <p className="font-semibold text-foreground text-sm">{TERMS_FOOTER.contact.label}</p>
+          <p className="font-semibold text-foreground text-sm">{t("footer.contact.label")}</p>
           <p className="mt-0.5 text-xs text-muted-foreground">
-            Sunday – Thursday &nbsp;·&nbsp; 8 AM – 5 PM AST
+            {t("footer.contact.workingHours")}
           </p>
         </div>
         <a
-          href={TERMS_FOOTER.contact.href}
+          href={t("footer.contact.href")}
           className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#F26334] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#d4522a] hover:shadow-md"
         >
           <Mail className="h-4 w-4" />
-          {TERMS_FOOTER.contact.action}
+          {t("footer.contact.action")}
           <ArrowUpRight className="h-3.5 w-3.5 opacity-70" />
         </a>
       </div>
 
       {/* copyright */}
       <p className="pb-6 text-center text-[11px] text-muted-foreground/50">
-        © {new Date().getFullYear()} {TERMS_META.organization} · Saudi Bar Coding Center.
-        All rights reserved.
+        {t("footer.copyright", { 
+          year: new Date().getFullYear(),
+          organization: t("meta.organization")
+        })}
       </p>
     </footer>
   );
