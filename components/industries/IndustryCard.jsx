@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export function IndustryCard({ industry, className }) {
   const t = useTranslations("industries");
@@ -9,18 +10,20 @@ export function IndustryCard({ industry, className }) {
   return (
     <div
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-3xl bg-white dark:bg-card shadow-sm transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-full border border-border/40",
+        "group relative  flex flex-col overflow-hidden rounded-3xl bg-white dark:bg-card shadow-sm transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 h-full border border-border/40",
         className,
       )}
     >
       {/* Image Container */}
       <div className="relative aspect-4/3 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent z-10" />
-        <img
+        <Image
           src={industry.image}
           alt={t(`cards.${industry.slug}.title`)}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
+          width={500}
+          height={500}
         />
       </div>
 

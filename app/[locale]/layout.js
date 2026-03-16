@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ContactWidget from "@/components/layout/ContactWidget";
 import QueryProvider from "@/lib/providers/QueryProvider";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -83,6 +84,7 @@ export default async function RootLayout({ children, params }) {
             <QueryProvider>
               <Header />
               {children}
+              <ContactWidget />
               <Footer />
             </QueryProvider>
           </DirectionProvider>
