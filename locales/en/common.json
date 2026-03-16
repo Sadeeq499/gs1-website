@@ -21,13 +21,17 @@
     },
     "actions": {
       "verifiedByGs1": "Verified By GS1",
-      "signIn": "Sign in",
+      "signIn": "GS1 Member Login",
       "getBarcode": "Get a barcode",
       "quickLinks": "Quick Links",
       "signUp": "Sign Up"
     },
     "language": {
       "toggle": "العربية"
+    },
+    "brand": {
+      "name": "GS1 Saudi Arabia",
+      "slogan": "The Global Language of Business"
     }
   },
   "footer": {

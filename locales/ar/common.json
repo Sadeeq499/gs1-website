@@ -21,13 +21,17 @@
     },
     "actions": {
       "verifiedByGs1": "مُوثق من GS1",
-      "signIn": "تسجيل الدخول",
+      "signIn": "دخول أعضاء GS1",
       "getBarcode": "احصل على باركود",
       "quickLinks": "روابط سريعة",
       "signUp": "إنشاء حساب"
     },
     "language": {
       "toggle": "English"
+    },
+    "brand": {
+      "name": "GS1 السعودية",
+      "slogan": "اللغة العالمية للأعمال"
     }
   },
   "footer": {

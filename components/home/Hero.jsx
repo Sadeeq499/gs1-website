@@ -68,7 +68,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative max-w-full mx-auto h-[320px] md:h-[360px] lg:h-[440px] overflow-hidden bg-[#002C6C]">
+    <section className="relative max-w-full mx-auto h-[320px] md:h-[360px] lg:h-[96vh] overflow-hidden bg-[#002C6C]">
       {/* ════════════════════════════════════════
           MOBILE  ( < md )
           Full-width background image with
