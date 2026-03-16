@@ -1,7 +1,8 @@
 {
   "hero": {
     "title": "خدماتنا",
-    "subtitle": "تمكين عملك عبر المعايير والحلول العالمية للكفاءة والرؤية والنمو."
+    "subtitle": "تمكين عملك عبر المعايير والحلول العالمية للكفاءة والرؤية والنمو.",
+    "cta_button": "ابدأ مع GS1 الآن"
   },
   "section": {
     "badge": "حلول شاملة",
@@ -25,12 +26,14 @@
     "empower_title": "عزّز سلسلة التوريد",
     "empower_subtitle": "بحلول {acronym} الشاملة",
     "why_choose": "لماذا تختار {acronym}؟",
-    "ideal_for": "مثالي لـ"
+    "ideal_for": "مثالي لـ",
+    "get_now": "احصل على {acronym} الآن"
   },
   "items": {
     "global-trade-item-number": {
       "title": "رقم البند التجاري العالمي (GTIN)",
       "shortName": "GTIN",
+      "get_button": "احصل على GTIN",
       "description": "تحديد منتجاتك بشكل فريد باستخدام أرقام GTIN (الباركود) للبيع في متاجر التجزئة والأسواق عبر الإنترنت عالمياً.",
       "detailTitle": "رقم البند التجاري العالمي",
       "acronym": "GTIN",
@@ -71,6 +74,7 @@
     "global-location-number": {
       "title": "رقم الموقع العالمي (GLN)",
       "shortName": "GLN",
+      "get_button": "احصل على GLN",
       "description": "تحديد المواقع المادية والكيانات القانونية لتبسيط اتصالات ومعاملات سلسلة التوريد.",
       "detailTitle": "رقم الموقع العالمي",
       "acronym": "GLN",
@@ -106,6 +110,7 @@
     "serial-shipping-container-code": {
       "title": "رمز حاوية الشحن التسلسلي (SSCC)",
       "shortName": "SSCC",
+      "get_button": "احصل على SSCC",
       "description": "تتبع الوحدات اللوجستية وتتبعها عبر سلسلة التوريد من خلال معرف فريد لكل منصة أو شحنة.",
       "detailTitle": "رمز حاوية الشحن التسلسلي",
       "acronym": "SSCC",
@@ -141,6 +146,7 @@
     "saudi-electricity-company": {
       "title": "الشركة السعودية للكهرباء (SEC)",
       "shortName": "SEC",
+      "get_button": "احصل على حل SEC",
       "description": "حلول باركود وتحديد هوية متخصصة لموردي وبائعي الشركة السعودية للكهرباء.",
       "detailTitle": "تتبع وتحديد المرافق والطاقة",
       "acronym": "SEC",
@@ -176,6 +182,7 @@
     "tobacco-traceability": {
       "title": "تتبع وتتبع التبغ",
       "shortName": "Tobacco",
+      "get_button": "احصل على تتبع التبغ",
       "description": "فئة خاصة: ضمان الامتثال لضوابط التبغ من خلال حلول التتبع المتخصصة لدينا.",
       "detailTitle": "تتبع التبغ",
       "acronym": "الختم الضريبي",

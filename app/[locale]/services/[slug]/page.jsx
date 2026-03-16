@@ -39,11 +39,10 @@ export default async function ServicePage({ params }) {
   };
 
   // Fallback image handling
-  
+
   const featureImg =
     service.image ||
     "https://images.unsplash.com/photo-1589828952479-79737b8d8102?auto=format&fit=crop&q=80&w=1200";
-
 
   return (
     <div className="bg-slate-50  text-slate-900 overflow-x-hidden selection:bg-orange-100 selection:text-orange-900">
@@ -53,7 +52,7 @@ export default async function ServicePage({ params }) {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/95 to-[#002c5c]" />
         </div>
-        
+
         <div className="relative z-10 container mx-auto px-4 md:px-8 flex flex-col justify-center text-white">
           <div className="max-w-4xl space-y-6 animate-in slide-in-from-bottom-5 duration-700">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
@@ -102,12 +101,15 @@ export default async function ServicePage({ params }) {
                       <Factory className="w-6 h-6 text-secondary" />,
                     ];
                     const SelectedIcon = icons[idx % icons.length];
-                    
+
                     return (
                       <div key={idx} className="flex gap-6 group">
                         <div className="shrink-0">
                           <div className="w-14 h-14 rounded-2xl bg-orange-50 text-secondary flex items-center justify-center shadow-sm group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                            {React.cloneElement(SelectedIcon, { className: "w-6 h-6 group-hover:text-white transition-colors" })}
+                            {React.cloneElement(SelectedIcon, {
+                              className:
+                                "w-6 h-6 group-hover:text-white transition-colors",
+                            })}
                           </div>
                         </div>
                         <div className="space-y-2">
@@ -122,8 +124,6 @@ export default async function ServicePage({ params }) {
                     );
                   })}
               </div>
-
-
             </div>
 
             {/* Right: Feature Image */}
@@ -144,7 +144,7 @@ export default async function ServicePage({ params }) {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/95 to-[#002c5c]" />
         </div>
-        
+
         <div className="container mx-auto px-4 md:px-8 relative z-10 flex flex-col items-center text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
             {t("empower_title")}
