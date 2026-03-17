@@ -4,7 +4,7 @@ export const industries = [
     slug: "healthcare-pharma",
     description:
       "Ensure patient safety with end-to-end traceability for pharmaceuticals, medical devices, and hospital supplies using GS1 standards.",
-    image: "/images/industries/helthcare.png",
+    image: "/images/Industries/helthcare.png",
     href: "/industries/healthcare-pharma",
   },
   {
@@ -12,7 +12,7 @@ export const industries = [
     slug: "retail-fmcg",
     description:
       "Streamline point-of-sale, inventory management, and omnichannel commerce with globally recognized barcodes and data standards.",
-    image: "/images/industries/solutions-retail.png",
+    image: "/images/Industries/solutions-retail.png",
     href: "/industries/retail-fmcg",
   },
   {
@@ -20,7 +20,7 @@ export const industries = [
     slug: "logistics-supply-chain",
     description:
       "Gain real-time visibility across your entire supply chain with standardized identification and EPCIS event tracking.",
-    image: "/images/industries/logistics.png",
+    image: "/images/Industries/logistics.png",
     href: "/industries/logistics-supply-chain",
   },
   {
@@ -28,7 +28,7 @@ export const industries = [
     slug: "food-safety-agriculture",
     description:
       "Meet regulatory compliance and build consumer trust with farm-to-fork traceability powered by GS1 Digital Link.",
-    image: "/images/industries/food-agriculture.png",
+    image: "/images/Industries/food-agriculture.png",
     href: "/industries/food-safety-agriculture",
   },
   {
@@ -36,7 +36,7 @@ export const industries = [
     slug: "e-commerce-digital",
     description:
       "Enable seamless product discovery, authentication, and enriched digital experiences with GS1-powered QR codes.",
-    image: "/images/industries/e-commerce.png",
+    image: "/images/Industries/e-commerce.png",
     href: "/industries/e-commerce-digital",
   },
   {
@@ -88,7 +88,7 @@ export const industryDetails = {
     slug: "healthcare-pharma",
     description:
       "Ensure patient safety with end-to-end traceability for pharmaceuticals, medical devices, and hospital supplies using GS1 standards.",
-    image1: "/images/industries/helthcare.png",
+    image1: "/images/Industries/helthcare.png",
     description1:
       "The healthcare industry faces unique challenges in ensuring patient safety, reducing medication errors, and securing the supply chain against counterfeit drugs. GS1 standards provide the foundation for end-to-end traceability, enabling manufacturers, distributors, and healthcare providers to track pharmaceuticals and medical devices from production to the point of care. By implementing Global Trade Item Numbers (GTINs) and 2D barcodes, stakeholders can instantly verify product authenticity and expiration dates.",
     description2:
@@ -99,7 +99,7 @@ export const industryDetails = {
     slug: "retail-fmcg",
     description:
       "Streamline point-of-sale, inventory management, and omnichannel commerce with globally recognized barcodes and data standards.",
-    image1: "/images/industries/solutions-retail.png",
+    image1: "/images/Industries/solutions-retail.png",
     description1:
       "In the fast-paced world of Retail and FMCG, consumer expectations for product availability and information are higher than ever. GS1 standards enable a smarter supply chain by providing a common language for identifying, capturing, and sharing data about products and locations. From the warehouse to the checkout counter, GTINs and barcodes ensure that products are accurately identified, reducing errors and speeding up transactions. This foundation supports critical operations like automated ordering, inventory replenishment, and seamless omnichannel experiences.",
     description2:
@@ -110,7 +110,7 @@ export const industryDetails = {
     slug: "logistics-supply-chain",
     description:
       "Gain real-time visibility across your entire supply chain with standardized identification and EPCIS event tracking.",
-    image1: "/images/industries/logistics.png",
+    image1: "/images/Industries/logistics.png",
     description1:
       "Efficient logistics rely on knowing exactly where shipments are at any given moment. GS1 standards like the Serial Shipping Container Code (SSCC) and Global Location Number (GLN) provide the backbone for real-time visibility across complex, multi-modal supply chains. By uniquely identifying logistic units—pallets, cases, and containers—companies can automate tracking from dispatch to delivery, significantly reducing manual interventions and the risk of lost inventory.",
     description2:
@@ -121,7 +121,7 @@ export const industryDetails = {
     slug: "food-safety-agriculture",
     description:
       "Meet regulatory compliance and build consumer trust with farm-to-fork traceability powered by GS1 Digital Link.",
-    image1: "/images/industries/food-agriculture.png",
+    image1: "/images/Industries/food-agriculture.png",
     description1:
       "Food safety is paramount, and consumers increasingly demand to know the story behind what they eat. GS1 standards facilitate complete farm-to-fork traceability, allowing producers, manufacturers, and retailers to track food products with precision. By capturing critical data points such as batch numbers and expiration dates in standardized barcodes, the industry can rapidly respond to food safety incidents, executing targeted recalls that minimize waste and protect public health.",
     description2:
@@ -132,7 +132,7 @@ export const industryDetails = {
     slug: "e-commerce-digital",
     description:
       "Enable seamless product discovery, authentication, and enriched digital experiences with GS1-powered QR codes.",
-    image1: "/images/industries/e-commerce.png",
+    image1: "/images/Industries/e-commerce.png",
     description1:
       "In the digital marketplace, accurate product data is critical for searchability and sales. GS1 GTINs are the trusted currency of e-commerce, required by major marketplaces like Amazon and Google Shopping to uniquely identify products. By using these global identifiers, brands ensure their products are discoverable, reducing listing errors and preventing conflicts with duplicate items. This foundation allows for a seamless shopping experience across platforms.",
     description2:
