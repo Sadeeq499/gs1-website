@@ -99,11 +99,17 @@ export default function Header() {
               <Image src="/logos/gs1-logo.png" alt={t("brand.name")} fill sizes="150px" className="object-contain object-left" priority />
             </div>
             <div className="hidden lg:flex flex-col justify-center">
-              <span className="text-[#002c6c] font-bold text-[18px] leading-tight mb-0.5">
-                GS1 Saudi Arabia
+              <span className={cn(
+                "text-[#002c6c] font-bold leading-tight mb-0.5",
+                locale === "ar" ? "text-[16px]" : "text-[18px]"
+              )}>
+                {t("brand.name")}
               </span>
-              <span className="text-[#002c6c] text-[15px] leading-tight">
-                The Global Language of Business
+              <span className={cn(
+                "text-[#002c6c] leading-tight",
+                locale === "ar" ? "text-[13px]" : "text-[15px]"
+              )}>
+                {t("brand.slogan")}
               </span>
             </div>
           </Link>
@@ -120,7 +126,7 @@ export default function Header() {
                 <div className="bg-[#10b981] rounded-full p-1 shadow-inner flex items-center justify-center">
                   <ShieldCheck className="h-3 w-3 text-white stroke-[3px]" />
                 </div>
-                <span className="text-[12px] tracking-tight">{t("actions.verifiedByGs1") || "Verified By GS1"}</span>
+                <span className="text-[12px] tracking-tight">{t("actions.verifiedByGs1")}</span>
               </Link>
             </Button>
 
@@ -148,7 +154,7 @@ export default function Header() {
           {/* RIGHT: Chamber / FSC logo */}
           <div className="hidden shrink-0 lg:flex items-center justify-end w-[150px]">
             <div className="relative w-[110px] h-[55px]">
-              <Image src="https://saudisteelconference.com/_images/logo-federation.png" alt="FSC" fill sizes="110px" className="object-contain object-right" />
+              <Image src="https://saudisteelconference.com/_images/logo-federation.png" alt={t("brand.fsc")} fill sizes="110px" className="object-contain object-right" />
             </div>
           </div>
 
@@ -233,7 +239,7 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
             <div className="relative w-[80px] h-[40px]">
               <Image 
                 src="https://saudisteelconference.com/_images/logo-federation.png" 
-                alt="FSC" 
+                alt={t("brand.fsc")} 
                 fill 
                 sizes="80px" 
                 className="object-contain object-left" 

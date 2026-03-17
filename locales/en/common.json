@@ -1,4 +1,11 @@
 {
+  "slider": {
+    "title": "GS1 Saudi Arabia",
+    "subtitle": "The Global Language of Business",
+    "description": "Empower your business with a globally recognized digital identity for your products. Acquire official Barcodes, 2D QR Codes, and Global Location Numbers (GLN) from GS1 Saudi Arabia to ensure seamless supply chain connectivity, regulatory compliance, and consumer trust locally and worldwide.",
+    "getStarted": "Get Started",
+    "hero_alt": "Logistics and supply chain"
+  },
   "header": {
     "topBar": {
       "slogan": "Welcome to GS1 Saudi Arabia",
@@ -31,7 +38,8 @@
     },
     "brand": {
       "name": "GS1 Saudi Arabia",
-      "slogan": "The Global Language of Business"
+      "slogan": "The Global Language of Business",
+      "fsc": "Federation of Saudi Chambers"
     }
   },
   "footer": {
