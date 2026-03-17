@@ -80,13 +80,13 @@ export default function Header() {
       className={cn(
         "w-full z-50 transition-all duration-500",
         isHome ? "fixed left-0 right-0" : "sticky top-0",
-        isHome && !isScrolled ? "top-4 sm:top-6 px-4 sm:px-6 lg:px-8" : "top-0 px-0"
+        isHome && !isScrolled ? "top-0 px-0 md:top-4 md:px-6 lg:top-6 lg:px-8" : "top-0 px-0"
       )}
     >
       <div className={cn(
         "mx-auto w-full transition-all duration-500",
         isHome && !isScrolled 
-          ? "max-w-7xl rounded-xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)]" 
+          ? "max-w-7xl rounded-none md:rounded-xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)]" 
           : "max-w-full bg-white shadow-md border-b border-gray-100"
       )}>
         
@@ -153,8 +153,8 @@ export default function Header() {
           </div>
 
           {/* Mobile Actions */}
-          <div className="lg:hidden flex items-center gap-2">
-            <Button asChild className="bg-[#EF5323] hover:bg-[#d9481d] text-white font-medium px-4 h-9 rounded-md text-xs shadow-sm">
+          <div className="lg:hidden flex items-center gap-1 sm:gap-2">
+            <Button asChild className="bg-[#EF5323] hover:bg-[#d9481d] text-white font-medium px-3 sm:px-4 h-8 sm:h-9 rounded-md text-[11px] sm:text-xs shadow-sm">
               <a href={process.env.NEXT_PUBLIC_MEMBER_REGISTER} target="_blank" rel="noopener noreferrer">{t("actions.getBarcode")}</a>
             </Button>
             <Sheet>
