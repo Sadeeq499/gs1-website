@@ -22,15 +22,15 @@ function Slider() {
       {/* Content wrapper */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         <div className="max-w-3xl text-white">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-8 tracking-tight">
-                Welcome to GS1 Saudi Arabia
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 tracking-tight">
+            Welcome to GS1 Saudi Arabia
           </h1>
           
           {/* Bright Orange/Red Accent Line identical to reference */}
-          <div className="w-[140px] h-1 bg-[#D94F2B] mb-10"></div>
+          <div className="w-[140px] h-1 bg-[#D94F2B] mb-8"></div>
 
           <p className="text-lg sm:text-xl text-gray-200 mb-10 max-w-2xl leading-relaxed font-light">
-            Improve brand positioning for consumers, keep consumers at ease when buying your brand. GS1's dynamic platform helps companies manage and ensure compliance with top regulators seamlessly across the world.
+            Empower your business with a globally recognized digital identity for your products. Acquire official Barcodes, 2D QR Codes, and Global Location Numbers (GLN) from GS1 Saudi Arabia to ensure seamless supply chain connectivity, regulatory compliance, and consumer trust locally and worldwide.
           </p>
           
           <div>
