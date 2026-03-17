@@ -20,8 +20,7 @@ export function IndustryCard({ industry, className }) {
         <Image
           src={industry.image}
           alt={t(`cards.${industry.slug}.title`)}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-          loading="lazy"
+          className="h-full w-full object-cover"
           width={500}
           height={500}
         />

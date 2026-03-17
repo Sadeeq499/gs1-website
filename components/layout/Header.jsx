@@ -65,6 +65,8 @@ export default function Header() {
     router.replace(pathname, { locale: nextLocale });
   };
 
+  const isHome = pathname === "/";
+
   React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -76,202 +78,122 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "w-full z-50 sticky top-0 transition-all duration-300",
-        isScrolled ? "shadow-md" : "",
+        "w-full z-50 transition-all duration-500",
+        isHome ? "fixed left-0 right-0" : "sticky top-0",
+        isHome && !isScrolled ? "top-4 sm:top-6 px-4 sm:px-6 lg:px-8" : "top-0 px-0"
       )}
     >
-      {/* Top Bar - Dark Blue — NO CHANGES */}
-      <div className="bg-primary text-white hidden lg:block">
-        <div className="mx-auto px-4 h-10 flex justify-between items-center text-xs font-medium">
-          <span className="opacity-90 tracking-wide uppercase text-[10px]">
-            {t("topBar.slogan")}
-          </span>
-          <div className="flex items-center gap-6">
-            <Link href="/insights" className="hover:text-secondary transition-colors">
-              {t("topBar.insights")}
-            </Link>
-            <Link href="/events" className="hover:text-secondary transition-colors">
-              {t("topBar.events")}
-            </Link>
-            <Link href="/training" className="hover:text-secondary transition-colors">
-              {t("topBar.training")}
-            </Link>
-            <Link href="/contact" className="hover:text-secondary transition-colors">
-              {t("topBar.contact")}
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Middle Identity Bar ── */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="mx-auto px-4 sm:px-6 flex items-center justify-between gap-4 sm:gap-6" style={{ minHeight: "clamp(70px, 10vh, 90px)", paddingTop: "8px", paddingBottom: "8px" }}>
-
-          {/* LEFT — GS1 logo + text only */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-4 group shrink-0">
-            {/* responsive size container */}
-            <div
-              className="relative w-[100px] h-[55px] sm:w-[140px] sm:h-[80px] shrink-0 transition-transform duration-200 group-hover:scale-105"
-            >
-              <Image
-                src="/logos/gs1-logo.png"
-                alt={t("brand.name")}
-                fill
-                sizes="(max-width: 640px) 100px, 140px"
-                className="object-contain"
-                priority
-              />
+      <div className={cn(
+        "mx-auto w-full transition-all duration-500",
+        isHome && !isScrolled 
+          ? "max-w-7xl rounded-xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)]" 
+          : "max-w-full bg-white shadow-md border-b border-gray-100"
+      )}>
+        
+        {/* Top Row: Logo, Action Buttons, Chamber Logo */}
+        <div className="px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 py-3 sm:py-4 border-b border-gray-100/80">
+          
+          {/* LEFT: GS1 Logo */}
+          <Link href="/" className="flex items-center gap-4 group shrink-0">
+            <div className="relative w-[120px] h-[45px] sm:w-[150px] sm:h-[55px] shrink-0 transition-transform">
+              <Image src="/logos/gs1-logo.png" alt={t("brand.name")} fill sizes="150px" className="object-contain object-left" priority />
             </div>
-            <div className="hidden sm:flex flex-col leading-snug">
-              <span className="text-primary font-semibold text-lg tracking-tight">
-                {t("brand.name")}
+            <div className="hidden lg:flex flex-col justify-center">
+              <span className="text-[#002c6c] font-bold text-[18px] leading-tight mb-0.5">
+                GS1 Saudi Arabia
               </span>
-              <span className="text-primary text-[13px] font-normal">
-                {t("brand.slogan")}
+              <span className="text-[#002c6c] text-[15px] leading-tight">
+                The Global Language of Business
               </span>
             </div>
           </Link>
 
-          {/* CENTER — CTAs + Language toggle */}
-          <div className="hidden lg:flex items-center gap-3">
-            {/* Verified By GS1 */}
+          {/* MIDDLE: Desktop Action Buttons */}
+          <div className="hidden lg:flex items-center justify-center gap-2 lg:gap-3 flex-1">
+            {/* Verified By GS1 (Light Green Pill) */}
             <Button
               asChild
               variant="outline"
-              className="relative flex items-center gap-2 border border-green-200 bg-gradient-to-b from-green-50 to-green-100/50 hover:from-green-100 hover:to-green-200/50 text-green-900 px-4 py-2.5 rounded-full font-bold shadow-sm hover:shadow-md transition-all duration-300 group overflow-hidden"
+              className="relative flex items-center gap-2 border-green-200 bg-[#ebfbf3] hover:bg-green-100 text-green-800 px-4 h-8 rounded-full font-bold shadow-sm transition-colors group"
             >
               <Link href="/verified-by-gs1">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent -translate-x-full group-hover:animate-shimmer" />
-                <div className="bg-green-600/90 group-hover:bg-green-600 rounded-full p-1.5 shadow-inner flex items-center justify-center transition-colors">
-                  <ShieldCheck className="h-3.5 w-3.5 text-white stroke-[3px]" />
+                <div className="bg-[#10b981] rounded-full p-1 shadow-inner flex items-center justify-center">
+                  <ShieldCheck className="h-3 w-3 text-white stroke-[3px]" />
                 </div>
-                <span className="text-[13px] tracking-tight">
-                  {t("actions.verifiedByGs1")}
-                </span>
+                <span className="text-[12px] tracking-tight">{t("actions.verifiedByGs1") || "Verified By GS1"}</span>
               </Link>
             </Button>
 
-            {/* Thin separator */}
-            <div className="h-8 w-px bg-gray-200" />
-
-            {/* Get a Barcode — primary dark blue */}
-            <Button
-              asChild
-              className="bg-primary text-white hover:bg-primary/90 font-bold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all text-sm h-10"
-            >
-              <a
-                href={process.env.NEXT_PUBLIC_MEMBER_REGISTER}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            {/* Get a barcode (Dark Blue) */}
+            <Button asChild className="bg-[#1a2b56] hover:bg-[#1a2b56]/90 text-white font-semibold px-4 h-8 rounded-md text-[12px] shadow-sm transition-colors">
+              <a href={process.env.NEXT_PUBLIC_MEMBER_REGISTER} target="_blank" rel="noopener noreferrer">
                 {t("actions.getBarcode")}
               </a>
             </Button>
 
-            {/* Sign In — secondary orange */}
-            <Button
-              asChild
-              className="bg-secondary text-white hover:bg-secondary/90 font-bold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all text-sm h-10"
-            >
-              <a
-                href={process.env.NEXT_PUBLIC_MEMBER_LOGIN}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            {/* GS1 Member Login (Orange) */}
+            <Button asChild className="bg-[#EF5323] hover:bg-[#d9481d] text-white font-semibold px-4 h-8 rounded-md text-[12px] shadow-sm transition-colors">
+              <a href={process.env.NEXT_PUBLIC_MEMBER_LOGIN} target="_blank" rel="noopener noreferrer">
                 {t("actions.signIn")}
               </a>
             </Button>
 
-            {/* Language toggle — Moved to last */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleLanguage}
-              className="gap-1.5 text-primary font-bold cursor-pointer border border-gray-200 rounded-lg px-3 h-10 hover:bg-gray-50 transition-colors"
-            >
-              <Globe className="h-4 w-4" />
-              <span className="text-sm">{t("language.toggle")}</span>
+            {/* Language Toggle (Outline) */}
+            <Button variant="outline" size="sm" onClick={toggleLanguage} className="flex gap-2 text-primary hover:bg-gray-50 h-8 px-3 rounded-md border-gray-200 ml-1">
+              <Globe className="h-3.5 w-3.5" />
+              <span className="text-[12px] font-medium text-gray-700">{t("language.toggle")}</span>
             </Button>
           </div>
 
-          {/* RIGHT — Chamber / FSC logo (bigger, with label) */}
-          <div className="hidden md:flex flex-col items-center gap-1 shrink-0">
-            <div
-              className="relative"
-              style={{ width: "120px", height: "70px" }}
-            >
-              <Image
-                src="https://saudisteelconference.com/_images/logo-federation.png"
-                alt="Federation of Saudi Chambers of Commerce"
-                fill
-                sizes="120px"
-                className="object-contain"
-              />
+          {/* RIGHT: Chamber / FSC logo */}
+          <div className="hidden shrink-0 lg:flex items-center justify-end w-[150px]">
+            <div className="relative w-[110px] h-[55px]">
+              <Image src="https://saudisteelconference.com/_images/logo-federation.png" alt="FSC" fill sizes="110px" className="object-contain object-right" />
             </div>
           </div>
 
-          {/* Mobile — shield icon + hamburger */}
-          <div className="lg:hidden flex items-center gap-3">
-            <Button
-              variant="outline"
-              size="icon"
-              className="bg-gradient-to-b from-green-50 to-green-100/50 border-green-200 hover:from-green-100 hover:to-green-200/50 rounded-full shadow-sm"
-              asChild
-            >
-              <Link href="/verified-by-gs1">
-                <div className="bg-green-600/90 rounded-full p-1 shadow-inner flex items-center justify-center">
-                  <ShieldCheck className="h-4 w-4 text-white stroke-[2.5px]" />
-                </div>
-              </Link>
+          {/* Mobile Actions */}
+          <div className="lg:hidden flex items-center gap-2">
+            <Button asChild className="bg-[#EF5323] hover:bg-[#d9481d] text-white font-medium px-4 h-9 rounded-md text-xs shadow-sm">
+              <a href={process.env.NEXT_PUBLIC_MEMBER_REGISTER} target="_blank" rel="noopener noreferrer">{t("actions.getBarcode")}</a>
             </Button>
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-primary">
+                <Button variant="ghost" size="icon" className="text-primary hover:bg-gray-100">
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <MobileMenuContent
-                pathname={pathname}
-                t={t}
-                toggleLanguage={toggleLanguage}
-                mainNavItems={mainNavItems}
-              />
+              <MobileMenuContent pathname={pathname} t={t} toggleLanguage={toggleLanguage} mainNavItems={mainNavItems} />
             </Sheet>
           </div>
         </div>
-      </div>
 
-      {/* ── Navigation Bar ── */}
-      <div className="bg-white border-b border-gray-100 hidden xl:block">
-        <div className="mx-auto px-4">
-          <NavigationMenu className="mx-auto">
-            <NavigationMenuList className="flex justify-center">
+        {/* Bottom Row: Nav Menu */}
+        <div className="hidden lg:flex w-full justify-center px-4 py-1.5">
+          <NavigationMenu>
+            <NavigationMenuList className="flex space-x-6">
               {mainNavItems.map((item) => (
                 <NavigationMenuItem key={item.title}>
                   {item.items ? (
                     <>
-                      <NavigationMenuTrigger className="text-[16px] font-normal text-primary hover:text-secondary bg-transparent hover:bg-transparent focus:bg-transparent focus:text-secondary data-[state=open]:text-secondary data-[state=open]:bg-transparent transition-colors px-5 py-4">
+                      <NavigationMenuTrigger className="text-[13px] font-semibold text-gray-700 hover:text-[#EF5323] focus:text-[#EF5323] data-[state=open]:text-[#EF5323] bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent h-8 px-2 transition-colors">
                         {item.title}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="absolute top-0 left-0">
-                        <ul className="grid w-[400px] gap-2 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] border-t-4 border-secondary">
+                        <ul className="grid w-[400px] gap-2 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] border-t-4 border-[#EF5323]  rounded-b-lg ">
                           {item.items.map((subItem) => (
-                            <ListItem
-                              key={subItem.title}
-                              title={subItem.title}
-                              href={subItem.href}
-                            />
+                            <ListItem key={subItem.title} title={subItem.title} href={subItem.href} />
                           ))}
                         </ul>
                       </NavigationMenuContent>
                     </>
                   ) : (
-                    <NavigationMenuLink asChild className="bg-transparent hover:bg-transparent focus:bg-transparent">
+                    <NavigationMenuLink asChild>
                       <Link
                         href={item.href}
                         className={cn(
-                          "text-[16px] font-normal text-primary hover:text-secondary px-5 py-4 block transition-colors",
-                          pathname === item.href && "text-secondary",
+                          "inline-flex h-8 w-max items-center justify-center rounded-md bg-transparent px-2 text-[13px] font-semibold text-gray-700 transition-colors hover:text-[#EF5323]",
+                          pathname === item.href && "text-[#EF5323]"
                         )}
                       >
                         {item.title}
