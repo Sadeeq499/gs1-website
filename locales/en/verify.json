@@ -5,8 +5,7 @@
   },
   "hero": {
     "title": "Verified by GS1",
-    "description": "Verified by GS1 makes it easy to search, look up and verify information on barcode numbers (GTIN, UPC, EAN), locations (GLN), companies or other GS1 identification keys (SSCC)."
-  },
+    "description": "Verified by GS1 ensures that your products are accurately registered and authenticated within the global GS1 system. It provides businesses and consumers with confidence that product information is reliable, enhances brand trust, supports regulatory compliance, and helps prevent counterfeiting."  },
   "tabs": {
     "product": {
       "label": "Verify Product",

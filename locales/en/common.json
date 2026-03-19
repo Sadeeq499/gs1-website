@@ -2,7 +2,7 @@
   "slider": {
     "title": "GS1 Saudi Arabia",
     "subtitle": "The Global Language of Business",
-    "description": "Empower your business with a globally recognized digital identity for your products. Acquire official Barcodes, 2D QR Codes, and Global Location Numbers (GLN) from GS1 Saudi Arabia to ensure seamless supply chain connectivity, regulatory compliance, and consumer trust locally and worldwide.",
+    "description": "GS1 Saudi Arabia is the sole national authority authorized to issue Saudi barcodes in line with global GS1 standards. These barcodes carry the international prefix 628, globally recognized as the digital identity of Saudi products. They ensure regulatory compliance, enable seamless access to local and international markets, and protect against counterfeiting while reinforcing trust and quality. In short, they strengthen your product’s credibility and market presence both locally and globally.",
     "getStarted": "Get Started",
     "hero_alt": "Logistics and supply chain"
   },
@@ -29,7 +29,7 @@
     "actions": {
       "verifiedByGs1": "Verified By GS1",
       "signIn": "GS1 Member Login",
-      "getBarcode": "Get a barcode",
+      "getBarcode": "Get a Barcode",
       "quickLinks": "Quick Links",
       "signUp": "Sign Up"
     },

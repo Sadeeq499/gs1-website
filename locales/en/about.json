@@ -78,7 +78,7 @@
       "tag": "Our Vision",
       "title": "A Unified Language for",
       "titleHighlight": "National Commerce",
-      "description": "To be the primary catalyst for a digital, transparent, and globally integrated Saudi supply chain. We envision a future where every Saudi SME and Enterprise speaks the same digital language, enabling seamless trade from the Red Sea to the global market."
+      "description": "To implement and promote GS1 global standards in Saudi Arabia, providing businesses with reliable identification, traceability, and authentication solutions that enhance market access, ensure regulatory compliance, and build consumer trust."
     },
     "mission": {
       "tag": "Our Mission",
@@ -287,7 +287,7 @@
       "title": "The Global Language of",
       "titleHighlight": "Saudi Business",
       "titleSuffix": "Innovation",
-      "description": "Operating as the Saudi Barcode Center under the Federation of Saudi Chambers, we are the architects of the Kingdom's digital supply chain ecosystem.",
+      "description": "GS1 Saudi Arabia is the national authority responsible for implementing global GS1 standards in the Kingdom. It provides businesses with unique barcodes and digital identification solutions, ensuring product traceability, authenticity, and compliance with international and local regulations. GS1 Saudi Arabia empowers companies to access local and global markets while enhancing consumer trust and protecting against counterfeiting.",
       "stats": [
         { "value": "2M+", "label": "Global Users" },
         { "value": "18K+", "label": "KSA Members" },
@@ -304,8 +304,7 @@
     "missionVision": [
       {
         "title": "Our Vision",
-        "desc": "To be the primary catalyst for a digital, transparent, and globally integrated Saudi supply chain by 2030."
-      },
+"desc": "To be the trusted authority for global standards in Saudi Arabia, enabling businesses to uniquely identify, track, and authenticate products while fostering trust, quality, and efficiency in local and international markets."      },
       {
         "title": "Our Mission",
         "desc": "To empower Saudi organizations with global standards that enhance efficiency, safety, and regulatory compliance."

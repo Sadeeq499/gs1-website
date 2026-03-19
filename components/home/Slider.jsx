@@ -11,7 +11,7 @@ function Slider() {
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
-          src="/images/home-hero/hero-image.png"
+          src="/images/home-hero/intro.png"
           alt={t("hero_alt")}
           fill
           className="object-cover object-center transform scale-105"
