@@ -27,7 +27,7 @@ export const footerConfig = {
       links: [
         { label: "2D Barcode Sunrise", href: "/solutions/2d-barcodes" },
         { label: "GS1 Digital Link", href: "/solutions/digital-link" },
-        { label: "ZATCA E-Invoicing", href: "/solutions/zatca-compliance" },
+        // { label: "ZATCA E-Invoicing", href: "/solutions/zatca-compliance" },
         { label: "End-to-End Traceability", href: "/solutions/traceability" },
         // { label: "Global Registry", href: "#" },
       ],
@@ -58,7 +58,7 @@ export const footerConfig = {
     { label: "YouTube", href: "#", icon: Youtube },
   ],
   legal: [
-    { label: "Terms & Conditions", href: "/terms" },
+    // { label: "Terms & Conditions", href: "/terms" },
     // { label: "Privacy Policy", href: "/privacy" },
     // { label: "Cookie Policy", href: "/cookies" },
     // { label: "Membership Terms", href: "/membership-agreement" },

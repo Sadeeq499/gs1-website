@@ -93,7 +93,6 @@ export const PARTNERS_DATA = {
     description: "GS1 Saudi Arabia provides the authentic GTINs and identifiers required to list and sell your products on major platforms, ensuring global discoverability and consumer trust.",
     features: [
       "Official & Verified Product Identification",
-      "Direct API Integration Readiness",
       "Global Standards Compliance"
     ],
     ctaPrimary: "Get Your GTINs",

@@ -1,98 +1,97 @@
 "use client";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import { ChevronRight, Building2, Verified, ArrowUpRight } from "lucide-react";
+import { useLocale } from "next-intl";
 
 export const ProviderShowcase = ({ data: providers }) => {
-  const [emblaRef] = useEmblaCarousel({ loop: true, align: "start" }, [
-    Autoplay({ delay: 4000 }),
-  ]);
+  const locale = useLocale();
+  const isRtl = locale === "ar";
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { 
+      loop: true, 
+      align: "center", 
+      direction: isRtl ? "rtl" : "ltr" 
+    }, 
+    [Autoplay({ delay: 3000, stopOnInteraction: false })]
+  );
+
+  // Simple logic to detect which logo is in the center
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+  }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-24 bg-gs1-info">
+    <section className="py-24 bg-gs1-info/5 border-y border-border/40 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-          >
-            <Badge className="mb-4 bg-secondary/10 text-secondary border-none px-4 py-1 font-bold">
+        
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 text-start">
+          <motion.div initial={{ opacity: 0, x: isRtl ? 30 : -30 }} whileInView={{ opacity: 1, x: 0 }}>
+            <Badge className="mb-4 bg-primary/10 text-primary border-none px-4 py-1 font-bold">
               {providers.badge}
             </Badge>
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-foreground leading-tight">
-              {providers.title}{" "}
-              <span className="text-primary">{providers.titleHighlight}</span>
+              {providers.title} <span className="text-primary">{providers.titleHighlight}</span>
             </h2>
+            <p className="text-muted-foreground text-sm mt-4 max-w-xl">
+              {providers.description}
+            </p>
           </motion.div>
-          {/* <div className="hidden md:flex items-center gap-2 text-muted-foreground text-xs font-bold uppercase tracking-widest pb-2">
-            {providers.exploreText} <ChevronRight className="w-4 h-4 text-secondary animate-pulse" />
-          </div> */}
         </div>
 
-        <div className="overflow-hidden rounded-xl" ref={emblaRef}>
-          <div className="flex -ml-4 lg:-ml-6">
-            {providers.list.map((partner, index) => (
-              <div
-                key={index}
-                className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-4 lg:pl-6 py-4"
-              >
-                <Card className="h-[420px] p-8 flex flex-col justify-between border-border/40 bg-card hover:border-secondary/50 shadow-sm hover:shadow-xl transition-all duration-500">
-                  <div>
-                    <div className="flex justify-between items-start mb-8">
-                      <div className="relative w-24 h-24 rounded-2xl border-[1.5px] border-secondary/20 p-1 flex items-center justify-center bg-white shadow-sm">
-                        {partner.logo ? (
-                          <img
-                            src={partner.logo}
-                            alt={partner.name}
-                            className="w-full h-full object-contain"
-                          />
-                        ) : (
-                          <Building2 className="w-12 h-12 text-primary" />
-                        )}
-                      </div>
-                      <Verified className="w-6 h-6 text-secondary/30" />
+        {/* Smart Focus Slider */}
+        <div className="overflow-hidden cursor-grab active:cursor-grabbing py-10" ref={emblaRef} dir={isRtl ? "rtl" : "ltr"}>
+          <div className="flex -ml-4 items-center">
+            {providers.list.map((partner, index) => {
+              const isActive = index === selectedIndex;
+
+              return (
+                <div
+                  key={index}
+                  className="flex-[0_0_65%] sm:flex-[0_0_40%] lg:flex-[0_0_25%] pl-4 transition-all duration-500"
+                >
+                  <div 
+                    className={`h-44 p-8 flex flex-col items-center justify-center rounded-3xl transition-all duration-500 border
+                      ${isActive 
+                        ? "scale-110 grayscale-0 opacity-100 bg-white border-primary/20 shadow-2xl z-10" 
+                        : "scale-90 grayscale opacity-30 bg-card border-border/60 z-0"
+                      }`}
+                  >
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="max-w-full max-h-full object-contain"
+                      />
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-1">
+                    
+                    {/* Name appears only for centered logo */}
+                    <span className={`mt-4 text-[10px] font-bold uppercase tracking-widest text-primary transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}>
                       {partner.name}
-                    </h3>
-                    <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-4">
-                      {partner.type}
-                    </p>
-                    <p className="text-sm text-muted-foreground line-clamp-3">
-                      {partner.desc}
-                    </p>
+                    </span>
                   </div>
-                  <div className="pt-6 border-t border-border/50 flex flex-col gap-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold uppercase text-foreground/40">
-                        {providers.impactLabel}
-                      </span>
-                      <Badge
-                        variant="outline"
-                        className="text-[10px] border-secondary/30 text-secondary"
-                      >
-                        {partner.impact}
-                      </Badge>
-                    </div>
-                    <a
-                      href={partner.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-xs font-bold text-primary hover:underline group w-fit"
-                    >
-                      {providers.detailsText}
-                      <ArrowUpRight className="ml-1 w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </a>
-                  </div>
-                </Card>
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
+
+        <p className="text-center text-[11px] text-muted-foreground/60 mt-12 font-medium tracking-wide uppercase">
+          {providers.visualNote}
+        </p>
       </div>
     </section>
   );

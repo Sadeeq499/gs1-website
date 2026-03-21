@@ -41,7 +41,7 @@ const getMainNavItems = (t) => [
     items: [
       { title: t("nav.whoWeAre"), href: "/about/who-we-are" },
       { title: t("nav.missionVision"), href: "/about/mission-vision" },
-      { title: t("nav.managementBoard"), href: "/about/board" },
+      // { title: t("nav.managementBoard"), href: "/about/board" },
       { title: t("nav.ourStrategy"), href: "/about/strategy" },
       { title: t("nav.ourPartners"), href: "/about/partners" },
     ],

@@ -82,37 +82,41 @@ export function BarcodeTechnologySection() {
         <div className="mt-10 grid gap-6 lg:grid-cols-5">
           {/* Large image card - spans 3 cols */}
           <Card className="group overflow-hidden border-0 shadow-lg lg:col-span-3">
-            <div className="relative h-64 overflow-hidden lg:h-80">
-              <img
-                src={baseContent.image}
-                alt={content.headline}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/30 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-6 lg:p-8">
-                <h3 className="text-2xl font-bold text-primary-foreground lg:text-3xl">
-                  {content.headline}
-                </h3>
-              </div>
-            </div>
-            <CardContent className="p-6 lg:p-8">
-              <p className="text-base leading-relaxed text-muted-foreground">
-                {content.description}
-              </p>
-              <Button
-                className="mt-6 bg-secondary text-white hover:bg-secondary/90"
-                asChild
-              >
-                <a
-                  href={`/solutions/${baseContent.slug}`}
-                  className="flex items-center"
-                >
-                  {content.cta}
-                  <ArrowRight className="ml-2 h-4 w-4 rtl:-scale-x-100 rtl:mr-2 rtl:ml-0" />
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
+  <div className="relative h-64 overflow-hidden lg:h-80">
+    <img
+      src={baseContent.image}
+      alt={content.headline}
+      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+    <div className="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/30 to-transparent" />
+    <div className="absolute bottom-0 left-0 p-6 lg:p-8">
+      <h3 className="text-2xl font-bold text-primary-foreground lg:text-3xl">
+        {content.headline}
+      </h3>
+    </div>
+  </div>
+  <CardContent className="p-6 lg:p-8">
+    <p className="text-base leading-relaxed text-muted-foreground">
+      {content.description}
+    </p>
+    
+    {/* Conditional Rendering using && */}
+    {content?.cta && (
+      <Button
+        className="mt-6 bg-secondary text-white hover:bg-secondary/90"
+        asChild
+      >
+        <a
+          href={`/solutions/${baseContent.slug}`}
+          className="flex items-center"
+        >
+          {content.cta}
+          <ArrowRight className="ml-2 h-4 w-4 rtl:-scale-x-100 rtl:mr-2 rtl:ml-0" />
+        </a>
+      </Button>
+    )}
+  </CardContent>
+</Card>
 
           {/* Feature cards stack - spans 2 cols */}
           <div className="flex flex-col gap-6 lg:col-span-2">

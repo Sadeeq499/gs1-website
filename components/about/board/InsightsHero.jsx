@@ -39,7 +39,7 @@ export const InsightsHero = ({ data }) => {
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-white gap-2">
               {data.title} <br />
               <span className="text-secondary drop-shadow-md">
-                {data.titleHighlight}
+                {/* {data.titleHighlight} */}
               </span>{" "}
               <br />
               <span className="text-white/80 text-xl md:text-3xl">
