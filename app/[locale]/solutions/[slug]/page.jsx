@@ -3,19 +3,70 @@ import { notFound } from "next/navigation";
 import { techSolutions } from "@/components/home/data";
 import {
   CheckCircle2,
-  ArrowRight,
   Lightbulb,
   ShieldAlert,
-  Users,
   Info,
   Zap,
   Star,
   Globe,
   ShieldCheck,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
+
+const TextContent = ({ text }) => {
+  if (!text) return null;
+  return (
+    <div className="space-y-6">
+      {text.split("\n\n").map((block, idx) => {
+        if (block.includes("\n- ") || block.startsWith("- ")) {
+          const lines = block.split("\n");
+          const preText = [];
+          const listItems = [];
+
+          lines.forEach((line) => {
+            if (line.startsWith("- ")) {
+              listItems.push(line.substring(2));
+            } else {
+              preText.push(line);
+            }
+          });
+
+          return (
+            <div key={idx} className="space-y-4">
+              {preText.length > 0 && (
+                <p className="text-lg leading-relaxed text-slate-700 font-light">
+                  {preText.join(" ")}
+                </p>
+              )}
+              {listItems.length > 0 && (
+                <ul className="space-y-3">
+                  {listItems.map((item, i) => (
+                    <li key={i} className="flex items-start text-lg">
+                      <div className="h-6 w-6 rounded-full bg-secondary/10 flex items-center justify-center mr-3 shrink-0 mt-0.5">
+                        <CheckCircle2 className="h-4 w-4 text-secondary" />
+                      </div>
+                      <span className="leading-relaxed text-slate-700 font-light">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          );
+        }
+        return (
+          <p
+            key={idx}
+            className="text-lg leading-relaxed text-slate-700 font-light whitespace-pre-line"
+          >
+            {block}
+          </p>
+        );
+      })}
+    </div>
+  );
+};
 import { getTranslations } from "next-intl/server";
 
 export async function generateStaticParams() {
@@ -75,24 +126,6 @@ export default async function SolutionPage({ params }) {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-7xl space-y-6">
-            {/* Breadcrumb */}
-            <div className="text-sm text-white/60">
-              <Link
-                href={`/${locale}`}
-                className="hover:text-white transition-colors"
-              >
-                {t("common.breadcrumbHome")}
-              </Link>
-              <span className="mx-2">/</span>
-              <span className="text-secondary/80 font-medium">
-                {t("common.breadcrumbSolutions")}
-              </span>
-              <span className="mx-2">/</span>
-              <span className="text-secondary font-bold">
-                {solution.acronym || solution.title}
-              </span>
-            </div>
-
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-white leading-tight">
               {solution.title}
               {solution.acronym && (
@@ -109,26 +142,28 @@ export default async function SolutionPage({ params }) {
       </section>
 
       {/* 2. Introduction & Overview */}
-      <section className="relative z-10 -mt-10 px-4 pb-16">
+      <section className="py-16 md:py-24 px-4 relative z-10">
         <div className="container mx-auto">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 border border-slate-100 max-w-7xl mx-auto space-y-8 animate-in fade-in-up duration-700">
-            <div className="flex items-center gap-4 text-slate-900">
-              <div className="bg-gs1-info p-2 rounded-lg">
-                <Info className="h-6 w-6 text-primary" />
+          <div className="max-w-7xl mx-auto animate-in fade-in-up duration-700">
+            <div className="text-lg md:text-xl text-slate-700 leading-relaxed font-light">
+              <span className="font-bold text-slate-900 block mb-6 text-2xl md:text-3xl">
+                {solution.title}
+              </span>
+              <div className="flex items-center gap-4 text-slate-900 mb-6">
+                <div className="bg-gs1-info p-2 rounded-lg">
+                  <Info className="h-6 w-6 text-primary" />
+                </div>
+                <h2 className="text-2xl font-bold">
+                  {t("common.understandingTitle")}
+                </h2>
               </div>
-              <h2 className="text-2xl font-bold">
-                {t("common.understandingTitle")}
-              </h2>
+              <TextContent text={solution.description} />
             </div>
-            <p className="text-lg md:text-xl text-slate-700 leading-relaxed font-light">
-              <span className="font-bold text-slate-900">{solution.title}</span>{" "}
-              {solution.description}
-            </p>
           </div>
         </div>
       </section>
 
-      {/* 3. Dynamic Modules Section - Alternating Blog Layout */}
+      {/* 3. Dynamic Modules Section - Clean Layout */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -142,43 +177,32 @@ export default async function SolutionPage({ params }) {
             </p>
           </div>
 
-          <div className="space-y-32">
+          <div className="max-w-4xl mx-auto space-y-12">
             {solution.modules?.map((module, idx) => (
               <div
                 key={idx}
-                className={`flex flex-col gap-12 lg:gap-24 items-center ${
-                  idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className="bg-white rounded-[2rem] p-8 md:p-12 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 relative overflow-hidden"
               >
-                {/* Image Side */}
-                <div className="lg:w-1/2 relative h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl group">
-                  <img
-                    src={module.image}
-                    alt={module.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-slate-900/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-8 left-8">
-                    <span className="text-secondary font-mono text-sm font-bold tracking-widest uppercase">
-                      {t("common.moduleLabel")} {idx + 1}
-                    </span>
-                    <div className="text-white text-3xl font-bold mt-1">
-                      {module.title}
-                    </div>
+                {/* Decorative background element for pure clean look */}
+                <div className="absolute -top-10 -right-4 p-8 opacity-5 select-none pointer-events-none">
+                  <div className="text-[12rem] font-black leading-none">
+                    {idx + 1}
                   </div>
                 </div>
 
-                {/* Content Side */}
-                <div className="lg:w-1/2 space-y-8">
+                <div className="relative z-10 flex flex-col gap-6">
                   <div className="space-y-4">
-                    <h3 className="text-3xl font-bold text-slate-900 tracking-tight">
+                    <span className="inline-block bg-secondary/10 text-secondary font-mono text-sm font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">
+                      {t("common.moduleLabel")} {idx + 1}
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
                       {module.title}
                     </h3>
-                    <div className="h-1 w-20 bg-secondary rounded-full" />
                   </div>
-                  <p className="text-lg leading-relaxed text-slate-600 font-light">
-                    {module.description}
-                  </p>
+                  <div className="w-full h-px bg-slate-100 border-0" />
+                  <div className="text-lg text-slate-700 font-light">
+                    <TextContent text={module.description} />
+                  </div>
                 </div>
               </div>
             ))}
@@ -239,28 +263,6 @@ export default async function SolutionPage({ params }) {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Call to Action */}
-      <section className="bg-white py-24 px-4 border-t border-slate-100">
-        <div className="container mx-auto">
-          <div className="bg-primary rounded-[3rem] p-8 md:p-20 text-center relative overflow-hidden">
-            <div className="relative z-10 space-y-8">
-              <ShieldAlert className="h-16 w-16 mx-auto text-secondary" />
-              <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-white">
-                {t("common.ctaTitle")}
-              </h2>
-              <p className="max-w-2xl mx-auto text-lg text-slate-400 leading-relaxed font-medium">
-                {t("common.ctaDesc", { title: solution.title })}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                {/* <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-12 py-8 text-xl font-bold shadow-2xl shadow-secondary/30">
-                        Consult an Expert <ArrowRight className="ml-3" />
-                    </Button> */}
-              </div>
-            </div>
           </div>
         </div>
       </section>

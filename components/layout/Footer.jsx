@@ -55,6 +55,26 @@ const Footer = () => {
                 {t("brand.description")}
               </p>
 
+              {/* Contact Info */}
+              <div className="space-y-3 pt-2">
+                {footerConfig.contact.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="flex items-center gap-3 text-sm text-primary-foreground/70 hover:text-white transition-colors group w-fit"
+                  >
+                    <item.icon className="h-4 w-4 text-orange-500" />
+                    <span>
+                      {item.label === "Riyadh, Kingdom of Saudi Arabia" ? (
+                        t("contact.location")
+                      ) : (
+                        <span dir="ltr">{item.label}</span>
+                      )}
+                    </span>
+                  </a>
+                ))}
+              </div>
+
               {/* Social Links */}
               <div className="flex gap-3 pt-4">
                 {footerConfig.socials.map((social) => (
@@ -101,30 +121,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* 3. Contact & Location Strip */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-10 border-y border-white/10">
-            {footerConfig.contact.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="flex items-center gap-4 p-4 rounded-2xl hover:border-secondary hover:bg-white/10 transition-all group"
-              >
-                <div className="bg-white/10 p-3 rounded-xl group-hover:bg-orange-500 transition-colors">
-                  <item.icon className="h-5 w-5 text-orange-500 group-hover:text-white" />
-                </div>
-                <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">
-                  {item.label === "Riyadh, Kingdom of Saudi Arabia" ? (
-                    t("contact.location")
-                  ) : (
-                    <span dir="ltr">{item.label}</span>
-                  )}
-                </span>
-              </a>
-            ))}
-          </div>
-
           {/* Final Bottom Bar & Legal */}
-          <div className="mt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="pt-8 mt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex flex-col items-center md:items-start gap-1">
               <p className="text-primary-foreground/40 text-xs">
                 {t("copyright", { year: new Date().getFullYear() })}

@@ -165,29 +165,21 @@ export const techSolutions = [
     shortDescription: "The biggest evolution in retail since the 1970s.",
     description:
       "By 2027, the world is moving from simple 1D barcodes to data-rich 2D symbols. GS1 Saudi Arabia is leading this transition, enabling businesses to provide more information than ever before through a single scan at the checkout counter.",
-    heroImage:
-      "https://images.unsplash.com/photo-1605152276897-4f618f831968?q=80&w=2000&auto=format&fit=crop",
     modules: [
       {
         title: "The Data Revolution",
         description:
           "Unlike traditional barcodes, 2D symbols (like QR codes and DataMatrix) can store expiry dates, batch numbers, and serial numbers. This allows retailers to automatically block the sale of expired items at the register.",
-        image:
-          "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop",
       },
       {
         title: "Sustainability & Transparency",
         description:
           "Encode a product's entire journey into the barcode. Consumers can scan with their smartphones to see the carbon footprint, organic certifications, or 'Made in Saudi' heritage.",
-        image:
-          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
       },
       {
         title: "Operations & Efficiency",
         description:
           "Simplify your warehouse operations by scanning a single 2D code to capture all production data simultaneously. This reduces manual entry by 80%.",
-        image:
-          "https://images.unsplash.com/photo-1565891741441-64926e441838?q=80&w=1200&auto=format&fit=crop",
       },
     ],
     features: [
@@ -211,22 +203,16 @@ export const techSolutions = [
     shortDescription: "Connecting every physical product to the digital world.",
     description:
       "GS1 Digital Link transforms the traditional barcode into a web-enabled gateway. It allows a single QR code to serve multiple purposes: retail checkout, consumer engagement, and regulatory tracking.",
-    heroImage:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop",
     modules: [
       {
         title: "One Code, Infinite Destinations",
         description:
           "Using 'Resolver' technology, a single QR code can send a customer to a promotional video or a technician to a repair manual, depending on who scans it.",
-        image:
-          "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200&auto=format&fit=crop",
       },
       {
         title: "Enhanced Brand Loyalty",
         description:
           "Turn your packaging into a direct marketing channel. Update recipes or share sustainability stories in real-time without changing physical printing.",
-        image:
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
       },
     ],
     features: [
@@ -245,22 +231,16 @@ export const techSolutions = [
       "Ensuring your E-Invoicing meets Saudi National Standards.",
     description:
       "GS1 Saudi Arabia provides the foundational identifiers (GLNs) and data structures necessary to comply with ZATCA's Fatoora mandate for Phase 2 integration.",
-    heroImage:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2000&auto=format&fit=crop",
     modules: [
       {
         title: "Technical Integration",
         description:
           "We provide the technical blueprints for encoding Seller, VAT, and Timestamp data into ZATCA-compliant QR codes.",
-        image:
-          "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop",
       },
       {
         title: "Branch & Location Management",
         description:
           "Use Global Location Numbers (GLN) to identify every branch and warehouse in your tax filings accurately.",
-        image:
-          "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1200&auto=format&fit=crop",
       },
     ],
     features: [
@@ -278,22 +258,21 @@ export const techSolutions = [
     shortDescription: "Full supply chain visibility from farm to fork.",
     description:
       "Our traceability solutions utilize GS1 EPCIS standards to capture and share event data, allowing Saudi businesses to prove product origin and ensure cold chain integrity.",
-    heroImage:
-      "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=2000&auto=format&fit=crop",
     modules: [
       {
-        title: "Surgical Recall Management",
+        title: "Solution",
         description:
-          "Identify exactly which specific batch in which city needs to be removed from shelves, minimizing waste and protecting reputation.",
-        image:
-          "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop",
+          "GS1 Global Traceability Standard is a process standard describing the traceability process independent from the choice of enabling technologies.",
       },
       {
-        title: "Cold Chain Monitoring",
+        title: "How it works",
         description:
-          "Ensure temperature-sensitive goods like pharmaceuticals and fresh food are handled correctly throughout the entire journey.",
-        image:
-          "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200&auto=format&fit=crop",
+          "GS1 Global Traceability Standard is a building block for developing Traceability systems.",
+      },
+      {
+        title: "Benefit",
+        description:
+          "The GTC Programme is established to review Traceability Systems in place through a rigorous methodology.",
       },
     ],
     features: [
@@ -317,11 +296,7 @@ export const tabs = [
     label: "GS1 Digital Link",
     icon: Link2,
   },
-  {
-    id: "zatca",
-    label: "ZATCA & Compliance",
-    icon: FileCheck,
-  },
+
   {
     id: "traceability",
     label: "End-to-End Traceability",

@@ -91,18 +91,22 @@
       ]
     },
     "traceability": {
-      "title": "End-to-End Traceability",
-      "acronym": "Traceability",
-      "shortDescription": "Full supply chain visibility from farm to fork.",
-      "description": "Our traceability solutions utilize GS1 EPCIS standards to capture and share event data, allowing Saudi businesses to prove product origin and ensure cold chain integrity.",
+      "title": "GS1 Global Traceability Standard",
+      "acronym": "GTS",
+      "shortDescription": "A business process standard to track forward movement and trace backward the history, application or location of products.",
+      "description": "GS1 Global Traceability Standard is a business process standard. It improves the ability to track forward movement of products along stages(s) of the supply chain to trace backward the history, application or location of products in compliance with the appropriate GS1 identifiers.\n\nThe implementation of GS1 Global Traceability Standard serves a variety of business needs related to traceability systems and supply chain management, including:\n- Complying with regulatory requirements and guidance on recalls\n- Reducing business risks above and beyond legal compliance\n- Product recall and withdrawal (notably to achieve a greater degree of precision, to demonstrate control, increase efficiency and reduce the cost of product recall or withdrawal)\n- Complying with a trading partner’s specifications for efficient logistics management and effective quality management\n- Supporting product and/or patient safety\n- Enhancing visibility in supply and demand chain",
       "modules": [
         {
-          "title": "Surgical Recall Management",
-          "description": "Identify exactly which specific batch in which city needs to be removed from shelves, minimizing waste and protecting reputation."
+          "title": "Solution",
+          "description": "GS1 Global Traceability Standard is a process standard describing the traceability process independent from the choice of enabling technologies. It defines minimum requirements for all stakeholders, organisations, industry sectors and countries and corresponding GS1 Standards to be used in combination with information management tools.\n\nThe intention is therefore to create a generic framework that is expected to be used by any business, any industry sector, any organisation, large or small, and by any country in order to develop specific implementation guidelines or additional requirements for inventory management solutions and supplier management solutions.\n\nGS1 Global Traceability Standard maximises usage of the well-established, globally acceptable and voluntary GS1 supply chain standards that uniquely identify a “traceable item”, describe the establishment of appropriate and effective records of events, and provides for accurate communication about the traceable item between trading partners to improve supply chain visibility."
         },
         {
-          "title": "Cold Chain Monitoring",
-          "description": "Ensure temperature-sensitive goods like pharmaceuticals and fresh food are handled correctly throughout the entire journey."
+          "title": "How it works",
+          "description": "GS1 Global Traceability Standard is a building block for developing:\n- Traceability systems\n- Traceability assessments and auditing tools\n- Industry or country specific traceability Implementation Guidelines\n- Extensions of traceability requirements for specific industries, countries or business needs\n- New GS1 standards that may be required (or leverage of existing standards)\n\nAlso, GS1 has developed a Global Traceability Conformance (GTC) Programme, which defines, in a measurable way, the essential elements of best practices for the production and distribution of trade items acceptable to every industry worldwide."
+        },
+        {
+          "title": "Benefit",
+          "description": "The GTC Programme is established to review Traceability Systems in place through a rigorous methodology supported by technical criteria and documentation. Traceability assessments are conducted by GS1 to:\n- Ensure that companies correctly implement GS1 standards in inventory management solutions, supplier management solutions and other suitable solutions\n- Help determine if the company complies with the GS1 Global Traceability Standard (GTS) and/or industry extensions\n- Give the possibility to grant a seal through audits verification depending on local programmes."
         }
       ],
       "features": [
