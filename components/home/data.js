@@ -439,40 +439,40 @@ export const stats = [
   { value: "2027", label: "Global Sunrise Deadline" },
 ];
 
-export const slides = [
-  {
-    id: 1,
-    image: "/images/home-hero/store.png",
-    title: "Unlock New Sales Channels with GS1 ",
-    highlight: "Standards",
-    description:
-      "GS1 Saudi Arabia empowers businesses to expand into retail and e-commerce with global barcodes. Boost product visibility and simplify data exchange across the supply chain.",
-    primaryCta: "Get a Barcode",
-    secondaryCta: "Explore Services",
-  },
+// export const slides = [
+//   {
+//     id: 1,
+//     image: "/images/home-hero/store.png",
+//     title: "Unlock New Sales Channels with GS1 ",
+//     highlight: "Standards",
+//     description:
+//       "GS1 Saudi Arabia empowers businesses to expand into retail and e-commerce with global barcodes. Boost product visibility and simplify data exchange across the supply chain.",
+//     primaryCta: "Get a Barcode",
+//     secondaryCta: "Explore Services",
+//   },
 
-  {
-    id: 2,
-    image: "/images/home-hero/logistics.png",
-    title: "Enhancing Logistics & Supply Chain Visibility with GS1 ",
-    highlight: "Standards",
-    description:
-      "Empowering logistics providers with global barcode, QR, and ID standards to enable real-time tracking, accurate product identification, and seamless data sharing.",
-    primaryCta: "Get a Barcode",
-    secondaryCta: "Explore Services",
-  },
+//   {
+//     id: 2,
+//     image: "/images/home-hero/logistics.png",
+//     title: "Enhancing Logistics & Supply Chain Visibility with GS1 ",
+//     highlight: "Standards",
+//     description:
+//       "Empowering logistics providers with global barcode, QR, and ID standards to enable real-time tracking, accurate product identification, and seamless data sharing.",
+//     primaryCta: "Get a Barcode",
+//     secondaryCta: "Explore Services",
+//   },
 
-  {
-    id: 3,
-    image: "/images/home-hero/pharmaceutical.png",
-    title: "Advancing Pharmaceutical Traceability with GS1 ",
-    highlight: "Standards",
-    description:
-      "Enable healthcare providers to implement global identification standards like barcodes, QR codes, and DataMatrix for product safety and regulatory compliance.",
-    primaryCta: "Get a Barcode",
-    secondaryCta: "Explore Services",
-  },
-];
+//   {
+//     id: 3,
+//     image: "/images/home-hero/pharmaceutical.png",
+//     title: "Advancing Pharmaceutical Traceability with GS1 ",
+//     highlight: "Standards",
+//     description:
+//       "Enable healthcare providers to implement global identification standards like barcodes, QR codes, and DataMatrix for product safety and regulatory compliance.",
+//     primaryCta: "Get a Barcode",
+//     secondaryCta: "Explore Services",
+//   },
+// ];
 
 export const partners = [
   {

@@ -18,7 +18,7 @@ const WhatsAppIcon = ({ className }) => (
 const contactLinks = [
   {
     id: "whatsapp",
-    icon: <WhatsAppIcon className="w-5 h-5" />,
+    icon: <WhatsAppIcon className="w-6 h-6 sm:w-7 sm:h-7 md:w-6 md:h-6 lg:w-5 lg:h-5" />,
     label: "WhatsApp",
     href: "https://wa.me/966112182285",
     color: "bg-[#25D366]",
@@ -26,7 +26,7 @@ const contactLinks = [
   },
   {
     id: "phone",
-    icon: <Phone className="w-5 h-5" />,
+    icon: <Phone className="w-5 h-5 sm:w-6 sm:h-6 md:w-5 md:h-5 lg:w-5 lg:h-5" />,
     label: "Phone",
     href: "tel:920031437",
     color: "bg-primary",
@@ -34,7 +34,7 @@ const contactLinks = [
   },
   {
     id: "email",
-    icon: <Mail className="w-5 h-5" />,
+    icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6 md:w-5 md:h-5 lg:w-5 lg:h-5" />,
     label: "Email",
     href: "mailto:gs1sa@gs1.org.sa",
     color: "bg-secondary",
@@ -44,16 +44,16 @@ const contactLinks = [
 
 export default function ContactWidget() {
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2.5 pointer-events-none">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-50 flex flex-col gap-3 sm:gap-4 md:gap-3 lg:gap-2.5 pointer-events-none">
       {contactLinks.map((link, index) => (
         <motion.div
           key={link.id}
-          className="flex items-center gap-3 pointer-events-auto group"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
+          className="relative flex items-center justify-center pointer-events-auto group"
+          initial={{ opacity: 0, y: 20, scale: 0.8 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: index * 0.1, duration: 0.3, ease: "easeOut" }}
         >
-          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-white/95 text-gray-700 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-gray-100 whitespace-nowrap">
+          <span className="absolute top-1/2 -translate-y-1/2 right-[calc(100%+12px)] opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-white/95 text-gray-700 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-gray-100 whitespace-nowrap pointer-events-none hidden md:block">
             {link.label}
           </span>
           <motion.a
@@ -63,10 +63,11 @@ export default function ContactWidget() {
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.93 }}
             className={cn(
-              "flex items-center justify-center w-11 h-11 rounded-full text-white shadow-md transition-colors duration-300",
+              "flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-12 md:h-12 lg:w-11 lg:h-11 rounded-full text-white shadow-lg sm:shadow-md transition-all duration-300",
               link.color,
               link.hoverColor,
             )}
+            aria-label={link.label}
           >
             {link.icon}
           </motion.a>
