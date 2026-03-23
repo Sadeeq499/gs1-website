@@ -12,7 +12,7 @@ const StandardHero = () => {
         <div className="absolute -bottom-40 -left-20 w-80 h-80 rounded-full bg-white blur-3xl" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28">
+      <div className="relative max-w-7xl mx-auto px-6 py-10 ">
         <div className="max-w-3xl space-y-6">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/8">
@@ -28,7 +28,7 @@ const StandardHero = () => {
           </h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl font-light text-white/45 leading-relaxed max-w-2xl">
+          <p className="text-lg md:text-xl font-light text-white/50 leading-relaxed max-w-3xl border-l-4 border-[#FE5000] pl-6 py-2 mt-8">
             {t("description")}
           </p>
 

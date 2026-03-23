@@ -2,10 +2,49 @@
   "hero": {
     "badge": "The Global Language of Business",
     "title": "GS1 Standards",
-    "description": "Identify, capture, and share information automatically and accurately with the world's most widely used supply chain standards.",
+    "description": "GS1 Standards are globally recognized guidelines that enable businesses to uniquely identify, capture, and share information about products, assets, locations, and services across the supply chain. These standards ensure consistency, accuracy, and efficiency in trading, logistics, and data exchange.",
     "identify": "Identify",
     "capture": "Capture",
     "share": "Share"
+  },
+  "key_components": {
+    "title": "Key Components of GS1 Standards",
+    "subtitle": "A comprehensive suite of standards designed to enhance visibility and efficiency across your entire supply chain.",
+    "components": [
+      {
+        "title": "Barcodes & QR Codes",
+        "desc": "Unique identification of products and items."
+      },
+      {
+        "title": "Global Trade Item Number (GTIN)",
+        "desc": "Standardized product identification for commerce."
+      },
+      {
+        "title": "Serial Shipping Container Code (SSCC)",
+        "desc": "Identification of logistic units for tracking shipments."
+      },
+      {
+        "title": "Global Location Number (GLN)",
+        "desc": "Standard for identifying physical locations and legal entities."
+      },
+      {
+        "title": "Electronic Data Interchange (EDI)",
+        "desc": "Structured data exchange between businesses."
+      },
+      {
+        "title": "Data Synchronization",
+        "desc": "Ensures product information is consistent across systems and partners."
+      }
+    ],
+    "benefits_title": "Benefits of Implementing Standards",
+    "benefits_badge": "Why GS1?",
+    "benefits_desc": "By adopting our global standards, modern businesses unlock new levels of efficiency, visibility, and trust.",
+    "benefits": [
+      "Enhances supply chain efficiency.",
+      "Facilitates local and global market access.",
+      "Improves product traceability and authenticity.",
+      "Supports regulatory compliance and consumer trust."
+    ]
   },
   "pillars": {
     "badge": "The GS1 Framework",
