@@ -19,7 +19,7 @@ function Slider() {
           unoptimized
         />
         {/* Sleek Gradient Overlay to mimic the reference perfectly */}
-        <div className="absolute inset-0 bg-linear-to-r from-gray-950/90 via-gray-900/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-r rtl:bg-linear-to-l from-gray-950/90 via-gray-900/50 to-transparent"></div>
         <div className="absolute inset-0 bg-linear-to-t from-gray-950/40 via-transparent to-transparent"></div>
       </div>
 

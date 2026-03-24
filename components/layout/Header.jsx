@@ -159,14 +159,19 @@ export default function Header() {
           </div>
 
           {/* Mobile Actions */}
-          <div className="lg:hidden flex items-center gap-1 sm:gap-2">
-            <Button asChild className="bg-[#EF5323] hover:bg-[#d9481d] text-white font-medium px-3 sm:px-4 h-8 sm:h-9 rounded-md text-[11px] sm:text-xs shadow-sm">
+          <div className="lg:hidden flex items-center gap-1 shrink-0">
+            {/* Get a Barcode */}
+            <Button asChild className="bg-[#1a2b56] hover:bg-[#1a2b56]/90 text-white font-semibold px-2 sm:px-3 h-7 sm:h-8 rounded-md text-[10px] sm:text-[11px] shadow-sm whitespace-nowrap">
               <a href={process.env.NEXT_PUBLIC_MEMBER_REGISTER} target="_blank" rel="noopener noreferrer">{t("actions.getBarcode")}</a>
+            </Button>
+            {/* Sign In */}
+            <Button asChild className="bg-[#EF5323] hover:bg-[#d9481d] text-white font-semibold px-2 sm:px-3 h-7 sm:h-8 rounded-md text-[10px] sm:text-[11px] shadow-sm whitespace-nowrap">
+              <a href={process.env.NEXT_PUBLIC_MEMBER_LOGIN} target="_blank" rel="noopener noreferrer">{t("actions.signIn")}</a>
             </Button>
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-primary hover:bg-gray-100">
-                  <Menu className="h-6 w-6" />
+                <Button variant="ghost" size="icon" className="text-primary hover:bg-gray-100 h-8 w-8 ml-0.5">
+                  <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
               <MobileMenuContent pathname={pathname} t={t} toggleLanguage={toggleLanguage} mainNavItems={mainNavItems} />
@@ -380,7 +385,7 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
             className="w-full h-10 border-primary/30 text-primary font-bold text-sm rounded-xl hover:bg-primary/5"
           >
             <a href={process.env.NEXT_PUBLIC_MEMBER_LOGIN} target="_blank" rel="noopener noreferrer">
-              {t("actions.signUp")}
+              {t("actions.signIn")}
             </a>
           </Button>
         </SheetClose>

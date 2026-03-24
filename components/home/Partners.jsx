@@ -8,7 +8,7 @@ export function Partners() {
   const t = useTranslations("home");
 
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="py-12 my-8 md:py-16 md:my-16 bg-white overflow-hidden">
       <style jsx>{`
         @keyframes scroll {
           0% {
@@ -53,29 +53,28 @@ export function Partners() {
         }
         .flip-front {
           background: white;
-          border: 1px solid #f1f5f9;
-          padding: 35px;
+          border: 1px solid #cbd5e1;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
         .flip-back {
           background: linear-gradient(135deg, #002c5c 0%, #0052a5 100%);
           color: white;
           transform: rotateY(180deg);
           flex-direction: column;
-          padding: 24px;
           text-align: center;
         }
       `}</style>
 
-      <div className="w-full max-w-5xl mx-auto px-4 mb-16 text-center">
-        <h2 className="text-3xl font-bold text-primary">
+      <div className="w-full max-w-5xl mx-auto px-4 mb-8 md:mb-16 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold text-primary">
           {t("partners.title")}
         </h2>
       </div>
 
       <div className="slider-container relative w-full">
         {/* Gradients */}
-        <div className="absolute inset-y-0 left-0 w-48 z-10 bg-linear-to-r from-white via-white/80 to-transparent pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-48 z-10 bg-linear-to-l from-white via-white/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-12 md:w-32 lg:w-48 z-10 bg-linear-to-r from-white via-white/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-12 md:w-32 lg:w-48 z-10 bg-linear-to-l from-white via-white/80 to-transparent pointer-events-none" />
 
         <div className="animate-scroll py-8 hover:pause">
           {[...dataPartners, ...dataPartners].map((partner, index) => (
@@ -83,7 +82,7 @@ export function Partners() {
               <div className="flip-card h-40 w-40 md:h-48 md:w-48">
                 <div className="flip-card-inner">
                   {/* Front: Logo */}
-                  <div className="flip-front">
+                  <div className="flip-front p-4 md:p-8">
                     <img
                       src={partner.logo}
                       alt={partner.name}
@@ -92,11 +91,11 @@ export function Partners() {
                   </div>
 
                   {/* Back: Info + Real Link */}
-                  <div className="flip-back">
-                    <p className="text-[11px] font-bold leading-tight mb-2 uppercase">
+                  <div className="flip-back p-4 md:p-6">
+                    <p className="text-[9px] md:text-[11px] font-bold leading-tight mb-1 md:mb-2 uppercase">
                       {partner.name}
                     </p>
-                    <p className="text-[9px] text-blue-200 tracking-widest uppercase mb-4">
+                    <p className="text-[8px] md:text-[9px] text-blue-200 tracking-widest uppercase mb-2 md:mb-4">
                       {t(`partners.categories.${partner.category}`)}
                     </p>
 
@@ -104,7 +103,7 @@ export function Partners() {
                       href={partner.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-5 py-2 bg-white text-[#002c5c] text-[10px] font-bold rounded-full hover:bg-blue-50 transition-colors duration-300 shadow-lg"
+                      className="px-3 py-1.5 md:px-5 md:py-2 bg-white text-[#002c5c] text-[9px] md:text-[10px] font-bold rounded-full hover:bg-blue-50 transition-colors duration-300 shadow-lg"
                     >
                       {t("partners.viewProfile")}
                     </a>
