@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Phone, Mail, MapPin } from "lucide-react";
-import building from "@/public/images/building.png";
 
 export default function ContactFormImage({ data: info }) {
   return (
@@ -15,20 +14,20 @@ export default function ContactFormImage({ data: info }) {
     >
       <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-xl">
         <Image
-          src={building}
+          src={"/images/contact/building.png"}
           alt={info.companyName}
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/40 to-transparent" />
+        {/* <div className="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/40 to-transparent" /> */}
         <div className="absolute bottom-6 left-6 text-white">
-          <Badge className="bg-secondary text-white border-0 mb-2">
+          {/* <Badge className="bg-secondary text-white border-0 mb-2">
             {info.locationName}
-          </Badge>
-          <h3 className="text-2xl font-bold">{info.companyName}</h3>
-          <p className="text-sm text-white/80">
+          </Badge> */}
+          {/* <h3 className="text-2xl font-bold">{info.companyName}</h3> */}
+          {/* <p className="text-sm text-white/80">
             {info.city}, {info.country}
-          </p>
+          </p> */}
         </div>
       </div>
 

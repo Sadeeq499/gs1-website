@@ -19,6 +19,7 @@ export function BarcodeTechnologySection() {
   const t = useTranslations("home.technology");
   const translatedTabs = t.raw("tabs");
   const translatedStats = t.raw("stats");
+  const translatedDetails = t.raw("barcodeDetails");
 
   const content = translatedTabs[activeTab];
   const baseContent = tabContent[activeTab];
@@ -127,7 +128,7 @@ export function BarcodeTechnologySection() {
                       rel="noopener noreferrer"
                       className="flex items-center"
                     >
-                      Learn more about 2D
+                      {translatedDetails.learnMore2d}
                       <ArrowRight className="ml-2 h-4 w-4 rtl:-scale-x-100 rtl:mr-2 rtl:ml-0" />
                     </a>
                   </Button>
@@ -148,10 +149,10 @@ export function BarcodeTechnologySection() {
                     <div className="flex flex-col items-center sm:items-start gap-3 shrink-0 w-full sm:w-auto sm:min-w-[140px]">
                       <div className="text-center sm:text-left rtl:sm:text-right w-full">
                         <h4 className="text-lg font-bold text-primary">
-                          QR Code
+                          {translatedDetails.qrCode.title}
                         </h4>
                         <p className="text-[0.65rem] font-bold text-secondary uppercase leading-tight mt-0.5">
-                          [GS1 Digital Link URI]
+                          {translatedDetails.qrCode.subTitle}
                         </p>
                       </div>
                       <div className="flex flex-col items-center bg-white p-2.5 rounded-xl border border-border shadow-sm text-center">
@@ -171,18 +172,17 @@ export function BarcodeTechnologySection() {
                     {/* Right Part: List */}
                     <div className="flex-1 text-sm text-foreground/80 space-y-2.5 w-full flex flex-col justify-center">
                       {[
-                        { label: "Symbol ID:", value: "]Q1" },
+                        { label: translatedDetails.qrCode.symbolIdLabel, value: "]Q1" },
                         {
-                          label: "Capacity:",
-                          value:
-                            "7,089 Numeric capacity, 4296 Alphanumeric capacity",
+                          label: translatedDetails.qrCode.capacityLabel,
+                          value: translatedDetails.qrCode.capacityValue,
                         },
                         {
                           label: "",
-                          value: "Supports GS1 Digital Link URI syntax",
+                          value: translatedDetails.qrCode.featureLink,
                         },
-                        { label: "", value: "Supports all keys" },
-                        { label: "", value: "Supports attributes" },
+                        { label: "", value: translatedDetails.qrCode.featureKeys },
+                        { label: "", value: translatedDetails.qrCode.featureAttributes },
                       ].map((item, i) => (
                         <div
                           key={i}
@@ -210,10 +210,10 @@ export function BarcodeTechnologySection() {
                     <div className="flex flex-col items-center sm:items-start gap-3 shrink-0 w-full sm:w-auto sm:min-w-[140px]">
                       <div className="text-center sm:text-left rtl:sm:text-right w-full">
                         <h4 className="text-lg font-bold text-primary leading-tight">
-                          GS1
+                          {translatedDetails.dataMatrix.title}
                         </h4>
                         <p className="text-lg font-bold text-primary leading-tight">
-                          DataMatrix
+                          {translatedDetails.dataMatrix.titleSuffix}
                         </p>
                       </div>
 
@@ -259,18 +259,17 @@ export function BarcodeTechnologySection() {
                     {/* Right part: List */}
                     <div className="flex-1 text-sm text-foreground/80 space-y-2.5 w-full flex flex-col justify-center">
                       {[
-                        { label: "Symbol ID:", value: "]d2" },
+                        { label: translatedDetails.dataMatrix.symbolIdLabel, value: "]d2" },
                         {
-                          label: "Capacity:",
-                          value:
-                            "3116 Numeric capacity, 2335 Alphanumeric capacity",
+                          label: translatedDetails.dataMatrix.capacityLabel,
+                          value: translatedDetails.dataMatrix.capacityValue,
                         },
                         {
                           label: "",
-                          value: "Support GS1 element string syntax",
+                          value: translatedDetails.dataMatrix.featureSyntax,
                         },
-                        { label: "", value: "Supports all keys" },
-                        { label: "", value: "Supports attributes" },
+                        { label: "", value: translatedDetails.dataMatrix.featureKeys },
+                        { label: "", value: translatedDetails.dataMatrix.featureAttributes },
                       ].map((item, i) => (
                         <div
                           key={i}

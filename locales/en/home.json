@@ -136,6 +136,29 @@
         ],
         "cta": "Discover Traceability"
       }
+    },
+    "barcodeDetails": {
+      "qrCode": {
+        "title": "QR Code",
+        "subTitle": "[GS1 Digital Link URI]",
+        "symbolIdLabel": "Symbol ID:",
+        "capacityLabel": "Capacity:",
+        "capacityValue": "7,089 Numeric capacity, 4296 Alphanumeric capacity",
+        "featureLink": "Supports GS1 Digital Link URI syntax",
+        "featureKeys": "Supports all keys",
+        "featureAttributes": "Supports attributes"
+      },
+      "dataMatrix": {
+        "title": "GS1",
+        "titleSuffix": "DataMatrix",
+        "symbolIdLabel": "Symbol ID:",
+        "capacityLabel": "Capacity:",
+        "capacityValue": "3116 Numeric capacity, 2335 Alphanumeric capacity",
+        "featureSyntax": "Support GS1 element string syntax",
+        "featureKeys": "Supports all keys",
+        "featureAttributes": "Supports attributes"
+      },
+      "learnMore2d": "Learn more about 2D"
     }
   }
 }

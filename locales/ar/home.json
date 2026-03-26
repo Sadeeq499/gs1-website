@@ -136,6 +136,29 @@
         ],
         "cta": "اكتشف التتبع"
       }
+    },
+    "barcodeDetails": {
+      "qrCode": {
+        "title": "رمز الاستجابة السريعة (QR)",
+        "subTitle": "[معرف الرابط الرقمي GS1]",
+        "symbolIdLabel": "معرّف الرمز:",
+        "capacityLabel": "السعة:",
+        "capacityValue": "7,089 سعة رقمية، 4296 سعة أبجدية رقمية",
+        "featureLink": "يدعم بناء جملة الرابط الرقمي GS1",
+        "featureKeys": "يدعم جميع المفاتيح",
+        "featureAttributes": "يدعم الخصائص"
+      },
+      "dataMatrix": {
+        "title": "GS1",
+        "titleSuffix": "داتا ماتريكس",
+        "symbolIdLabel": "معرّف الرمز:",
+        "capacityLabel": "السعة:",
+        "capacityValue": "3116 سعة رقمية، 2335 سعة أبجدية رقمية",
+        "featureSyntax": "يدعم بناء جملة سلسلة عناصر GS1",
+        "featureKeys": "يدعم جميع المفاتيح",
+        "featureAttributes": "يدعم الخصائص"
+      },
+      "learnMore2d": "تعرف على المزيد حول 2D"
     }
   }
 }
