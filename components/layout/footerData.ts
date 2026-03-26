@@ -9,7 +9,7 @@ export const footerConfig = {
   contact: [
     { icon: Phone, label: "920031437", href: "tel:920031437" },
     { icon: Mail, label: "gs1sa@gs1.org.sa", href: "mailto:gs1sa@gs1.org.sa" },
-    { icon: MapPin, label: "Riyadh, Kingdom of Saudi Arabia", href: "#" },
+    { icon: MapPin, label: "RANB7259, 7259 Uthman Ibn Affan Rd, 2327, An Narjis, Riyadh 13328", href: "#" },
   ],
   sections: [
     {

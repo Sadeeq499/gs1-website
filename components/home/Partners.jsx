@@ -71,7 +71,7 @@ export function Partners() {
         </h2>
       </div>
 
-      <div className="slider-container relative w-full">
+      <div className="slider-container relative w-full" dir="ltr">
         {/* Gradients */}
         <div className="absolute inset-y-0 left-0 w-12 md:w-32 lg:w-48 z-10 bg-linear-to-r from-white via-white/80 to-transparent pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-12 md:w-32 lg:w-48 z-10 bg-linear-to-l from-white via-white/80 to-transparent pointer-events-none" />

@@ -1,17 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 function Slider() {
   const t = useTranslations("slider");
+  const locale = useLocale();
+  const heroImage = locale === 'ar' ? '/images/home-hero/hero-arabic.png' : '/images/home-hero/hero-english.png';
 
   return (
     <div className="relative w-full min-h-dvh sm:min-h-[600px] lg:min-h-[700px] overflow-hidden flex flex-col justify-center bg-gray-900">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
-          src="/images/home-hero/hero-slider-new.png"
+          src={heroImage}
           alt={t("hero_alt")}
           fill
           className="object-cover object-center transform scale-105"
