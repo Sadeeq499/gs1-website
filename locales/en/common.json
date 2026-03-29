@@ -52,8 +52,8 @@
       "location": "RANB7259, 7259 Uthman Ibn Affan Rd, 2327, An Narjis, Riyadh 13328"
     },
     "sections": {
-      "Core Services": {
-        "title": "Core Services",
+      "Services": {
+        "title": "Services",
         "links": {
           "Product ID (GTIN)": "Product ID (GTIN)",
           "Location ID (GLN)": "Location ID (GLN)",
@@ -62,34 +62,34 @@
           "Tobacco Traceability": "Tobacco Traceability"
         }
       },
-      "Tech Solutions": {
-        "title": "Tech Solutions",
+      "Standards": {
+        "title": "Standards",
         "links": {
-          "2D Barcode Sunrise": "2D Barcode Sunrise",
-          "GS1 Digital Link": "GS1 Digital Link",
-          "ZATCA E-Invoicing": "ZATCA E-Invoicing",
-          "End-to-End Traceability": "End-to-End Traceability"
+          "Identify": "Identify",
+          "Capture": "Capture",
+          "Share": "Share"
         }
       },
-      "Resources": {
-        "title": "Resources",
+      "Industries": {
+        "title": "Industries",
         "links": {
-          "Training & Events": "Training & Events",
-          "Barcode Check": "Barcode Check",
-          "Verified by GS1": "Verified by GS1"
+          "Healthcare & Pharma": "Healthcare & Pharma",
+          "Retail & FMCG": "Retail & FMCG",
+          "Logistics & Supply Chain": "Logistics & Supply Chain",
+          "Food Safety & Agriculture": "Food Safety & Agriculture",
+          "E-Commerce & Digital": "E-Commerce & Digital"
         }
       },
-      "Company": {
-        "title": "Company",
+      "About GS1 Saudi Arabia": {
+        "title": "About GS1 Saudi Arabia",
         "links": {
-          "Who we are": "Who we are",
-          "Leadership": "Leadership",
+          "Who We Are": "Who We Are",
+          "Mission & Vision": "Mission & Vision",
+          "Our Strategy": "Our Strategy",
+          "Our Partners": "Our Partners",
           "Contact": "Contact"
         }
       }
-    },
-    "legal": {
-      "Terms & Conditions": "Terms & Conditions"
     },
     "copyright": "© {year} GS1 Saudi Arabia. All rights reserved.",
     "slogan": "Global Language of Business"

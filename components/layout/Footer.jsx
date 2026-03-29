@@ -37,7 +37,7 @@ const Footer = () => {
       {/* 2. Main Footer Body */}
       <div className="bg-primary pt-12 pb-8 text-white">
         <div className="mx-auto max-w-7xl px-6">
-          {/* Top Section: Brand & Link Clusters */}
+          {/* Top Section: Brand + Nav Sections */}
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 mb-16">
             {/* Brand Column */}
             <div className="lg:col-span-4 space-y-6">
@@ -64,13 +64,7 @@ const Footer = () => {
                     className="flex items-center gap-3 text-sm text-primary-foreground/70 hover:text-white transition-colors group w-fit"
                   >
                     <item.icon className="h-4 w-4 text-orange-500" />
-                    <span>
-                      {item.label === "Riyadh, Kingdom of Saudi Arabia" ? (
-                        t("contact.location")
-                      ) : (
-                        <span dir="ltr">{item.label}</span>
-                      )}
-                    </span>
+                    <span dir="ltr">{item.label}</span>
                   </a>
                 ))}
               </div>
@@ -95,21 +89,23 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Link Columns Grid */}
+            {/* Nav Sections Grid */}
             <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
               {footerConfig.sections.map((section) => (
                 <div key={section.title}>
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-orange-500 mb-6">
-                    {t(`sections.${section.title}.title`)}
-                  </h3>
-                  <ul className="space-y-4">
+                  <Link href={section.href}>
+                    <h3 className="text-xs font-bold uppercase tracking-wide text-orange-500 mb-5 hover:text-orange-400 transition-colors">
+                      {t(`sections.${section.title}.title`)}
+                    </h3>
+                  </Link>
+                  <ul className="space-y-3">
                     {section.links.map((link) => (
                       <li key={link.label}>
                         <Link
                           href={link.href}
-                          className="text-primary-foreground/60 hover:text-white text-sm transition-colors flex items-center group"
+                          className="text-primary-foreground/60 hover:text-white text-sm transition-colors block group"
                         >
-                          <span className="group-hover:translate-x-1 transition-transform duration-300 rtl:group-hover:-translate-x-1">
+                          <span className="group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform duration-300 inline-block">
                             {t(`sections.${section.title}.links.${link.label}`)}
                           </span>
                         </Link>
@@ -132,18 +128,14 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* Expanded Legal Links */}
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-              {footerConfig.legal.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="text-[11px] font-medium text-primary-foreground/40 hover:text-orange-500 transition-colors"
-                >
-                  {t(`legal.${link.label}`)}
-                </Link>
-              ))}
-            </div>
+            <a
+              href="https://member.gs1.org.sa/terms.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] font-medium text-primary-foreground/40 hover:text-orange-500 transition-colors border border-white/10 rounded-full px-4 py-2"
+            >
+              Terms &amp; Conditions
+            </a>
           </div>
         </div>
       </div>

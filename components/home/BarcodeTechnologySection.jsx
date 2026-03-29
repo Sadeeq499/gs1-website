@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { tabs, tabContent, stats } from "./data";
+import { tabs, tabContent } from "./data";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -18,7 +18,6 @@ export function BarcodeTechnologySection() {
   const [activeTab, setActiveTab] = useState("2d-barcodes");
   const t = useTranslations("home.technology");
   const translatedTabs = t.raw("tabs");
-  const translatedStats = t.raw("stats");
   const translatedDetails = t.raw("barcodeDetails");
 
   const content = translatedTabs[activeTab];
@@ -38,23 +37,6 @@ export function BarcodeTechnologySection() {
           <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
             {t("description")}
           </p>
-        </div>
-
-        {/* Stats Row */}
-        <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {translatedStats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-xl border border-border/50 bg-accent p-6 text-center transition-colors hover:bg-accent/50"
-            >
-              <div className="text-3xl font-bold text-secondary lg:text-4xl">
-                {stat.value}
-              </div>
-              <div className="mt-1 text-sm text-muted-foreground">
-                {stat.label}
-              </div>
-            </div>
-          ))}
         </div>
 
         {/* Tab Navigation */}

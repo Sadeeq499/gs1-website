@@ -51,12 +51,6 @@
     "badge": "Standards & Technology",
     "title": "Next-Generation Barcode Solutions for Saudi Arabia",
     "description": "From 2D barcodes and GS1 Digital Link to ZATCA compliance and end-to-end traceability -- one unified platform powering the Kingdom's digital transformation.",
-    "stats": [
-      { "value": "2M+", "label": "Barcodes Issued in KSA" },
-      { "value": "150+", "label": "Countries Connected" },
-      { "value": "99.9%", "label": "Scan Accuracy Rate" },
-      { "value": "2027", "label": "Global Sunrise Deadline" }
-    ],
     "tabs": {
       "2d-barcodes": {
         "label": "2D Barcodes",

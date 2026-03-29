@@ -13,7 +13,8 @@ export const footerConfig = {
   ],
   sections: [
     {
-      title: "Core Services",
+      title: "Services",
+      href: "/services",
       links: [
         { label: "Product ID (GTIN)", href: "/services/global-trade-item-number" },
         { label: "Location ID (GLN)", href: "/services/global-location-number" },
@@ -23,32 +24,33 @@ export const footerConfig = {
       ],
     },
     {
-      title: "Tech Solutions",
+      title: "Standards",
+      href: "/standards",
       links: [
-        // { label: "2D Barcode Sunrise", href: "/solutions/2d-barcodes" },
-        { label: "GS1 Digital Link", href: "/solutions/digital-link" },
-        // { label: "ZATCA E-Invoicing", href: "/solutions/zatca-compliance" },
-        { label: "End-to-End Traceability", href: "/solutions/traceability" },
-        // { label: "Global Registry", href: "#" },
+        { label: "Identify", href: "/standards/identify" },
+        { label: "Capture", href: "/standards/capture" },
+        { label: "Share", href: "/standards/share" },
       ],
     },
     {
-      title: "Resources",
+      title: "Industries",
+      href: "/industries",
       links: [
-        // { label: "Knowledge Hub", href: "/knowledge-hub" },
-        // { label: "Member Support", href: "/support" },
-        // { label: "Training & Events", href: "/events" },
-        // { label: "Barcode Check", href: "/verify" },
-        { label: "Verified by GS1", href: "/verify" },
+        { label: "Healthcare & Pharma", href: "/industries/healthcare-pharma" },
+        { label: "Retail & FMCG", href: "/industries/retail-fmcg" },
+        { label: "Logistics & Supply Chain", href: "/industries/logistics-supply-chain" },
+        { label: "Food Safety & Agriculture", href: "/industries/food-safety-agriculture" },
+        { label: "E-Commerce & Digital", href: "/industries/e-commerce-digital" },
       ],
     },
     {
-      title: "Company",
+      title: "About GS1 Saudi Arabia",
+      href: "/about/who-we-are",
       links: [
-        { label: "Who we are", href: "/about/who-we-are" },
-        // { label: "Leadership", href: "/about/board" },
-        // { label: "Global Network", href: "/global-offices" },
-        // { label: "Careers", href: "/careers" },
+        { label: "Who We Are", href: "/about/who-we-are" },
+        { label: "Mission & Vision", href: "/about/mission-vision" },
+        { label: "Our Strategy", href: "/about/strategy" },
+        { label: "Our Partners", href: "/about/partners" },
         { label: "Contact", href: "/contact" },
       ],
     },
@@ -57,10 +59,5 @@ export const footerConfig = {
     { label: "LinkedIn", href: "#", icon: Linkedin },
     { label: "YouTube", href: "#", icon: Youtube },
   ],
-  legal: [
-    // { label: "Terms & Conditions", href: "/terms" },
-    // { label: "Privacy Policy", href: "/privacy" },
-    // { label: "Cookie Policy", href: "/cookies" },
-    // { label: "Membership Terms", href: "/membership-agreement" },
-  ]
+
 };

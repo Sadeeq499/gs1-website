@@ -52,8 +52,8 @@
       "location": "RANB7259، 7259 طريق عثمان بن عفان، 2327، حي النرجس، الرياض 13328"
     },
     "sections": {
-      "Core Services": {
-        "title": "الخدمات الأساسية",
+      "Services": {
+        "title": "الخدمات",
         "links": {
           "Product ID (GTIN)": "رقم المنتج (GTIN)",
           "Location ID (GLN)": "رقم الموقع (GLN)",
@@ -62,34 +62,34 @@
           "Tobacco Traceability": "تتبع التبغ"
         }
       },
-      "Tech Solutions": {
-        "title": "الحلول التقنية",
+      "Standards": {
+        "title": "المعايير",
         "links": {
-          "2D Barcode Sunrise": "الباركود ثنائي الأبعاد",
-          "GS1 Digital Link": "الرابط الرقمي GS1",
-          "ZATCA E-Invoicing": "الفوترة الإلكترونية (هيئة الزكاة)",
-          "End-to-End Traceability": "التتبع الشامل"
+          "Identify": "التعريف",
+          "Capture": "التحصيل",
+          "Share": "المشاركة"
         }
       },
-      "Resources": {
-        "title": "الموارد",
+      "Industries": {
+        "title": "القطاعات",
         "links": {
-          "Training & Events": "التدريب والفعاليات",
-          "Barcode Check": "فحص الباركود",
-          "Verified by GS1": "تحقق GS1"
+          "Healthcare & Pharma": "الرعاية الصحية والأدوية",
+          "Retail & FMCG": "التجزئة والسلع الاستهلاكية",
+          "Logistics & Supply Chain": "اللوجستيات وسلسلة التوريد",
+          "Food Safety & Agriculture": "سلامة الغذاء والزراعة",
+          "E-Commerce & Digital": "التجارة الإلكترونية والرقمية"
         }
       },
-      "Company": {
-        "title": "الشركة",
+      "About GS1 Saudi Arabia": {
+        "title": "عن GS1 السعودية",
         "links": {
-          "Who we are": "من نحن",
-          "Leadership": "القيادة",
+          "Who We Are": "من نحن",
+          "Mission & Vision": "الرسالة والرؤية",
+          "Our Strategy": "استراتيجيتنا",
+          "Our Partners": "شركاؤنا",
           "Contact": "اتصل بنا"
         }
       }
-    },
-    "legal": {
-      "Terms & Conditions": "الشروط والأحكام"
     },
     "copyright": "© {year} GS1 السعودية. جميع الحقوق محفوظة.",
     "slogan": "اللغة العالمية للأعمال"

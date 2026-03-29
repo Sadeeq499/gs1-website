@@ -407,13 +407,6 @@ export const tabContent = {
   },
 };
 
-export const stats = [
-  { value: "2M+", label: "Barcodes Issued in KSA" },
-  { value: "150+", label: "Countries Connected" },
-  { value: "99.9%", label: "Scan Accuracy Rate" },
-  { value: "2027", label: "Global Sunrise Deadline" },
-];
-
 // export const slides = [
 //   {
 //     id: 1,
