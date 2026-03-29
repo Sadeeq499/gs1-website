@@ -1,4 +1,4 @@
-import { Barcode, ShieldCheck, MapPin, Package, Cigarette } from "lucide-react";
+import { Barcode, ShieldCheck, MapPin, Package, Cigarette, BadgeCheck, Route, Layers, HeartPulse } from "lucide-react";
 
 export const services = [
   {
@@ -53,6 +53,50 @@ export const services = [
     description:
       "Special Category: Ensure compliance with tobacco regulations through our specialized tracking and tracing solutions.",
     icon: Cigarette,
+    color: "bg-primary",
+    textColor: "text-primary",
+  },
+  {
+    id: "verified-by-gs1",
+    title: "Verified by GS1",
+    slug: "verified-by-gs1",
+    shortName: "Verified",
+    description:
+      "Authenticate and verify your products with the globally trusted GS1 verification service, building consumer confidence and combating counterfeiting.",
+    icon: BadgeCheck,
+    color: "bg-secondary",
+    textColor: "text-secondary",
+  },
+  {
+    id: "traceability",
+    title: "Traceability",
+    slug: "traceability",
+    shortName: "Trace",
+    description:
+      "End-to-end supply chain visibility — track products from origin to consumer using GS1 standards for full transparency and recall readiness.",
+    icon: Route,
+    color: "bg-primary",
+    textColor: "text-primary",
+  },
+  {
+    id: "fixed-assets-management",
+    title: "Fixed Assets Management",
+    slug: "fixed-assets-management",
+    shortName: "Assets",
+    description:
+      "Efficiently manage and track organizational fixed assets using GS1 barcodes, reducing loss and ensuring accurate asset register maintenance.",
+    icon: Layers,
+    color: "bg-secondary",
+    textColor: "text-secondary",
+  },
+  {
+    id: "healthcare-management",
+    title: "Healthcare Management",
+    slug: "healthcare-management",
+    shortName: "Healthcare",
+    description:
+      "Implement GS1 standards across healthcare settings to ensure patient safety, accurate medical device identification, and drug traceability.",
+    icon: HeartPulse,
     color: "bg-primary",
     textColor: "text-primary",
   },
@@ -256,5 +300,181 @@ export const servicesDetails = [
       "Compliance Officers",
     ],
     image: "/images/service-detail/tobacco.png",
+  },
+  {
+    title: "Verified by GS1",
+    acronym: "Verified",
+    slug: "verified-by-gs1",
+    shortDescription: "Global product authentication and consumer trust.",
+    description:
+      "Verified by GS1 is the world's most trusted product verification service. It allows consumers, retailers, and supply chain partners to instantly verify that a product's barcode data matches official GS1 registry information — fighting counterfeits, improving data quality, and building brand trust across every channel.",
+    modules: [
+      {
+        title: "GS1 Registry Lookup",
+        description:
+          "Cross-check product identifiers against the official GS1 global registry to confirm authenticity and data accuracy in real time.",
+      },
+      {
+        title: "Brand & Product Data Syndication",
+        description:
+          "Publish rich, verified product information — images, descriptions, certifications — to all trading partners from one trusted source.",
+      },
+      {
+        title: "Consumer-Facing Verification",
+        description:
+          "Enable shoppers to scan a barcode or QR code and instantly see verified product details, fostering transparency and loyalty.",
+      },
+      {
+        title: "Counterfeit Detection",
+        description:
+          "Identify duplicate or fraudulent barcodes circulating in the market and protect your brand's integrity.",
+      },
+    ],
+    features: [
+      "Globally recognized verification seal",
+      "Reduce counterfeit products in the market",
+      "Improve product data quality and consistency",
+      "Build consumer trust and brand transparency",
+      "Seamless integration with e-commerce platforms",
+    ],
+    idealFor: [
+      "Brand Owners & Manufacturers",
+      "Retail & E-Commerce",
+      "Regulatory Bodies",
+      "Consumer Goods Companies",
+    ],
+    image: "/images/service-detail/verified-by-gs1.png",
+  },
+  {
+    title: "Traceability",
+    acronym: "Trace",
+    slug: "traceability",
+    shortDescription: "End-to-end supply chain visibility from origin to consumer.",
+    description:
+      "GS1 Traceability solutions give businesses complete visibility of their products as they move through the supply chain. By capturing and sharing standardized data at every step — from raw material sourcing to final delivery — companies can respond rapidly to recalls, meet regulatory requirements, and build consumer confidence.",
+    modules: [
+      {
+        title: "Batch & Lot Traceability",
+        description:
+          "Assign unique batch and lot numbers to production runs, enabling targeted recalls and quality investigations.",
+      },
+      {
+        title: "Item-Level Serialization",
+        description:
+          "Apply unique serial numbers to every individual unit for granular, item-level tracking across the entire supply chain.",
+      },
+      {
+        title: "Event Data Capture",
+        description:
+          "Record EPCIS (Electronic Product Code Information Services) events at each supply chain checkpoint for a full audit trail.",
+      },
+      {
+        title: "Regulatory Compliance Reporting",
+        description:
+          "Generate and submit traceability reports required by Saudi Food & Drug Authority (SFDA) and other regulatory bodies.",
+      },
+    ],
+    features: [
+      "Rapid product recall capabilities",
+      "Full compliance with SFDA traceability mandates",
+      "Reduce waste and improve supply chain efficiency",
+      "Real-time visibility from farm/factory to shelf",
+      "Supports fresh food, pharma, and general trade",
+    ],
+    idealFor: [
+      "Food & Beverage Producers",
+      "Pharmaceutical Companies",
+      "Agricultural Exporters",
+      "Retailers & Distributors",
+    ],
+    image: "/images/service-detail/traceability.png",
+  },
+  {
+    title: "Fixed Assets Management",
+    acronym: "Assets",
+    slug: "fixed-assets-management",
+    shortDescription: "GS1-powered barcode solutions for asset tracking.",
+    description:
+      "Our Fixed Assets Management solution leverages GS1 standards to help organizations tag, track, and audit every physical asset — from IT equipment and machinery to furniture and vehicles. Eliminate manual spreadsheet errors, reduce asset loss, and maintain an always-accurate asset register.",
+    modules: [
+      {
+        title: "Asset Tagging & Labeling",
+        description:
+          "Generate GS1-compliant barcode or RFID labels for every asset, ensuring unique identification throughout its lifecycle.",
+      },
+      {
+        title: "Asset Register Integration",
+        description:
+          "Sync asset data with SAP, Oracle, or other ERP systems for real-time updates to your fixed asset register.",
+      },
+      {
+        title: "Periodic Audit & Verification",
+        description:
+          "Conduct fast, mobile-based asset audits by scanning barcodes — eliminating time-consuming manual counting.",
+      },
+      {
+        title: "Lifecycle & Maintenance Tracking",
+        description:
+          "Monitor asset condition, depreciation schedules, and maintenance history from acquisition to disposal.",
+      },
+    ],
+    features: [
+      "Reduce asset loss and ghost assets",
+      "Accurate and up-to-date asset register",
+      "Faster audit cycles with mobile scanning",
+      "Integration with leading ERP platforms",
+      "Compliance with IFRS 16 and local regulations",
+    ],
+    idealFor: [
+      "Government & Public Sector",
+      "Healthcare Facilities",
+      "Manufacturing Plants",
+      "Educational Institutions",
+    ],
+    image: "/images/service-detail/fixed-assets.png",
+  },
+  {
+    title: "Healthcare Management",
+    acronym: "Healthcare",
+    slug: "healthcare-management",
+    shortDescription: "GS1 standards for patient safety and medical traceability.",
+    description:
+      "Our Healthcare Management solution applies GS1 global standards to hospitals, pharmacies, and medical device manufacturers in Saudi Arabia. From accurate patient identification to drug and device traceability, GS1 standards reduce medication errors, streamline procurement, and ensure compliance with SFDA and MOH regulations.",
+    modules: [
+      {
+        title: "Medical Device Identification (UDI)",
+        description:
+          "Assign and manage Unique Device Identifiers (UDIs) for surgical instruments, implants, and medical equipment in compliance with SFDA requirements.",
+      },
+      {
+        title: "Pharmaceutical Traceability",
+        description:
+          "Serialize drug packages with GS1 DataMatrix codes to track medicines from manufacturer to patient, preventing counterfeits.",
+      },
+      {
+        title: "Patient & Specimen Identification",
+        description:
+          "Implement GS1-compliant wristbands and specimen labels to eliminate patient misidentification events.",
+      },
+      {
+        title: "Hospital Supply Chain Optimization",
+        description:
+          "Standardize procurement, receiving, and inventory processes across all hospital departments using GS1 identifiers.",
+      },
+    ],
+    features: [
+      "Reduce medication errors and adverse events",
+      "SFDA and MOH compliance for drug serialization",
+      "Accurate medical device lifecycle management",
+      "Improved inventory visibility across hospital stores",
+      "Interoperability with national health information systems",
+    ],
+    idealFor: [
+      "Hospitals & Clinics",
+      "Pharmacies & Distributors",
+      "Medical Device Manufacturers",
+      "Ministry of Health & SFDA",
+    ],
+    image: "/images/service-detail/healthcare.png",
   },
 ];

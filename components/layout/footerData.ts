@@ -25,7 +25,7 @@ export const footerConfig = {
     {
       title: "Tech Solutions",
       links: [
-        { label: "2D Barcode Sunrise", href: "/solutions/2d-barcodes" },
+        // { label: "2D Barcode Sunrise", href: "/solutions/2d-barcodes" },
         { label: "GS1 Digital Link", href: "/solutions/digital-link" },
         // { label: "ZATCA E-Invoicing", href: "/solutions/zatca-compliance" },
         { label: "End-to-End Traceability", href: "/solutions/traceability" },
@@ -37,8 +37,8 @@ export const footerConfig = {
       links: [
         // { label: "Knowledge Hub", href: "/knowledge-hub" },
         // { label: "Member Support", href: "/support" },
-        { label: "Training & Events", href: "/events" },
-        { label: "Barcode Check", href: "/verify" },
+        // { label: "Training & Events", href: "/events" },
+        // { label: "Barcode Check", href: "/verify" },
         { label: "Verified by GS1", href: "/verify" },
       ],
     },
@@ -46,7 +46,7 @@ export const footerConfig = {
       title: "Company",
       links: [
         { label: "Who we are", href: "/about/who-we-are" },
-        { label: "Leadership", href: "/about/board" },
+        // { label: "Leadership", href: "/about/board" },
         // { label: "Global Network", href: "/global-offices" },
         // { label: "Careers", href: "/careers" },
         { label: "Contact", href: "/contact" },

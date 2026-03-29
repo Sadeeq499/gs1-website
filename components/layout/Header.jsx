@@ -49,6 +49,7 @@ const getMainNavItems = (t) => [
   { title: t("nav.services"), href: "/services" },
   { title: t("nav.standards"), href: "/standards" },
   { title: t("nav.industries"), href: "/industries" },
+  { title: t("nav.contact"), href: "/contact" },
 ];
 
 export default function Header() {
