@@ -249,6 +249,71 @@ export default function ProductPanel() {
                     ))}
                 </div>
               </div>
+
+              {/* Certifications Section */}
+              {(productData.product.certifications?.is_saso_certified ||
+                productData.product.certifications?.is_saudi_made) && (
+                <div className="mt-10">
+                  <div className="flex items-center gap-3 mb-5">
+                    <h3 className="text-[#0b1c5c] text-[18px] font-semibold">
+                      Certifications
+                    </h3>
+                    <div className="flex-1 h-px bg-[#0b1c5c]/15" />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {productData.product.certifications?.is_saso_certified && (
+                      <div className="flex items-center gap-4 bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="shrink-0 w-[56px] h-[56px] flex items-center justify-center">
+                          <img
+                            src="/logos/saso.png"
+                            alt="SASO Certified"
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-[13px] font-semibold text-[#0b1c5c] leading-tight">
+                            SASO Certified
+                          </span>
+                          <span className="text-[12px] text-slate-500 mt-0.5">
+                            Saudi Standards, Metrology &amp; Quality Org.
+                          </span>
+                          <span className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold text-[#2e7d32] bg-[#e8f5e9] px-2 py-0.5 rounded-full w-fit">
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Verified
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                    {productData.product.certifications?.is_saudi_made && (
+                      <div className="flex items-center gap-4 bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="shrink-0 w-[56px] h-[56px] flex items-center justify-center">
+                          <img
+                            src="/logos/saudi-made.png"
+                            alt="Saudi Made"
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-[13px] font-semibold text-[#0b1c5c] leading-tight">
+                            Saudi Made
+                          </span>
+                          <span className="text-[12px] text-slate-500 mt-0.5">
+                            Manufactured in Saudi Arabia
+                          </span>
+                          <span className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold text-[#2e7d32] bg-[#e8f5e9] px-2 py-0.5 rounded-full w-fit">
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Verified
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
             </TabsContent>
 
             <TabsContent value="company" className="pt-8">
