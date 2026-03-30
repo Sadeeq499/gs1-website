@@ -7,26 +7,50 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Send, CheckCircle, AlertCircle } from "lucide-react";
-
+import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { useContactUs } from "@/lib/hooks/useContactUs";
 export default function ContactForm({ data: form }) {
   const [formState, setFormState] = useState({
     fullName: "",
     email: "",
+    company: "",
     phone: "",
     subject: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
 
-  const handleSubmit = async (e) => {
+  const { mutate: submitContact, isPending, isSuccess, isError, error, reset } = useContactUs();
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setSubmitStatus("success");
-    setIsSubmitting(false);
-    setTimeout(() => setSubmitStatus(null), 5000);
+
+    submitContact(
+      {
+        name: formState.fullName,
+        email: formState.email,
+        company: formState.company,
+        phoneNumber: formState.phone,
+        // subject is not part of the API payload but kept in form state for UX
+        message: formState.subject
+          ? `[${formState.subject}] ${formState.message}`
+          : formState.message,
+      },
+      {
+        onSuccess: () => {
+          // Reset form on success
+          setFormState({
+            fullName: "",
+            email: "",
+            company: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+          // Auto-clear success banner after 5s
+          setTimeout(() => reset(), 5000);
+        },
+      }
+    );
   };
 
   const handleChange = (e) =>
@@ -49,19 +73,37 @@ export default function ContactForm({ data: form }) {
         <h2 className="text-2xl font-bold text-primary mb-2">{form.heading}</h2>
         <p className="text-sm text-muted-foreground mb-6">{form.subheading}</p>
 
-        {submitStatus === "success" && (
+        {/* Success Banner */}
+        {isSuccess && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3"
           >
-            <CheckCircle className="w-5 h-5 text-green-600" />
+            <CheckCircle className="w-5 h-5 text-green-600 shrink-0" />
             <p className="text-sm text-green-700">{form.successMessage}</p>
+          </motion.div>
+        )}
+
+        {/* Error Banner */}
+        {isError && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3"
+          >
+            <AlertCircle className="w-5 h-5 text-red-600 shrink-0" />
+            <p className="text-sm text-red-700">
+              {error?.response?.data?.message ??
+                form.errorMessage ??
+                "Something went wrong. Please try again."}
+            </p>
           </motion.div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid md:grid-cols-2 gap-5">
+            {/* Full Name */}
             <div className="space-y-2">
               <Label htmlFor="fullName" className="text-primary">
                 {form.labels.fullName}
@@ -74,6 +116,8 @@ export default function ContactForm({ data: form }) {
                 required
               />
             </div>
+
+            {/* Email */}
             <div className="space-y-2">
               <Label htmlFor="email" className="text-primary">
                 {form.labels.email}
@@ -88,7 +132,9 @@ export default function ContactForm({ data: form }) {
               />
             </div>
           </div>
+
           <div className="grid md:grid-cols-2 gap-5">
+            {/* Phone */}
             <div className="space-y-2">
               <Label htmlFor="phone" className="text-primary">
                 {form.labels.phone}
@@ -101,19 +147,36 @@ export default function ContactForm({ data: form }) {
                 onChange={handleChange}
               />
             </div>
+
+            {/* Company — mapped to API's `company` field */}
             <div className="space-y-2">
-              <Label htmlFor="subject" className="text-primary">
-                {form.labels.subject}
+              <Label htmlFor="company" className="text-primary">
+                {form.labels.company ?? "Company"}
               </Label>
               <Input
-                id="subject"
-                placeholder={form.placeholders.subject}
-                value={formState.subject}
+                id="company"
+                placeholder={form.placeholders.company ?? "Your company name"}
+                value={formState.company}
                 onChange={handleChange}
-                required
               />
             </div>
           </div>
+
+          {/* Subject (prepended to message on submit) */}
+          <div className="space-y-2">
+            <Label htmlFor="subject" className="text-primary">
+              {form.labels.subject}
+            </Label>
+            <Input
+              id="subject"
+              placeholder={form.placeholders.subject}
+              value={formState.subject}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {/* Message */}
           <div className="space-y-2">
             <Label htmlFor="message" className="text-primary">
               {form.labels.message}
@@ -131,15 +194,15 @@ export default function ContactForm({ data: form }) {
 
           <Button
             type="submit"
-            disabled={isSubmitting}
+            disabled={isPending}
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-6 text-base"
           >
-            {isSubmitting ? (
-              <AlertCircle className="w-5 h-5 mr-2 animate-spin" />
+            {isPending ? (
+              <Loader2 className="w-5 h-5 mr-2 animate-spin" />
             ) : (
               <Send className="w-5 h-5 mr-2" />
             )}
-            {isSubmitting ? form.labels.sending : form.labels.submit}
+            {isPending ? form.labels.sending : form.labels.submit}
           </Button>
 
           <p className="text-xs text-muted-foreground text-center mt-4">
