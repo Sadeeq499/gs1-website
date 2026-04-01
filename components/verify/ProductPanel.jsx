@@ -15,6 +15,7 @@ export default function ProductPanel() {
   const [productData, setProductData] = useState(null);
   const t = useTranslations("verify.panels");
   const tCommon = useTranslations("verify.panels.common");
+  const tCert = useTranslations("verify.panels.certifications");
   const locale = useLocale();
 
   const {
@@ -256,7 +257,7 @@ export default function ProductPanel() {
                 <div className="mt-10">
                   <div className="flex items-center gap-3 mb-5">
                     <h3 className="text-[#0b1c5c] text-[18px] font-semibold">
-                      Certifications
+                      {tCert("title")}
                     </h3>
                     <div className="flex-1 h-px bg-[#0b1c5c]/15" />
                   </div>
@@ -272,16 +273,16 @@ export default function ProductPanel() {
                         </div>
                         <div className="flex flex-col">
                           <span className="text-[13px] font-semibold text-[#0b1c5c] leading-tight">
-                            SASO Certified
+                            {tCert("saso.label")}
                           </span>
                           <span className="text-[12px] text-slate-500 mt-0.5">
-                            Saudi Standards, Metrology &amp; Quality Org.
+                            {tCert("saso.description")}
                           </span>
                           <span className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold text-[#2e7d32] bg-[#e8f5e9] px-2 py-0.5 rounded-full w-fit">
                             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                             </svg>
-                            Verified
+                            {tCert("verified")}
                           </span>
                         </div>
                       </div>
@@ -297,16 +298,16 @@ export default function ProductPanel() {
                         </div>
                         <div className="flex flex-col">
                           <span className="text-[13px] font-semibold text-[#0b1c5c] leading-tight">
-                            Saudi Made
+                            {tCert("saudiMade.label")}
                           </span>
                           <span className="text-[12px] text-slate-500 mt-0.5">
-                            Manufactured in Saudi Arabia
+                            {tCert("saudiMade.description")}
                           </span>
                           <span className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold text-[#2e7d32] bg-[#e8f5e9] px-2 py-0.5 rounded-full w-fit">
                             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                             </svg>
-                            Verified
+                            {tCert("verified")}
                           </span>
                         </div>
                       </div>

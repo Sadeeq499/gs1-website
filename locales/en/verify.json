@@ -148,6 +148,18 @@
       "inactive": "Inactive",
       "unknown": "Unknown"
     },
+    "certifications": {
+      "title": "Certifications",
+      "verified": "Verified",
+      "saso": {
+        "label": "Quality Certified",
+        "description": "Saudi Standards, Metrology & Quality Org."
+      },
+      "saudiMade": {
+        "label": "Saudi Made",
+        "description": "Manufactured in Saudi Arabia"
+      }
+    },
     "incorrectData": {
       "trigger": "Are these details shown above incorrect?",
       "title": "Reporting incorrect data",
