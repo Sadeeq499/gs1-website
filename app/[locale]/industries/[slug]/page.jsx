@@ -1,8 +1,43 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import React from "react";
 import { notFound } from "next/navigation";
 import { industryDetails } from "@/components/industries/data";
 import IndustryDetailHero from "@/components/industries/industries-detail/IndustryDetailHero";
 import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }) {
+  const { locale, slug } = await params;
+  if (!industryDetails[slug]) return {};
+  const tCard = await getTranslations({
+    locale,
+    namespace: `industries.cards.${slug}`,
+  });
+  const title = tCard.has("metadata.title")
+    ? tCard("metadata.title")
+    : `${tCard("title")} | GS1 Saudi Arabia`;
+  const description = tCard.has("metadata.description")
+    ? tCard("metadata.description")
+    : tCard("description");
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/industries/${slug}`,
+      languages: {
+        en: `${BASE_URL}/en/industries/${slug}`,
+        ar: `${BASE_URL}/ar/industries/${slug}`,
+        "x-default": `${BASE_URL}/en/industries/${slug}`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${BASE_URL}/${locale}/industries/${slug}`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
+  };
+}
 
 export default async function IndustryPage({ params }) {
   const { slug } = await params;

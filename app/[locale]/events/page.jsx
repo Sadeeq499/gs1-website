@@ -1,3 +1,4 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import { EventsHero } from "@/components/events/EventsHero";
 import { EventsGrid } from "@/components/events/EventsGrid";
 import { NewsletterSection } from "@/components/events/NewsletterSection";
@@ -10,6 +11,21 @@ export async function generateMetadata({ params }) {
   return {
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/events`,
+      languages: {
+        en: `${BASE_URL}/en/events`,
+        ar: `${BASE_URL}/ar/events`,
+        "x-default": `${BASE_URL}/en/events`,
+      },
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${BASE_URL}/${locale}/events`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
   };
 }
 

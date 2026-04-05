@@ -1,3 +1,4 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactMap from "@/components/contact/ContactMap";
@@ -11,6 +12,21 @@ export async function generateMetadata({ params }) {
   return {
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/contact`,
+      languages: {
+        en: `${BASE_URL}/en/contact`,
+        ar: `${BASE_URL}/ar/contact`,
+        "x-default": `${BASE_URL}/en/contact`,
+      },
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${BASE_URL}/${locale}/contact`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
   };
 }
 

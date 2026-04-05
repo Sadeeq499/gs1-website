@@ -20,6 +20,10 @@
   },
   "items": {
     "2d-barcodes": {
+      "metadata": {
+        "title": "2D Barcodes (Sunrise 2027) | GS1 Saudi Arabia QR & DataMatrix Solutions",
+        "description": "GS1 Saudi Arabia leads the Sunrise 2027 transition to 2D barcodes. Upgrade to QR codes and DataMatrix for expiry management, consumer engagement, and ZATCA compliance."
+      },
       "title": "Next-Generation 2D Barcodes",
       "acronym": "Sunrise 2027",
       "shortDescription": "The biggest evolution in retail since the 1970s.",
@@ -47,6 +51,10 @@
       ]
     },
     "digital-link": {
+      "metadata": {
+        "title": "GS1 Digital Link | Smart QR Codes for Saudi Products",
+        "description": "GS1 Digital Link transforms Saudi product barcodes into web-connected QR codes for retail checkout, consumer engagement, anti-counterfeiting, and real-time data updates."
+      },
       "title": "GS1 Digital Link",
       "acronym": "Digital Link",
       "shortDescription": "Connecting every physical product to the digital world.",
@@ -69,6 +77,10 @@
       ]
     },
     "zatca-compliance": {
+      "metadata": {
+        "title": "ZATCA Fatoora Compliance | GS1 GLN for Saudi E-Invoicing",
+        "description": "GS1 Saudi Arabia provides Global Location Numbers (GLN) and compliant data structures for ZATCA Fatoora Phase 2 e-invoicing integration across all Saudi business branches."
+      },
       "title": "ZATCA Compliance",
       "acronym": "Fatoora",
       "shortDescription": "Ensuring your E-Invoicing meets Saudi National Standards.",
@@ -91,6 +103,10 @@
       ]
     },
     "traceability": {
+      "metadata": {
+        "title": "GS1 Global Traceability Standard | End-to-End Supply Chain Visibility in KSA",
+        "description": "GS1 Saudi Arabia’s traceability solutions use EPCIS 2.0 and the GS1 Global Traceability Standard to deliver full supply chain visibility, SFDA Tameni integration, and cold chain monitoring."
+      },
       "title": "GS1 Global Traceability Standard",
       "acronym": "GTS",
       "shortDescription": "A business process standard to track forward movement and trace backward the history, application or location of products.",

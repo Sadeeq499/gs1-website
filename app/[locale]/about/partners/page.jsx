@@ -1,3 +1,4 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import { MarketplaceSync } from "@/components/about/partners/MarketplaceSync";
 import { PartnerCTA } from "@/components/about/partners/PartnerCTA";
 import { PartnerHero } from "@/components/about/partners/PartnerHero";
@@ -15,6 +16,21 @@ export async function generateMetadata({ params }) {
   return {
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/about/partners`,
+      languages: {
+        en: `${BASE_URL}/en/about/partners`,
+        ar: `${BASE_URL}/ar/about/partners`,
+        "x-default": `${BASE_URL}/en/about/partners`,
+      },
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${BASE_URL}/${locale}/about/partners`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
   };
 }
 

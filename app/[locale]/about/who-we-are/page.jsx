@@ -1,3 +1,4 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import { AboutHero } from "@/components/about/who-we-are/AboutHero";
 import { CompanyIdentity } from "@/components/about/who-we-are/CompanyIdentity";
 import { GovernanceSection } from "@/components/about/who-we-are/GovernanceSection";
@@ -15,6 +16,21 @@ export async function generateMetadata({ params }) {
   return {
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/about/who-we-are`,
+      languages: {
+        en: `${BASE_URL}/en/about/who-we-are`,
+        ar: `${BASE_URL}/ar/about/who-we-are`,
+        "x-default": `${BASE_URL}/en/about/who-we-are`,
+      },
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${BASE_URL}/${locale}/about/who-we-are`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
   };
 }
 

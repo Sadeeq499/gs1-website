@@ -1,3 +1,4 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import React from "react";
 import { notFound } from "next/navigation";
 import { techSolutions } from "@/components/home/data";
@@ -82,9 +83,40 @@ export async function generateMetadata({ params }) {
   const solution = techSolutions.find((s) => s.slug === slug);
   if (!solution) return {};
 
+  const hasMetadata = (() => {
+    try {
+      t(`items.${slug}.metadata.title`);
+      return true;
+    } catch {
+      return false;
+    }
+  })();
+
+  const title = hasMetadata
+    ? t(`items.${slug}.metadata.title`)
+    : t(`items.${slug}.title`);
+  const description = hasMetadata
+    ? t(`items.${slug}.metadata.description`)
+    : t(`items.${slug}.shortDescription`);
+
   return {
-    title: t(`items.${slug}.title`),
-    description: t(`items.${slug}.shortDescription`),
+    title,
+    description,
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/solutions/${slug}`,
+      languages: {
+        en: `${BASE_URL}/en/solutions/${slug}`,
+        ar: `${BASE_URL}/ar/solutions/${slug}`,
+        "x-default": `${BASE_URL}/en/solutions/${slug}`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${BASE_URL}/${locale}/solutions/${slug}`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
   };
 }
 

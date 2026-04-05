@@ -1,3 +1,4 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import { InsightsHero } from "@/components/about/mission-vision/InsightsHero";
 import { MISSION_VISION_DATA } from "@/components/about/mission-vision/mission-vision-data";
 import { MissionSection } from "@/components/about/mission-vision/MissionSection";
@@ -14,6 +15,21 @@ export async function generateMetadata({ params }) {
   return {
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/about/mission-vision`,
+      languages: {
+        en: `${BASE_URL}/en/about/mission-vision`,
+        ar: `${BASE_URL}/ar/about/mission-vision`,
+        "x-default": `${BASE_URL}/en/about/mission-vision`,
+      },
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${BASE_URL}/${locale}/about/mission-vision`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
   };
 }
 

@@ -1,3 +1,4 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import { INSIGHTS_DATA } from "@/components/insights/insights-data";
 import { InsightsHero } from "@/components/insights/InsightsHero";
 import { NewsGrid } from "@/components/insights/NewsGrid";
@@ -10,6 +11,21 @@ export async function generateMetadata({ params }) {
   return {
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/insights`,
+      languages: {
+        en: `${BASE_URL}/en/insights`,
+        ar: `${BASE_URL}/ar/insights`,
+        "x-default": `${BASE_URL}/en/insights`,
+      },
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${BASE_URL}/${locale}/insights`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
   };
 }
 

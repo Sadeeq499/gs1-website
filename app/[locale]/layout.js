@@ -10,6 +10,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { DirectionProvider } from "@/components/ui/direction";
+import { BASE_URL } from "@/lib/seo";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -26,7 +27,11 @@ export function generateStaticParams() {
 }
 
 export const metadata = {
-  title: "GS1 Saudi Arabia | The Global Language of Business",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "GS1 Saudi Arabia | The Global Language of Business",
+    template: "%s | GS1 Saudi Arabia",
+  },
   description:
     "GS1 Saudi Arabia is the sole authorized entity for GS1 standards in KSA, providing Barcodes (GTIN), GLN, and SSCC to enhance supply chain efficiency and transparency.",
   keywords: [
@@ -39,10 +44,25 @@ export const metadata = {
     "Supply Chain",
     "Business Standards",
     "Riyadh",
-    "Jeddah",
-    "Dammam",
     "Saudi Numbering Center",
+    "باركود",
+    "سلسلة التوريد",
+    "GS1 السعودية",
   ],
+  authors: [{ name: "GS1 Saudi Arabia", url: BASE_URL }],
+  creator: "GS1 Saudi Arabia",
+  publisher: "GS1 Saudi Arabia",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "GS1 Saudi Arabia | The Global Language of Business",
     description:
@@ -50,12 +70,35 @@ export const metadata = {
     type: "website",
     locale: "en_SA",
     siteName: "GS1 Saudi Arabia",
+    url: BASE_URL,
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "GS1 Saudi Arabia",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@GS1SaudiArabia",
+    creator: "@GS1SaudiArabia",
     title: "GS1 Saudi Arabia | The Global Language of Business",
     description:
       "GS1 Saudi Arabia is the sole authorized entity for GS1 standards in KSA, providing Barcodes (GTIN), GLN, and SSCC to enhance supply chain efficiency and transparency.",
+    images: ["/images/og-image.png"],
+  },
+  alternates: {
+    canonical: BASE_URL,
+    languages: {
+      en: `${BASE_URL}/en`,
+      ar: `${BASE_URL}/ar`,
+      "x-default": `${BASE_URL}/en`,
+    },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
 };
 

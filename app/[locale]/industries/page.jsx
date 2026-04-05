@@ -1,3 +1,4 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import React from "react";
 import { IndustryCard } from "@/components/industries/IndustryCard";
 import { IndustryHero } from "@/components/industries/IndustryHero";
@@ -11,6 +12,21 @@ export async function generateMetadata({ params: { locale } }) {
   return {
     title: t("meta_title"),
     description: t("meta_description"),
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/industries`,
+      languages: {
+        en: `${BASE_URL}/en/industries`,
+        ar: `${BASE_URL}/ar/industries`,
+        "x-default": `${BASE_URL}/en/industries`,
+      },
+    },
+    openGraph: {
+      title: t("meta_title"),
+      description: t("meta_description"),
+      url: `${BASE_URL}/${locale}/industries`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
   };
 }
 

@@ -1,3 +1,4 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import React from "react";
 import { notFound } from "next/navigation";
 import { standardDetails } from "@/components/standards/standard-detail-data";
@@ -8,6 +9,36 @@ const validSlugs = ["identify", "capture", "share"];
 
 export async function generateStaticParams() {
   return validSlugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }) {
+  const { locale, slug } = await params;
+  if (!validSlugs.includes(slug)) return {};
+  const t = await getTranslations({
+    locale,
+    namespace: `standards.details.${slug}`,
+  });
+  const title = t("metadata.title");
+  const description = t("metadata.description");
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/standards/${slug}`,
+      languages: {
+        en: `${BASE_URL}/en/standards/${slug}`,
+        ar: `${BASE_URL}/ar/standards/${slug}`,
+        "x-default": `${BASE_URL}/en/standards/${slug}`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${BASE_URL}/${locale}/standards/${slug}`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
+  };
 }
 
 export default async function StandardDetailPage({ params }) {

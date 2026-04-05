@@ -1,6 +1,9 @@
 {
+  "metadata": {
+    "title": "GS1 Standards | Identify, Capture & Share for Saudi Supply Chains",
+    "description": "Learn how GS1 global standards — GTIN, GLN, SSCC, and 2D barcodes — enable Saudi businesses to identify, capture, and share supply chain data with global precision and regulatory compliance."
+  },
   "hero": {
-    "badge": "The Global Language of Business",
     "title": "GS1 Standards",
     "description": "GS1 Standards are globally recognized guidelines that enable businesses to uniquely identify, capture, and share information about products, assets, locations, and services across the supply chain. These standards ensure consistency, accuracy, and efficiency in trading, logistics, and data exchange.",
     "identify": "Identify",
@@ -125,6 +128,10 @@
   },
   "details": {
     "identify": {
+      "metadata": {
+        "title": "GS1 Identify Standard | GTIN, GLN & GS1 Keys in Saudi Arabia",
+        "description": "Discover GS1 identification standards used in Saudi Arabia: GTIN, GLN, SSCC, GRAI, and GIAI — the universal keys that uniquely identify every product, location, and asset globally."
+      },
       "hero": {
         "badge": "GS1 Standard — Pillar 01",
         "title": "Identify",
@@ -323,6 +330,10 @@
       }
     },
     "capture": {
+      "metadata": {
+        "title": "GS1 Capture Standard | Barcodes, QR Codes & RFID in Saudi Arabia",
+        "description": "Explore GS1 data capture standards: 1D barcodes, 2D QR codes, DataMatrix, and RFID technology that encode product identity for seamless scanning across Saudi supply chains."
+      },
       "hero": {
         "badge": "GS1 Standard — Pillar 02",
         "title": "Capture",
@@ -521,6 +532,10 @@
       }
     },
     "share": {
+      "metadata": {
+        "title": "GS1 Share Standard | EDI, GDSN & EPCIS Data Exchange in Saudi Arabia",
+        "description": "Learn how GS1 share standards — including EPCIS, GDSN, and EDI — enable secure, real-time data exchange between Saudi trading partners for full supply chain visibility."
+      },
       "hero": {
         "badge": "GS1 Standard — Pillar 03",
         "title": "Share",

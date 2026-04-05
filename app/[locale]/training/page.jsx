@@ -1,3 +1,4 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import { InsightsHero } from "@/components/training/InsightsHero";
 import { TRAINING_DATA } from "@/components/training/training-data";
 import { TrainingAbout } from "@/components/training/TrainingAbout";
@@ -11,6 +12,21 @@ export async function generateMetadata({ params }) {
   return {
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/training`,
+      languages: {
+        en: `${BASE_URL}/en/training`,
+        ar: `${BASE_URL}/ar/training`,
+        "x-default": `${BASE_URL}/en/training`,
+      },
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${BASE_URL}/${locale}/training`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
   };
 }
 

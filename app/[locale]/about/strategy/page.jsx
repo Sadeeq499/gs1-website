@@ -1,3 +1,4 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import { InsightsHero } from "@/components/about/strategy/InsightsHero";
 import { STRATEGY_DATA } from "@/components/about/strategy/strategy-data";
 import { StrategyPillars } from "@/components/about/strategy/StrategyPillars";
@@ -13,6 +14,21 @@ export async function generateMetadata({ params }) {
   return {
     title: t("title"),
     description: t("description"),
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/about/strategy`,
+      languages: {
+        en: `${BASE_URL}/en/about/strategy`,
+        ar: `${BASE_URL}/ar/about/strategy`,
+        "x-default": `${BASE_URL}/en/about/strategy`,
+      },
+    },
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${BASE_URL}/${locale}/about/strategy`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
   };
 }
 

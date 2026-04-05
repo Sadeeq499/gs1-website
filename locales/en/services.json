@@ -1,6 +1,9 @@
 {
+  "metadata": {
+    "title": "GS1 Services | Barcodes, GTIN, GLN & SSCC in Saudi Arabia",
+    "description": "Explore GS1 Saudi Arabia’s official services including GTIN barcodes, Global Location Numbers, Serial Shipping Container Codes, ZATCA compliance, and traceability solutions."
+  },
   "hero": {
-    "title": "Our Services",
     "subtitle": "Empowering your business with global standards and solutions for efficiency, visibility, and growth.",
     "cta_button": "Get Started with GS1"
   },
@@ -31,6 +34,10 @@
   },
   "items": {
     "global-trade-item-number": {
+      "metadata": {
+        "title": "GTIN Barcode Service | Get a Saudi Arabia Barcode (Prefix 628)",
+        "description": "Get your official GS1 GTIN barcode from GS1 Saudi Arabia (prefix 628). List on Amazon, Noon, SFDA-regulated markets, and global retailers with a single verified product identifier."
+      },
       "title": "Global Trade Item Number (GTIN)",
       "shortName": "GTIN",
       "get_button": "Get GTIN",
@@ -72,6 +79,10 @@
       ]
     },
     "global-location-number": {
+      "metadata": {
+        "title": "GLN Service | Global Location Number for Saudi Businesses",
+        "description": "Get a Global Location Number (GLN) from GS1 Saudi Arabia to uniquely identify warehouses, stores, hospitals, and business entities in the Kingdom’s supply chain."
+      },
       "title": "Global Location Number (GLN)",
       "shortName": "GLN",
       "get_button": "Get GLN",
@@ -108,6 +119,10 @@
       ]
     },
     "serial-shipping-container-code": {
+      "metadata": {
+        "title": "SSCC | Serial Shipping Container Code for Saudi Logistics",
+        "description": "Get GS1 SSCC numbers from GS1 Saudi Arabia to uniquely identify pallets, cases, and shipping containers — enabling real-time logistics tracking, Advance Ship Notices, and automated warehouse receiving."
+      },
       "title": "Serial Shipping Container Code (SSCC)",
       "shortName": "SSCC",
       "get_button": "Get SSCC",
@@ -144,6 +159,10 @@
       ]
     },
     "saudi-electricity-company": {
+      "metadata": {
+        "title": "SEC Barcode Compliance | GS1 for Saudi Electricity Company Suppliers",
+        "description": "GS1 Saudi Arabia provides Data Matrix barcodes and serialized identifiers fully compliant with Saudi Electricity Company (SEC) vendor requirements and SAP EWM integration."
+      },
       "title": "Saudi Electricity Company (SEC)",
       "shortName": "SEC",
       "get_button": "Get SEC Solution",
@@ -180,6 +199,10 @@
       ]
     },
     "tobacco-traceability": {
+      "metadata": {
+        "title": "Tobacco Track & Trace | ZATCA Compliance with GS1 Saudi Arabia",
+        "description": "GS1 Saudi Arabia delivers ZATCA-compliant tobacco traceability: digital tax stamp integration, multi-level aggregation, and reporting from production to point of sale."
+      },
       "title": "Tobacco Traceability",
       "shortName": "Tobacco",
       "get_button": "Get Tobacco Solution",
@@ -216,6 +239,10 @@
       ]
     },
     "verified-by-gs1": {
+      "metadata": {
+        "title": "Verified by GS1 | Product Authentication & Anti-Counterfeiting",
+        "description": "Verified by GS1 lets consumers, retailers, and partners instantly validate product barcode data against the official GS1 global registry, protecting brands from counterfeiting in Saudi Arabia."
+      },
       "title": "Verified by GS1",
       "shortName": "Verified",
       "get_button": "Get Verified",
@@ -257,6 +284,10 @@
       ]
     },
     "traceability": {
+      "metadata": {
+        "title": "GS1 Traceability Solutions | End-to-End Supply Chain Visibility in KSA",
+        "description": "GS1 Saudi Arabia’s traceability solutions enable full supply chain visibility: batch tracking, EPCIS event capture, SFDA compliance, and recall management for food, pharma, and retail."
+      },
       "title": "Traceability",
       "shortName": "Trace",
       "get_button": "Get Traceability",
@@ -298,6 +329,10 @@
       ]
     },
     "fixed-assets-management": {
+      "metadata": {
+        "title": "Fixed Assets Management | GS1 Barcode Tracking for Saudi Organizations",
+        "description": "GS1 Saudi Arabia’s fixed assets management solution tags, tracks, and audits every organizational asset with GS1 barcodes, integrating with SAP, Oracle, and major ERP platforms."
+      },
       "title": "Fixed Assets Management",
       "shortName": "Assets",
       "get_button": "Get Assets Solution",
@@ -339,6 +374,10 @@
       ]
     },
     "healthcare-management": {
+      "metadata": {
+        "title": "Healthcare Management | GS1 Standards for Hospitals & Pharma in Saudi Arabia",
+        "description": "GS1 Saudi Arabia applies global standards to hospitals, pharmacies, and medical device makers: UDI compliance, drug serialization, patient identification, and SFDA/MOH regulatory alignment."
+      },
       "title": "Healthcare Management",
       "shortName": "Healthcare",
       "get_button": "Get Healthcare Solution",

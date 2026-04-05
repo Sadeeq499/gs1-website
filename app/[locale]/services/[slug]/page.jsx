@@ -1,3 +1,4 @@
+﻿import { BASE_URL } from "@/lib/seo";
 import React from "react";
 import { notFound } from "next/navigation";
 import { servicesDetails } from "@/components/services/data";
@@ -11,6 +12,41 @@ import {
 import { Button } from "@/components/ui/button";
 import { getTranslations } from "next-intl/server";
 import ServicesCTA from "@/components/services/ServicesCTA";
+
+export async function generateMetadata({ params }) {
+  const { locale, slug } = await params;
+  const serviceData = servicesDetails.find((s) => s.slug === slug);
+  if (!serviceData) return {};
+  const tItem = await getTranslations({
+    locale,
+    namespace: `services.items.${slug}`,
+  });
+  const title = tItem.has("metadata.title")
+    ? tItem("metadata.title")
+    : `${serviceData.title} | GS1 Saudi Arabia`;
+  const description = tItem.has("metadata.description")
+    ? tItem("metadata.description")
+    : serviceData.description;
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/services/${slug}`,
+      languages: {
+        en: `${BASE_URL}/en/services/${slug}`,
+        ar: `${BASE_URL}/ar/services/${slug}`,
+        "x-default": `${BASE_URL}/en/services/${slug}`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${BASE_URL}/${locale}/services/${slug}`,
+      locale: locale === "ar" ? "ar_SA" : "en_SA",
+      alternateLocale: locale === "ar" ? ["en_SA"] : ["ar_SA"],
+    },
+  };
+}
 
 export default async function ServicePage({ params }) {
   const { slug } = await params;
