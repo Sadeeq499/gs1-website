@@ -41,6 +41,8 @@ export const metadata = {
     "GTIN",
     "GLN",
     "SSCC",
+    "Traceability",
+    "Tobacco Tracking",
     "Supply Chain",
     "Business Standards",
     "Riyadh",
