@@ -278,6 +278,21 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
         </Button>
       </div>
 
+      <div className="p-2">
+        <Button
+          asChild
+          variant="outline"
+          className="relative flex items-center gap-2 border-green-200 bg-[#ebfbf3] hover:bg-green-100 text-green-800 px-4 h-10 rounded-full font-bold shadow-sm transition-colors group"
+        >
+          <Link href="/verified-by-gs1">
+            <div className="bg-[#10b981] rounded-full p-1 shadow-inner flex items-center justify-center">
+              <ShieldCheck className="h-3 w-3 text-white stroke-[3px]" />
+            </div>
+            <span className="text-[12px] tracking-tight">{t("actions.verifiedByGs1")}</span>
+          </Link>
+        </Button>
+      </div>
+
       <nav className="flex-1 overflow-y-auto px-2 py-2">
         {mainNavItems.map((item) => {
           const isActive = pathname === item.href || pathname?.startsWith(item.href + "/");
@@ -347,7 +362,7 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
           );
         })}
 
-        <div className="mt-3 pt-3 border-t border-gray-100">
+        {/* <div className="mt-3 pt-3 border-t border-gray-100">
           <p className="px-3 text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">
             {t("actions.quickLinks")}
           </p>
@@ -367,7 +382,7 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
               </Link>
             </SheetClose>
           ))}
-        </div>
+        </div> */}
       </nav>
 
       <div className="shrink-0 px-3 py-3 border-t border-gray-100 bg-white space-y-2">
