@@ -15,12 +15,12 @@ const StandardHero = () => {
       <div className="relative max-w-7xl mx-auto px-6 py-10 ">
         <div className="max-w-3xl space-y-6">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/8">
+          {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/8 border border-white/8">
             <div className="w-1.5 h-1.5 rounded-full bg-[#FE5000]" />
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
               {t("badge")}
             </span>
-          </div>
+          </div> */}
 
           {/* Title */}
           <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight leading-[0.95]">

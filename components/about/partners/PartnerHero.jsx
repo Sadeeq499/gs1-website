@@ -41,27 +41,24 @@ export const PartnerHero = ({ data: hero }) => {
             {hero.titleSuffix}
           </h1>
 
-          <p className="text-lg text-white/90 max-w-2xl">
+          {/* <p className="text-lg text-white/90">
             {hero.description}
-          </p>
+          </p> */}
 
-          <div className="pt-4">
+          {/* <div className="pt-4">
             <Button
               size="lg"
-              /* FIXED: Ensure text color is explicit and font-weight is strong */
               className="bg-secondary hover:bg-secondary/90 text-white font-bold rounded-full px-8 h-12 shadow-lg shadow-secondary/20 transition-all hover:-translate-y-0.5 flex items-center gap-2"
             >
-              {/* FIXED: Wrapped text in a span to ensure rendering */}
               <span>{hero.ctaText}</span>
               
-              {/* FIXED: Icon flips based on direction */}
               {isRtl ? (
                 <ArrowLeft className="h-5 w-5" />
               ) : (
                 <ArrowRight className="ml-2 h-5 w-5" />
               )}
             </Button>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>
