@@ -71,18 +71,12 @@ const Footer = () => {
 
               {/* Social Links */}
               <div className="flex gap-3 pt-4">
-                {footerConfig.socials.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/60 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300"
-                  >
-                    <social.icon className="h-5 w-5" />
-                  </a>
-                ))}
                 <a
-                  href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/60 hover:bg-orange-500 hover:text-white transition-all"
+                  href="https://x.com/GS1Saudi?s=20"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GS1 Saudi on X"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/60 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300"
                 >
                   <XIcon className="h-4 w-4" />
                 </a>
