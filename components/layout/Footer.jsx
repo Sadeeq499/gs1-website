@@ -61,10 +61,11 @@ const Footer = () => {
                   <a
                     key={item.label}
                     href={item.href}
+                    target="_blank"
                     className="flex items-center gap-3 text-sm text-primary-foreground/70 hover:text-white transition-colors group w-fit"
                   >
                     <item.icon className="h-4 w-4 text-orange-500" />
-                    <span dir="ltr">{item.label}</span>
+                    <span>{t (`contact.${item.label}`)}</span>
                   </a>
                 ))}
               </div>

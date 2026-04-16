@@ -7,9 +7,9 @@ export const footerConfig = {
     name: "Saudi Arabia"
   },
   contact: [
-    { icon: Phone, label: "920031437", href: "tel:920031437" },
-    { icon: Mail, label: "gs1sa@gs1.org.sa", href: "mailto:gs1sa@gs1.org.sa" },
-    { icon: MapPin, label: "RANB7259, 7259 Uthman Ibn Affan Rd, 2327, An Narjis, Riyadh 13328", href: "#" },
+    { icon: Phone, label: "phone", href: "tel:920031437" },
+    { icon: Mail, label: "email", href: "mailto:gs1.info@gs1.org.sa" },
+    { icon: MapPin, label: "location", href: "https://www.google.com/maps/place/GS1+Saudi+Arabia+%D9%85%D8%B1%D9%83%D8%B2+%D8%A7%D9%84%D8%AA%D8%B1%D9%82%D9%8A%D9%85+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%E2%80%AD/@24.8456196,46.6717674,17z/data=!3m1!4b1!4m6!3m5!1s0x3e2efb004b18df73:0xd49913c1b6cf4d67!8m2!3d24.8456196!4d46.6743477!16s%2Fg%2F11mcz364xg?entry=ttu&g_ep=EgoyMDI2MDQxMy4wIKXMDSoASAFQAw%3D%3D", },
   ],
   sections: [
     {
