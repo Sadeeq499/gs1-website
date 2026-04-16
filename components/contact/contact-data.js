@@ -18,7 +18,7 @@ export const CONTACT_DATA = {
     address: "RANB7259, 7259 Uthman Ibn Affan Rd, 2327, An Narjis, Riyadh 13328",
     phone: "920031437",
     phoneRaw: "+966112182421",
-    email: "gs1.info@gs1.org.sa",
+    email: "info@gs1.org.sa",
     workingHours: "Sun - Thu: 9AM - 5PM",
   },
   form: {
