@@ -9,7 +9,7 @@ export default function ContactMap({ data: map, info }) {
 
   // Standard non-API link for embedding:
   const simpleEmbed = `https://maps.google.com/maps?q=${map.lat},${map.lng}&z=${map.zoom}&output=embed`;
-  const externalUrl = `https://www.google.com/maps/dir/?api=1&destination=${map.lat},${map.lng}`;
+  const externalUrl = `https://www.google.com/maps/dir/?api=1&destination=${map.lat},${map.lng}&travelmode=driving`;
 
   return (
     <section className="py-16 bg-muted/30">

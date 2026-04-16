@@ -47,8 +47,8 @@ export const CONTACT_DATA = {
     }
   },
   map: {
-    lat: 24.845800502811944,
-    lng: 46.67434067834527,
+    lat: 24.84563976921826,
+    lng: 46.674352386454125,
     zoom: 17,
     buttons: {
       directions: 'Get Directions',
