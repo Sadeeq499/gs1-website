@@ -43,6 +43,23 @@
       "Logistics Partner": "Logistics Partner",
       "SME Support": "SME Support",
       "Local Content": "Local Content"
+    },
+    "names": {
+      "fsc": "Federation of Saudi Chambers",
+      "sfda": "Saudi Food and Drug Authority",
+      "ministry_of_commerce": "Ministry of Commerce",
+      "ministry_of_industry": "Ministry of Industry and Mineral Resources",
+      "saudi_made": "Saudi Made",
+      "zatca": "Zakat, Tax and Customs Authority (ZATCA)",
+      "saso": "Saudi Standards, Metrology and Quality Organization (SASO)",
+      "fgccc": "Federation of GCC Chambers",
+      "uac": "Union of Arab Chambers",
+      "consumer_protection": "Consumer Protection Association",
+      "aramco": "Saudi Aramco",
+      "sabic": "SABIC",
+      "ministry_of_energy": "Ministry of Energy",
+      "saip": "Saudi Authority for Intellectual Property",
+      "local_content_authority": "Local Content and Government Procurement Authority"
     }
   },
   "solutions": {

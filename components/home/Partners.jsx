@@ -93,7 +93,7 @@ export function Partners() {
                   {/* Back: Info + Real Link */}
                   <div className="flip-back p-4 md:p-6">
                     <p className="text-[9px] md:text-[11px] font-bold leading-tight mb-1 md:mb-2 uppercase">
-                      {partner.name}
+                      {t(`partners.names.${partner.name}`)}
                     </p>
                     <p className="text-[8px] md:text-[9px] text-blue-200 tracking-widest uppercase mb-2 md:mb-4">
                       {t(`partners.categories.${partner.category}`)}
