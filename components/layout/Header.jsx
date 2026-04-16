@@ -51,7 +51,7 @@ const getMainNavItems = (t) => [
     // href: "/services",
     items: [
       { title: t("nav.services"), href: "/services" },
-      { title: t("nav.tools"), href: "/tools" } // Ensure "nav.tools" exists in your locales
+      // { title: t("nav.tools"), href: "/tools" } // Ensure "nav.tools" exists in your locales
     ]
   },
   { title: t("nav.standards"), href: "/standards" },
