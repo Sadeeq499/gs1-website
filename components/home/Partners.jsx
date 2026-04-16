@@ -21,7 +21,7 @@ export function Partners() {
         .animate-scroll {
           display: flex;
           width: max-content;
-          animation: scroll 80s linear infinite;
+          animation: scroll 40s linear infinite;
         }
         .slider-container:hover .animate-scroll {
           animation-play-state: paused;

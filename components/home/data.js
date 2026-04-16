@@ -523,7 +523,7 @@ export const partners = [
   },
   {
     name: "saip",
-    logo: "https://www.saip.gov.sa/images/saip-logo-white-ar.svg",
+    logo: "https://saip.gov.sa/images/saip-logo-en.svg",
     category: "Strategic Host",
     url: "https://www.saip.gov.sa/ar/",
   },
