@@ -37,7 +37,7 @@ const getMainNavItems = (t) => [
   { title: t("nav.home"), href: "/" },
   {
     title: t("nav.aboutUs"),
-    href: "/about",
+    // href: "/about",
     items: [
       { title: t("nav.whoWeAre"), href: "/about/who-we-are" },
       { title: t("nav.missionVision"), href: "/about/mission-vision" },
@@ -46,7 +46,14 @@ const getMainNavItems = (t) => [
       { title: t("nav.ourPartners"), href: "/about/partners" },
     ],
   },
-  { title: t("nav.services"), href: "/services" },
+  { 
+    title: t("nav.servicesHeading"), 
+    // href: "/services",
+    items: [
+      { title: t("nav.services"), href: "/services" },
+      { title: t("nav.tools"), href: "/tools" } // Ensure "nav.tools" exists in your locales
+    ]
+  },
   { title: t("nav.standards"), href: "/standards" },
   { title: t("nav.industries"), href: "/industries" },
   { title: t("nav.contact"), href: "/contact" },

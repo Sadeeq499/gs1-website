@@ -1,0 +1,85 @@
+{
+  "tools": {
+    "metadata": {
+      "title": "GS1 KSA Digital Tools | Barcode Management & Verification",
+      "description": "Access official GS1 Saudi Arabia tools including Check Digit Calculator, GTIN Management, and Verified by GS1 for SFDA and ZATCA compliance."
+    },
+    "hero": {
+      "badge": "Technical Excellence",
+      "title": "GS1 Digital Toolset",
+      "subtitle": "Empowering Saudi businesses with precise tools for global identification and supply chain visibility."
+    },
+    "common": {
+      "back_to_tools": "Back to all tools"
+    },
+    "details": {
+      "check-digit-calculator": {
+        "metadata": {
+          "title": "Check Digit Calculator | GS1 Saudi Arabia",
+          "description": "Verify the integrity of your GS1 identifiers (GTIN, GLN, SSCC) with our official calculator."
+        },
+        "hero": {
+          "badge": "Integrity Tool",
+          "title": "Check Digit Calculator",
+          "subtitle": "Ensure your barcodes are valid before printing."
+        },
+        "mainSection": {
+          "title": "Verify Your Identifier",
+          "description": "The check digit is the last number in a GS1 identification key. It is calculated from all the previous numbers and ensures the barcode is correctly constructed.",
+          "componentLabel": "Enter your GS1 number (GTIN-8, 12, 13, 14 or SSCC)"
+        },
+        "features": [
+          {"title": "Global Validation", "description": "Meets international GS1 General Specifications."},
+          {"title": "Multi-Format", "description": "Supports GTIN, GLN, SSCC, and GRAI identifiers."},
+          {"title": "Error Prevention", "description": "Prevents costly printing errors by validating math logic."}
+        ],
+        "howToUse": {
+          "title": "How to Calculate",
+          "steps": [
+            {"title": "Select Format", "description": "Choose the type of GS1 key you are using."},
+            {"title": "Enter Sequence", "description": "Type the numbers excluding the last digit."},
+            {"title": "Calculate", "description": "The tool will generate the correct check digit automatically."}
+          ]
+        },
+        "faq": [
+          {"question": "Why is the check digit important?", "answer": "It prevents scanning errors at Point of Sale or in warehouses."},
+          {"question": "Does this work for SSCC?", "answer": "Yes, it supports the 18-digit Serial Shipping Container Code."}
+        ],
+        "cta": {
+          "title": "Print with Confidence",
+          "description": "Avoid re-printing costs by verifying your data first.",
+          "buttonLabel": "Contact Technical Support"
+        }
+      },
+      "gtin-management": {
+        "metadata": {
+          "title": "GTIN Management & Estimation | GS1 KSA",
+          "description": "Plan your product identification strategy for the Saudi market."
+        },
+        "hero": {
+          "badge": "Strategic Planning",
+          "title": "GTIN Management",
+          "subtitle": "Optimize your barcode allocation for diverse product portfolios."
+        },
+        "mainSection": {
+          "title": "Estimate Your Requirements",
+          "description": "Determine exactly how many Global Trade Item Numbers (GTINs) your business needs based on SKU variations, sizes, and packaging types."
+        },
+        "howToUse": {
+          "title": "Estimation Steps",
+          "steps": [
+            {"title": "Define SKUs", "description": "Identify all unique product variants (size, color, flavor)."},
+            {"title": "Packaging Levels", "description": "Account for individual items, cases, and pallets."},
+            {"title": "Growth Forecast", "description": "Consider upcoming product launches over the next 24 months."},
+            {"title": "Allocation", "description": "Receive a recommended GS1 Company Prefix capacity."}
+          ]
+        },
+        "cta": {
+          "title": "Apply for GTINs",
+          "description": "Get your official GS1 Company Prefix registered in Saudi Arabia.",
+          "buttonLabel": "Get Barcodes Now"
+        }
+      }
+    }
+  }
+}
