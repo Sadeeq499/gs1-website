@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MessageCircle } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const WhatsAppIcon = ({ className }) => (
@@ -21,6 +22,7 @@ const contactLinks = [
     icon: <WhatsAppIcon className="w-6 h-6 sm:w-7 sm:h-7 md:w-6 md:h-6 lg:w-5 lg:h-5" />,
     label: "WhatsApp",
     href: "https://wa.me/966112182285",
+    external: true,
     color: "bg-[#25D366]",
     hoverColor: "hover:bg-[#128C7E]",
   },
@@ -29,14 +31,16 @@ const contactLinks = [
     icon: <Phone className="w-5 h-5 sm:w-6 sm:h-6 md:w-5 md:h-5 lg:w-5 lg:h-5" />,
     label: "Phone",
     href: "tel:920031437",
+    external: true,
     color: "bg-primary",
     hoverColor: "hover:opacity-90",
   },
   {
     id: "email",
     icon: <Mail className="w-5 h-5 sm:w-6 sm:h-6 md:w-5 md:h-5 lg:w-5 lg:h-5" />,
-    label: "Email",
-    href: "mailto:info@gs1.org.sa",
+    label: "Contact Us",
+    href: "/contact",
+    external: false,
     color: "bg-secondary",
     hoverColor: "hover:opacity-90",
   },
@@ -45,34 +49,50 @@ const contactLinks = [
 export default function ContactWidget() {
   return (
     <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 z-50 flex flex-col gap-3 sm:gap-4 md:gap-3 lg:gap-2.5 pointer-events-none">
-      {contactLinks.map((link, index) => (
-        <motion.div
-          key={link.id}
-          className="relative flex items-center justify-center pointer-events-auto group"
-          initial={{ opacity: 0, y: 20, scale: 0.8 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: index * 0.1, duration: 0.3, ease: "easeOut" }}
-        >
-          <span className="absolute top-1/2 -translate-y-1/2 right-[calc(100%+12px)] opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-white/95 text-gray-700 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-gray-100 whitespace-nowrap pointer-events-none hidden md:block">
-            {link.label}
-          </span>
-          <motion.a
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
+      {contactLinks.map((link, index) => {
+        const content = (
+          <motion.div
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.93 }}
             className={cn(
               "flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-12 md:h-12 lg:w-11 lg:h-11 rounded-full text-white shadow-lg sm:shadow-md transition-all duration-300",
               link.color,
-              link.hoverColor,
+              link.hoverColor
             )}
-            aria-label={link.label}
           >
             {link.icon}
-          </motion.a>
-        </motion.div>
-      ))}
+          </motion.div>
+        );
+
+        return (
+          <motion.div
+            key={link.id}
+            className="relative flex items-center justify-center pointer-events-auto group"
+            initial={{ opacity: 0, y: 20, scale: 0.8 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ delay: index * 0.1, duration: 0.3, ease: "easeOut" }}
+          >
+            <span className="absolute top-1/2 -translate-y-1/2 right-[calc(100%+12px)] opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-white/95 text-gray-700 px-3 py-1.5 rounded-full text-xs font-medium shadow-sm border border-gray-100 whitespace-nowrap pointer-events-none hidden md:block">
+              {link.label}
+            </span>
+
+            {link.external ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+              >
+                {content}
+              </a>
+            ) : (
+              <Link href={link.href} aria-label={link.label}>
+                {content}
+              </Link>
+            )}
+          </motion.div>
+        );
+      })}
     </div>
   );
 }
