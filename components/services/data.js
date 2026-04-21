@@ -11,7 +11,7 @@ export const services = [
     icon: Barcode,
     color: "bg-primary",
     textColor: "text-primary",
-    image: "/images/services-cards/gs1-gtin.jpg",
+    image: "/images/services-cards/gs1-gtin.png",
   },
   {
     id: "gln",
@@ -23,7 +23,7 @@ export const services = [
     icon: MapPin,
     color: "bg-secondary",
     textColor: "text-secondary",
-    image: "/images/services-cards/gs1-gln.avif",
+    image: "/images/services-cards/gs1-gln.png",
   },
   {
     id: "sscc",
@@ -35,7 +35,7 @@ export const services = [
     icon: Package,
     color: "bg-primary",
     textColor: "text-primary",
-    image: "/images/services-cards/gs1-sscc.png",
+    image: "/images/services-cards/gs1-sscc1.png",
   },
   {
     id: "sec",
@@ -47,7 +47,7 @@ export const services = [
     icon: ShieldCheck,
     color: "bg-secondary",
     textColor: "text-secondary",
-    image: "/images/services-cards/gs1-sec.webp",
+    image: "/images/services-cards/gs1-sec.png",
   },
   {
     id: "tobacco",
@@ -59,7 +59,7 @@ export const services = [
     icon: Cigarette,
     color: "bg-primary",
     textColor: "text-primary",
-    image: "/images/services-cards/gs1-tobacco.jpeg",
+    image: "/images/services-cards/gs1-tobacco.png",
   },
   {
     id: "verified-by-gs1",
@@ -83,7 +83,7 @@ export const services = [
     icon: Route,
     color: "bg-primary",
     textColor: "text-primary",
-    image: "/images/services-cards/gs1-traceability.avif",
+    image: "/images/services-cards/gs1-traceability.png",
   },
   {
     id: "fixed-assets-management",
@@ -95,7 +95,7 @@ export const services = [
     icon: Layers,
     color: "bg-secondary",
     textColor: "text-secondary",
-    image: "/images/services-cards/gs1-Fixed Assets Management.jpg",
+    image: "/images/services-cards/gs1-Fixed Assets Management.png",
   },
   {
     id: "healthcare-management",
@@ -107,7 +107,7 @@ export const services = [
     icon: HeartPulse,
     color: "bg-primary",
     textColor: "text-primary",
-    image: "/images/services-cards/gs1-Healthcare Management.png",
+    image: "/images/services-cards/gs1-Healthcare Management1.png",
   },
 ];
 
