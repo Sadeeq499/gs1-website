@@ -443,12 +443,12 @@ export const tabContent = {
 // ];
 
 export const partners = [
-  {
-    name: "fsc",
-    logo: "./images/fsc.png",
-    category: "Strategic Host",
-    url: "https://fsc.org.sa/",
-  },
+  // {
+  //   name: "fsc",
+  //   logo: "./images/fsc.png",
+  //   category: "Strategic Host",
+  //   url: "https://fsc.org.sa/",
+  // },
   {
     name: "sfda",
     logo: "https://srcosa.com/wp-content/uploads/2016/11/SFDA.jpg",

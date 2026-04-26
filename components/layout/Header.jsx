@@ -160,11 +160,11 @@ export default function Header() {
           </div>
 
           {/* RIGHT: Chamber / FSC logo */}
-          <div className="hidden shrink-0 lg:flex items-center justify-end w-[150px]">
+          {/*<div className="hidden shrink-0 lg:flex items-center justify-end w-[150px]">
             <div className="relative w-[110px] h-[55px]">
               <Image src="https://saudisteelconference.com/_images/logo-federation.png" alt={t("brand.fsc")} fill sizes="110px" className="object-contain object-right" />
             </div>
-          </div>
+          </div>*/}
 
           {/* Mobile Actions */}
           <div className="lg:hidden flex items-center gap-1 shrink-0">
@@ -249,7 +249,7 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
               <Image src="/logos/gs1-logo.png" alt={t("brand.name")} fill sizes="80px" className="object-contain object-left" />
             </div>
             <div className="h-6 w-px bg-gray-200" />
-            <div className="relative w-[80px] h-[40px]">
+            {/*<div className="relative w-[80px] h-[40px]">
               <Image 
                 src="https://saudisteelconference.com/_images/logo-federation.png" 
                 alt={t("brand.fsc")} 
@@ -257,7 +257,7 @@ function MobileMenuContent({ pathname, t, toggleLanguage, mainNavItems }) {
                 sizes="80px" 
                 className="object-contain object-left" 
               />
-            </div>
+            </div> */}
           </div>
         </SheetTitle>
       </SheetHeader>

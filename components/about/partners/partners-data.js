@@ -39,15 +39,15 @@ export const PARTNERS_DATA = {
     detailsText: "Partner Details",
     impactLabel: "Key Impact",
    list: [
-    { 
-      name: "FSC", 
-      full: "Federation of Saudi Chambers", 
-      type: "Strategic Partner", 
-      logo: "/images/FSC.png", 
-      desc: "The primary representative of the Saudi business community, ensuring global standards for local commerce.",
-      impact: "SME Support & Vision 2030",
-      url: "https://fsc.org.sa"
-    },
+    // { 
+    //   name: "FSC", 
+    //   full: "Federation of Saudi Chambers", 
+    //   type: "Strategic Partner", 
+    //   logo: "/images/FSC.png", 
+    //   desc: "The primary representative of the Saudi business community, ensuring global standards for local commerce.",
+    //   impact: "SME Support & Vision 2030",
+    //   url: "https://fsc.org.sa"
+    // },
     { 
       name: "SFDA", 
       full: "Saudi Food & Drug Authority", 
