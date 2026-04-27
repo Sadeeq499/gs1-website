@@ -9,7 +9,7 @@
       {
         "title": "Unlock New Sales Channels with GS1 ",
         "highlight": "Standards",
-        "description": "GS1 Saudi Arabia empowers businesses to expand into retail and e-commerce with global barcodes. Boost product visibility and simplify data exchange across the supply chain.",
+        "description": "GS1 Saudi Arabia empowers businesses to expand into retail and e-commerce with global barcodes, including the Saudi barcode (628 prefix). Boost product visibility with a GS1 barcode and simplify data exchange across the supply chain.",
         "primaryCta": "Get a Barcode",
         "secondaryCta": "Explore Services"
       },
@@ -71,7 +71,7 @@
   "technology": {
     "badge": "Standards & Technology",
     "title": "Next-Generation Barcode Solutions for Saudi Arabia",
-    "description": "From 2D barcodes and GS1 Digital Link to ZATCA compliance and end-to-end traceability -- one unified platform powering the Kingdom's digital transformation.",
+    "description": "From 2D barcodes and GS1 Digital Link to ZATCA compliance and end-to-end traceability -- GS1 software and standards power the Kingdom's digital transformation using the Saudi product code.",
     "tabs": {
       "2d-barcodes": {
         "label": "2D Barcodes",
@@ -85,6 +85,10 @@
           {
             "title": "Smartphone-Ready",
             "text": "Consumers scan with any smartphone camera -- no special apps or hardware needed."
+          },
+          {
+            "title": "GTIN Code & Number",
+            "text": "Every product receives a unique GTIN code and GTIN number (Global Trade Item Number) for global identification."
           },
           {
             "title": "Sunrise 2027 Ready",
@@ -113,9 +117,9 @@
         "cta": "Learn About Digital Link"
       },
       "zatca": {
-        "label": "ZATCA & Compliance",
+        "label": "ZATCA Compliance",
         "headline": "Seamless ZATCA E-Invoicing Compliance",
-        "description": "Saudi Arabia's ZATCA e-invoicing mandate requires GS1-compliant QR codes on every tax invoice. GS1 Saudi Arabia provides the standards, tools, and support to ensure your business meets Phase 2 integration requirements with confidence.",
+        "description": "Saudi Arabia's ZATCA e-invoicing mandate requires GS1-compliant QR codes on every tax invoice. GS1 Saudi Arabia provides the standards, tools, and support to ensure your business meets Phase 2 integration requirements with confidence and full ZATCA compliance.",
         "features": [
           {
             "title": "Phase 2 Ready",
