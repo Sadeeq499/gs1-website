@@ -17,6 +17,7 @@ const namespaces = [
   "solutions",
   "verify",
   "terms",
+  "privacy-policy",
 ];
 
 async function loadMessages(locale) {

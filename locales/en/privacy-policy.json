@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "title": "Privacy Policy",
+    "subtitle": "GS1 Saudi Arabia",
+    "lastUpdated": "March 2026"
+  },
+  "intro": "Welcome to GS1 Saudi Arabia. Your privacy is of paramount importance to us. This Privacy Policy outlines our practices regarding the access, collection, use, and sharing of your personal and sensitive data. It also details our secure data handling procedures, data retention, and deletion policies.",
+  "sections": [
+    {
+      "id": "data-collection",
+      "number": "2",
+      "title": "Data Access, Collection, Use, and Sharing",
+      "subsections": [
+        {
+          "title": "Types of Data",
+          "items": [
+            {
+              "label": "Personal, Company Information",
+              "content": "Includes name, email address, phone number, and other contact details."
+            },
+            {
+              "label": "Sensitive Data",
+              "content": "Includes location data, documents, payment information, and other sensitive information necessary for app functionality."
+            },
+            {
+              "label": "Usage Data",
+              "content": "Includes information about how you use the app, such as log files, usage patterns, and device information."
+            },
+            {
+              "label": "Communications",
+              "content": "Includes any interactions with our customer support and feedback mechanisms."
+            }
+          ]
+        },
+        {
+          "title": "Data Sharing",
+          "items": [
+            {
+              "label": "Service Providers",
+              "content": "We may share data with third-party vendors who provide services on our behalf, such as payment processing, data analysis, and customer support."
+            },
+            {
+              "label": "Business Partners",
+              "content": "We may collaborate with partners who assist in providing services or offers."
+            },
+            {
+              "label": "Legal Authorities",
+              "content": "We may disclose data to government authorities or legal entities to comply with legal obligations."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "secure-handling",
+      "number": "3",
+      "title": "Secure Data Handling Procedures",
+      "lead": "We implement robust security measures to protect your personal and sensitive data:",
+      "items": [
+        {
+          "label": "Encryption",
+          "content": "All sensitive data is encrypted during transmission and storage to ensure it remains secure."
+        },
+        {
+          "label": "Access Controls",
+          "content": "Only authorized personnel have access to your data, ensuring it is handled responsibly."
+        },
+        {
+          "label": "Regular Audits",
+          "content": "We conduct regular audits to assess and enhance our data handling practices, ensuring compliance with security standards."
+        }
+      ]
+    },
+    {
+      "id": "retention-deletion",
+      "number": "4",
+      "title": "Data Retention and Deletion Policy",
+      "items": [
+        {
+          "label": "Retention Periods",
+          "content": "We retain your data only as long as necessary to fulfill the purposes for which it was collected or as required by law."
+        },
+        {
+          "label": "Deletion Requests",
+          "content": "You have the right to request the deletion of your personal data. We will honor such requests in accordance with applicable laws and internal policies."
+        }
+      ]
+    },
+    {
+      "id": "contact-us",
+      "number": "5",
+      "title": "Contact Us",
+      "content": "If you have any questions or concerns about our Privacy Policy or data practices, please contact us:",
+      "contact": {
+        "email": "info@gs1.org.sa",
+        "phone": "920031437",
+        "phoneLabel": "Unified Number",
+        "whatsapp": "+966 11 218 2285",
+        "whatsappLink": "https://wa.me/966112182285"
+      }
+    }
+  ],
+  "agreement": "By using GS1 Saudi Arabia services, you agree to this Privacy Policy. We reserve the right to update or modify this policy at any time. Any changes will be posted on this page, and your continued use of the services will constitute acceptance of such changes.",
+  "thanks": "Thank you for trusting GS1 Saudi Arabia with your personal data."
+}

@@ -28,7 +28,7 @@
     "successMessage": "تم إرسال الرسالة بنجاح! سنرد عليك قريباً.",
     "privacyText": "بإرسال هذا النموذج، فإنك توافق على",
     "privacyLinkText": "سياسة الخصوصية",
-    "privacyUrl": "/privacy",
+    "privacyUrl": "/privacy-policy",
     "labels": {
       "fullName": "الاسم الكامل",
       "email": "عنوان البريد الإلكتروني",

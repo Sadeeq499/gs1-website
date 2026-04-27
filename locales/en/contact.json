@@ -28,7 +28,7 @@
     "successMessage": "Message sent successfully! We'll reply soon.",
     "privacyText": "By submitting this form, you agree to our",
     "privacyLinkText": "Privacy Policy",
-    "privacyUrl": "/privacy",
+    "privacyUrl": "/privacy-policy",
     "labels": {
       "fullName": "Full Name",
       "email": "Email Address",
