@@ -10,49 +10,101 @@ import { useProductGs1Verified } from "@/lib/hooks/useVerify";
 import { useTranslations, useLocale } from "next-intl";
 import IncorrectDataDialog from "./IncorrectDataDialog";
 
+function parseCountryOfSale(countryOfSaleArr) {
+  if (!countryOfSaleArr || countryOfSaleArr.length === 0) return undefined;
+
+  const combined = countryOfSaleArr
+    .map((item) => (item?.code ?? "").trim())
+    .join("");
+  if (combined.includes("isoCode") || combined.startsWith("[") || combined.startsWith("{")) {
+    try {
+      // Unescape \" → " in case the string was double-serialised
+      const unescaped = combined.replace(/\\"/g, '"');
+
+      // Extract the JSON array portion — grab from first [ to last ]
+      const jsonStart = unescaped.indexOf("[");
+      const jsonEnd = unescaped.lastIndexOf("]");
+      const jsonStr =
+        jsonStart !== -1 && jsonEnd !== -1
+          ? unescaped.slice(jsonStart, jsonEnd + 1)
+          : unescaped;
+
+      const parsed = JSON.parse(jsonStr);
+      const entries = Array.isArray(parsed) ? parsed : [parsed];
+      const labels = entries
+        .map((entry) => entry.name || entry.isoCode || entry.code)
+        .filter(Boolean);
+
+      if (labels.length > 0) return labels.join(", ");
+    } catch {
+      // JSON parse failed — fall through to plain display
+    }
+  }
+
+  // Case 2 & 3: plain ISO codes or country names — display each code directly
+  const plain = countryOfSaleArr
+    .map((item) => (item?.code ?? "").trim())
+    .filter(Boolean);
+
+  return plain.length > 0 ? plain.join(", ") : undefined;
+}
+
 export default function ProductPanel() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [productData, setProductData] = useState(null);
+  const [triggeredQuery, setTriggeredQuery] = useState("");
   const t = useTranslations("verify.panels");
   const tCommon = useTranslations("verify.panels.common");
   const tCert = useTranslations("verify.panels.certifications");
   const locale = useLocale();
 
   const {
-    mutateAsync: productGs1Verified,
-    isPending,
+    data: productVerifiedData,
     isLoading,
-  } = useProductGs1Verified();
-  const isMutating = isPending || isLoading;
+    isError,
+    error,
+    isFetching,
+    refetch,
+    status,
+  } = useProductGs1Verified(triggeredQuery);
 
-  const handleSearch = async (e) => {
+  const productData = productVerifiedData?.data;
+  const isMutating = isFetching;
+
+
+  const getLocalized = (multilingualObj) => {
+    if (!multilingualObj) return undefined;
+    const preferred = locale === "ar" ? multilingualObj.ar : multilingualObj.en;
+    return preferred ?? multilingualObj.en ?? multilingualObj.ar;
+  };
+
+  /**
+   * Returns the company display name respecting locale.
+   * Uses nameArabic for Arabic locale, falls back to name.
+   */
+  const getCompanyName = (company) => {
+    if (!company) return tCommon("unknown");
+    if (locale === "ar" && company.nameArabic) return company.nameArabic;
+    return company.name || tCommon("unknown");
+  };
+
+  const handleSearch = (e) => {
     if (e) e.preventDefault();
     if (!searchQuery) return;
-    try {
-      const res = await productGs1Verified(searchQuery);
-      if (res?.success && res?.data) {
-        setProductData(res.data);
-      } else {
-        setProductData(null);
-      }
-    } catch (error) {
-      console.error(error);
-      setProductData(null);
+
+    if (triggeredQuery === searchQuery) {
+      refetch();
+    } else {
+      setTriggeredQuery(searchQuery);
     }
   };
 
-  const handleExampleClick = async () => {
-    setSearchQuery("09506000140445");
-    try {
-      const res = await productGs1Verified("09506000140445");
-      if (res?.success && res?.data) {
-        setProductData(res.data);
-      } else {
-        setProductData(null);
-      }
-    } catch (error) {
-      console.error(error);
-      setProductData(null);
+  const handleExampleClick = () => {
+    const example = "09506000140445";
+    setSearchQuery(example);
+    if (triggeredQuery === example) {
+      refetch();
+    } else {
+      setTriggeredQuery(example);
     }
   };
 
@@ -130,7 +182,7 @@ export default function ProductPanel() {
             <p className="text-slate-800 text-[16px]">
               {tCommon("registeredTo")}{" "}
               <span className="font-bold text-black">
-                {productData.product.company?.name || tCommon("unknown")}.
+                {getCompanyName(productData.product.company)}.
               </span>
             </p>
           </div>
@@ -155,14 +207,15 @@ export default function ProductPanel() {
               </TabsTrigger>
             </TabsList>
 
+            {/* ── PRODUCT TAB ── */}
             <TabsContent value="product" className="pt-8">
               <h2 className="text-[#0b1c5c] text-[26px] font-medium mb-8">
-                {productData.product.product?.description ||
+                {getLocalized(productData.product.product?.nameMultilingual) ||
                   tCommon("productInfo")}
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-8">
-                {/* Image Placeholder */}
+                {/* Product Image */}
                 <div className="flex justify-start items-start pt-2">
                   <div className="w-full max-w-[200px] aspect-3/4 relative bg-white flex items-center justify-center">
                     {productData.product.media?.images?.primary ? (
@@ -187,12 +240,16 @@ export default function ProductPanel() {
                     },
                     {
                       label: t("product.attributes.brand"),
-                      value: productData.product.product?.brand,
+                      value: getLocalized(
+                        productData.product.product?.brandMultilingual
+                      ),
                       bold: true,
                     },
                     {
                       label: t("product.attributes.description"),
-                      value: productData.product.product?.description,
+                      value: getLocalized(
+                        productData.product.product?.descriptionMultilingual
+                      ),
                       bold: true,
                     },
                     {
@@ -215,9 +272,9 @@ export default function ProductPanel() {
                     },
                     {
                       label: t("product.attributes.countryOfSale"),
-                      value: productData.product.specifications?.countryOfSale
-                        ?.map((c) => c.code)
-                        .join(", "),
+                      value: parseCountryOfSale(
+                        productData.product.specifications?.countryOfSale
+                      ),
                       bold: true,
                     },
                   ]
@@ -225,13 +282,19 @@ export default function ProductPanel() {
                     .map((row, i) => (
                       <div
                         key={i}
-                        className={`flex flex-col sm:flex-row py-3.5 border-b border-[#0b1c5c]/20 ${i % 2 === 1 ? "bg-[#f8fafd] px-3 -mx-3" : "px-3 -mx-3"}`}
+                        className={`flex flex-col sm:flex-row py-3.5 border-b border-[#0b1c5c]/20 ${
+                          i % 2 === 1
+                            ? "bg-[#f8fafd] px-3 -mx-3"
+                            : "px-3 -mx-3"
+                        }`}
                       >
                         <div className="w-full sm:w-[240px] shrink-0 text-[#64748b] font-bold text-[13px] uppercase tracking-wide pt-0.5">
                           {row.label}
                         </div>
                         <div
-                          className={`w-full text-[#0b1c5c] text-[15px] ${row.bold ? "font-bold" : ""}`}
+                          className={`w-full text-[#0b1c5c] text-[15px] ${
+                            row.bold ? "font-bold" : ""
+                          }`}
                         >
                           {row.link ? (
                             <a
@@ -279,8 +342,18 @@ export default function ProductPanel() {
                             {tCert("saso.description")}
                           </span>
                           <span className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold text-[#2e7d32] bg-[#e8f5e9] px-2 py-0.5 rounded-full w-fit">
-                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                            <svg
+                              className="w-3 h-3"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="3"
+                                d="M5 13l4 4L19 7"
+                              />
                             </svg>
                             {tCert("verified")}
                           </span>
@@ -304,8 +377,18 @@ export default function ProductPanel() {
                             {tCert("saudiMade.description")}
                           </span>
                           <span className="mt-1.5 inline-flex items-center gap-1 text-[11px] font-semibold text-[#2e7d32] bg-[#e8f5e9] px-2 py-0.5 rounded-full w-fit">
-                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                            <svg
+                              className="w-3 h-3"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="3"
+                                d="M5 13l4 4L19 7"
+                              />
                             </svg>
                             {tCert("verified")}
                           </span>
@@ -317,6 +400,7 @@ export default function ProductPanel() {
               )}
             </TabsContent>
 
+            {/* ── COMPANY TAB ── */}
             <TabsContent value="company" className="pt-8">
               <h2 className="text-[#0b1c5c] text-[26px] font-medium mb-8">
                 {tCommon("infoAboutCompanyLicenced")}
@@ -326,8 +410,7 @@ export default function ProductPanel() {
                 {[
                   {
                     label: t("company.attributes.name"),
-                    value:
-                      productData.product.company?.name || tCommon("unknown"),
+                    value: getCompanyName(productData.product.company),
                     bold: true,
                   },
                   {
@@ -359,7 +442,8 @@ export default function ProductPanel() {
                                 </div>
                               )}
                               {(productData.product.company.address.locality ||
-                                productData.product.company.address.region) && (
+                                productData.product.company.address
+                                  .region) && (
                                 <div className="font-bold">
                                   {[
                                     productData.product.company.address
@@ -432,13 +516,19 @@ export default function ProductPanel() {
                 ].map((row, i) => (
                   <div
                     key={i}
-                    className={`flex flex-col sm:flex-row py-4 border-b border-[#0b1c5c]/20 ${i % 2 === 1 ? "bg-[#f8fafd] px-3 -mx-3" : "px-3 -mx-3"}`}
+                    className={`flex flex-col sm:flex-row py-4 border-b border-[#0b1c5c]/20 ${
+                      i % 2 === 1 ? "bg-[#f8fafd] px-3 -mx-3" : "px-3 -mx-3"
+                    }`}
                   >
                     <div className="w-full sm:w-[320px] shrink-0 text-[#64748b] font-bold text-[13px] uppercase tracking-wide pt-0.5">
                       {row.label}
                     </div>
                     <div
-                      className={`w-full text-[#0b1c5c] text-[15px] ${row.bold && row.value !== tCommon("unknown") ? "font-bold" : "min-h-[22px]"}`}
+                      className={`w-full text-[#0b1c5c] text-[15px] ${
+                        row.bold && row.value !== tCommon("unknown")
+                          ? "font-bold"
+                          : "min-h-[22px]"
+                      }`}
                     >
                       {row.link && row.value !== tCommon("unknown") ? (
                         <a
@@ -470,18 +560,21 @@ export default function ProductPanel() {
             <IncorrectDataDialog />
             <p className="text-slate-600 text-[15px] font-medium mt-6">
               {tCommon("providedBy")}{" "}
-              {productData.product.company?.name || tCommon("unknown")}{" "}
+              {getCompanyName(productData.product.company)}{" "}
               {tCommon("lastUpdated")}{" "}
               {productData.product.company?.dates?.updated ||
               productData.product.metadata?.dateUpdated
                 ? new Date(
                     productData.product.company?.dates?.updated ||
-                      productData.product.metadata?.dateUpdated,
-                  ).toLocaleDateString(locale === "ar" ? "ar-SA" : "en-GB", {
-                    day: "numeric",
-                    month: "short",
-                    year: "numeric",
-                  })
+                      productData.product.metadata?.dateUpdated
+                  ).toLocaleDateString(
+                    locale === "ar" ? "ar-SA" : "en-GB",
+                    {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    }
+                  )
                 : tCommon("unknownDate")}
               .
             </p>

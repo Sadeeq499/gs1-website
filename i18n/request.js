@@ -2,8 +2,6 @@ import { getRequestConfig } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { routing } from "./routing";
 
-// Add new namespace filenames here — they auto-load and merge under their key.
-// e.g. adding "services" will load locales/{locale}/services.json → messages.services.*
 const namespaces = [
   "home",
   "industries",
@@ -27,7 +25,7 @@ async function loadMessages(locale) {
   ]);
 
   return {
-    ...common.default, // spread common keys at root (header, footer, etc.)
+    ...common.default,
     ...Object.fromEntries(
       namespaces.map((ns, i) => [ns, namespacedModules[i].default]),
     ),
