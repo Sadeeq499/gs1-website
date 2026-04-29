@@ -4,6 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { useTranslations, useLocale } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import {
   Menu,
   Globe,
@@ -65,12 +66,15 @@ export default function Header() {
   const t = useTranslations("header");
   const locale = useLocale();
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const mainNavItems = getMainNavItems(t);
 
   const toggleLanguage = () => {
     const nextLocale = locale === "en" ? "ar" : "en";
-    router.replace(pathname, { locale: nextLocale });
+    const query = searchParams.toString(); // e.g. "barcode=09506000140445"
+    const pathWithParams = query ? `${pathname}?${query}` : pathname;
+    router.replace(pathWithParams, { locale: nextLocale });
   };
 
   const isHome = pathname === "/";
@@ -123,37 +127,44 @@ export default function Header() {
           </Link>
 
           {/* MIDDLE: Desktop Action Buttons */}
-          <div className="hidden lg:flex items-center justify-center gap-2 lg:gap-3 flex-1">
-            {/* Verified By GS1 (Light Green Pill) */}
+          <div className="hidden lg:flex items-center justify-center gap-2 lg:gap-3 flex-1 min-w-0 lg:-translate-x-10">
+              {/* Verified By GS1 (Light Green Pill) */}
+              <Button
+                asChild
+                variant="outline"
+                className="relative flex items-center gap-2 border-green-200 bg-[#ebfbf3] hover:bg-green-100 text-green-800 px-4 h-8 rounded-full font-bold shadow-sm transition-colors group"
+              >
+                <Link href="/verified-by-gs1">
+                  <div className="bg-[#10b981] rounded-full p-1 shadow-inner flex items-center justify-center">
+                    <ShieldCheck className="h-3 w-3 text-white stroke-[3px]" />
+                  </div>
+                  <span className="text-[12px] tracking-tight">{t("actions.verifiedByGs1")}</span>
+                </Link>
+              </Button>
+
+              {/* Get a barcode (Dark Blue) */}
+              <Button asChild className="bg-[#1a2b56] hover:bg-[#1a2b56]/90 text-white font-semibold px-4 h-8 rounded-md text-[12px] shadow-sm transition-colors">
+                <a href={process.env.NEXT_PUBLIC_MEMBER_REGISTER} target="_blank" rel="noopener noreferrer">
+                  {t("actions.getBarcode")}
+                </a>
+              </Button>
+
+              {/* GS1 Member Login (Orange) */}
+              <Button asChild className="bg-[#EF5323] hover:bg-[#d9481d] text-white font-semibold px-4 h-8 rounded-md text-[12px] shadow-sm transition-colors">
+                <a href={process.env.NEXT_PUBLIC_MEMBER_LOGIN} target="_blank" rel="noopener noreferrer">
+                  {t("actions.signIn")}
+                </a>
+              </Button>
+          </div>
+
+          {/* RIGHT: Language Toggle */}
+          <div className="hidden lg:flex shrink-0 items-center justify-end">
             <Button
-              asChild
               variant="outline"
-              className="relative flex items-center gap-2 border-green-200 bg-[#ebfbf3] hover:bg-green-100 text-green-800 px-4 h-8 rounded-full font-bold shadow-sm transition-colors group"
+              size="sm"
+              onClick={toggleLanguage}
+              className="flex gap-2 text-primary hover:bg-gray-50 h-8 px-3 rounded-md border-gray-200"
             >
-              <Link href="/verified-by-gs1">
-                <div className="bg-[#10b981] rounded-full p-1 shadow-inner flex items-center justify-center">
-                  <ShieldCheck className="h-3 w-3 text-white stroke-[3px]" />
-                </div>
-                <span className="text-[12px] tracking-tight">{t("actions.verifiedByGs1")}</span>
-              </Link>
-            </Button>
-
-            {/* Get a barcode (Dark Blue) */}
-            <Button asChild className="bg-[#1a2b56] hover:bg-[#1a2b56]/90 text-white font-semibold px-4 h-8 rounded-md text-[12px] shadow-sm transition-colors">
-              <a href={process.env.NEXT_PUBLIC_MEMBER_REGISTER} target="_blank" rel="noopener noreferrer">
-                {t("actions.getBarcode")}
-              </a>
-            </Button>
-
-            {/* GS1 Member Login (Orange) */}
-            <Button asChild className="bg-[#EF5323] hover:bg-[#d9481d] text-white font-semibold px-4 h-8 rounded-md text-[12px] shadow-sm transition-colors">
-              <a href={process.env.NEXT_PUBLIC_MEMBER_LOGIN} target="_blank" rel="noopener noreferrer">
-                {t("actions.signIn")}
-              </a>
-            </Button>
-
-            {/* Language Toggle (Outline) */}
-            <Button variant="outline" size="sm" onClick={toggleLanguage} className="flex gap-2 text-primary hover:bg-gray-50 h-8 px-3 rounded-md border-gray-200 ml-1">
               <Globe className="h-3.5 w-3.5" />
               <span className="text-[12px] font-medium text-gray-700">{t("language.toggle")}</span>
             </Button>

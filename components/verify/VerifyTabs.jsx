@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { VERIFY_TABS } from "./verify";
 import ProductPanel from "./ProductPanel";
 import LocationPanel from "./LocationPanel";
@@ -117,7 +117,11 @@ export default function VerifyTabs() {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12">
-        {activeTab === "product" && <ProductPanel />}
+        {activeTab === "product" && (
+          <Suspense fallback={null}>
+            <ProductPanel />
+          </Suspense>
+        )}
         {activeTab === "location" && <LocationPanel />}
         {activeTab === "other" && <OtherKeysPanel />}
         {activeTab === "company" && <CompanyPanel />}

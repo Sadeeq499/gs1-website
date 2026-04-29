@@ -11,6 +11,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { DirectionProvider } from "@/components/ui/direction";
 import { BASE_URL } from "@/lib/seo";
+import { Suspense } from "react";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -141,7 +142,9 @@ export default async function RootLayout({ children, params }) {
         <NextIntlClientProvider messages={messages}>
           <DirectionProvider direction={dir}>
             <QueryProvider>
-              <Header />
+              <Suspense fallback={null}>
+                <Header />
+              </Suspense>
               {children}
               <ContactWidget />
               <Footer />

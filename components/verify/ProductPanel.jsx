@@ -1,14 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { Search, Info, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useProductGs1Verified } from "@/lib/hooks/useVerify";
-
 import { useTranslations, useLocale } from "next-intl";
 import IncorrectDataDialog from "./IncorrectDataDialog";
+import Image from "next/image";
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
 
 function parseCountryOfSale(countryOfSaleArr) {
   if (!countryOfSaleArr || countryOfSaleArr.length === 0) return undefined;
@@ -16,12 +21,14 @@ function parseCountryOfSale(countryOfSaleArr) {
   const combined = countryOfSaleArr
     .map((item) => (item?.code ?? "").trim())
     .join("");
-  if (combined.includes("isoCode") || combined.startsWith("[") || combined.startsWith("{")) {
-    try {
-      // Unescape \" → " in case the string was double-serialised
-      const unescaped = combined.replace(/\\"/g, '"');
 
-      // Extract the JSON array portion — grab from first [ to last ]
+  if (
+    combined.includes("isoCode") ||
+    combined.startsWith("[") ||
+    combined.startsWith("{")
+  ) {
+    try {
+      const unescaped = combined.replace(/\\"/g, '"');
       const jsonStart = unescaped.indexOf("[");
       const jsonEnd = unescaped.lastIndexOf("]");
       const jsonStr =
@@ -41,7 +48,6 @@ function parseCountryOfSale(countryOfSaleArr) {
     }
   }
 
-  // Case 2 & 3: plain ISO codes or country names — display each code directly
   const plain = countryOfSaleArr
     .map((item) => (item?.code ?? "").trim())
     .filter(Boolean);
@@ -49,13 +55,24 @@ function parseCountryOfSale(countryOfSaleArr) {
   return plain.length > 0 ? plain.join(", ") : undefined;
 }
 
+// ---------------------------------------------------------------------------
+// Component
+// ---------------------------------------------------------------------------
+
 export default function ProductPanel() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [triggeredQuery, setTriggeredQuery] = useState("");
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
   const t = useTranslations("verify.panels");
   const tCommon = useTranslations("verify.panels.common");
   const tCert = useTranslations("verify.panels.certifications");
   const locale = useLocale();
+
+  // The single source of truth for what has been searched lives in the URL.
+  // ?barcode=<value> drives the data-fetch; the input is purely local UI state.
+  const triggeredQuery = searchParams.get("barcode") ?? "";
+  const [searchQuery, setSearchQuery] = useState(triggeredQuery);
 
   const {
     data: productVerifiedData,
@@ -64,37 +81,45 @@ export default function ProductPanel() {
     error,
     isFetching,
     refetch,
-    status,
   } = useProductGs1Verified(triggeredQuery);
 
   const productData = productVerifiedData?.data;
   const isMutating = isFetching;
 
+  // ---------------------------------------------------------------------------
+  // Keep the input in sync when the URL changes (back/forward, locale switch)
+  // ---------------------------------------------------------------------------
+  useEffect(() => {
+    setSearchQuery(triggeredQuery);
+  }, [triggeredQuery]);
 
-  const getLocalized = (multilingualObj) => {
-    if (!multilingualObj) return undefined;
-    const preferred = locale === "ar" ? multilingualObj.ar : multilingualObj.en;
-    return preferred ?? multilingualObj.en ?? multilingualObj.ar;
+  // ---------------------------------------------------------------------------
+  // URL helper — writes ?barcode=<query> while preserving other params
+  // ---------------------------------------------------------------------------
+  const pushQuery = (query) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (query) {
+      params.set("barcode", query);
+    } else {
+      params.delete("barcode");
+    }
+    // replace so we don't pollute browser history on every keystroke/search
+    router.replace(`${pathname}?${params.toString()}`);
   };
 
-  /**
-   * Returns the company display name respecting locale.
-   * Uses nameArabic for Arabic locale, falls back to name.
-   */
-  const getCompanyName = (company) => {
-    if (!company) return tCommon("unknown");
-    if (locale === "ar" && company.nameArabic) return company.nameArabic;
-    return company.name || tCommon("unknown");
-  };
-
+  // ---------------------------------------------------------------------------
+  // Event handlers
+  // ---------------------------------------------------------------------------
   const handleSearch = (e) => {
     if (e) e.preventDefault();
     if (!searchQuery) return;
 
     if (triggeredQuery === searchQuery) {
+      // Same query already in URL → just re-fetch
       refetch();
     } else {
-      setTriggeredQuery(searchQuery);
+      // Push new barcode to URL → hook re-runs with new triggeredQuery
+      pushQuery(searchQuery);
     }
   };
 
@@ -104,22 +129,39 @@ export default function ProductPanel() {
     if (triggeredQuery === example) {
       refetch();
     } else {
-      setTriggeredQuery(example);
+      pushQuery(example);
     }
   };
 
+  // ---------------------------------------------------------------------------
+  // Locale-aware helpers
+  // ---------------------------------------------------------------------------
+  const getLocalized = (multilingualObj) => {
+    if (!multilingualObj) return undefined;
+    const preferred = locale === "ar" ? multilingualObj.ar : multilingualObj.en;
+    return preferred ?? multilingualObj.en ?? multilingualObj.ar;
+  };
+
+  const getCompanyName = (company) => {
+    if (!company) return tCommon("unknown");
+    if (locale === "ar" && company.nameArabic) return company.nameArabic;
+    return company.name || tCommon("unknown");
+  };
+
+  // ---------------------------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------------------------
   return (
     <div className="mx-auto w-full max-w-[900px] pt-6 pb-12">
+      {/* ── Search Form ── */}
       <form
         onSubmit={handleSearch}
         className="relative flex w-full items-center"
       >
-        {/* Search Icon */}
         <div className="absolute left-3.5 flex items-center justify-center text-slate-500 pointer-events-none">
           <Search className="h-5 w-5 stroke-[1.5]" />
         </div>
 
-        {/* Search Input */}
         <Input
           type="text"
           value={searchQuery}
@@ -128,17 +170,18 @@ export default function ProductPanel() {
           className="h-14 w-full pl-12 pr-32 text-lg border-slate-300 rounded-md focus-visible:ring-primary focus-visible:border-primary shadow-sm"
         />
 
-        <Button
-          type="submit"
-          disabled={isMutating}
-          className="absolute right-0 top-0 bottom-0 h-14 rounded-l-none rounded-r-md bg-secondary text-white hover:bg-[#d9532b] px-8 text-base font-medium flex items-center gap-2"
-        >
-          {isMutating && <Loader2 className="h-5 w-5 animate-spin" />}
-          {tCommon("search")}
-        </Button>
+      <Button
+  type="submit"
+  disabled={isMutating}
+  className="absolute right-0 top-0 bottom-0 h-14 rounded-l-none rounded-r-md bg-secondary text-white hover:bg-[#d9532b] px-8 text-base font-medium flex items-center gap-2"
+>
+  {/* Always render the icon, just hide it when not loading */}
+  <Loader2 className={`h-5 w-5 animate-spin ${isMutating ? "visible" : "invisible"}`} />
+  {tCommon("search")}
+</Button>
       </form>
 
-      {/* Example link below */}
+      {/* Example link */}
       <div className="mt-4 pl-1 text-[15px] text-slate-700">
         {tCommon("exampleSearch")}{" "}
         <button
@@ -150,9 +193,10 @@ export default function ProductPanel() {
         </button>
       </div>
 
+      {/* ── Results ── */}
       {productData && productData.product && (
         <div className="mt-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-          {/* Banner */}
+          {/* Verified Banner */}
           <div className="flex bg-[#e8f5e9] border-l-[6px] border-[#2e7d32] p-4 mb-10 items-center">
             <div className="mr-5 shrink-0 flex flex-col pt-1">
               <div className="w-[46px] h-[30px] bg-[#7cb342] rounded-t flex items-center justify-center">
@@ -187,7 +231,7 @@ export default function ProductPanel() {
             </p>
           </div>
 
-          {/* Tabs */}
+          {/* ── Tabs ── */}
           <Tabs defaultValue="product" className="w-full">
             <TabsList
               variant="line"
@@ -314,7 +358,7 @@ export default function ProductPanel() {
                 </div>
               </div>
 
-              {/* Certifications Section */}
+              {/* Certifications */}
               {(productData.product.certifications?.is_saso_certified ||
                 productData.product.certifications?.is_saudi_made) && (
                 <div className="mt-10">
@@ -363,9 +407,11 @@ export default function ProductPanel() {
                     {productData.product.certifications?.is_saudi_made && (
                       <div className="flex items-center gap-4 bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                         <div className="shrink-0 w-[56px] h-[56px] flex items-center justify-center">
-                          <img
+                          <Image
                             src="/logos/saudi-made.png"
                             alt="Saudi Made"
+                            width={56}
+                            height={56}
                             className="w-full h-full object-contain"
                           />
                         </div>
@@ -442,8 +488,7 @@ export default function ProductPanel() {
                                 </div>
                               )}
                               {(productData.product.company.address.locality ||
-                                productData.product.company.address
-                                  .region) && (
+                                productData.product.company.address.region) && (
                                 <div className="font-bold">
                                   {[
                                     productData.product.company.address
@@ -555,7 +600,7 @@ export default function ProductPanel() {
             </TabsContent>
           </Tabs>
 
-          {/* Footer Info */}
+          {/* Footer */}
           <div className="mt-12 pt-4">
             <IncorrectDataDialog />
             <p className="text-slate-600 text-[15px] font-medium mt-6">
@@ -567,14 +612,11 @@ export default function ProductPanel() {
                 ? new Date(
                     productData.product.company?.dates?.updated ||
                       productData.product.metadata?.dateUpdated
-                  ).toLocaleDateString(
-                    locale === "ar" ? "ar-SA" : "en-GB",
-                    {
-                      day: "numeric",
-                      month: "short",
-                      year: "numeric",
-                    }
-                  )
+                  ).toLocaleDateString(locale === "ar" ? "ar-SA" : "en-GB", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })
                 : tCommon("unknownDate")}
               .
             </p>
