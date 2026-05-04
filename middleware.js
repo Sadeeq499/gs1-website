@@ -1,7 +1,8 @@
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
+import { withMarkdown } from "@markdown-for-agents/nextjs";
 
-export default createMiddleware(routing);
+export default withMarkdown(createMiddleware(routing));
 
 export const config = {
   // Match only internationalized pathnames

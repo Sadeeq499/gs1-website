@@ -4,6 +4,7 @@ import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ContactWidget from "@/components/layout/ContactWidget";
+import WebMCPProvider from "@/components/layout/WebMCPProvider";
 import QueryProvider from "@/lib/providers/QueryProvider";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -146,6 +147,7 @@ export default async function RootLayout({ children, params }) {
                 <Header />
               </Suspense>
               {children}
+              <WebMCPProvider />
               <ContactWidget />
               <Footer />
             </QueryProvider>
